@@ -39,6 +39,15 @@ the following way:
 
 \\[ h_{\theta}(x) = \frac{1}{1+e^{-\theta^{T}x}} = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+...+\theta_{n}x_{n} )}} \\]
 
+This is just a non-linear transformation of the linear combination of the feature \\(x_{i}\\)'s. Using this model, the classification rule can be defined as for a data \\(x\\):
+\\[ f(x) = \begin{equation}
+  D_{it} =
+    \begin{cases}
+      0, h_{\theta}(x) < t \\
+      1 & h_{\theta}(x) \geq t
+    \end{cases}       
+\end{equation} \\]
+
 ```python
 examples = [1,2,3,4,5,6]
 print(examples)
