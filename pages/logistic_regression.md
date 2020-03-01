@@ -7,8 +7,8 @@ description: ""
 
 ## Logistic Regression
 
-Now we have a different type of data (experience): \\( D = {(X_i,Y_i)|X_i \in R^n, y_i \in C } \\), where \\( C \\) is categorical. For now, lets
-assume \\( C = \{ 0,1\} \\) . For an unseen data \\( x \in R^n \\), we need a function \\( F:R^n \rightarrow  C \\) which predicts its category label whether
+Now we have a different type of data (experience): \\(  D = \{ (X_i,Y_i)|X_i \in R^n, y_i \in C \} \\), where \\( C \\) is categorical. For now, lets
+assume \\( C = \{0,1\} \\) . For an unseen data \\( x \in R^n \\), we need a function \\( F:R^n \rightarrow  C \\) which predicts its category label whether
 it belongs to class '0' or to class '1', formally: \\( F(x) \in {0,1} \\)
 For instance:
 1. Email classification: Spam or not spam
@@ -34,7 +34,7 @@ has some sort of probabilistic distribution interpretation.
 Figure 2. Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
 
 
-We can use this sigmoid functions as a model to represent the relationship between data (X) and the categories ( C ) in
+We can use this sigmoid functions as a model to represent the relationship between data \\((X)\\) and the categories \\((C)\\) in
 the following way:
 
 \\[ h_{\theta}(x) = \frac{1}{1+e^{-\theta^{T}x}} = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+...+\theta_{n}x_{n} )}} \\]
