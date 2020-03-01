@@ -16,7 +16,8 @@ For instance:
 3. Fraud detection: employer is cheating or not
 4. Customer will pay back the loan or not.
 
-
+![Figure 1](Figure1.png)
+Figure 1. Classification problem.
 
 One could fit a regression line and rounding the outcome, the regressand to 0 or 1. This approach would not work here.
 A large value of \\(x\\), say \\(x=14\\), would indicate a strong relation to the class labeled by '1'. However, the corresponding
@@ -25,9 +26,18 @@ error the optimizer would choose another \\( \theta_{i} \\) parameters so that t
 classification error around the decision boundary.
 
 Instead of using a linear regression, we fit an S-shaped function on the data. Many S-shaped functions are available, e.g.
-arc tangent. However the most frequently used one is the sigmoid function or also called logistic function, defined as: \\( g(x) =  \\)
+arc tangent. However the most frequently used one is the sigmoid function or also called logistic function, defined as: \\( g(x) = \frac{1}{1+e^{-x}}  \\
+The reason of preferring the sigmoid function over the arctan is that (i) sigmoid has a nice derivative function and (it) it
+has some sort of probabilistic distribution interpretation.
 
-![Figure 1](Figure1.png)
+![Figure 2](Figure2.png)
+Figure 2. Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
+
+
+We can use this sigmoid functions as a model to represent the relationship between data (X) and the categories ( C ) in
+the following way:
+
+\\[ h_{\theta}(x) = \frac{1}{1+e^{-\theta^{T}x}} = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+...+\theta_{n}x_{n} )}} \\]
 
 ```python
 examples = [1,2,3,4,5,6]
