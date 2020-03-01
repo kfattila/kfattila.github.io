@@ -43,8 +43,8 @@ This is just a non-linear transformation of the linear combination of the featur
 \\[ \begin{equation} 
 	f(x) = 
     \begin{cases}
-      0 & \text{if h_{\theta}(x) < t}\\
-      1 & \text{if h_{\theta}(x) \geq t}
+      0 & if h_{\theta}(x) < t\\
+      1 & if h_{\theta}(x) \geq t
     \end{cases}       
 \end{equation} \\]
 
