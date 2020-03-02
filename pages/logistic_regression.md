@@ -123,8 +123,8 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
-\\[ J(\theta|D) = -mean(Y *. \log(g(X\theta))) + (1-Y) *. \log(1-g(X\theta))) +\lambda mean(\theta(\theta^{\\^.2})) \\]
-Note: \\(*.\\) element-wise production, takes the mean of all elements in its argument and \\(\\^.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
+\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\\^.2})) \\]
+Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\\^.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
 Now the training algorithm can be formulated as:
 1. repeat until convergence  \\[ 
     \begin{cases}
@@ -136,7 +136,7 @@ Now the training algorithm can be formulated as:
 Some remarks:
 1. The cost function here is also called cross-entropy (xent). The cross-entropy of two discrete probabilistic distributions \\(P\\) and \\(Q\\) is defined as:
 \\[ H(P,Q) = -\sum_{k}P(k) \log Q(k) \\] Now, let us consider a single data and a binary class logistic regression problem \\((k=2)\\). We can consider \\(P\\) as the true distribution over the class labels which is defined in the following form \\(P(Y_{i} = 1) = 1\\) iff \\(x\\) belongs to the positive class, otherwise  \\(P(Y_{i} = 0) = 0\\) (\\(x\\) belongs to the negative class). \\(P\\) is a probability distribution. Now, we can define \\(Q\\) as a distribution over the classes calculated by our model \\(Q(Y_{i} = 1) = g(x\theta)\\) and \\(Q(Y_{i} = 0) = 1 - Q(1) = 1 - g(x\theta)\\). Check that \\( Q(Y_{i} = 1) + Q(Y_{i} = 0) = g(x\theta) + 1 - g(x\theta) = 1 \\).
-2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. In fact, \\(g(x\theta) = P(y=1|x)\\); and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y} \\)
+2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. In fact, \\(g(x\theta) = P(y=1|x)\\); and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y}\\)
 
 
 For a given dataset, the likelihood function is defined as \\(l(\theta) = \prod_{i} P{y_{i}|x_{i}} = \prod_{i}g(x_{i}\theta)^{y_{i}}(1-g(x_{i}\theta))^{1-y_{i}}\\).
