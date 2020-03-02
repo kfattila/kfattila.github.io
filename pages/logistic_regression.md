@@ -117,13 +117,13 @@ worthwhile calculating it once and storing it in a local variable.
 Multi-class classification problem
 The method above can be used with two categories, i.e. in binary classification problems. However, we need an approach to deal with multi-class classification problems.
 
-In multi-class classification problems, for each category a logisitc regression model is built. Let's suppose there are \\(K\\) categories, i.e. \\(\y \in \\{1,2,...,K\\}\\).
+In multi-class classification problems, for each category a logisitc regression model is built. Let's suppose there are \\(K\\) categories, i.e. \\(y \in \\{1,2,...,K\\}\\).
 Then the kth logistic regression model is assigned to the kth class, such that, the k-th class is treated as positive class (1) and all the other classes are joined 
 and marked as negative class (0). A new data instance is to be classifed to the class whose model gives the highest score. This approach is called one-vs-all classification.
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
-\\[J(\theta|D) = -mean(Y *. \log(g(X\theta))) + (1-Y) *. \log(1-g(X\theta))) +\lambda mean(\theta(\theta^{\\^.2})) \\]
+\\[ J(\theta|D) = -mean(Y *. \log(g(X\theta))) + (1-Y) *. \log(1-g(X\theta))) +\lambda mean(\theta(\theta^{\\^.2})) \\]
 Note: \\(*.\\) element-wise production, takes the mean of all elements in its argument and \\(\\^.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
 Now the training algorithm can be formulated as:
 1. repeat until convergence  \\[ 
