@@ -106,12 +106,24 @@ matrix containing the data in its columns where we added a constant 1 to each da
 Hence, \((X\\) and \\(\theta\\) are "compatibile". Let \\( Y \in R^{1 \times m} \\) be a row vector containing category labels.
 
 Let \\( X = \left[\begin{array}{cccc}
+1, & X_{1}  \\\
+1, & X_{2}  \\\
+1, & X_{3}   \\\
+ ... \\\
+1, & X_{m}
+\end{array}\right] = \left[\begin{array}{cccc}
 1, & x_{1,1}, & x_{1,2}, & ... & x_{1,n}   \\\
 1, & x_{2,1}, & x_{2,2}, & ... & x_{2,n}   \\\
 1, & x_{3,1}, & x_{3,2}, & ... & x_{3,n}   \\\
+& & ... & & \\\
+1, & x_{m,1}, & x_{m,2}, & ... & x_{m,n}
+\end{array}\right] and let Y = \left[\begin{array}{cccc}
+y_{1}  \\\
+y_{2}  \\\
+y_{3}   \\\
 ... \\\
-1, & x_{1,1}, & x_{1,2}, & ... & x_{1,n}
-\end{array}\right] \\)
+y_{m}
+\end{array}\right]  \\)
 
 Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector denoting the ith data in \\(X\\). Let \\(g(.)\\) be the sigmoid function
 extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
