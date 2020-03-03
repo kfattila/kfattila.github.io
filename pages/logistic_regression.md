@@ -56,7 +56,7 @@ for one data as following:
 \\[ c_{\theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
 
 This leads the following loss function using the regularization term as:
-\\[ J(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(h_{theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+\\[ J(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 
 Discussion 1. What is the problem with this objective function?
 Solution. This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
@@ -68,7 +68,7 @@ Now, let's define the cost of an error as following:
 \\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 Now, this leads to a convex error function and we can find the \\( \theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
-Algorithm 2.
+#####Algorithm 2.
 1. initialize \\( \theta_{j} \\) with random values.
 2. \\( \begin{array}{l} \text{repeat until convergence \\{} \\\ \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\\ \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} \\\ text{\\}} \end{array} \\)
 
@@ -91,7 +91,7 @@ Note that, features are needed to be normalized.
 
 
 
-Vectorization
+####Vectorization
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
 Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
 matrix containing the data in its columns where we added a constant 1 to each data in the 0th position.
@@ -104,10 +104,14 @@ extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a v
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 Algorithm 3.
 1. Initialize the parameters randomly
-2. repeat until convergence  \\[ 
-    \begin{cases}
-
-    \end{cases}       
+2. \\[ 
+    \begin{array}{l}
+        \text{repeat until convergence \\{} \\\
+        \Delta = X^{T}(g(X\theta)-Y)) \\\
+        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
+        \theta = \theta - \mu\Delta
+        \text{\\}}
+    \end{array}{l}        
 \\]
 That is it, logistic regression using gradient descent optimization can be implemented in 7-10 code of lines in a mathematical programing languages.
 Implementation issue: The algorithm above calculates \\(g(X\theta)\\) three times. To make it computationally more efficient in implementation, it would be 
@@ -124,10 +128,15 @@ In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ...,
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
 \\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\\^.2})) \\]
 Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\\^.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
-Now the training algorithm can be formulated as:
-1. repeat until convergence  \\[ 
-    \begin{cases}
 
+Now the training algorithm can be formulated as:
+repeat until convergence  \\[ 
+    \begin{cases}
+        \Delta = X^{T}(g(X\theta)-Y)) \\\
+        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
+        \theta = \theta - \mu\Delta
+        error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \\\
+        \text{Print out current error. So you can see if the algorithm converges or diverges.}
     \end{cases}       
 \\]
 
