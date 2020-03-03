@@ -78,20 +78,21 @@ We just need the derivatives of \\(J\\). After simple calculus, we get that:
 
 This summarises algorithm 2 as follows:
 
-\\( 
+\\[ 
     \begin{array}{l} 
         \text{repeat until convergence \\{} \\\
         widetilde_{\theta_{j}} = \\\
         widetilde_{\theta_{0}} = \\\
         \theta_{j} = \widetilde_{\theta_{j}},
-    \end{array}{l}     
-\\)
+    \end{array}       
+\\]{l}
 
 Note that, features are needed to be normalized.
 
 
 
-####Vectorization
+###Vectorization
+
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
 Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
 matrix containing the data in its columns where we added a constant 1 to each data in the 0th position.
@@ -103,10 +104,10 @@ Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector de
 extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 
-####Algorithm 3
+###Algorithm 3
 
 1. Initialize the parameters randomly
-2. \\( 
+2. \\[ 
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
@@ -114,7 +115,8 @@ Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten a
         \theta = \theta - \mu\Delta \\\
         \text{\\}}
     \end{array}{l}        
-\\)
+\\]
+
 That is it, logistic regression using gradient descent optimization can be implemented in 7-10 code of lines in a mathematical programing languages.
 Implementation issue: The algorithm above calculates \\(g(X\theta)\\) three times. To make it computationally more efficient in implementation, it would be 
 worthwhile calculating it once and storing it in a local variable.
