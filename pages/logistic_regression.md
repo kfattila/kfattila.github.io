@@ -94,13 +94,13 @@ This summarises algorithm 2 as follows:
 \\[ 
     \begin{array}{l} 
         \text{repeat until convergence \\{} \\\
-        widetilde_{\theta_{j}} = \\\
-        widetilde_{\theta_{0}} = \\\
-        \theta_{j} = \widetilde_{\theta_{j}},
+        widetilde_{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lamda\theta_{i}), & \text{for } j \gt 0 \\\
+        widetilde_{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}), & \text{for } j \eq 0 \\\
+        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for} \forall{j}
     \end{array}{l}     
 \\]
 
-Note that, features are needed to be normalized.
+Note that, the features are needed to be normalized.
 
 
 
