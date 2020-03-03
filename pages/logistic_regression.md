@@ -94,7 +94,7 @@ This summarises algorithm 2 as follows:
 \begin{array}{ll} 
     \text{repeat until convergence \\{} \\\
     \widetilde{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i}), & \text{for } j \gt 0 \\\
-    \widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}), & \text{for } j \eq 0 \\\
+    \widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}), & \text{for } j = 0 \\\
     \theta_{j} = \widetilde{\theta_{j}}, & \text{for } \forall j \\\
     \text{\\}}
 \end{array}   
