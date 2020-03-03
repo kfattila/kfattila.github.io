@@ -76,7 +76,7 @@ Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
 \\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
 
-This summarises algorithm 2. as follows:
+This summarises algorithm 2 as follows:
 
 \\[ 
     \begin{array}{l} 
@@ -102,14 +102,15 @@ Let \\( X \\)
 Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector denoting the ith data in \\(X\\). Let \\(g(.)\\) be the sigmoid function
 extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
-Algorithm 3.
+
+####Algorithm 3
 1. Initialize the parameters randomly
 2. \\[ 
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
         \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
-        \theta = \theta - \mu\Delta
+        \theta = \theta - \mu\Delta \\\
         \text{\\}}
     \end{array}{l}        
 \\]
