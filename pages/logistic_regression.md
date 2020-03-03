@@ -70,14 +70,15 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 
 Algorithm 2.
 1. initialize \\( \theta_{j} \\) with random values.
-2. repeat until convergence \{
-    \\[ 
+2.  \\[ 
     \begin{array}{l}
+        \text{repeat until convergence \\{}
         \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\\
-        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} 
+        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} \\\
+        text{\\}}
     \end{array}
     \\]
-\}
+
 Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
 \\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
@@ -85,7 +86,9 @@ We just need the derivatives of \\(J\\). After simple calculus, we get that:
 This summarises algorithm 2. as follows:
 \\[ 
     \begin{cases}
-
+        widetilde_{\theta_{j}} = \\\
+        widetilde_{\theta_{0}} = \\\
+        \theta_{j} = \widetilde_{\theta_{j}},
     \end{cases}       
 \\]
 
