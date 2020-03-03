@@ -79,7 +79,7 @@ Algorithm 2.
     \\]
 \}
 Note: update \\(\theta\\)'s simultenously.
-We just need the derivatives of \\(J\)). After simple calculus, we get that:
+We just need the derivatives of \\(J\\). After simple calculus, we get that:
 \\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
 
 This summarises algorithm 2. as follows:
