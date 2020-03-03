@@ -41,7 +41,7 @@ This is just a non-linear transformation of the linear combination of the featur
 \\[ 
     f(x) = 
     \begin{cases}
-      0, & h_{\theta}(x) \lt t \\\
+      0, & h_{\theta}(x) \lt t \\
       1, & h_{\theta}(x) \geq t
     \end{cases}       
 \\]
@@ -71,11 +71,10 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 Algorithm 2.
 1. initialize \\( \theta_{j} \\) with random values.
 2. repeat until convergence {
-} 
     \\[ 
     \begin{array}{l}
         \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\
-        \theta_{j} = \widetilde_{\theta_{j}}, & \text{ for all j;} 
+        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} 
     \end{array}
     \\]
 }
