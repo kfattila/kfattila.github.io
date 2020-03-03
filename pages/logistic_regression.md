@@ -68,7 +68,7 @@ Now, let's define the cost of an error as following:
 \\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 Now, this leads to a convex error function and we can find the \\( \theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
-#####Algorithm 2#####
+##### Algorithm 2
 1. Initialize \\( \theta_{j} \\) with random values
 2. \\[ 
     \begin{array}{l}
@@ -98,7 +98,7 @@ Note that, features are needed to be normalized.
 
 
 
-#####Vectorization#####
+##### Vectorization
 
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
 Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
@@ -111,7 +111,7 @@ Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector de
 extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 
-#####Algorithm 3#####
+##### Algorithm 3
 
 1. Initialize the parameters randomly
 2. \\[ 
