@@ -90,13 +90,12 @@ We just need the derivatives of \\(J\\). After simple calculus, we get that:
 
 
 This summarises algorithm 2 as follows:
-
 \\[ 
     \begin{array}{l} 
         \text{repeat until convergence \\{} \\\
         widetilde_{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lamda\theta_{i}), & \text{for } j \gt 0 \\\
         widetilde_{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}), & \text{for } j \eq 0 \\\
-        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for} \forall{j}
+        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for} \forall j
     \end{array}{l}     
 \\]
 
@@ -183,4 +182,4 @@ Some remarks:
 
 
 For a given dataset, the likelihood function is defined as \\(l(\theta) = \prod_{i} P{y_{i}|x_{i}} = \prod_{i}g(x_{i}\theta)^{y_{i}}(1-g(x_{i}\theta))^{1-y_{i}}\\).
-The loglikelihood: \\( l(\theta) = \sum_{i} y_{i} \log g(x_{i}\theta}) + (1-y_{i})\log(1-g(x_{i}\theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
+The loglikelihood: \\( l(\theta) = \sum_{i} y_{i} \log g(x_{i}\theta) + (1-y_{i})\log(1-g(x_{i}\theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
