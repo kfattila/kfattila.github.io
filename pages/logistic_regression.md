@@ -39,13 +39,11 @@ the following way:
 
 This is just a non-linear transformation of the linear combination of the feature \\(x_{i}\\)'s. Using this model, the classification rule can be defined as for a data \\(x\\):
 \\[ 
-\begin{equation} 
     f(x) = 
     \begin{cases}
       0, & h_{\theta}(x) < t \\
-      1, & h_{\theta}(x) \geq t \\
+      1, & h_{\theta}(x) \geq t
     \end{cases}       
-\end{equation} 
 \\]
 
 The value \\(t\\) is called the decision threshold. And the region \\(x\\), where \\(f(x) = t\\) is called the becision boundary. The value
@@ -72,7 +70,8 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 
 Algorithm 2.
 1. initialize \\( \theta_{j} \\) with random values.
-2. repeat until convergence  \\[ 
+2. repeat until convergence  
+\\[ 
     \begin{cases}
 
     \end{cases}       
@@ -82,7 +81,7 @@ We just need the derivatives of \\(J\)). After simple calculus, we get that:
 \\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
 
 This summarises algorithm 2. as follows:
-\[ 
+\\[ 
     \begin{cases}
 
     \end{cases}       
@@ -140,4 +139,4 @@ Some remarks:
 
 
 For a given dataset, the likelihood function is defined as \\(l(\theta) = \prod_{i} P{y_{i}|x_{i}} = \prod_{i}g(x_{i}\theta)^{y_{i}}(1-g(x_{i}\theta))^{1-y_{i}}\\).
-The loglikelihood: \\(l(\theta) = \sum_{i} y_{i} \log g(x_{i}\theta}) + (1-y_{i})\log(1-g(x_{i}\theta))\\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
+The loglikelihood: \\( l(\theta) = \sum_{i} y_{i} \log g(x_{i}\theta}) + (1-y_{i})\log(1-g(x_{i}\theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
