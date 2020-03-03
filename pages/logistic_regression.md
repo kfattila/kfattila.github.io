@@ -78,14 +78,14 @@ We just need the derivatives of \\(J\\). After simple calculus, we get that:
 
 This summarises algorithm 2 as follows:
 
-\\[ 
+\\( 
     \begin{array}{l} 
         \text{repeat until convergence \\{} \\\
         widetilde_{\theta_{j}} = \\\
         widetilde_{\theta_{0}} = \\\
         \theta_{j} = \widetilde_{\theta_{j}},
-    \end{array}       
-\\]
+    \end{array}{l}     
+\\)
 
 Note that, features are needed to be normalized.
 
@@ -104,8 +104,9 @@ extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a v
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 
 ####Algorithm 3
+
 1. Initialize the parameters randomly
-2. \\[ 
+2. \\( 
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
@@ -113,7 +114,7 @@ Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten a
         \theta = \theta - \mu\Delta \\\
         \text{\\}}
     \end{array}{l}        
-\\]
+\\)
 That is it, logistic regression using gradient descent optimization can be implemented in 7-10 code of lines in a mathematical programing languages.
 Implementation issue: The algorithm above calculates \\(g(X\theta)\\) three times. To make it computationally more efficient in implementation, it would be 
 worthwhile calculating it once and storing it in a local variable.
