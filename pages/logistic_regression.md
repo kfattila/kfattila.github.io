@@ -154,8 +154,7 @@ repeat until convergence  \\[
 
 Some remarks:
 1. The cost function here is also called cross-entropy (xent). The cross-entropy of two discrete probabilistic distributions \\(P\\) and \\(Q\\) is defined as:
-\\[ H(P,Q) = -\sum_{k}P(k) \log Q(k) \\] Now, let us consider a single data and a binary class logistic regression problem \\((k=2)\\). We can consider \\(P\\) as the true distribution over the class labels which is defined in the following form \\(P(Y_{i} = 1) = 1\\) iff \\(x\\) belongs to the positive class, otherwise  \\(P(Y_{i} = 0) = 0\\) (\\(x\\) belongs to the negative class). \\(P\\) is a probability distribution. Now, we can define \\(Q\\) as a distribution over the classes calculated by our model \\(Q(Y_{i} = 1) = g(x\theta)\\) and \\(Q(Y_{i} = 0) = 1 - Q(1) = 1 - g(x\theta)\\). Check that \\( Q(Y_{i} = 1) + Q(Y_{i} = 0) = g(x\theta) + 1 - g(x\theta) = 1 \\).
-
+\\[ H(P,Q) = -\sum_{k}P(k) \log Q(k) \\] Now, let us consider a single data and a binary class logistic regression problem \\((k=2)\\). We can consider \\(P\\) as the true distribution over the class labels which is defined in the following form \\(P(Y_{i} = 1) = 1\\) iff \\(x\\) belongs to the positive class, otherwise  \\(P(Y_{i} = 0) = 0\\) (\\(x\\) belongs to the negative class). \\(P\\) is a probability distribution. Now, we can define \\(Q\\) as a distribution over the classes calculated by our model \\(Q(Y_{i} = 1) = g(x\theta)\\) and \\(Q(Y_{i} = 0) = 1 - Q(1) = 1 - g(x\theta)\\). Check that \\( Q(Y_{i} = 1) + Q(Y_{i} = 0) = g(x\theta) + 1 - g(x\theta) = 1 \\)
 2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. In fact, \\(g(x\theta) = P(y=1|x)\\); and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y}\\)
 
 
