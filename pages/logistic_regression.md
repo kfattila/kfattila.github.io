@@ -72,12 +72,12 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 
 1. Initialize \\( \theta_{j} \\) with random values
 2. \\[ 
-    \begin{array}{l}
-        \text{repeat until convergence \\{} \\\ 
-        \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\\
-        \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} \\\
+    \begin{array}{ll}
+        \text{repeat until convergence \\{} \\\
+        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all }j \\\
+        \theta_{j} = \widetilde{\theta_{j}}, & \text{for }\forall j \\\
         text{\\}}
-    \end{array}{l}
+    \end{array}
 \\]
 
 Note: update \\(\theta\\)'s simultenously.
