@@ -69,6 +69,7 @@ Now, let's define the cost of an error as following:
 Now, this leads to a convex error function and we can find the \\( \theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
 ##### Algorithm 2
+
 1. Initialize \\( \theta_{j} \\) with random values
 2. \\[ 
     \begin{array}{l}
@@ -76,12 +77,17 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
         \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\\
         \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} \\\
         text{\\}}
-    \end{array}
+    \end{array}{l}
 \\]
 
 Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
 \\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
+
+\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\theta}(x_{i})) - (1-y_{i})\log(1-h_{\theta}(x_\theta))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})\\]
+\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} \text{for} j \gt 0 \\]
+\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) \text{for} j \eq 0 \\]
+
 
 This summarises algorithm 2 as follows:
 
