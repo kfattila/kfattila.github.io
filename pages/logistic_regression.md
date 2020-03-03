@@ -69,14 +69,15 @@ Now, let's define the cost of an error as following:
 Now, this leads to a convex error function and we can find the \\( \theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
 #####Algorithm 2#####
-1. initialize \\( \theta_{j} \\) with random values.
+1. Initialize \\( \theta_{j} \\) with random values
 2. \\[ 
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\ 
         \widetilde_{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{ for all j;} \\\
         \theta_{j} = \widetilde_{\theta_{j}}, & \text{for all j;} \\\
         text{\\}}
-    \end{array} \\]
+    \end{array}
+\\]
 
 Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
