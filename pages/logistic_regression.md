@@ -117,7 +117,7 @@ Let \\( X = \left[\begin{array}{cccc}
 1, & x_{3,1}, & x_{3,2}, & ... & x_{3,n}   \\\
 & & ... & & \\\
 1, & x_{m,1}, & x_{m,2}, & ... & x_{m,n}
-\end{array}\right] and let Y = \left[\begin{array}{cccc}
+\end{array}\right]\\) and let \\(Y = \left[\begin{array}{cccc}
 y_{1}  \\\
 y_{2}  \\\
 y_{3}   \\\
