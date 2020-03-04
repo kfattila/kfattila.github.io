@@ -62,7 +62,7 @@ Discussion 1. What is the problem with this objective function?
 Solution. This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
 
 How can we make this error function convex?
-Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x)).
+Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
 
 Now, let's define the cost of an error as following: 
 \\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
