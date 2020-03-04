@@ -170,15 +170,15 @@ Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its
 
 Now the training algorithm can be formulated as:
 \\[ 
-    \begin{list}{l}
+    \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
         \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
         \theta = \theta - \mu\Delta \\\
         error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \\\
-        \text{Print out current error. So you can see if the algorithm converges or diverges.}
+        \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
         \text{\\}}
-    \end{list}       
+    \end{array}       
 \\]
 
 
