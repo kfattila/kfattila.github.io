@@ -82,11 +82,15 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 
 Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
-\\[ h_{\theta}(x)' = h(x)(1-h(x)) \\], so
+\\( h_{\theta}(x)' = h(x)(1-h(x)) \\), so
 
-\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\theta}(x_{i})) - (1-y_{i})\log(1-h_{\theta}(x_\theta))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})\\]
-\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} \text{for} j \gt 0 \\]
-\\[ \frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) \text{for} j \eq 0 \\]
+\\[ 
+\begin{array}{ll} 
+\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\theta}(x_{i})) - (1-y_{i})\log(1-h_{\theta}(x_\theta))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) \\\
+\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} \text{for} j \gt 0 \
+\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) \text{for} j = 0  \\
+\end{array}
+\\]
 
 
 This summarises algorithm 2 as follows:
