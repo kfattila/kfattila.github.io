@@ -167,8 +167,8 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
-\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\arrowup.2})) \\]
-Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\arrowup.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
+\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\uparrow.2})) \\]
+Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\uparrow.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
 
 Now the training algorithm can be formulated as:
 \\[ 
