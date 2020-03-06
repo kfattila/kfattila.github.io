@@ -7,6 +7,7 @@ description: ""
 Content based recommendation systems offers new contents or products for customers based on their personal preference (in order to increase selling and revenue). It is extensively used by online retail stores such as Amazon, eBay, Netflix.
 
 **Example:** Consider a movie rental store which has some movies rated by some users, organized in a table as follows(illustration):
+
 |              | Alice | Beata | Cecil | Dennis | Emily |
 |--------------|-------|-------|-------|--------|-------|
 | Terminator   | 1     | 1     | 2     | 2      | 4     |
@@ -38,10 +39,10 @@ The parameters \\(\theta_{u}\\) for user (\\u\\) is independet and thus they cou
 \\[ J(\theta_{1}, \theta_{2}, ..., \theta_{U}|D) = \sum_{u=1}^{U} \frac{1}{n} sum_{i=0; y_{i},u \neq ?}^{n} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
 
 When the parameters \\(\theta_{u}\\) are given, the one can learn the features for the products to indentify the best parameters vector associated with a product:
-\\[ J(x_{1}, x_{2}, ..., x_{n}|D) = \sum_{i=1}^{n} \frac{1}{U} sum_{u=1; y_{i},u \neq ?}^{U} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{i=1}^{n}\sum_{j=1}^{m}(x_{i,j})^{2}  \\]
+\\[ J(x_{1}, x_{2}, ..., x_{n}|D) = \sum_{i=1}^{n} \frac{1}{U} \sum_{u=1; y_{i},u \neq ?}^{U} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{i=1}^{n}\sum_{j=1}^{m}(x_{i,j})^{2}  \\]
 
 When neither \\(\theta_{u}\\) nor \\(x_{i}\\) feature vectors are given (but only some user preference), one can randomly initialize both parameters and can exacute the two optimization back and forth and updateing the parameters after each optimization. However, the optimization can be solved simultaneiously: 
 
-\\[ J(x_{1}, x_{2}, ..., x_{n}, J(\theta_{1}, \theta_{2}, ..., \theta_{U}|D) = \sum_{i=1}^{n} \frac{1}{U} sum_{u=1; y_{i},u \neq ?}^{U} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{i=1}^{n}\sum_{j=1}^{m}(x_{i,j})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
+\\[ J(x_{1}, x_{2}, ..., x_{n}, J(\theta_{1}, \theta_{2}, ..., \theta_{U}|D) = \sum_{i=1}^{n} \frac{1}{U} \sum_{u=1; y_{i},u \neq ?}^{U} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{i=1}^{n}\sum_{j=1}^{m}(x_{i,j})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
 
 The procedure, above, for learning product feature parameters \\(x_{i}\\) and user preference parameters \\(\theta_{u}\\) called **collaborative filtering**. 
