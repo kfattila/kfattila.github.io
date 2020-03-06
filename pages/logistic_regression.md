@@ -58,8 +58,9 @@ for one data as following:
 This leads the following loss function using the regularization term as:
 \\[ J(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 
-Discussion 1. What is the problem with this objective function?
-Solution. This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
+**Discussion 1.** What is the problem with this objective function?
+
+**Solution.** This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
 
 How can we make this error function convex?
 Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
@@ -71,14 +72,14 @@ Now, this leads to a convex error function and we can find the \\( \theta \\) pa
 ##### Algorithm 2
 
 1. Initialize \\( \theta_{j} \\) with random values
-2. \\[ 
+2. \\( 
     \begin{array}{ll}
         \text{repeat until convergence \\{} \\\
         \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{for }\forall j \\\
         \theta_{j} = \widetilde{\theta_{j}}, & \text{for }\forall j \\\
         \text{\\}}
     \end{array}
-\\]
+\\)
 
 Note: update \\(\theta\\)'s simultenously.
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
@@ -113,7 +114,7 @@ Note that, the features are needed to be normalized.
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
 Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
 matrix containing the data in its columns where we added a constant 1 to each data in the 0th position.
-Hence, \((X\\) and \\(\theta\\) are "compatibile". Let \\( Y \in R^{1 \times m} \\) be a row vector containing category labels.
+Hence, \\(X\\) and \\(\theta\\) are "compatibile". Let \\( Y \in R^{1 \times m} \\) be a row vector containing category labels.
 
 Let \\( X = \left[\begin{array}{cccc}
 1, & X_{1}  \\\
@@ -156,7 +157,8 @@ That is it, logistic regression using gradient descent optimization can be imple
 Implementation issue: The algorithm above calculates \\(g(X\theta)\\) three times. To make it computationally more efficient in implementation, it would be 
 worthwhile calculating it once and storing it in a local variable.
 
-Multi-class classification problem
+##### Multi-class classification problem
+
 The method above can be used with two categories, i.e. in binary classification problems. However, we need an approach to deal with multi-class classification problems.
 
 In multi-class classification problems, for each category a logisitc regression model is built. Let's suppose there are \\(K\\) categories, i.e. \\(y \in \\{1,2,...,K\\}\\).
@@ -165,8 +167,8 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
-\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\\^.2})) \\]
-Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\\^.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
+\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta(\theta^{\arrowup.2})) \\]
+Note: \\(\ast.\\) element-wise production, takes the mean of all elements in its argument and \\(\arrowup.2\\) is performed element-wise. Note that \\(\theta\\)) is matrix and \\(X\theta\\) will have the same size as \\(Y\\).
 
 Now the training algorithm can be formulated as:
 \\[ 
@@ -186,7 +188,8 @@ Some remarks:
 1. The cost function here is also called cross-entropy (xent). The cross-entropy of two discrete probabilistic distributions \\(P\\) and \\(Q\\) is defined as:
 \\[ H(P,Q) = -\sum_{k}P(k) \log Q(k) \\] Now, let us consider a single data and a binary class logistic regression problem \\((k=2)\\). We can consider \\(P\\) as the true distribution over the class labels which is defined in the following form \\(P(Y_{i} = 1) = 1\\) iff \\(x\\) belongs to the positive class, otherwise  \\(P(Y_{i} = 0) = 0\\) (\\(x\\) belongs to the negative class). \\(P\\) is a probability distribution. Now, we can define \\(Q\\) as a distribution over the classes calculated by our model \\(Q(Y_{i} = 1) = g(x\theta)\\) and \\(Q(Y_{i} = 0) = 1 - Q(1) = 1 - g(x\theta)\\). Check that \\( Q(Y_{i} = 1) + Q(Y_{i} = 0) = g(x\theta) + 1 - g(x\theta) = 1 \\).
 
-2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. In fact, \\(g(x\theta) = P(y=1|x)\\) and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y}\\)
+2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. 
+In fact, \\(g(x\theta) = P(y=1|x)\\) and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y}\\)
 
 
 For a given dataset, the likelihood function is defined as \\(l(\theta) = \prod_{i} P{y_{i}|x_{i}} = \prod_{i}g(x_{i}\theta)^{y_{i}}(1-g(x_{i}\theta))^{1-y_{i}}\\).
