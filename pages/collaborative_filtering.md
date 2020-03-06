@@ -33,7 +33,7 @@ So, if we include the usual constant 1 for the bias parameter then each movie ca
 The idea is that we model the rating of each user by a linear regression, that is, the rate of a user on a product is a linear combination of the features. Let's denote the number of users \\(U\\) and number of products \\(n\\) and the number of features \\(m\\). Then we want \\(\theta_{u} = [\theta_{0},\theta_{1},...,\theta_{m}]^{T}\\) for each user \\(1 \leq u \leq U\\).
 
 This can be learned by minimizing the following error function.
-\\[J(\theta_{u}|D) = frac{1}{n}\sum_{i=0; y_{i},u \neq ?}^{n}(\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{j=1}^{m}(\theta_{u,j})^{2} \\]
+\\[J(\theta_{u}|D) = \frac{1}{n}\sum_{i=0; y_{i},u \neq ?}^{n}(\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{j=1}^{m}(\theta_{u,j})^{2} \\]
 
 The parameters \\(\theta_{u}\\) for user \\(u\\) is independet and thus they could be learned using a single optimization:
 \\[ J(\theta_{1}, \theta_{2}, ..., \theta_{U}|D) = \sum_{u=1}^{U} \frac{1}{n} \sum_{i=0; y_{i},u \neq ?}^{n} (\theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
