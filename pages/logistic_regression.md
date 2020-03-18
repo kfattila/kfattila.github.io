@@ -75,7 +75,7 @@ Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\l
 
 
 ![Softmax](softmax.png)
-(source: https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
+[source:](https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
 
 Now, let's define the cost of an error as following: 
 \\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
@@ -179,7 +179,7 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 
 ![Softmax](Figure3.png)
 **Figure 3.** One-vs-all classification. For each class a logistic regression model is built.
-From <http://www.holehouse.org/mlclass/06_Logistic_Regression.html> 
+[From](http://www.holehouse.org/mlclass/06_Logistic_Regression.html)
 
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
