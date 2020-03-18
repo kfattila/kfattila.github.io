@@ -15,7 +15,7 @@ For instance:
 4. Customer will pay back the loan or not.
 
 ![Figure 1](Figure1.png)
-Figure 1. Classification problem.
+**Figure 1.** Classification problem.
 
 One could fit a regression line and rounding the outcome, the regressand to 0 or 1. This approach would not work here.
 A large value of \\(x\\), say \\(x=14\\), would indicate a strong relation to the class labeled by '1'. However, the corresponding
@@ -29,7 +29,7 @@ The reason of preferring the sigmoid function over the arctan is that (i) sigmoi
 has some sort of probabilistic distribution interpretation.
 
 ![Figure 2](Figure2.png)
-Figure 2. Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
+**Figure 2.** Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
 
 
 We can use this sigmoid functions as a model to represent the relationship between data \\((X)\\) and the categories \\((C)\\) in
@@ -49,6 +49,14 @@ This is just a non-linear transformation of the linear combination of the featur
 The value \\(t\\) is called the decision threshold. And the region \\(x\\), where \\(f(x) = t\\) is called the becision boundary. The value
 of \\(t\\) could depend on the application but in our case here let's choose \\(t = 0.5\\) .
 
+
+![Figure 2a](Figure2a.png)
+**Figure 2a.** A logistic regression representing a classification problem.
+
+
+![Figure 2b](Figure2b.png)
+**Figure 2b.** A logistic regression representing a classification problem.
+
 The model parameters are \\(\theta\\)'s, and we need a way to learn these parameters. Now the question is how?
 To learn the parameters, first we need to define the loss function (also called cost function). One could define the cost
 for one data as following:
@@ -64,6 +72,10 @@ This leads the following loss function using the regularization term as:
 
 How can we make this error function convex?
 Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
+
+
+![Softmax](softmax.png)
+(source: https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
 
 Now, let's define the cost of an error as following: 
 \\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
@@ -164,6 +176,11 @@ The method above can be used with two categories, i.e. in binary classification 
 In multi-class classification problems, for each category a logisitc regression model is built. Let's suppose there are \\(K\\) categories, i.e. \\(y \in \\{1,2,...,K\\}\\).
 Then the kth logistic regression model is assigned to the kth class, such that, the k-th class is treated as positive class (1) and all the other classes are joined 
 and marked as negative class (0). A new data instance is to be classifed to the class whose model gives the highest score. This approach is called one-vs-all classification.
+
+![Softmax](Figure3.png)
+**Figure 3.** One-vs-all classification. For each class a logistic regression model is built.
+From <http://www.holehouse.org/mlclass/06_Logistic_Regression.html> 
+
 
 In this case we have \\(K\\) model parameters in vector form \\(\theta_{1}, ..., \theta_{K}\\), which can be merged in to a matrix \\(\theta = \theta_{1},\theta_{2},...,\theta_{K}\\) in which the kth column corresponds to the kth class.
 We also can recode the class labels. For every class label \\(y_{i} \ in {1,2,...,K}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
