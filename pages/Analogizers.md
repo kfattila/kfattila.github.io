@@ -69,3 +69,5 @@ The choise of \\(\pm 1\\) is arbitrary but it must be non-zero. This cost functi
 
 Using this cost functions we can formulate the objective function of SVM classification.
 \\[J(\theta|D) = \frac{1}{m}\sum_{i=1}^{m} y_{i}(1 - \theta^{T}x_{i})_{+} + (1 - y_{i})(\theta^{T}x_{i} + 1)_{+} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}\\]
+
+What does this mean? For a positive sample
