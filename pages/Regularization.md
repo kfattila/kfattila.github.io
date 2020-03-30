@@ -110,7 +110,191 @@ where \\(H\\) is the hessian matrix of \\(J\\) w.r.t. \\(\theta\\) at \\(\theta^
 Moreover, because \\(\theta^{\ast}\\) is the local minimum, therefore the Hessian is positive semidefinite.
 
 If we set the derivatives of the new function to zero and solve it:
+\\[\nabla_{\theta}J(\theta) = \frac{1}{2}\nabla_{\theta}(\theta - \theta^{\ast})^{T} H(\theta - \theta^{\ast}) + \alpha\frac{1}{2}\nabla_{\theta}(\theta^{T}\theta) = 0\\]
 
+Then we get the following forms
+\\[\alpha\theta + H(\theta - \theta^{\ast}) = 0\\]
+\\[(H = \alpha I)\theta = H\theta^{\ast}\\]
+\\[\theta = (H + \alpha I)^{-1}H\theta^{\ast}\\]
+
+Let \\(\theta'\\) denote the solution of the equation above. Then \\(\theta' = (H + \alpha I)^{-1}H\theta^{\ast}\\)
+As \\(\lambda \rightarrow 0\\) then \\(\theta' \rightarrow \theta^{\ast}\\).
+Because \\(H\\) is real, symmetric, we can decompose it as \\(H = Q\Lambda Q^{T}\\), where \\(Q\\) is matrix formed from  orthonormal basis of eighenvectors, and \\(\Lambda\\) is a diagonal matrix containing the eigenvalues. Using this decomposition it gives us the following form:
+\\[\theta' = (Q\Lambda Q^{T} + \alpha  I)^{-1}Q\Lambda Q^{T}\theta^{\ast}\\]
+\\[\theta' = (Q(\Lambda + \alpha I)Q^{T})^{-1}Q\Lambda Q^{T}\theta^{\ast}\\]
+\\[\theta' = Q(\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
+
+This means that the regularization parameter \\(\alpha\\) rescales \\(theta^{\ast}\\) along the axes defined by the eighenvectors of \\(H\\). In a direction where the corresponding eigenvalue is small, a step in that direction does not reduce the cost function "greatly". Specifically, components are rescaled by a factor of \\(\frac{\lambda_{i}}{\lambda_{i} + \alpha}\\). When \\(\lambda_{i} \gg \alpha\\), then the effect of the regularization is small. When (\lambda_{i} \ll \alpha\\), then it will be shifted toward zero by a larger magnitude. Note that, if a component of \\(\theta^{\ast}\\) is nonzero, then the corresponding component of the optimal value remains nonzero.
+
+
+###### \\(l_{1}\\) norm:
+
+This type of regularization is defined as \\(\Omega(\theta) = ||\theta||_{1} = \sum_{i}|\theta_{i}|\\). Doing the similar calculations with the learning objective function we get:
+
+This gives us the learning objective:
+\\[J(\theta ; D) = \sum_{i} L_{\theta}(x_{i}, y_{i}) + \lambda||\theta||_{1}\\]
+
+The corresponding gradient and the update can be written as:
+\\[\nabla_{\theta}J(\theta ; D) = \sum_{i}\nabla_{\theta}L_{\theta}(x_{i}, y_{i}) + \lambda\sum_{i} sign(\theta_{i})\\]
+where sign(.) is applied element-wise.
+
+This formulation does not give us clean analytical formulas. In order to proceed further, in the subsequent part, we will assume that the Hessian matrix is diagonal. That is: \\(H = diag([H_{1,1}, H_{2,2}, ..., H_{n,n}])\\). This might be not a strict assumption, as such Hessian matrix can be achieved by using PCA filtering beforehand.
+
+The learning objective can be approximated by its Taylor series as before and we get
+\\[J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast}) + \alpha\frac{1}{2}||\theta||_{1}\\]
+
+Because we assumed that the Hessian \\(H\\) is diagonal, it can be rewritten in the following form:
+\\[J(\theta) = J(\theta^{\ast}) + \sum_{i}[\frac{1}{2}H_{i,i}(\theta_{i} - \theta_{i}^{\ast})^{2} + \alpha|\theta_{i}|]\\]
+
+The minimization of this function can be done analytically:
+\\[\theta_{i}' = sign(\theta_{i}^{\ast}) max\{|\theta_{i}^{\ast}| - \frac{\alpha}{H_{i,i}}, 0\}\\]
+
+Let's consider a situation when \\(\theta_{i}^{\ast}\\) is positive.
+1. \\(\theta_{i}^{\ast} \leq \frac{\alpha}{H_{i,i}} \\) : then the optimal value is simply set to zero: \\(\theta_{i}' = 0\\).
+2.  \\(\theta_{i}^{\ast} > \frac{\alpha}{H_{i,i}} \\) : The optimal value \\(\theta_{i}'\\) does not move to zero, but it just shits \\(\theta_{i}'\\) by \\(\frac{\alpha}{H_{i,i}}\\) towards zero.
+
+Similar arguments can be done for negative \\(\theta_{i}^{\ast}\\).
+
+One of the good thing in this regularization is that if \\(\theta_{i}^{\ast}\\) is zero, then the optimal value \\(\theta_{i}'\\) remains zero; and if \\(\theta_{i}^{\ast}\\) is nonzero, then the optimal value \\(\theta_{i}'\\) can become zero for \\(\alpha\\) large enough and the corresponding feature may safely be removed. This property can lead to sparse representation and thus \\(l_{1}\\) norm can be used for feature selection.
+
+###### Early-stopping:
+
+When one monitors the learning curves while training a model; it can be seen the training error is decreasing while the error on the validation set is increasing. Let's name it, this is the case of overfitting. Therefore, stopping the training when it reaches the lowest validation error and before the algorithm reaches the local minima; hopefully this can give a better generalization error on the test set. This is called early-stopping.
+
+
+
+
+Training usually starts with random initialization of the parameters \\(\theta^{(0)}\\) with very small but random numbers around zero. Thus, during the training, the parameter point \\(\theta^{(l)}\\) starts wandering from zero to one of the local minima. Early stopping terminates this walk before it could reach the local minimum. Therefore, early stopping does not let the parameter values grow, they will have smaller values than at the local minimum. Regularization introduces a penalty on the value of the parameters, and smaller parameter values are preferred. Early stopping introduces a shift  from the local minimum towards zero. Loosley speaking this shift is the bias. Therefore, since early stopping has the same effect, it can be considered as a regularizer.
+
+
+
+
+Now we will show that how early stopping is related to \\(l_{2}\\) normalization.
+Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped after \\(\tau\\)  iteration. Let \\(\theta^{(0)}\\) be the starting point around zero; that is \\(\theta^{(0)} \approx 0\\). Let \\(J(\theta) = J(\theta^{\ast}) + \fracs{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast})\\) be the cost function and \\(\nabla_{\theta}J(\theta) = H(\theta - \theta^{\ast})\\) be the gradient, where \\(H\\) is the Hessian at \\(\theta^{\ast}\\).
+\\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon\nabla_{\theta}J(\theta^{(\tau - 1)})\\]
+\\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon H(\theta^{(\tau - 1)} - \theta^{\ast})\\]
+\\[\theta^{\tau} - \theta^{\ast} = ( I - epsilon H)(\theta^{(\tau - 1)} - \theta^{\ast})\\]
+
+If we decompose Hessian matrix \\(H\\) as \\(H = Q\Lambda Q^{T}\\)
+\\[\theta^{\tau} - \theta^{\ast} = (I - \epsilon Q\Lambda Q^{T})(\theta^{\tau - 1} - \theta^{\ast})\\]
+\\[Q^{T}(\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)Q^{T}(\theta^{\tau - 1} - \theta^{\ast}) \\]
+
+Assuming \\(\theta^{(0)} = 0\\) and \\(\epsilon\\) is small enough to guarantee that \\(|1 - \epsilon\lambda_{i}| < 1\\) then \\(Q^{T} = (\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)(I - \epsilon\Lambda)(I - \epsilon\Lambda)...(I - \epsilon\Lambda)Q^{T}(\theta^{(0)} - \theta^{\ast})\\)
+
+\\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} = (I - \epsilon\Lambda)^{\tau}Q^{T}(-\theta^{\ast})\\]
+\\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} - (I - \epsilon\Lambda)^{\tau}Q^{T}\theta^{\ast}\\]
+\\(Q^{T}\theta^{(\tau)} = [I - (I - \epsilon\Lambda)^{\tau}]Q^{T}\theta^{\tau}\\) (1)
+
+Now, recall that from \\(l_{2}\\) normalization we have:
+\\[\theta' = Q(\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
+\\[Q^{T}\theta' = (\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
+\\(Q^{T}\theta' = [I - (\Lambda + \alpha I)^{-1}\alpha]Q^{T}\theta^{\ast}\\)  (2)
+
+When we compare the two equation (1) and (2) we see if the hyperparameters \\(\epsilon, \alpha, \tau\\) are chosen such that
+\\[(I - \epsilon\Lambda)^{\tau} = (\Lambda + \alpha I)^{-1}\alpha\\]
+Then \\(l_{2}\\) regularization and early stopping can be seen to be equivalent. Going further, by taking logarithms and using the series of expansion for \\(\log(1+x)\\), we can conclude that if all \\(\lambda_{i}\\) are small then
+\\[\tau = \frac{1}{\epsilon\alpha}\\]
+\\[\alpha = \frac{1}{\tau\epsilon}\\]
+
+However, when one monitors the learning curve and terminates the optimizer when validation increases to prevent overfitting, potentially one can get a good generalization error. However using \\(l_{2}\\) regularization one does not have this visual feedback and needs to adjust the trade-off parameter blindly several times in order to choose the most appropriate \\(\alpha\\).
+
+###### Dataset augmentation
+
+Training of a model needs lots of data. It is a thumb rule that for an \\(n\\)-dimensional data one should be provided \\(2^{n}\\) data. The optimal number of training examples also depends on the number of the model parameters as well.
+When enough data is not available, often more data are generated. There are two approach for this:
+
+1. For any \\((x,y) \in D\\), one can generate a new data \\((\widetilda{x}, y)\\) with linear transformation and add it to the traning dataset. This can be easily done for image classification, when images can be shifted by some pixels or rotated a bit. However, this should be carried out carefully as not to transform one example to another class. For instance, the digit '6' can be transformed to '9' with 180 degree rotation or 'b' could be transformed to 'd' with vertical flipping.
+2. For any \\((x,y) \in D\\), one can generate \\((\widetilda{x}, y)\\) via adding some noise: \\(\widetilda{x} + N(0, \eta I)\\). This technique increases the robustness of neural networks as practice shows.
+
+In some cases it is difficult or impossible to generate new data. For instance, it is difficult to generate data for density estimation problems without first solving the density estimation problem.
+
+Dataset augmentation needs to be handled carefully during benchmarking different  learning algorithms. Let's suppose, one trains an algorithm A on a dataset, and an algorithm B using dataset augmentation. Then during evaluation it should be considered that, B might yield improved performance due to dataset augmentation, and not because it is better. 
+Many learning algorithm includes some noise addition to the input implicitly or explicitly. However, when the dataset augmentation is domain specific then it is often considered as pre-processing.
+
+Noise can be added not only to input but to hidden units, latent variables, weight matrices, or output targets as well.
+
+1. Injecting noise to the hidden nodes can be considered as dataset augmentation at multiple levels of abstraction.
+2. Injecting noise to weights can be considered as a regularizer.
+Let's consider a regression problem modeled with a multi-layer neural network. 
+\\[J = \frac{1}{m}\sum_{i}(f(x_{i}) - y_{i})^{2}\\]
+Let \\(f_{\epsilon}\\) be the neural network in which the weights are perturbed with a noise \\(W_{\epsilon} = W + N(0, \eta I)\\)
+The learning objective can be written as:
+\\[J_{\epsilon} = \frac{1}{m}\sum_{i}(f(x_{i}) - y_{i})^{2} = \frac{1}{m}\sum_{i}f_{\epsilon}^{2}(x_{i}) - y_{i}^{2} + 2f_{\epsilon}(x_{i})y_{i}\\]
+This will lead to an extra term in the learning objective \\(\frac{\eta}{m}||\nabla_{\theta}f_{\epsilon}(x)||^{2}\\). This regularization will get the optimizer find solution surrounded with flat region.
+3. Injecting noise to output targets: Instead of using hard coded class labels like 0 and 1 one can introduce a little noise ϵ on them. This would give as more relaxed class labels as \\(\epsilon\\) and \\(1 - \epsilon\\), respectively and they can plugged in the cross-entropy loss as
+\\[c_{\theta}(x_{i},y_{i}) = -(y_{i} - \epsilon)\log(h_{\theta}(x_{i})) - (1 - y_{i} + \epsilon) \log(1 - h_{\theta}(x_{i}))\\]
+
+###### Parameter sharing and tying
+
+For this we have seen examples already, for example in the case of GMMs, when the covariance matrices can be restricted to be i) diagonal, ii)spherical), iii) or all Gaussian components have the same covariance matrices. Other examples are first-order hidden Markov model, or  first-order Markov chains. On the lecture we discussed first order HMMs might be not adequate for speech recognition, but using first-order methods keeps the number of parameters and the whole model tractable. Other example of this kind technique is the convolution layers in neural networks.
+Other type of parameter sharing and tying can be applied in multi-task learning. For more details see section 7.7.
+
+###### Dropout
+
+The motivation of dropout method is to prevent co-adaptation of units in neural networks and it is thought to ensure that different units learn different weights.
+Dropout is a method used during the training such that, between every parameter update cycle around ~50% of the units are locked and the rest of them participate in the training. Let's recall the forward propagation step:
+\\[A_{i} = g(\Theta^{(i)})A_{i-1}\\]
+where \\(A_{i-1}\\) is the output from the previous layer, \\(\Theta_{i}\\) the parameter matrix at layer \\(i\\), and \\(g(.)\\) is the activation function (such as sigmoid) applied component-wise, and \\(A_{0} = x\\) is the input data.
+
+In the case of dropout method, a binary mask vector is used to indicate which units participate in the training and which ones are held out. Let \\(r^{(i)}\\) be a binary vector of size \\(1 \times n\\) for layer \\(i\\), where \\(n\\) indicates the number of units in the layer \\(i\\). Now the forward propagation becomes \\(r_{j}^{(i)} ~ Bernoulli(p)\\) is a random bit vector which indicates whether unit \\(j\\) should be active in layer \\(i\\). \\(p\\) is usually set to be 0.5 Bias unites are always present, i.e. \\(r_{0}^{(i)} = 1\\).
+
+\\[\Theta'^{(i)} = \Theta^{(i)}[r^{(i-1)} == 1, r^{(i)} == 1]\\]
+
+This means that keep the row \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i)} = 1\\) , otherwise delete it; and keep the column \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i-1)} = 1\\), otherwise delete it.
+
+Finally, 
+\\[A_{i} = g(\Theta'^{i}A_{i-1}^{'})\\]
+
+In the back propagation and in the parameter update use units which were active during forward propagation. Keep parameters of locked units unchanged.
+
+All units are used in test time.
+
+
+
+
+Dropout method has been reportedly proved to be a good method to increase generalization performance in various practical methods. This technique can be used to Restricted Boltzmann machines, or auto-encoders, as well. For more details, see [1,2].
+
+###### Generalization gap and sharp minima
+
+In recent years, it has been observed in practical applications that stochastic gradient descent (SGD) methods using small-batches (SB) provide smaller generalization error than using large-batches (LB) for classification tasks. (Note that, for generative learning (such as RBMs or VAEs) mini-batches are also strongly recommended).
+
+Typical sizes of mini-batches: 32,64,…, 512
+The theoretical properties of mini-batches are: 
+1. Convergence to global optimum for convex functions,
+2. Convergence to local optimum for non-convex functions,
+3. Saddle-point avoidance,
+4. Robustness to input data
+
+The reasons of that LB provides worse generalization error are the following:
+1. LB methods lack the explorative properties of SB methods and tend to zoom-In on the closest global minimum.
+2. SB and LB methods converges to different local minima with different generalization properties.
+
+It is said that LB methods converge to sharp minimum, while SB methods tend to converge to flat minimum.
+
+The concept of sharp and flat minima are defined in terms of the \\(\\nabla^{2}f(x)\).
+Experiments. The following architectures and data were used in a research study [3]:
+
+
+And the overall results obtained with SB (256 data) and LB (10% of the total data):
+
+
+
+Error surface characterization. The local minima obtained with LB and SB are denoted by \\(x_{l}^{\ast}\\) and \\(x_{s}^{\ast}\\). respectively. Then the loss function were plotted along the line-segment containing these two local minina. Secifically, for \\(\alpha = [-1,2]\\), the loss function \\(f(\alpha x_{l}^{\ast} + (1 - \alpha)x_{s}^{\ast})\\) were plotted below. The plots show that local minima found by SB is stringkingly flatter than the local minima found by LB.
+
+###### Batch normalization
+
+In the training of a deep neural network, a little change in the weights at the lower levels might end up in a large change in the higher levels. The training of a deep neural network is hindered by the fact that inputs to each layer is affected by all preceding layers. That is, at the fist layer the data has a certain fixed distribution, but changing the parameters by backpropagation the distribution of the feature data (activations) changes and the learner has to compensate and modify the weights so that the higher layers can adapt to the new feature distribution.
+Batch normalization aims to mitigate this problem introducing a layer-wise normalization in which the mini-batch of the data is normalized and centralized at every hidden layers.
+Let \\(MB = \{h_{1}, h_{2},...,h_{n}\}\\) be the mini-batch data at level \\(k\\). For first layer \\((k = 0)\\), this data is equivalent to the input raw data \\(h_{i} = x_{i}\\), while at higher layers this data is obtained by transforming the original data through the preceding layer's \\((l = 1, ..., k)\\) transformation and activation.
+
+The mini-batch normalization is defined by:
+\\[\mu_{B} := \frac{1}{m}\sum h_{i}\\]
+\\[\sigma_{B}^{2} := \frac{1}{m}\sum(h_{i} - \mu_{B})^{2}\\]
+\\[\widehat{h_{i}} := \frac{(h_{i} - \mu_{b})}{\sqrt{\sigma_{B}^{2} + \epsilon}}\\]
+\\[\\]
+
+where \\(\epsilon\\) is used only for numerical stability. After the normalization the training proceeds with \\(\{\}\\). That is at every layer with every mini-batch, the data is centralized and normalized, then scaled. Here the assumption is that the mini-batch more-or-less well approximates the whole data distribution, or equivalently, the gradients obtained on the mini-batch data is a good approximation of the true gradients that we would get on a large batch.
+The question remains if this transformation is differentiable when it is applied in the forward propagation at every layer? The answer is yes, and more importantly, the scaling parameters \\(\gamma, \beta\\) can be learned as well:
 
 ###### References:
 1. [http://arxiv.org/pdf/1207.0580v1.pdf](http://arxiv.org/pdf/1207.0580v1.pdf)
