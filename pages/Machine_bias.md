@@ -46,14 +46,19 @@ Last year, the EU General Data Protection Regulation (GDPR) came effect in EU, a
 Sexual orientation prediction.
 Finally, let us discuss an interesting story from 2017/2018. A research group led by Michal Kosinski [4] created an machine learning system, or an artificial intelligence system, which tried to predict the sexual orientation of a person based on solely on the person's face. Let me just emphasize that, it is NOT possible tell someone's sexual orientation based on the person's face. But this system achieved a 60 percent accuracy, which is much better than a random prediction. How come? How is this possible? 
 
+![Machine bias 1](machine_bias1.png)
 
 Michal Kosinski, made even bolder claims: that such AI algorithms will soon be able to measure the intelligence, political orientation, and criminal inclinations of people from their facial images alone.
 Last year, two computer scientists from China posted a non-peer-reviewed paper online in which they argued that their AI algorithm correctly categorizes “criminals” with nearly 90% accuracy from a government ID photo alone. Technology startups had also begun to crop up, claiming that they can profile people’s character from their facial images. 
 
 So, there has been an investigation on this in more depth and it turned out the AI system learned some social patterns. For instance, it turned out homosexual women are a bit likely to wear less makeup than heterosexuals, while homosexual men are bit more open to glasses than to contact lenses. And the system's prediction mainly based on these social traits. For the full analysis see: [3]. It is interesting to read. In [3], a survey of 8,000 Americans using Amazon’s Mechanical Turk crowdsourcing platform was conducted  to see if we could independently confirm these patterns, asking 77 yes/no questions such as “Do you wear eyeshadow?”, “Do you wear glasses?”, and “Do you have a beard?”, as well as questions about gender and sexual orientation. The results show that lesbians indeed use eyeshadow much less than straight women do, gay men and women do both wear glasses more, and young opposite-sex-attracted men are considerably more likely to have prominent facial hair than their gay or same-sex-attracted peers.
 
+![Machine bias 2](machine_bias2.png)
+
+![Machine bias 3](machine_bias3.png)
+
 ###### References:
-[1]  Cathy O'Neil: Weapons of math destruction, 2016, Crown Random House, ISBN: 0553418815, 9780553418811
-[2] [https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people](https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people)
-[3] [https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477](https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477)
-[4]: [https://psyarxiv.com/hv28a/](https://psyarxiv.com/hv28a/)
+1. Cathy O'Neil: Weapons of math destruction, 2016, Crown Random House, ISBN: 0553418815, 9780553418811
+2. [https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people](https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people)
+3. [https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477](https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477)
+4. [https://psyarxiv.com/hv28a/](https://psyarxiv.com/hv28a/)
