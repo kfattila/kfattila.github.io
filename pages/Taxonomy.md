@@ -22,7 +22,7 @@ The main five branches of machine learning are:
 
 Note that these branches are not completely independent or disjunct. Some graphical models (E.g. Restricted Boltzmann Machines or Belief Networks) also belong to connectionist models.
 
-Let \\(D = \{(X_{i}, Y_{i})\_{i=1}^{m} \vert +X_{i} \in R^{n}, y_{i} \in C\}\\) be a dataset.
+Let \\(D = \\{(X_{i}, Y_{i})\_{i=1}^{m} \vert +X_{i} \in R^{n}, y_{i} \in C\\}\\) be a dataset.
 
 Neural Networks (and deep models) perform well on so called deep data. This data means when data has significantly more data instances than features (\\(m \gg n\\)), for instance in speech recognition or image processing (Note that an image can be high dimensional, but the convolutional kernels at the first layer greatly reduces the number of parameters).
 
