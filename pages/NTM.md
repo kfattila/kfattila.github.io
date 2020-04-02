@@ -23,7 +23,7 @@ Note that, this operation is differentiable with respect to both the memory and 
 #### Writing:
 
 The writing consists of two steps. First erasing an old element from the memory and then adding new information \\(a_{t}\\). The idea is the same, we erase from everywhere and add to everywhere, but at different extent. Let \\(e_{t} \in R^{l}\\) be the erase vector at time \\(t\\) whose elements lie in the range (0,1). The memory vectors are updated as follows:
-\\[M_{t}(i) \leftarrow M_{t-1}(i)\textdegree [\1 − w_{t}(i)e_{t}] + w_{t}(i)a_{t}\\]
+\\[M_{t}(i) \leftarrow M_{t-1}(i)\textdegree [1 − w_{t}(i)e_{t}] + w_{t}(i)a_{t}\\]
 where **1** is a vector of all 1-s. 
 Note that, the weights can be considered as attention. A large value of the weight indicates the location in the memory, where the system should focus on.
 
@@ -67,7 +67,7 @@ Now, the outputs from the LSTM are the following:
 And the LSTM emits vectors that defines the interactions with the memory at the current time step.
 \\(k_{t}^{w} = W_{k}^{w}h_{t} + b_{k}^{w} \in R^{l}\\), the key for memory writing.
 \\(k_{t}^{r} = W_{k}^{r}h_{t} + b_{k}^{r} \in R^{l}\\), the key for memory reading.
-\\(\Beta_{t}^{r} = W_{\Beta}h_{t} + b_{\Beta} \in R\\), the temperature for the softmax.
+\\(\beta_{t}^{r} = W_{\beta}h_{t} + b_{\beta} \in R\\), the temperature for the softmax.
 \\(\gamma_{t} = W_{\gamma}h_{t} + b_{\gamma} \in R\\), the parameter for the shaprening.
 \\(g_{t} = W_{g}h_{t} + b_{g} \in R\\), the interpolation weight.
 \\(s_{t} = W_{s}h_{t} + b_{s} \in R^{k}\\), the rotation (shift) vector.
