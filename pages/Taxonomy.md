@@ -12,13 +12,13 @@ The main five branches of machine learning are:
 	4. Evolutionary (Genetic Algorithms)
 	5. Bayesian
 
-
+{:class="table table-bordered"}
 |             | Connectionist                               | Analogizer                       | Symbolic                  | Evolutionary              | Bayesian                   |
 |-------------|---------------------------------------------|----------------------------------|---------------------------|---------------------------|----------------------------|
 | Model       | Neural Networks, <br>RNNs                   | Support<br>Vectors Machines      | Logic                     | Genetic<br>Programs       | Graphical<br>Models        |
 | Objective   | Squared Error, <br>Cross-entropy(Xent)      | Maximal<br>Margin                | Accuracy                  | Fitness                   | Posterior<br>Probability   |
 | Optimizer   | Gradient<br>Descent                         | Constraint<br>Optimization       | Inverse<br>Deduction      | Genetic<br>Search         | Probabilistic<br>Inference |
-{:.table-striped}
+
 
 Note that these branches are not completely independent or disjunct. Some graphical models (E.g. Restricted Boltzmann Machines or Belief Networks) also belong to connectionist models.
 
