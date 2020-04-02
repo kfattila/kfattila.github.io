@@ -13,16 +13,16 @@ The main five branches of machine learning are:
 	5. Bayesian
 
 
-|           | Connectionist                          | Analogizer                  | Symbolic             | Evolutionary        | Bayesian                   |
-|-----------|----------------------------------------|-----------------------------|----------------------|---------------------|----------------------------|
-| Model     | Neural Networks, <br>RNNs              | Support<br>Vectors Machines | Logic                | Genetic<br>Programs | Graphical<br>Models        |
-| Objective | Squared Error, <br>Cross-entropy(Xent) | Maximal<br>Margin           | Accuracy             | Fitness             | Posterior<br>Probability   |
-| Optimizer | Gradient<br>Descent                    | Constraint<br>Optimization  | Inverse<br>Deduction | Genetic<br>Search   | Probabilistic<br>Inference |
+|             | Connectionist                               | Analogizer                       | Symbolic                  | Evolutionary              | Bayesian                   |
+|-------------|---------------------------------------------|----------------------------------|---------------------------|---------------------------|----------------------------|
+| Model       | Neural Networks, <br>RNNs                   | Support<br>Vectors Machines      | Logic                     | Genetic<br>Programs       | Graphical<br>Models        |
+| Objective   | Squared Error, <br>Cross-entropy(Xent)      | Maximal<br>Margin                | Accuracy                  | Fitness                   | Posterior<br>Probability   |
+| Optimizer   | Gradient<br>Descent                         | Constraint<br>Optimization       | Inverse<br>Deduction      | Genetic<br>Search         | Probabilistic<br>Inference |
 {:.table-striped}
 
 Note that these branches are not completely independent or disjunct. Some graphical models (E.g. Restricted Boltzmann Machines or Belief Networks) also belong to connectionist models.
 
-Let \\(D = \\{X_{i}, Y_{i}\_{i=1}^{m} \vert+X_{i} \in R^{n}, y_{i} \in C\\} \\) be a dataset.
+Let \\(D = \{X_{i}, Y_{i}\_{i=1}^{m} \vert +X_{i} \in R^{n}, y_{i} \in C\} \\) be a dataset.
 Neural Networks (and deep models) perform well on so called deep data. This data means when data has significantly more data instances than features (\\(m \gg n\\)), for instance in speech recognition or image processing (Note that an image can be high dimensional, but the convolutional kernels at the first layer greatly reduces the number of parameters).
 
 The connectionist models are justified by the Hebbian principle (in which associations between an environmental stimulus and a response to the stimulus can be encoded by strengthening of synaptic connections between neurons.) This also related to Behaviorism which is a systematic approach to understanding the behavior of humans and other animals. It assumes that all behaviors are either reflexes produced by a response to certain stimuli in the environment, or a consequence of that individual's history, including especially reinforcement and punishment, together with the individual's current motivational state and controlling stimuli. Although behaviorists generally accept the important role of inheritance in determining behavior, they focus primarily on environmental factors.
