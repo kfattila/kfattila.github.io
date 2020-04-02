@@ -30,11 +30,11 @@ Case I: less hidden units than features \\((d < H)\\). In this case, the AE is c
 Case II: equal or more hidden units than features \\((H \geq d)\\). In this case, AE is called overcomplete. In general, one assumes that AE can learn more complex data distribution. As the complexity of the data distribution increases, the more capacity it is needed, and hence the number of the input features should not be a limitation. 
 The problem in this case is that, we need to ensure that the AE does not learn an identical mapping. For this purpose we can do:
 
-1. Use a non-linear activation function in the hidden nodes, that is one can use the usual sigmoid function \\(h_{l} = g(x^{T}W_{1,l})\\) in the hidden units, where \\(W_{1,l})\\) is the weight vector corresponding to the *i*-th hidden unit and \\(g\\) is the sigmoid function.
+1. Use a non-linear activation function in the hidden nodes, that is one can use the usual sigmoid function \\(h_{i} = g(x^{T}W_{1,i})\\) in the hidden units, where \\(W_{1,l})\\) is the weight vector corresponding to the *i*-th hidden unit and \\(g\\) is the sigmoid function.
 2. Another option is to add a stochastic noise to the input. This is called **denoising auto-encoder**. One can take the original data \\(x\\) and generate several \\(\widehat{x_{k}} = x + N(0, \Sigma)\\) perturbated (corrupted) data, use it as input but the original input is still used as a target output. That is, minimize the loss \\(L(x, f(\hat{x}))\\) . Other way is, for instance, one can set several features of the input data \\(x\\) (as many as half of the features) to zero, and expect the AE to learn to predict the missing values from available features, for randomly selected subsets of missing patterns. 
 
 
-###### Denoising AEs
+### Denoising AEs
 Denoising AEs make sense if the perturbed data is not the part of the dataset that is generating corrupted data \\(\widehat{x_{k}}\\) will not fall in the distribution of the data. Putting it another way, it is often assumed the data in the high dimension spans over a low dimensional manifold. Then the perturbated data will lie outside of the lower dimensional manifold.
 
 ![ae2](./images/ae2.png)
@@ -46,6 +46,7 @@ In this case, DAEs trains the gradient vector field \\(f(\hat{x}) - x\\) that es
 ![ae4](./images/ae4.png)
 ![ae5](./images/ae5.png)
 
-References:
-Chapter 4.6 in Bengio: Learning deep architectures for AI. [http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf](http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf)
-Chapter 14 in Godfellow: Deep Learning: [http://www.deeplearningbook.org/contents/autoencoders.html](http://www.deeplearningbook.org/contents/autoencoders.html)
+##### References:
+
+1. Chapter 4.6 in Bengio: Learning deep architectures for AI. [http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf](http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf)
+2. Chapter 14 in Godfellow: Deep Learning: [http://www.deeplearningbook.org/contents/autoencoders.html](http://www.deeplearningbook.org/contents/autoencoders.html)
