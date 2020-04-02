@@ -18,11 +18,11 @@ The main five branches of machine learning are:
 | Model     | Neural Networks, <br>RNNs              | Support<br>Vectors Machines | Logic                | Genetic<br>Programs | Graphical<br>Models        |
 | Objective | Squared Error, <br>Cross-entropy(Xent) | Maximal<br>Margin           | Accuracy             | Fitness             | Posterior<br>Probability   |
 | Optimizer | Gradient<br>Descent                    | Constraint<br>Optimization  | Inverse<br>Deduction | Genetic<br>Search   | Probabilistic<br>Inference |
-{:.mbtablestyle}
+{:.table-striped}
 
 Note that these branches are not completely independent or disjunct. Some graphical models (E.g. Restricted Boltzmann Machines or Belief Networks) also belong to connectionist models.
 
-Let \\(D = \{X_{i}, Y_{i}_{i=1}^{m} |+X_{i} \in R^{n}, y_{i} \in C\} \\) be a dataset.
+Let \\(D = \\{X_{i}, Y_{i}\_{i=1}^{m} \vert+X_{i} \in R^{n}, y_{i} \in C\\} \\) be a dataset.
 Neural Networks (and deep models) perform well on so called deep data. This data means when data has significantly more data instances than features (\\(m \gg n\\)), for instance in speech recognition or image processing (Note that an image can be high dimensional, but the convolutional kernels at the first layer greatly reduces the number of parameters).
 
 The connectionist models are justified by the Hebbian principle (in which associations between an environmental stimulus and a response to the stimulus can be encoded by strengthening of synaptic connections between neurons.) This also related to Behaviorism which is a systematic approach to understanding the behavior of humans and other animals. It assumes that all behaviors are either reflexes produced by a response to certain stimuli in the environment, or a consequence of that individual's history, including especially reinforcement and punishment, together with the individual's current motivational state and controlling stimuli. Although behaviorists generally accept the important role of inheritance in determining behavior, they focus primarily on environmental factors.
@@ -44,7 +44,7 @@ In fact, shallow models still perform better on UCI datasets than deep neural ne
 
 Genetic Algorithms are also inspired by the nature (like connectionist models) and turned to be efficient in finding good model structures (i.e. a structure of an ANN), but gradient descent algorithms proved to be more efficient on optimizing the model parameters (weights).
 
-###### Software 2.0 paradigm
+### Software 2.0 paradigm
 
 The classic software 1.0 is that is known in programs written in languages such as Python, C++, R, Matlab, Ruby, etc.
 Andrej Karpathy introduces an interesting concept termed Software 2.0. In this concept, programs are written in much more abstract way, more human unfriendly language, such as the weights of a neural network. Interestingly, Humans are not involved in the programming. Instead, general aims and goals are formulated on the desirable program behavior and the model parameters are coded with backpropagation.  Thus, the program designer specifies the input and the desired output and lets the back propagation (the optimizer) write the code (the weights of the neural network). 
