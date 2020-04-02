@@ -35,15 +35,19 @@ Now, the question is how the weights are produced. There are two main mechanisms
 2. Location-based focusing: This step consists of several parts.
 
   a. Gated-weighting.
+
 Combines the weight vector from the previous state with the current state. The interpolation scalar weight is \\(g_{t} \in (0,1)\\)
 \\[w_{t}^{g}(i) \leftarrow g_{t}w_{t}^{c} + (1 - g_{t})w_{t-1} \\]
 If the interpolation weight is zero, then the content weighting entirely ignored and it will use the attention weight vector from the previous step. If the interpolation weight is one \\((g_{t} = 1)\\), then the attention weight from the previous step is completely ignored.
 
   b. Convolutional Shift.
+
 \\[w_{t}^{s}(i) \leftarrow \sum_{j=1}^{k}w_{t}^{g}(j)s_{t}(i - j)\\]
 where all index arithmetic is computed modulo \\(k\\). The shift vector \\(s_{t}\\) is of k-dimensional vector.
 
-  c. Sharpening. This is done by using a temperature parameter \\(\gamma_{t} \geq 1\\) 
+  c. Sharpening. 
+
+This is done by using a temperature parameter \\(\gamma_{t} \geq 1\\) 
  \\[w_{t}(i) \leftarrow \frac{w_{t}^{s}(i)^{\gamma_{t}}}{\sum_{j}w_{t}^{s}(j)^{\gamma_{t}}}\\]
 This step ensures that the system will focus on a small region of the memory, instead of a blurred region over several memory slots. 
 
