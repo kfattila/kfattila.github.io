@@ -54,7 +54,9 @@ The methods above described how the memory is used. Now we will discuss the cont
 
 The first three input is the same as in a vanilla LSTM.
 The controller has to deal with the data read from the memory. The gates of the LSTM are now defined as follows:
+
 \\(f_{t} = \sigma(W_{f}[h_{t-1};x_{t};r_{t}] + b_{f})\\)
+
 Note the new term related to the data read from the memory : \\(r_{t}\\)
 
 \\(i_{t} = \sigma(W_{i}[h_{t-1};x_{t};r_{t}] + b_{i}) \\)
