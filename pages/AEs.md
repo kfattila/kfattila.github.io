@@ -14,6 +14,7 @@ What is the purpose of AEs? The AE is expected to learn (encode) a representatio
 Let's suppose we are given a trained AE with \\(H\\) hidden units. For a given input \\(x \in R^{d}\\), let's define \\(c(x) = x^{T}W_{1} \in R^{H}\\). This is called the *coding* function and it maps an input vector \\(x \in R^{d}\\) to a representation vector \\(c(x) \in R^{H}\\). Let's define \\(d(h) = h^{T}W_{2}\\) the decoding function for an \\(h = c(x)\\). Function \\(c(.)\\) maps from \\(c(.):R^{H} \rightarrow R^{d}\\). For an easy notation, lets define \\(f(x) = d(c(x))\\).
 
 The reconstruction error (RE) is given as \\(L(x,f(x))\\) for an appropriate loss function. Here we prefer the negative log-likelihood of the reconstruction \\(RE = -\log p(x|f(x))\\). If \\(p(x|f(x))\\) is Gaussian, then the reconstruction error turns to be equivalent to the usual suared error loss function. If we work with binary vectos, the one might perfer the loss function
+
 \\[ log p(x|f(x)) = -\sum_{i=1}^{d}(x_{i}\log f(x)_{i} + (1 - x_{i}) \log(1-f(x)_{i}))\\]
 
 The weight matrices \\(W_{1}\\) and \\(W_{2}\\) of AEs can be learned by usual techniques which are used to train ANNs, such as back-propagation. The parameters of AE can be learned via regularized learning:
