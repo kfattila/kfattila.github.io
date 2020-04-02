@@ -78,7 +78,7 @@ This approach although is not widely used.
 ##### Greedy layer-wise unsupervised training
 
 Each layer in a multi-layer neural network can be considered as a representation of the input data obtained by a series of (often non-linear) transformation. Hence, each layer should capture useful information in the distribution of the input data from the previous layer. Exploiting this observation Hinton 2006 has proposed a method to train the parameters of the hidden layers iteratively using unsupervised learning. This pre-training provides a good initialization of the parameters which is then used by the final phase of fine-tuning the parameters with back-propagation in the usual supervised manner.
-Let \\(D = \{(x_{i},y_{i}):x_{i} \in R^{d}, y_{i} \in \{-1,+1\}\}_{i=1}^{n} \\) be the training data, and \\(h_{l}\\) are the varaibles in the layer \\(l =  0, ..., L\\) and \\(W_{l}\\) are the parameters in layer \\(l\\), where \\(h_{0}\\) represents the input data. The general framework is the following:
+Let \\(D = \{(x_{i},y_{i}):x_{i} \in R^{d}, y_{i} \in \{-1,+1\}\}_{i=1}^{n}\\) be the training data, and \\(h_{l}\\) are the varaibles in the layer \\(l =  0, ..., L\\) and \\(W_{l}\\) are the parameters in layer \\(l\\), where \\(h_{0}\\) represents the input data. The general framework is the following:
 
 Repeat until stopping criteria is met:
 1. For \\(l = 1 \rightarrow L\\)

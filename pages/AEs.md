@@ -7,7 +7,7 @@ description: ""
 
 **Auto-encoders** (AE) (also called auto-associator) have a very simple structure. It is actually an artificial neural network (ANN) with two layers where the number of the output units is equal to the number of the input features, which tries to copy its input to its output. It is to learn an identical mapping, i.e. for any \\(x \in R^{d}\\) the training aims to minimize \\(||x-\hat{x}||_{2}^{2}\\) where \\(\hat{x}\\) is the output from AE on the input \\(x\\). It is also said the target output of an AE is the input itself. 
 
-![ae1](ae1.png)
+![ae1](./images/ae1.png)
 
 What is the purpose of AEs? The AE is expected to learn (encode) a representation of the input dataset in its hidden units. It can also be considered as a noise filter, or a lossy compressor. The first layer, denoted \\(W_{1}\\), is the encoding layer, which maps the input data to the hidden layer and \\(W_{1}\\)  is called the matrix of encoding weights. The second layer, denoted \\(W_{2}\\) and called the matrix of decoding weights, is the decoding layer which aims to reconstruct the origianl input data from its coded representation. AEs are unsupervised methods and they do not require class labels. However when we use AEs, we assume that the distribution of the data is "narrow" (spiky) or at least it is different from flat distributions.
 
@@ -36,14 +36,14 @@ The problem in this case is that, we need to ensure that the AE does not learn a
 ###### Denoising AEs
 Denoising AEs make sense if the perturbed data is not the part of the dataset that is generating corrupted data \\(\widehat{x_{k}}\\) will not fall in the distribution of the data. Putting it another way, it is often assumed the data in the high dimension spans over a low dimensional manifold. Then the perturbated data will lie outside of the lower dimensional manifold.
 
-![ae2](ae2.png)
-![ae3](ae3.png)
+![ae2](./images/ae2.png)
+![ae3](./images/ae3.png)
 
 In this case, DAEs trains the gradient vector field \\(f(\hat{x}) - x\\) that estimates the Fisher score function of the data distribution \\( \frac{\partial}{\partial\theta}\log(p(x;\theta))\\). It can be shown, an DAE with sigmoidal hidden units and linear reconstruction units using Gaussian noise and mean squared error as the reconstruction cost is equivalent (Vincent, 2011) to training RBM with Gaussian visible units. (An RBM with gaussian visible units is defined with the following energy function:
 \\[ E(V,H) = -\sum_{i,j}w_{i,j}h_{i}(\frac{v_{j}}{\sigma_{i}}) - \sum_{j=1}\frac{(b_{j} - v_{j})^{2}}{\sigma_{i}} - \sum_{i=1}c_{i}h_{i} \\]
 
-![ae4](ae4.png)
-![ae5](ae5.png)
+![ae4](./images/ae4.png)
+![ae5](./images/ae5.png)
 
 References:
 Chapter 4.6 in Bengio: Learning deep architectures for AI. [http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf](http://www.iro.umontreal.ca/~bengioy/papers/ftml.pdf)
