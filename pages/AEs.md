@@ -5,7 +5,7 @@ description: ""
 ---
 {% include JB/setup %}
 
-**Auto-encoders** (AE) (also called auto-associator) have a very simple structure. It is actually an artificial neural network (ANN) with two layers where the number of the output units is equal to the number of the input features, which tries to copy its input to its output. It is to learn an identical mapping, i.e. for any \\(x \in R^{d}\\) the training aims to minimize \\(||x-\hat{x}||_{2}^{2}\\) where \\(\hat{x}\\) is the output from AE on the input \\(x\\). It is also said the target output of an AE is the input itself. 
+**Auto-encoders** (AE) (also called auto-associator) have a very simple structure. It is actually an artificial neural network (ANN) with two layers where the number of the output units is equal to the number of the input features, which tries to copy its input to its output. It is to learn an identical mapping, i.e. for any \\(x \in R^{d}\\) the training aims to minimize \\(\norm{x-\hat{x}}^{2}_{2}\\) where \\(\hat{x}\\) is the output from AE on the input \\(x\\). It is also said the target output of an AE is the input itself. 
 
 ![ae1](./images/ae1.png)
 
