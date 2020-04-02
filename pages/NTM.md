@@ -23,7 +23,7 @@ Note that, this operation is differentiable with respect to both the memory and 
 #### Writing:
 
 The writing consists of two steps. First erasing an old element from the memory and then adding new information \\(a_{t}\\). The idea is the same, we erase from everywhere and add to everywhere, but at different extent. Let \\(e_{t} \in R^{l}\\) be the erase vector at time \\(t\\) whose elements lie in the range (0,1). The memory vectors are updated as follows:
-\\[M_{t}(i) \leftarrow M_{t-1}(i)\textdegree [1 − w_{t}(i)e_{t}] + w_{t}(i)a_{t}\\]
+\\[M_{t}(i) \leftarrow M_{t-1}(i)\degree [1 − w_{t}(i)e_{t}] + w_{t}(i)a_{t}\\]
 where **1** is a vector of all 1-s. 
 Note that, the weights can be considered as attention. A large value of the weight indicates the location in the memory, where the system should focus on.
 
@@ -58,9 +58,9 @@ The controller has to deal with the data read from the memory. The gates of the 
 Note the new term related to the data read from the memory : \\(r_{t}\\)
 \\(i_{t} = \sigma(W_{i}[h_{t-1};x_{t};r_{t}] + b_{i}) \\)
 \\(\widetilda{c}\_{t} = tanh(W_{c}[h_{t-1};x_{t};r_{t}] + b_{c}) \\)
-\\(c_{t} = c_{t-1}\textdegree f_{t} + \widetilda{c}\_{t}\textdegree i_{t} \\)
+\\(c_{t} = c_{t-1}\degree f_{t} + \widetilda{c}\_{t}\degree i_{t} \\)
 \\(o_{t} = \sigma(W_{0}[h_{t-1};x_{t};r_{t}] + b_{0}) \\)
-\\(h_{t} = o_{t}\textdegree tanh(c_{t}) \\)
+\\(h_{t} = o_{t}\degree tanh(c_{t}) \\)
 
 Now, the outputs from the LSTM are the following:
 \\(y_{t} = a(W_{y}h_{t} + b_{y})\\) as before.
@@ -77,7 +77,7 @@ And the LSTM emits vectors that defines the interactions with the memory at the 
 Differentiable neural computer (DNC) is an upgraded version of NTMs having more complicated memory addressing mechanisms.
 
 
-References:
-[https://distill.pub/2016/augmented-rnns/](https://distill.pub/2016/augmented-rnns/)
-[https://www.nature.com/articles/nature20101](https://www.nature.com/articles/nature20101)
-[http://arxiv.org/pdf/1410.5401.pdf](http://arxiv.org/pdf/1410.5401.pdf)
+#### References:
+1. [https://distill.pub/2016/augmented-rnns/](https://distill.pub/2016/augmented-rnns/)
+2. [https://www.nature.com/articles/nature20101](https://www.nature.com/articles/nature20101)
+3. [http://arxiv.org/pdf/1410.5401.pdf](http://arxiv.org/pdf/1410.5401.pdf)
