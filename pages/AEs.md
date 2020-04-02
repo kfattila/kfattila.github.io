@@ -19,7 +19,7 @@ The reconstruction error (RE) is given as \\(L(x,f(x))\\) for an appropriate los
 
 The weight matrices \\(W_{1}\\) and \\(W_{2}\\) of AEs can be learned by usual techniques which are used to train ANNs, such as back-propagation. The parameters of AE can be learned via regularized learning:
 
-\\(W'_{1}, W'_{2} = argmin_{w_{1}, w_{2}}\{L_{w_{1}, w_{2}}(x, f(x)) + \lambda l(W_{1}, W_{2})\} \\)
+\\[W'\_{1}, W'\_{2} = argmin_{w_{1}, w_{2}}\{L_{w_{1}, w_{2}}(x, f(x)) + \lambda l(W_{1}, W_{2})\} \\]
 
 However, oddly enough, the aim is <span style="text-decoration: underline">not</span> to learn a perfect coping machine. If the capacity of the AE model is high enough, the AE can just learn to copy the input to its output without reconstruction error. Actually, in practice we are not interested in the output of an AE but in the hidden layer. Our aim is that to learn the distribution or a representation on the data in the hidden layer, i.e. extracting useful information.
 
