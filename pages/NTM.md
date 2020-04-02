@@ -56,22 +56,35 @@ The first three input is the same as in a vanilla LSTM.
 The controller has to deal with the data read from the memory. The gates of the LSTM are now defined as follows:
 \\(f_{t} = \sigma(W_{f}[h_{t-1};x_{t};r_{t}] + b_{f})\\)
 Note the new term related to the data read from the memory : \\(r_{t}\\)
+
 \\(i_{t} = \sigma(W_{i}[h_{t-1};x_{t};r_{t}] + b_{i}) \\)
+
 \\(\widetilde{c}\_{t} = tanh(W_{c}[h_{t-1};x_{t};r_{t}] + b_{c}) \\)
+
 \\(c_{t} = c_{t-1}° f_{t} + \widetilde{c}\_{t}° i_{t} \\)
+
 \\(o_{t} = \sigma(W_{0}[h_{t-1};x_{t};r_{t}] + b_{0}) \\)
+
 \\(h_{t} = o_{t}° tanh(c_{t}) \\)
 
 Now, the outputs from the LSTM are the following:
 \\(y_{t} = a(W_{y}h_{t} + b_{y})\\) as before.
 And the LSTM emits vectors that defines the interactions with the memory at the current time step.
+
 \\(k_{t}^{w} = W_{k}^{w}h_{t} + b_{k}^{w} \in R^{l}\\), the key for memory writing.
+
 \\(k_{t}^{r} = W_{k}^{r}h_{t} + b_{k}^{r} \in R^{l}\\), the key for memory reading.
+
 \\(\beta_{t}^{r} = W_{\beta}h_{t} + b_{\beta} \in R\\), the temperature for the softmax.
+
 \\(\gamma_{t} = W_{\gamma}h_{t} + b_{\gamma} \in R\\), the parameter for the shaprening.
+
 \\(g_{t} = W_{g}h_{t} + b_{g} \in R\\), the interpolation weight.
+
 \\(s_{t} = W_{s}h_{t} + b_{s} \in R^{k}\\), the rotation (shift) vector.
+
 \\(a_{t} = W_{a}h_{t} + b_{a} \in R^{l}\\), the write vector.
+
 \\(e_{t} = W_{e}h_{t} + b_{e} \in R^{l}\\), the erase vector.
 
 Differentiable neural computer (DNC) is an upgraded version of NTMs having more complicated memory addressing mechanisms.
