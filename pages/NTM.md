@@ -57,8 +57,8 @@ The controller has to deal with the data read from the memory. The gates of the 
 \\(f_{t} = \sigma(W_{f}[h_{t-1};x_{t};r_{t}] + b_{f})\\)
 Note the new term related to the data read from the memory : \\(r_{t}\\)
 \\(i_{t} = \sigma(W_{i}[h_{t-1};x_{t};r_{t}] + b_{i}) \\)
-\\(\widetilda{c}\_{t} = tanh(W_{c}[h_{t-1};x_{t};r_{t}] + b_{c}) \\)
-\\(c_{t} = c_{t-1}\degree f_{t} + \widetilda{c}\_{t}\degree i_{t} \\)
+\\(\widetilde{c}\_{t} = tanh(W_{c}[h_{t-1};x_{t};r_{t}] + b_{c}) \\)
+\\(c_{t} = c_{t-1}\degree f_{t} + \widetilde{c}\_{t}\degree i_{t} \\)
 \\(o_{t} = \sigma(W_{0}[h_{t-1};x_{t};r_{t}] + b_{0}) \\)
 \\(h_{t} = o_{t}\degree tanh(c_{t}) \\)
 
