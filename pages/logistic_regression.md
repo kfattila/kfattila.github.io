@@ -171,7 +171,7 @@ Initialize the parameters randomly
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
-        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
+        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{Add up regularization term without the bias.} \\\
         \theta = \theta - \mu\Delta \\\
         error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \\\
         \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
