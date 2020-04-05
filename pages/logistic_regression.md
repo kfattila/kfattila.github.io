@@ -14,7 +14,7 @@ For instance:
 3. Fraud detection: employer is cheating or not
 4. Customer will pay back the loan or not.
 
-![Figure 1](Figure1.png)
+![Figure 1](./images/logreg1.png)
 **Figure 1.** Classification problem.
 
 One could fit a regression line and rounding the outcome, the regressand to 0 or 1. This approach would not work here.
@@ -28,7 +28,7 @@ arc tangent. However the most frequently used one is the sigmoid function or als
 The reason of preferring the sigmoid function over the arctan is that (i) sigmoid has a nice derivative function and (it) it
 has some sort of probabilistic distribution interpretation.
 
-![Figure 2](Figure2.png)
+![Figure 2](./images/logreg2.png)
 **Figure 2.** Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
 
 
@@ -50,11 +50,11 @@ The value \\(t\\) is called the decision threshold. And the region \\(x\\), wher
 of \\(t\\) could depend on the application but in our case here let's choose \\(t = 0.5\\) .
 
 
-![Figure 2a](Figure2a.png)
+![Figure 2a](./images/logreg3.png)
 **Figure 2a.** A logistic regression representing a classification problem.
 
 
-![Figure 2b](Figure2b.png)
+![Figure 2b](./images/logreg4.png)
 **Figure 2b.** A logistic regression representing a classification problem.
 
 The model parameters are \\(\theta\\)'s, and we need a way to learn these parameters. Now the question is how?
@@ -74,7 +74,7 @@ How can we make this error function convex?
 Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
 
 
-![Softmax](softmax.png)
+![Softmax](./images/logreg5.png)
 [source:https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/](https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
 
 Now, let's define the cost of an error as following: 
@@ -177,7 +177,7 @@ In multi-class classification problems, for each category a logisitc regression 
 Then the kth logistic regression model is assigned to the kth class, such that, the k-th class is treated as positive class (1) and all the other classes are joined 
 and marked as negative class (0). A new data instance is to be classifed to the class whose model gives the highest score. This approach is called one-vs-all classification.
 
-![Softmax](Figure3.png)
+![Softmax](./images/logreg6.png)
 **Figure 3.** One-vs-all classification. For each class a logistic regression model is built.
 [From http://www.holehouse.org/mlclass/06_Logistic_Regression.html](http://www.holehouse.org/mlclass/06_Logistic_Regression.html)
 

@@ -70,3 +70,69 @@ This solution involves matrix inversion which requires \\(O(n^{3})\\) time.
 This method iteratively approaches an optima of functions. In each cycle 
 it determines the tangent of the function in the current position in order to 
 determine the direction of the optima. 
+
+
+###### Algorithm 1.
+
+
+
+This update rule is called LMS (Least mean squares) update rule, or Widrow-Hoff learning rule.
+
+The parameter \\(\mu\\) is the learning rate, it controls the size of the step in each iteration.
+Some technical issues:
+1. When \\(\mu\\) is too small then the convergence becomes slow.
+2. If \\(\mu\\) is too large, then divergence.
+3. The magnitude of the update is proportional to the error term: \\((Y_{i} - \theta_{0} - \sum_{j}^{n}x_{\{x,j\}}\theta_{j})\\)
+4. Feature normalization: the range of the feature values needs to be transformed to the same scale
+
+
+
+**Figure 4.** An example of the convergence of the Gradient Descent algorithm when data is not normalized. It converges slowly along with the large scale features and diverges on the small scale features.
+
+There are two common approaches, a) normalization and b) scaling:
+
+
+###### Batch mode:
+
+In the case above the gradient descent algorithm uses the whole dataset.  You can use less data in each iteration, say, you can chose randomly 1, 5, 10, … in each iteration, and calculate the \\(\Theta\\)'s. This can be often useful if you have lot's of data, or data access is expensive (over network, etc.)
+We can repeatedly run through the training set, and each time we encounter a training example, we update the parameters according to the gradient of the error with respect to that single training example only. This algorithm is called stochastic gradient descent (also incremental gradient descent). It slows the convergence down, but uses less data and hence less memory in each iteration.
+
+
+
+Figure 8. An example path of the stochastic gradient algorithm.
+
+###### Other optimization methods:
+	Other optimization methods can be used instead of Gradient Descent, such as:
+	Newton's method,
+	Conjugate gradient
+	BFGS (Broyden-Fletcher-Goldfarb-Shanno)
+	L-BFGS (Limited memory - BFGS)
+
+Each method would take the same input and provide (more-or-less) the same optimum at the output.
+
+
+**Discussion 1.**  Data comes from some clinical experiment, where 1000 (or 10,000) patients examined and for each patient you have 100,000 features. You need to explore a linear relationship in the data. Which method would you use: 1) Normal equations, or 2) Gradient Descent Optimization. Why?
+
+**Discussion 2.**  Data comes from used car retail shop, where cars are described by 54 features and there are 10,000,000 of such data objects. You need to explore a linear relationship in the data. Which method would you use: 1) Normal equations, or 2) Gradient Descent Optimization. Why?
+
+
+###### Comaprison of the Normal Equation method vs. Gradient Descent Optimization.
+
+Both methods aims at finding the same solution, but these two are different in some certain computational aspects.
+	1. Normal Equation method:
+		a. (-) O(n^3) can be very slow for large number of features.
+		b. (-) Involves matrix inversion and can be a problem when the matrix becomes singular.
+		c. (+) Not iterative, and thus does not require leraning rate and termination condition to be specified in advance. 
+	2. Gradient Descent Optimization:
+		a. (-) It is an iterative method and requires to specify the termination condition advance.
+		b. (-) Requires the specification of the learning rate parameter.
+		c. (+) Easy to scale up for paralell computations, better for big data.
+		d. (-) Requires feature scaling.
+(+) Easy to extend to other types of loss functions, i.e. this is a more general method, it works with non-convex loss functions as well.
+
+
+###### Problems with linear regression in general:
+
+A) Noise, 
+B) non-lienar relationship, 
+C-D) outliers, (Image source: Wikipedia. Anscombe's quartet)
