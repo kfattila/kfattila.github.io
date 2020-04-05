@@ -168,7 +168,7 @@ Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten a
 Initialize the parameters randomly
 
 \\( 
-    \begin{array}
+    \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
         \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{   Add up regularization term without the bias.} \\\
@@ -176,7 +176,7 @@ Initialize the parameters randomly
         error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \\\
         \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
         \text{\\}}
-    \end{array}        
+    \end{array}{l}        
 \\)
 
 That is it, logistic regression using gradient descent optimization can be implemented in 7-10 code of lines in a mathematical programing languages.
