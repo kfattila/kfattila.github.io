@@ -223,8 +223,8 @@ Some remarks:
 \\[ H(P,Q) = -\sum_{k}P(k) \log Q(k) \\] Now, let us consider a single data \\(x\\) and a binary class logistic regression problem \\((k=2)\\). We can consider \\(P\\) as the <u>true</u> distribution over the class labels which is defined in the following form \\(P(Y_{i} = 1) = 1\\) iff \\(x\\) belongs to the positive class, otherwise  \\(P(Y_{i} = 0) = 0\\) (\\(x\\) belongs to the negative class). \\(P\\) is a probability distribution. Now, we can define \\(Q\\) as a distribution over the classes calculated by our model \\(Q(Y_{i} = 1) = g(x\Theta)\\) and \\(Q(Y_{i} = 0) = 1 - Q(1) = 1 - g(x\Theta)\\). Check that \\( Q(Y_{i} = 1) + Q(Y_{i} = 0) = g(x\Theta) + 1 - g(x\Theta) = 1 \\).
 
 2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. 
-In fact, \\(g(x\theta) = P(y=1|x)\\) and \\(P(y=0|x) = 1 - g(x\theta)\\). This can be written as \\(P(y|x) = g(x\theta)^{y}(1-g(x\theta))^{1-y}\\)
+In fact, \\(g(x\theta) = P(y=1|x)\\) and \\(P(y=0|x) = 1 - g(x\Theta)\\). This can be written as \\(P(y|x) = g(x\Theta)^{y}(1-g(x\Theta))^{1-y}\\)
 
 
-For a given dataset, the likelihood function is defined as \\(l(\theta) = \prod_{i} P(y_{i}|x_{i}) = \prod_{i}g(x_{i}\Theta)^{y_{i}}(1-g(x_{i}\Theta))^{1-y_{i}}\\).
+For a given dataset, the likelihood function is defined as \\(l(\Theta) = \prod_{i} P(y_{i}|x_{i}) = \prod_{i}g(x_{i}\Theta)^{y_{i}}(1-g(x_{i}\Theta))^{1-y_{i}}\\).
 The loglikelihood: \\( l(\Theta) = \sum_{i} y_{i} \log g(x_{i}\Theta) + (1-y_{i})\log(1-g(x_{i}\Theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
