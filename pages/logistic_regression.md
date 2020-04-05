@@ -194,6 +194,7 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 ![Softmax](./images/logreg6.png)
 
 **Figure 3.** One-vs-all classification. For each class a logistic regression model is built.
+
 [From http://www.holehouse.org/mlclass/06_Logistic_Regression.html](http://www.holehouse.org/mlclass/06_Logistic_Regression.html)
 
 
