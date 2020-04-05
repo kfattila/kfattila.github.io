@@ -15,6 +15,7 @@ For instance:
 4. Customer will pay back the loan or not.
 
 ![Figure 1](./images/logreg1.png)
+
 **Figure 1.** Classification problem.
 
 One could fit a regression line and rounding the outcome, the regressand to 0 or 1. This approach would not work here.
@@ -29,6 +30,7 @@ The reason of preferring the sigmoid function over the arctan is that (i) sigmoi
 has some sort of probabilistic distribution interpretation.
 
 ![Figure 2](./images/logreg2.png)
+
 **Figure 2.** Sigmoid function. If you zoom out this plot the shape of the sigmoid function resembles to a step function.
 
 
@@ -51,10 +53,12 @@ of \\(t\\) could depend on the application but in our case here let's choose \\(
 
 
 ![Figure 2a](./images/logreg3.png)
+
 **Figure 2a.** A logistic regression representing a classification problem.
 
 
 ![Figure 2b](./images/logreg4.png)
+
 **Figure 2b.** A logistic regression representing a classification problem.
 
 The model parameters are \\(\theta\\)'s, and we need a way to learn these parameters. Now the question is how?
@@ -71,15 +75,19 @@ This leads the following loss function using the regularization term as:
 **Solution.** This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
 
 How can we make this error function convex?
-Let's take a logarithmic transformation of \\(h_{theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
+Let's take a logarithmic transformation of \\(h_{\theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
 
 
 ![Softmax](./images/logreg5.png)
 [source:https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/](https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
 
 Now, let's define the cost of an error as following: 
-\\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\theta}(x_{i})) - (1-y_{\theta}) \log(1-h_{\theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
-Now, this leads to a convex error function and we can find the \\( \theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
+\\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\Theta}(x_{i})) - (1-y_{i}) \log(1-h_{\theta}(x_{i})))\\]
+
+Using this cost function \\(c_{\theta}\\) in the error function \\(J(\Theta|D)\\) we get:
+
+\\[ J(\Theta|D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta})(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i})) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+Now, this leads to a convex error function and we can find the \\( \Theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
 ##### Algorithm 2
 
