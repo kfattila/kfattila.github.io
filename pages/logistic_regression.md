@@ -165,8 +165,9 @@ Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten a
 
 ##### Algorithm 3
 
-1. Initialize the parameters randomly
-2. \\[ 
+Initialize the parameters randomly
+
+\\[ 
     \begin{array}{l}
         \text{repeat until convergence \\{} \\\
         \Delta = X^{T}(g(X\theta)-Y)) \\\
