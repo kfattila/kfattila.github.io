@@ -174,7 +174,8 @@ Initialize the parameters randomly
         \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
         \theta = \theta - \mu\Delta \\\
         error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \\\
-        \text{Print out current error. #So you can see if the algorithm converges or diverges.}
+        \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
+        \text{\}}
     \end{array}{l}        
 \\)
 
