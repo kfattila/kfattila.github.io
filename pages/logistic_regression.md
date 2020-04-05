@@ -224,7 +224,5 @@ Some remarks:
 
 2. Consider the binary logistic regression problem. We mentioned earlier that, the sigmoid functions bears some probabilistic distribution interpretation. 
 In fact, \\(g(x\theta) = P(y=1|x)\\) and \\(P(y=0|x) = 1 - g(x\Theta)\\). This can be written as \\(P(y|x) = g(x\Theta)^{y}(1-g(x\Theta))^{1-y}\\)
-
-
 For a given dataset, the likelihood function is defined as \\(l(\Theta) = \prod_{i} P(y_{i}|x_{i}) = \prod_{i}g(x_{i}\Theta)^{y_{i}}(1-g(x_{i}\Theta))^{1-y_{i}}\\).
-The loglikelihood: \\( l(\Theta) = \sum_{i} y_{i} \log g(x_{i}\Theta) + (1-y_{i})\log(1-g(x_{i}\Theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
+The loglikelihood: \\(\log(l(\Theta)) = \sum_{i} y_{i} \log g(x_{i}\Theta) + (1-y_{i})\log(1-g(x_{i}\Theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
