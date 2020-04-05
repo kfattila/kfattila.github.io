@@ -103,7 +103,9 @@ Initialize \\( \theta_{j} \\) with random values
 \\)
 
 Note: update \\(\theta_{j}\\)'s simultenously.
+
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
+
 \\( h_{\theta}(x)' = h(x)(1-h(x)) \\), so
 
 \\[ 
