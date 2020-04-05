@@ -175,7 +175,7 @@ Initialize the parameters randomly
         \theta = \theta - \mu\Delta \\\
         error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \\\
         \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
-        \text{\}}
+        \text{\\}}
     \end{array}{l}        
 \\)
 
