@@ -215,7 +215,7 @@ Let \\(\Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the w
 
 ### The derivatives of J wrt. the parameters \\(Θ^{L−1}\\)  in the layer \\(L-1\\) is calculated as
 
-Now, the next step is to calculate the derivatives for the parameters \\(\Theta^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\Theta^{L-1}A_{L-2}\\):
+Now, the next step is to calculate the derivatives for the parameters \\(\Theta^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\Theta^{L-1}A_{L-2})\\):
 The cost function now is:
 \\[J = (-Y_{i}\log(g(\Theta^{L}g(\Theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}A_{L-2})))) \\]
 
