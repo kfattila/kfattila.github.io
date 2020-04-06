@@ -197,7 +197,7 @@ The method, which calculates that how wrong the parameters were and uses these e
 
 ### Backward propagation
 
-Let \\(h_{\Theta}(x)\\) represent a neural network (\\(A_{L} = h_{\Theta}(x)\\)) and let \\(\Sigma^{L} = A_{L} - Y_{i}\\), which is basically a column vector containing the difference between the actual output and the expected output. This is actually the error at the output level. The top level of the neural network is basically a logistic regression \\(A_{L} = g(\theta^{L}A_{L-1})\\) in which the input comes from the previous layer L-1. Let us consider \\(A_{L-1}\\) as a constant input here (instead of a recursive function). Thus, the error here:
+Let \\(h_{\Theta}(x)\\) represent a neural network (\\(A_{L} = h_{\Theta}(x)\\)) and let \\(\delta^{L} = A_{L} - Y_{i}\\), which is basically a column vector containing the difference between the actual output and the expected output. This is actually the error at the output level. The top level of the neural network is basically a logistic regression \\(A_{L} = g(\theta^{L}A_{L-1})\\) in which the input comes from the previous layer L-1. Let us consider \\(A_{L-1}\\) as a constant input here (instead of a recursive function). Thus, the error here:
 \\[J = (-Y_{i}\log(A_{L})) - (1 - Y_{i}) \log(1-A_{L} = (-Y_{i}\log(g(\theta^{L} A_{L-1})) - (1-Y_{i}) \log(1-g(\theta^{L} A_{L-1})))\\]
 
 Note: we handle the regularization terms later.
