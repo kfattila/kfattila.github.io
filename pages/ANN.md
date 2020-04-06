@@ -275,7 +275,7 @@ This can be illustrated for one data instance as follows.
 ![ann21](./images/ann_eq6.png)
 
 **The soft-max loss** is defined as:
-\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\frac{e^{h_{\Theta}(x_{i})\_k_{i}}}}{\sum_{j}e^{h_{\Theta}(x_{i})\_{j}}} + reg \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\frac{e^{h_{\Theta(x_{i})\_{k_{i}}}}}{\sum_{j}e^{h_{\Theta(x_{i})\_{j}}} + reg \\]
 
 where \\(h_{\Theta(x)}\\) denotes the output vector of an ANN and \\(h_{\Theta(x)\_{k_{i}}}\\) denotes the output value corresponding to the correct class, \\(k_{i}\\) denotes the index of the true class label of the data instance \\(i\\).
 
