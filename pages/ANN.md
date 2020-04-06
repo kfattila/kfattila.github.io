@@ -52,10 +52,11 @@ Or any boolean formula:
 It looks like ANN can learn any functions. In fact, single hidden layer ANNs are universal approximators meaning they can approximate any continuous function arbitrary well. This is known as universal approximation theorem:
 
 **Universal approximation theorem**
+
 Let \\(\phi(.)\\) be a non-constant, monotonically increasing, bounded continious function, \\(x \subseteq R^{m}\\) a compact set and \\(C(X)\\) be the space of continious funcions on \\(X\\). Then \\(\forall f \in C(X), \forall \epsilon > 0 \\) there exist \\(n \in N, a_{ij}, b_{i}, w_{i} \in R, i=1, ..., n\\) and \\(j=1,..., m\\) such that
-\\[ \widetilde{f}(x) = \sum_{i=1}^{n} w_{i}\phi (\sum_{j=1}^{m}a_{ij}x_{j} + b_{i} \\] Eq. 1
+\\[ \widetilde{f}(x) = \sum_{i=1}^{n} w_{i}\phi (\sum_{j=1}^{m}a_{ij}x_{j} + b_{i}) \\] Eq. 1
 and
-\\[ ||f(x) - \widetilde{f}(x) < \epsilon \\]
+\\[ ||f(x) - \widetilde{f}(x)|| < \epsilon \\]
 
 This was shown by Kurt Hornik in 1991 [1]. The theorem says that, loosely, every continuous function can be approximated (or represented) by a model in a form in eq. (1). It also turns out the model in eq. (1) can be represented as an artificial neural network where the hidden units are composed of sigmoid functions and the ANN has a single linear output unit. As a consequence any continuous functions can be approximated by such neural network. See ref [2]. 
 Note that, this theorem is not particularly useful in practice for few reasons:
