@@ -249,6 +249,50 @@ Then calculate the update weights \\(\Delta^{l} = \delta^{l}A_{l-1}^{T}\\)
 
 Note that, the first component of \\(\delta^{l}\\) stands for the bias, we need to simply delete it. \\(\delta^{l} = \delta^{l}[2:end]\\) in Matlab code, and \\(\delta^{l} = \delta^{l}[-1]\\) in R.
 
+![ann19](./images/ann16.png)
+
+### The backprop algorithm
+
+The following algorithm summarizes the training of a multi-layer neural network:
+
+**Forward-backward propagation algorithm.**
+
+Define a neural network structure
+
+![ann20](./images/ann_eq5.png)
+
+Note that, if the neural network consists of 1 layer, the 'for' loop of the back propagation is not executed and the update rules are exactly the same update rules as those in the Logistic Regression.
+
+#### Loss functions for ANN training.
+
+Let us consider only one data point \\((x_{i}, y_{i})\\) for multi-class classification, say, we have three classes (K=3). Therefore, \\(y_{i}\\) is a 3-component vector, in which only one component is '1', all other compentnes have value of '0'.
+
+**Cross entropy loss function (Xent)** is defined as:
+\\[ J(\Theta|D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k}) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k})) + reg  \\]
+
+This can be illustrated for one data instance as follows.
+
+![ann21](./images/ann_eq6.png)
+
+**The soft-max loss** is defined as:
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\frac{e^{h_{\Theta}(x_{i})\_k_{i}}}{\sum_{j}e^{h_{\Theta}(x_{i})\_{j}}} + reg \\]
+
+where \\(h_{\Theta(x)}\\) denotes the output vector of an ANN and \\(h_{\Theta(x)}\_{k_{i}}\\) denotes the output value corresponding to the correct class, \\(k_{i}\\) denotes the index of the true class label of the data instance \\(i\\).
+
+![ann22](./images/ann_eq7.png)
+
+The soft-max loss maximizes the term above. It is defined only for positive class. During the maximization, the nominator is maximized while the denominator is minimized. That is: the cost function maximizes the score for the correct class and simultaneously minimizes the other scores for all other classes.
+
+### Loss function for ANN regression
+
+The ANNs can be used for regression problems to learn mappings: \\(\Theta : R^{n} \rightarrow R^{m}\\), where the output is an m dimensional vector. There are two modifications needed to be implemented:
+1. You need to use a linear activation function in the last output layer. Otherwise, the ANN would never output any number smaller than zero or bigger than one.
+2. The cost function little bit changes. The error can be measure by the squared loss function:
+\\[J(\Theta\mid D) = \frac{1}{m}\sum_{m}^{i=1}\sum_{k}^{K}(Y_{i})\_{k} - h_{\Theta}(x_{i})\_{k})^{2} + reg\\]
+Illustration:
+
+![ann23](./images/ann_eq8.png)
+
 #### References:
 1. Kurt Hornik: Approximation Capabilities of Multilayer Feedforward Networks. Neural Networks, vol. 4, 1991.
 2. [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf)
