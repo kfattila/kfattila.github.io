@@ -120,14 +120,22 @@ Formally, it is defined as \\(h_{\Theta(x)} = A_{L}\\). It produces a single val
 ![ann13](./images/ann13.png)
 
 So far, we defined the ANN. It is not a big deal. The important questions is that how can we specify (or learn) the weights of it, mainly from a given dataset. We could do it manually but this would be too cumbersome. 
-Now, we will focus on how one could calculate (i.e. train) the weights of a ANN from a given dataset. Let's suppose, we have the following dataset \\(D = \{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in C\}\\). Data are usually represented as column vectors, and we can arrange our data in a matrix form:
+Now, we will focus on how one could calculate (i.e. train) the weights of a ANN from a given dataset. Let's suppose, we have the following dataset \\(D = \\{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in C\\}\\). Data are usually represented as column vectors, and we can arrange our data in a matrix form:
 \\[
-X = 
-
+X = \left[\begin{array}{cccc}
+1 & 1 & ... & 1   \\\
+X_{1} & X_{2} & ... & X_{m}
+\end{array}\right] =
+\left[\begin{array}{cccc}
+1 & 1 & ... & 1   \\\
+x_{1,1} & x_{1,2} & ... & x_{1,m} \\\
+. & . & . & . \\\
+x_{n,1} & x_{n,2} & ... & x_{n,m} 
+\end{array}\right]
 \\]
 where the first element in each column vector is used for the bias parameter.
 For binary classification problems, we define one output unit in the last layer. 
-For multi-class classification problems (\\(y = \{0,1,2,...,K\}\\)) for each class label \\(y_{i}\\)  we define column vector \\(Y_{i} \in B^{k \times 1}\\) such that
+For multi-class classification problems (\\(y = \\{0,1,2,...,K\\}\\)) for each class label \\(y_{i}\\)  we define column vector \\(Y_{i} \in B^{k \times 1}\\) such that
 \\[Y = \left[\begin{array}{cccc}
 0 \\\
 . \\\
