@@ -215,13 +215,28 @@ Let \\( \Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the 
 
 ### The derivatives of J wrt. the parameters \\(Θ^{L−1}\\)  in the layer \\(L-1\\) is calculated as
 
-Now, the next step is to calculate the derivatives for the parameters \\(Θ^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\theta^{L-1}A_{L-2}\\):
+Now, the next step is to calculate the derivatives for the parameters \\(\Theta^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\Theta^{L-1}A_{L-2}\\):
 The cost function now is:
-\\[J = (-Y_{i}\log(g(\theta^{L}g(\theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}A_{L-2})))) \\]
+\\[J = (-Y_{i}\log(g(\Theta^{L}g(\Theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}A_{L-2})))) \\]
 
 ![ann15](./images/ann_eq2.png)
 
 ![ann15](./images/ann_eq3.png)
+
+Finally, we have
+
+\\[ \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta^{L} .\ast g(\Theta^{L-1}A_{L-2} .\ast (1 - g(\Theta^{L-1}A_{L-2}))A_{L-2}^{T} \\]
+
+Here the operator .* means the element-wise multiplication of vectors, called Schur or Hadamard product. 
+
+In a nicer matrix form:
+\\[ \Delta^{L-1} = \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta_{L} .\ast A_{L-1} .\ast (1 - A_{L-1})A_{L-2}^{T} \\]
+
+### The derivatives of J wrt. the parameters \\(Θ^{L−2}\\)  in the layer \\(L-2\\) is calculated as follows
+
+The cost function is now:
+\\[\\]
+
 
 
 
