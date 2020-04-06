@@ -209,7 +209,7 @@ We calculate the derivatives with respect to the parameters at every layer.
 ![ann15](./images/ann_eq1.png)
 
 Thus, we have:
-\\[\nabla J = \frac{\partial J}{\partial\theta^{L} = (g(\theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
+\\[\nabla J = \frac{\partial J}{\partial\Theta^{L} = (g(\Theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
 
 Let \\( \Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the weight in the last layer are to be corrected (updated). We use this amount to update the weigths.
 
@@ -217,7 +217,7 @@ Let \\( \Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the 
 
 Now, the next step is to calculate the derivatives for the parameters \\(Θ^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\theta^{L-1}A_{L-2}\\):
 The cost function now is:
-\\[J = (-Y_{i}\log(g(\theta^{L}g(\theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\theta^{L}g(\theta^{L-1}A_{L-2})))) \\]
+\\[J = (-Y_{i}\log(g(\theta^{L}g(\theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}A_{L-2})))) \\]
 
 ![ann15](./images/ann_eq2.png)
 
