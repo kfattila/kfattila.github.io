@@ -209,7 +209,7 @@ We calculate the derivatives with respect to the parameters at every layer.
 ![ann16](./images/ann_eq1.png)
 
 Thus, we have:
-\\[\nabla J = \frac{\partial J}{\partial\Theta^{L} = (g(\Theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
+\\[\nambla J = \frac{\partial J}{\partial\Theta^{L} = (g(\Theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
 
 Let \\(\Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the weight in the last layer are to be corrected (updated). We use this amount to update the weigths.
 
