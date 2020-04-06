@@ -6,48 +6,48 @@ description: ""
 {% include JB/setup %}
 
 Last class, we have seen the linear and logistic regressions. It can be represented for a single data \\(x=[1,x_{1},x_{2},..,,x_{n}]^{T}\\) and a parameter \\(\theta = [\theta_{0},\theta_{1},\theta_{2},..,,\theta_{n}]\\) as:
-![ann1](ann1.png)
+![ann1](./images/ann1.png)
 **Figure.** Representation of Linear (for \\(g(x) = x\\) or Logistic (for \\(g(x) = \frac{1}{1+e^{-x}}\\)) Regression model.
 
 The multi-class logistic regression can be represented as (Note that these are just different binary logistic regression models placed next to each other):
 
-![ann2](ann2.png)
+![ann2](./images/ann2.png)
 
 Linear and logistic regression methods are linear models. The linear regression can represent any linear relationship between input and output. The logistic regression can split the space into two halves (one for positive, another for negative) by a linear decision boundary. 
 
-![LogReg](Figure2b.png)
+![LogReg](./images/logreg4.png)
 **Figure.** Logistic regression with two features.
 
 What are the model parameters of a logistic regression having the following decision boundary:
-![ann3](ann3.png)
+![ann3](./images/ann3.png)
 
 The models above can be extended and more generalized as follows: we can combine more than one sigmoid or linear functions and they can be nested as well. 
-![ann4](ann4.png)
+![ann4](./images/ann4.png)
 **Figure.** A multilayer Neural Network.
 
 It is worthwhile nothing that, the model is fully connected, without loops, and no jumps over units.
 While one sigmoid function can learn a S-shaped function, combination of several sigmoid function can learn more different functions.
-![ann5](ann5.png)
+![ann5](./images/ann5.png)
 **Figure.** Functions that a neural network can learn with a) one, b) two, and c-d) 4 hidden nodes. Figure is taken from: Christopher Bishop, Neural Networks (1995).
 
 Exercises:
 	1. Design a neural network (single input binary variables: \\(x\\)) and give its weights, which represents: \\(\textlnot x\\) (not)
 	2. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \lor y\\) (or)
 	3. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \wedge y\\) (and)
-	![ann6](ann6.png)
+	![ann6](./images/ann6.png)
 	4. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \oplus y (xor= (x \lor \textlnot y)\wedge(\textlnot x \lor y))\\):
-	![ann7](ann7.png)
+	![ann7](./images/ann7.png)
 	5. Design a neural network for the following decision boundaries:
-	![ann8](ann8.png)
+	![ann8](./images/ann8.png)
 	6. Design a neural network for the following decision boundaries:
-	![ann9](ann9.png)
+	![ann9](./images/ann9.png)
 
 
 Neural networks have the power to represent more complicated decision boundaries:
-![ann10](ann10.png)
+![ann10](./images/ann10.png)
 
 Or any boolean formula:
-![ann11](ann11.png)
+![ann11](./images/ann11.png)
 
 It looks like ANN can learn any functions. In fact, single hidden layer ANNs are universal approximators meaning they can approximate any continuous function arbitrary well. This is known as universal approximation theorem:
 
@@ -65,7 +65,7 @@ Note that, this theorem is not particularly useful in practice for few reasons:
 	4. It is not so 'universal', because it is restricted to continuous functions.
 The universal approximation theorem claims only the existence of an approximator for every continuous function but it does not give us hints how to find it.
 
-![ann12](ann12.png)
+![ann12](./images/ann12.png)
 **Figure.** A universal approximator.
 
 ###### Calculating the function represented by Neural Network
@@ -165,13 +165,13 @@ Let us introduce the simple notation for the derivatives: \\( \\)
 What we need is "just" calculation of the derivatives of the cost function. The main problem with this is that variables depend on each other and they influence each other. To calculate the derivate of such nested functions we need the chain rule from the calculus.
 
 Calculus Refresher (chain rule):
-![ann14](ann14.png)
+![ann14](./images/ann14.png)
 
 Example for real-valued functions \\(f(g(x))\\):
 \\(frac{\partial f(x(g(x)))}{\partial x} = \frac{\partial f(x(g(x)))}{\partial g(x)} \frac{\partial g(x)}{\partial x} = f'(g(x)) g'(x)\\)
 
 Influence diagram:
-![ann15](ann15.png)
+![ann15](./images/ann15.png)
 
 Small perturbation in \\(x\\) cause small perturbations in each \\(g_{i}\\)'s, each of which individually additively perturbs \\(y\\).
 Let's get back to the calculation of derivatives:
@@ -221,5 +221,5 @@ Now, we will calculate the derivatives of each factors:
 
 
 References:
-	1. Kurt Hornik: Approximation Capabilities of Multilayer Feedforward Networks. Neural Networks, vol. 4, 1991.
-	2. [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf)
+1. Kurt Hornik: Approximation Capabilities of Multilayer Feedforward Networks. Neural Networks, vol. 4, 1991.
+2. [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf)
