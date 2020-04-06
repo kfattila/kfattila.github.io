@@ -175,7 +175,7 @@ Now the training algorithm can be formulated as:
     \end{array}       
 \\]
 
-Let us introduce the simple notation for the derivatives: \\( \\)
+Let us introduce the simple notation for the derivatives: \\(\nabla_{i,j}^{l} := \frac{\partial}{\partial\theta_{i,j}^{l}}J(\Theta\mid D) \\)
 What we need is "just" calculation of the derivatives of the cost function. The main problem with this is that variables depend on each other and they influence each other. To calculate the derivate of such nested functions we need the chain rule from the calculus.
 
 Calculus Refresher (chain rule):
