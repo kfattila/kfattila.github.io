@@ -185,13 +185,13 @@ Calculus Refresher (chain rule):
 
 Example for real-valued functions \\(f(g(x))\\):
 
-\\(\frac{\partial f(x(g(x)))}{\partial x} = \frac{\partial f(x(g(x)))}{\partial g(x)} \frac{\partial g(x)}{\partial x} = f'(g(x)) g'(x)\\)
+\\(\frac{\partial f(x(g(x))}{\partial x} = \frac{\partial f(x(g(x))}{\partial g(x)} \frac{\partial g(x)}{\partial x} = f'(g(x)) g'(x)\\)
 
 Influence diagram:
 ![ann15](./images/ann15.png)
 
 Small perturbation in \\(x\\) cause small perturbations in each \\(g_{i}\\)'s, each of which individually additively perturbs \\(y\\).
-Let's get back to the calculation of derivatives:
+Let's get back to the calculation of derivatives: \\(\Delta_{i,j}^{l} := \frac{\partial}{\partial\theta_{i,j}^{l}}J(\Theta\mid D) \\)
 
 The method, which calculates that how wrong the parameters were and uses these errors to update the weights from the output toward the input (backward) is called the backpropagation (short for backward propagation of errors).
 
