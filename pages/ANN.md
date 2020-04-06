@@ -156,7 +156,7 @@ Let \\(h_{\Theta(x)}\\) denote a multi-layer neural network \\(h_{\Theta}(x) = A
 The error made by a \\(h_{\Theta(x)}\\) on a data can be calculated in the way similarly to the error function J of the Logistic Regression.
 
 \\[J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k})) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k}) + \frac{\lambda}{2}\sum_{l=1}^{l_{n}}\sum_{i=1}^{s_{l}}\sum_{j=1}^{s_{l+1}}(\theta_{j,i}^{l})^{2}\\]
-\\[J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m} 1^{T} (-Y_{i}\_{k}\log(h_{\Theta}(x_{i})) - (1 - Y_{i})\log(1-h_{\Theta}(x_{i})) + \frac{\lambda}{2}\sum_{l=1}^{l_{n}}\sum_{i=1}^{s_{l}}\sum_{j=1}^{s_{l+1}}(\Theta_{j,i}^{l})^{2} \\]
+\\[J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m} 1^{T} (-Y_{i}\log(h_{\Theta}(x_{i})) - (1 - Y_{i})\log(1-h_{\Theta}(x_{i})) + \frac{\lambda}{2}\sum_{l=1}^{l_{n}}\sum_{i=1}^{s_{l}}\sum_{j=1}^{s_{l+1}}(\Theta_{j,i}^{l})^{2} \\]
 
 **1** stands for a vector containing only 1's and log(.) is applied element-wise.
 It is basically defined as the cumulative difference from the desired output made by each "output", combined with the regularization term, where the difference is expressed by cross-entropy.
