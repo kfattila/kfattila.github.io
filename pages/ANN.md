@@ -117,7 +117,7 @@ Formally, it is defined as \\(h_{\Theta(x)} = A_{L}\\). It produces a single val
 
 **Semantic of ANNs:** It is very important to know that what we want from a multi-layer neural network. We expect it to propagate the input data through its layers towards the output. The first layer is the raw data layer. Higher layers aim to give a higher abstraction of the data, often referred to as *features*. At every layer \\(l\\) , it performs first a linear transofmation \\(R^{s_{l-1}} \rightarrow R^{s_{l-1}}: \Theta^{l}A_{l-1}\\), where the linear transofmation is parameterised by \\(\Theta^{l}\\), followed by non-linear activation function applied element-wise. The last layer can correspond either to class labels y in classification tasks or some other high-level cause in generative tasks. That is, an ANN propagates data through several level of abstractions: from the raw data to a higher level meaning, and at every step we expect to get a higher level of abstraction of the data by feature transformations. We also expect that the dataset becomes "more and more linearly separable" at higher levels.
 
-![ann13](ann13.png)
+![ann13](./images/ann13.png)
 
 So far, we defined the ANN. It is not a big deal. The important questions is that how can we specify (or learn) the weights of it, mainly from a given dataset. We could do it manually but this would be too cumbersome. 
 Now, we will focus on how one could calculate (i.e. train) the weights of a ANN from a given dataset. Let's suppose, we have the following dataset \\(D = \{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in C\}\\). Data are usually represented as column vectors, and we can arrange our data in a matrix form:
