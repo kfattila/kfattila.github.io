@@ -148,9 +148,9 @@ where \\(B = \\{0,1\\}\\) and the vector contains 1 only at the yth postion, and
 
 For the training we need a cost function (a.k.a. learning objective) what we could optimize/minimize.
 
-###### Error calculation:
+### Error calculation:
 
-Let us consider a K-class classification problem. Let's suppose we have the following dataset \\(D = \{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in \{1, ..., K\}\} \\) and \\(Y_{i} \in B^{k \times 1}\\)	are the one-hot encoded class labels.
+Let us consider a K-class classification problem. Let's suppose we have the following dataset \\(D = \\{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in \{1, ..., K\\}\\} \\) and \\(Y_{i} \in B^{k \times 1}\\)	are the one-hot encoded class labels.
 Let \\(h_{\theta(x)}\\) denote a multi-layer neural network \(h_{\theta(x)} = A_{L}\\), where \\(A_{i} = [1, g(\theta_{1}^{l-1}A_{l-1}), g(\theta_{2}^{l-1}A_{l-1}), ..., g(\theta_{s_{i}}^{l-1}A_{l-1})]^{T}\\) for \\(1 \leq i \leq L \\) \\(A_{0} = x\\).
 
 The error made by a \\(h_{\theta(x)}\\) on a data can be calculated in the way similarly to the error function J of the Logistic Regression.
