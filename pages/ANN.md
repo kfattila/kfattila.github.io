@@ -5,7 +5,7 @@ description: ""
 ---
 {% include JB/setup %}
 
-Last class, we have seen the linear and logistic regressions. It can be represented for a single data \\(x=[1,x_{1},x_{2},..,,x_{n}]^{T}\\) and a parameter \\(\theta = [\theta_{0},\theta_{1},\theta_{2},..,,\theta_{n}]\\) as:
+Last class, we have seen the linear and logistic regressions. It can be represented for a single data \\(x=[1,x_{1},x_{2},..,,x_{n}]^{T}\\) and a parameter \\(\Theta = [\theta_{0},\theta_{1},\theta_{2},..,,\theta_{n}]\\) as:
 ![ann1](./images/ann1.png)
 
 **Figure.** Representation of Linear (for \\(g(x) = x\\)) or Logistic (for \\(g(x) = \frac{1}{1+e^{-x}}\\)) Regression model.
@@ -51,7 +51,7 @@ Or any boolean formula:
 
 It looks like ANN can learn any functions. In fact, single hidden layer ANNs are universal approximators meaning they can approximate any continuous function arbitrary well. This is known as universal approximation theorem:
 
-**Universal approximation theorem**
+### Universal approximation theorem
 
 Let \\(\phi(.)\\) be a non-constant, monotonically increasing, bounded continious function, \\(x \subseteq R^{m}\\) a compact set and \\(C(X)\\) be the space of continious funcions on \\(X\\). Then \\(\forall f \in C(X), \forall \epsilon > 0 \\) there exist \\(n \in N, a_{ij}, b_{i}, w_{i} \in R, i=1, ..., n\\) and \\(j=1,..., m\\) such that
 \\[ \widetilde{f}(x) = \sum_{i=1}^{n} w_{i}\phi (\sum_{j=1}^{m}a_{ij}x_{j} + b_{i}) \\] Eq. 1
@@ -113,7 +113,7 @@ Except that, the constant 1s have to be handled properly.
 ### Forward propagation.
 
 ANN takes an input data and it pushes the input through the network.
-Formally, it is defined as \\(h_{\Theta(x)} = A_{L}\\). It produces a single value in case of binary classification problems, or a vector in case of multi-class classification problems. In the second case, for a data \\(x\\), every vector component \\((A_{L})_{i}\\)  gives a score on how much the input data \\(x\\) belongs to the ith class.
+Formally, it is defined as \\(h_{\Theta(x)} = A_{L}\\). It produces a single value in case of binary classification problems, or a vector in case of multi-class classification problems. In the second case, for a data \\(x\\), every vector component \\((A_{L})\_{i}\\)  gives a score on how much the input data \\(x\\) belongs to the *i*th class.
 
 **Semantic of ANNs:** It is very important to know that what we want from a multi-layer neural network. We expect it to propagate the input data through its layers towards the output. The first layer is the raw data layer. Higher layers aim to give a higher abstraction of the data, often referred to as *features*. At every layer \\(l\\) , it performs first a linear transofmation \\(R^{s_{l-1}} \rightarrow R^{s_{l}}: \Theta^{l}A_{l-1}\\), where the linear transofmation is parameterised by \\(\Theta^{l}\\), followed by non-linear activation function applied element-wise. The last layer can correspond either to class labels y in classification tasks or some other high-level cause in generative tasks. That is, an ANN propagates data through several level of abstractions: from the raw data to a higher level meaning, and at every step we expect to get a higher level of abstraction of the data by feature transformations. We also expect that the dataset becomes "more and more linearly separable" at higher levels.
 
