@@ -101,13 +101,13 @@ For a layer \\(l\\), we can arrange the parameters \\(\theta_{i}^{l}\\) in a mat
 
 This gives us a matrix of parameters for each layer, and it has \\(s_{l}\\) rows, one row for each unit, and the matrix has \\(s_{l-1} + 1\\) columns, column \\(i\\) stands for the input \\(i\\). Note that the first column stands for the bias variable in each row.
 
-Activation of unit \\(s_{i,l}\\) is defined as \\(a_{i,l} = g(Theta_{i}^{l}A_{l-1})\\), where \\(A_{0} = x\\) the input, and \\(A_{i} = [1, g(\Theta_{1}^{l-1}A_{l-1}), g(\Theta_{2}^{l-1}A_{l-1}), ..., g(\Theta_{s_{i},l-1}^{l-1}A_{l-1})]^{T}\\). The first constant 1 used for the bias parameter.
+Activation of unit \\(s_{i,l}\\) is defined as \\(a_{i,l} = g(\Theta_{i}^{l}A_{l-1})\\), where \\(A_{0} = x\\) the input, and \\(A_{i} = [1, g(\Theta_{1}^{l-1}A_{l-1}), g(\Theta_{2}^{l-1}A_{l-1}), ..., g(\Theta_{s_{i},l-1}^{l-1}A_{l-1})]^{T}\\). The first constant 1 used for the bias parameter.
 
 The function which is represented by the neural network is:
 \\[h_{\Theta(x)} = A_{L}\\]
 Except that, there is no 1 for the bias at the output layer.
 This can be written in a recursive form:
-\\[h_{\Theta(x)} = g(\Theta^{L}g(\Theta^{L-1}g(...g(\Theta^{3}g(\Theta^{2}g(\Theta^{1}x)))))\\]
+\\[h_{\Theta(x)} = g(\Theta^{L}g(\Theta^{(L-1)}g(...g(\Theta^{3}g(\Theta^{2}g(\Theta^{1}x)))))\\]
 Except that, the constant 1s have to be handled properly.
 
 ### Forward propagation.
