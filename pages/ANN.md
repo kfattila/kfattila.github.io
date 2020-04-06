@@ -206,7 +206,7 @@ We calculate the derivatives with respect to the parameters at every layer.
 
 ### The derivatives of J wrt the parameters \\(Θ^{L}\\)  in the last layer L is calculated as follows:
 
-![ann15](./images/ann_eq1.png)
+![ann16](./images/ann_eq1.png)
 
 Thus, we have:
 \\[\nabla J = \frac{\partial J}{\partial\Theta^{L} = (g(\Theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
@@ -219,9 +219,9 @@ Now, the next step is to calculate the derivatives for the parameters \\(\Theta^
 The cost function now is:
 \\[J = (-Y_{i}\log(g(\Theta^{L}g(\Theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}A_{L-2})))) \\]
 
-![ann15](./images/ann_eq2.png)
+![ann17](./images/ann_eq2.png)
 
-![ann15](./images/ann_eq3.png)
+![ann18](./images/ann_eq3.png)
 
 Finally, we have
 
@@ -235,11 +235,20 @@ In a nicer matrix form:
 ### The derivatives of J wrt. the parameters \\(Θ^{L−2}\\)  in the layer \\(L-2\\) is calculated as follows
 
 The cost function is now:
-\\[\\]
+\\[J = (-Y_{i} \log(g(\Theta^{L}g(\Theta^{L-1}g(\Theta^{L-2}A_{L-3})))) - (1 - Y_{i}) \log(1 - g(\Theta^{L}g(\Theta^{L-1}g(\Theta^{L-2}A_{L-3})))))\\]
 
+![ann18](./images/ann_eq4.png)
 
+Now, we need an algorithm which calculates the weight updates iteratively (recursively) from layer L to layer 1.
 
+Now, if you look at the formulas \\(\frac{\partial J}{\partial\Theta^{L-2}}\\) and \\(\frac{\partial J}{\partial\Theta^{L-1}}\\) you can notice a recursive pattern.
 
-References:
+Let \\(\delta^{l} = (\Theta^{l+1})^{T}\delta^{l+1} .\ast g(\Theta^{l}A_{l}) .\ast (1-g(\Theta^{l}A_{l}))\\)
+
+Then calculate the update weights \\(\Delta^{l} = \delta^{l}A_{l-1}^{T}\\)
+
+Note that, the first component of \\(\delta^{l}\\) stands for the bias, we need to simply delete it. \\(\delta^{l} = \delta^{l}[2:end]\\) in Matlab code, and \\(\delta^{l} = \delta^{l}[-1]\\) in R.
+
+#### References:
 1. Kurt Hornik: Approximation Capabilities of Multilayer Feedforward Networks. Neural Networks, vol. 4, 1991.
 2. [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2647&rep=rep1&type=pdf)
