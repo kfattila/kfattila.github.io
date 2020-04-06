@@ -141,8 +141,7 @@ For multi-class classification problems (\\(y = \\{0,1,2,...,K\\}\\)) for each c
 . \\\
 1 \\\
 . \\\
-0 \\\
-\theta_{s_{l}}^{l}
+0 
 \end{array}\right]
 \\]
 where \\(B = \{0,1\}\\) and the vector contains 1 only at the yth postion, and contains 0's in all the other places. This is also known as (a.k.a) one-hot encoding. In addition, we define one unit for each class in the last layer, thus for 10 class classification problem the neural network will have 10 output units.
