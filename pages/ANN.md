@@ -7,7 +7,7 @@ description: ""
 
 Last class, we have seen the linear and logistic regressions. It can be represented for a single data \\(x=[1,x_{1},x_{2},..,,x_{n}]^{T}\\) and a parameter \\(\theta = [\theta_{0},\theta_{1},\theta_{2},..,,\theta_{n}]\\) as:
 ![ann1](./images/ann1.png)
-**Figure.** Representation of Linear (for \\(g(x) = x\\) or Logistic (for \\(g(x) = \frac{1}{1+e^{-x}}\\)) Regression model.
+**Figure.** Representation of Linear (for \\(g(x) = x\\)) or Logistic (for \\(g(x) = \frac{1}{1+e^{-x}}\\)) Regression model.
 
 The multi-class logistic regression can be represented as (Note that these are just different binary logistic regression models placed next to each other):
 
