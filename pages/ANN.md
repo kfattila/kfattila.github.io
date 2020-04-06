@@ -16,6 +16,7 @@ The multi-class logistic regression can be represented as (Note that these are j
 Linear and logistic regression methods are linear models. The linear regression can represent any linear relationship between input and output. The logistic regression can split the space into two halves (one for positive, another for negative) by a linear decision boundary. 
 
 ![LogReg](./images/logreg4.png)
+
 **Figure.** Logistic regression with two features.
 
 What are the model parameters of a logistic regression having the following decision boundary:
@@ -23,11 +24,13 @@ What are the model parameters of a logistic regression having the following deci
 
 The models above can be extended and more generalized as follows: we can combine more than one sigmoid or linear functions and they can be nested as well. 
 ![ann4](./images/ann4.png)
+
 **Figure.** A multilayer Neural Network.
 
 It is worthwhile nothing that, the model is fully connected, without loops, and no jumps over units.
 While one sigmoid function can learn a S-shaped function, combination of several sigmoid function can learn more different functions.
 ![ann5](./images/ann5.png)
+
 **Figure.** Functions that a neural network can learn with a) one, b) two, and c-d) 4 hidden nodes. Figure is taken from: Christopher Bishop, Neural Networks (1995).
 
 Exercises:
