@@ -60,10 +60,11 @@ and
 
 This was shown by Kurt Hornik in 1991 [1]. The theorem says that, loosely, every continuous function can be approximated (or represented) by a model in a form in eq. (1). It also turns out the model in eq. (1) can be represented as an artificial neural network where the hidden units are composed of sigmoid functions and the ANN has a single linear output unit. As a consequence any continuous functions can be approximated by such neural network. See ref [2]. 
 Note that, this theorem is not particularly useful in practice for few reasons:
-	1. In practice, we are not given a target function to approximate it. We are given a set of data. 
-	2. The theorem above is not constructive, and it does not give us a hint about the number of the hidden units (n).
-	3. It also does not provide as a good parameter weights. The weights in practice are learned by back-propagation (we will discuss it later) via optimizing the weights w.r.t. some cost function. The cost function is non-convex, and the back-propagation can stuck in a local minimum. In addition, the global minimum might have a worse generalization error (i.e. this is the error measured on a test set (a data set which was not seen by the learner during training)) than a local minimum.
-	4. It is not so 'universal', because it is restricted to continuous functions.
+1. In practice, we are not given a target function to approximate it. We are given a set of data. 
+2. The theorem above is not constructive, and it does not give us a hint about the number of the hidden units (n).
+3. It also does not provide as a good parameter weights. The weights in practice are learned by back-propagation (we will discuss it later) via optimizing the weights w.r.t. some cost function. The cost function is non-convex, and the back-propagation can stuck in a local minimum. In addition, the global minimum might have a worse generalization error (i.e. this is the error measured on a test set (a data set which was not seen by the learner during training)) than a local minimum.
+4. It is not so 'universal', because it is restricted to continuous functions.
+
 The universal approximation theorem claims only the existence of an approximator for every continuous function but it does not give us hints how to find it.
 
 ![ann12](./images/ann12.png)
