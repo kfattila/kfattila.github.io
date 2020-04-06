@@ -71,13 +71,17 @@ The universal approximation theorem claims only the existence of an approximator
 
 **Figure.** A universal approximator.
 
-###### Calculating the function represented by Neural Network
+### Calculating the function represented by Neural Network
 
 Some definitions:
 A hidden layer can be a layer of weights or a layer of units. This is confusing and a convention has not been made yet.
+
 Number of hidden layers: \\(L\\).  In the example above \\(L = 3\\).
+
 Number of hidden units in the hidden or output layer \\( 2 \leq l \leq L\\) is \\(s_{l}\\).
+
 Parameters of a hidden unit \\( 1 \leq s_{i,l} \leq s_{l}\\) of hidden layer \\(l: \theta_{i}^{l}\\)  which contains the bias parameter \\(\theta_{l}^{0}\\).
+
 For a layer \\(l\\), we can arrange the parameters \\(\theta_{i}^{l}\\) in a matrix form as 
 \\[ \theta^{l} = 
 \left[\begin{array}{cccc}
@@ -86,7 +90,7 @@ For a layer \\(l\\), we can arrange the parameters \\(\theta_{i}^{l}\\) in a mat
 & & . & & \\\
 & & . & & \\\
 \theta_{s_{l},0}^{l} & \theta_{s_{l},1}^{l} & ... & \theta_{s_{l},s_{l-1}}^{l}
-\end{array}\right]\\) = \left[\begin{array}{cccc}
+\end{array}\right] = \left[\begin{array}{cccc}
 \theta_{1}^{l}  \\\
 \theta_{2}^{l}  \\\
 . \\\
@@ -106,7 +110,7 @@ This can be written in a recursive form:
 \\[h_{\theta(x)} = g(\theta^{L}g(\theta^{L-1}g(...g(\theta^{3}g(\theta^{2}g(\theta^{1}x)))))\\]
 Except that, the constant 1s have to be handled properly.
 
-###### Forward propagation.
+### Forward propagation.
 
 ANN takes an input data and it pushes the input through the network.
 Formally, it is defined as \\(h_{\theta(x)} = A_{L}\\). It produces a single value in case of binary classification problems, or a vector in case of multi-class classification problems. In the second case, for a data \\(x\\), every vector component \\((A_{L})_{i}\\)  gives a score on how much the input data \\(x\\) belongs to the ith class.
