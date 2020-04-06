@@ -68,6 +68,7 @@ Note that, this theorem is not particularly useful in practice for few reasons:
 The universal approximation theorem claims only the existence of an approximator for every continuous function but it does not give us hints how to find it.
 
 ![ann12](./images/ann12.png)
+
 **Figure.** A universal approximator.
 
 ###### Calculating the function represented by Neural Network
