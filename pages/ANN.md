@@ -225,7 +225,7 @@ The cost function now is:
 
 Finally, we have
 
-\\[ \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta^{L} .\ast g(\Theta^{L-1}A_{L-2} .\ast (1 - g(\Theta^{L-1}A_{L-2}))A_{L-2}^{T} \\]
+\\[ \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta^{L}) .\ast g(\Theta^{L-1}A_{L-2} .\ast (1 - g(\Theta^{L-1}A_{L-2}))A_{L-2}^{T} \\]
 
 Here the operator .* means the element-wise multiplication of vectors, called Schur or Hadamard product. 
 
@@ -265,7 +265,7 @@ Note that, if the neural network consists of 1 layer, the 'for' loop of the back
 
 #### Loss functions for ANN training.
 
-Let us consider only one data point \\((x_{i}, y_{i})\\) for multi-class classification, say, we have three classes (K=3). Therefore, \\(y_{i}\\) is a 3-component vector, in which only one component is '1', all other compentnes have value of '0'.
+Let us consider only one data point \\((x_{i}, y_{i})\\) for multi-class classification, say, we have three classes (K=3). Therefore, \\(y_{i}\\) is a 3-component vector, in which only one component is '1', all other components have value of '0'.
 
 **Cross entropy loss function (Xent)** is defined as:
 \\[ J(\Theta|D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k}) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k})) + reg  \\]
@@ -275,7 +275,7 @@ This can be illustrated for one data instance as follows.
 ![ann21](./images/ann_eq6.png)
 
 **The soft-max loss** is defined as:
-\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\frac{e^{h_{\Theta}(x_{i})\_k_{i}}}{\sum_{j}e^{h_{\Theta}(x_{i})\_{j}}} + reg \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\frac{e^{h_{\Theta}(x_{i})\_k_{i}}}}{\sum_{j}e^{h_{\Theta}(x_{i})\_{j}}} + reg \\]
 
 where \\(h_{\Theta(x)}\\) denotes the output vector of an ANN and \\(h_{\Theta(x)}\_{k_{i}}\\) denotes the output value corresponding to the correct class, \\(k_{i}\\) denotes the index of the true class label of the data instance \\(i\\).
 
