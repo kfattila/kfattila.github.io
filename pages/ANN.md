@@ -184,7 +184,8 @@ Calculus Refresher (chain rule):
 ![ann14](./images/ann14.png)
 
 Example for real-valued functions \\(f(g(x))\\):
-\\(frac{\partial f(x(g(x)))}{\partial x} = \frac{\partial f(x(g(x)))}{\partial g(x)} \frac{\partial g(x)}{\partial x} = f'(g(x)) g'(x)\\)
+
+\\(\frac{\partial f(x(g(x)))}{\partial x} = \frac{\partial f(x(g(x)))}{\partial g(x)} \frac{\partial g(x)}{\partial x} = f'(g(x)) g'(x)\\)
 
 Influence diagram:
 ![ann15](./images/ann15.png)
