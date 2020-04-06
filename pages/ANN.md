@@ -205,36 +205,23 @@ We calculate the derivatives with respect to the parameters at every layer.
 
 ### The derivatives of J wrt the parameters \\(Θ^{L}\\)  in the last layer L is calculated as follows:
 
-\\[\frac{\partial J}{\theta^{L}} = \frac{\partial(-Y_{i}\log(g(\theta^{L}A_{L-1})) - (1-Y_{i}) \log(1 - g(\theta^{L}A_{L-1})))}{\partial\theta^{L}}\\]
-
-Using \\(\log'(x) = \frac{1}{x}\\)
-
-\\[ -\frac{Y_{i}}{g(\theta^{L}A_{L-1})}g'(\theta^{L}A_{L-1}) - \frac{1-Y_{i}}{1 - g(\theta^{L}A_{L-1})}(1 - g(\theta^{L}A_{L-1}))' = \\]
-
-Using \\(g'(x) = g(x)(1 - g(x))x'\\) Remember: \\(g\\) is the sigmoid function.
-
-\\[ -\frac{Y_{i}}{g(\theta^{L}A_{L-1})} (g(\theta^{L}A_{L-1}))(1 - g(\theta^{L}A_{L-1}))(\theta^{L}A_{L-1})' - \frac{1-Y_{i}}{1 - g(\theta^{L}A_{L-1})}(-1)(1 - g(\theta^{L}A_{L-1}))(\theta^{L}A_{L-1}) = \\]
-
-\\[ -Y_{i}(1 - g(\theta^{L}A_{L-1}))A_{L-1}^{T} + (1 - Y_{i})(g(\theta^{L}A_{L-1}))(\theta^{L}A_{L-1}))(\theta^{L}A_{L-1}))' = \\]
-
-\\[(-Y_{i} + Y_{i}g(\theta^{L} A_{L-1}) + g(\theta^{L}A_{L-1}) -Y_{i}(g(\theta^{L}A_{L-1})))A_{L-1}^{T} = (g(\theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} \\]
+![ann15](./images/ann_eq1.png)
 
 Thus, we have:
 \\[\nablaJ = \frac{\partial J}{\partial\theta^{L} = (g(\theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \Sigma^{L}A_{L-1}^{T} \\]
 
 Let \\( \nabla^{L} = \Sigma^{L}A_{L-1}^{T}\\), which is the amount by which the weight in the last layer are to be corrected (updated). We use this amount to update the weigths.
 
-###### The derivatives of J wrt. the parameters \\(Θ^{L−1}\\)  in the layer \\(L-1\\) is calculated as
+### The derivatives of J wrt. the parameters \\(Θ^{L−1}\\)  in the layer \\(L-1\\) is calculated as
 
 Now, the next step is to calculate the derivatives for the parameters \\(Θ^{L−1}\\) at layer \\(L-1\\). We consider \\(A_{L-1}\\) as a function of \\(A_{L-2}\\), but consider \\(A_{L-2}\\) as a constant input: \\(A_{L-1} = g(\theta^{L-1}A_{L-2}\\):
 The cost function now is:
 \\[J = (-Y_{i}\log(g(\theta^{L}g(\theta^{L-1}A_{L-2}))) - (1 - Y_{i}) \log(1 - g(\theta^{L}g(\theta^{L-1}A_{L-2})))) \\]
 
-\\[ \frac{\partial J}{\partial\theta^{L-1}} = \frac{\partial J}{\partial g(\theta^{L}g(\theta^{L-1}A_{L-2}))} \dot \frac{\partial g(\theta^{L}g(\theta^{L-1}A_{L-2}))}{\partial g(\theta^{L-1}A_{L-2})} \dot \frac{\partial g(\theta^{L-1}A_{L-2})}{\partial \theta^{L-1}}\\]
+![ann15](./images/ann_eq2.png)
 
-Now, we will calculate the derivatives of each factors:
+![ann15](./images/ann_eq3.png)
 
-\\[\\]
 
 
 References:
