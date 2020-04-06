@@ -201,6 +201,7 @@ Let \\(h_{\Theta}(x)\\) represent a neural network (\\(A_{L} = h_{\Theta}(x)\\))
 \\[J = (-Y_{i}\log(A_{L})) - (1 - Y_{i}) \log(1-A_{L} = (-Y_{i}\log(g(\Theta^{L} A_{L-1})) - (1-Y_{i}) \log(1-g(\Theta^{L} A_{L-1})))\\]
 
 Note: we handle the regularization terms later.
+
 We calculate the derivatives with respect to the parameters at every layer.
 
 ### The derivatives of J wrt the parameters \\(Θ^{L}\\)  in the last layer L is calculated as follows:
@@ -208,9 +209,9 @@ We calculate the derivatives with respect to the parameters at every layer.
 ![ann15](./images/ann_eq1.png)
 
 Thus, we have:
-\\[\nablaJ = \frac{\partial J}{\partial\theta^{L} = (g(\theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \Sigma^{L}A_{L-1}^{T} \\]
+\\[\nabla J = \frac{\partial J}{\partial\theta^{L} = (g(\theta{L}A_{L-1}) - Y_{i})A_{L-1}^{T} = (A_{L} - Y_{i})A_{L-1}^{T} = \delta^{L}A_{L-1}^{T} \\]
 
-Let \\( \nabla^{L} = \Sigma^{L}A_{L-1}^{T}\\), which is the amount by which the weight in the last layer are to be corrected (updated). We use this amount to update the weigths.
+Let \\( \Delta^{L} = \delta^{L}A_{L-1}^{T}\\), which is the amount by which the weight in the last layer are to be corrected (updated). We use this amount to update the weigths.
 
 ### The derivatives of J wrt. the parameters \\(Θ^{L−1}\\)  in the layer \\(L-1\\) is calculated as
 
