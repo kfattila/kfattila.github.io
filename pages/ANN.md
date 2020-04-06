@@ -35,16 +35,12 @@ While one sigmoid function can learn a S-shaped function, combination of several
 **Figure.** Functions that a neural network can learn with a) one, b) two, and c-d) 4 hidden nodes. Figure is taken from: Christopher Bishop, Neural Networks (1995).
 
 Exercises:
-	1. Design a neural network (single input binary variables: \\(x\\)) and give its weights, which represents: \\(\textlnot x\\) (not)
-	2. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \lor y\\) (or)
-	3. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \wedge y\\) (and)
-	![ann6](./images/ann6.png)
-	4. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \oplus y (xor= (x \lor \textlnot y)\wedge(\textlnot x \lor y))\\):
-	![ann7](./images/ann7.png)
-	5. Design a neural network for the following decision boundaries:
-	![ann8](./images/ann8.png)
-	6. Design a neural network for the following decision boundaries:
-	![ann9](./images/ann9.png)
+1. Design a neural network (single input binary variables: \\(x\\)) and give its weights, which represents: \\(\lnot x\\) (not)
+2. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \lor y\\) (or)
+3. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \wedge y\\) (and) ![ann6](./images/ann6.png)
+4. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \oplus y (xor= (x \lor \textlnot y)\wedge(\textlnot x \lor y))\\): ![ann7](./images/ann7.png)
+5. Design a neural network for the following decision boundaries: ![ann8](./images/ann8.png)
+6. Design a neural network for the following decision boundaries: ![ann9](./images/ann9.png)
 
 
 Neural networks have the power to represent more complicated decision boundaries:
