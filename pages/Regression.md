@@ -148,6 +148,11 @@ There are two common approaches, a) normalization and b) scaling:
 
 a) <u>Normalization</u> consists of two steps:
 
+1. centralization: \\(\widehat{x_{i,j}} = x_{i,j} - \frac{1}{m}\sum_{l}x_{l,j} \\)
+2. standardization: \\(\widetilde{x_{i,j}} = \frac{\widetilde{x_{i,j}}}{\frac{1}{m}\sum_{l}\widehat{x_{l,j}}^{2}}
+
+b) <u>Scaling</u> feature values to the range [0,1], (other ranges work well too, such as, [-1,1], [-3,3], etc.).  \\(\widetilde{x_{i,j}} = \frac{X_{i,j} - X_{min,j}}{X_{max,j} - X_{min,j}}
+
 ##### Batch mode:
 
 In the case above the gradient descent algorithm uses the whole dataset.  You can use less data in each iteration, say, you can chose randomly 1, 5, 10, … in each iteration, and calculate the \\(\Theta\\)'s. This can be often useful if you have lot's of data, or data access is expensive (over network, etc.)
