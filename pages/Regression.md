@@ -28,7 +28,7 @@ Therefore, in this model, the regressand (\\(Y\\)) is a <u>linear combination</u
 So, what we want is to calculate the model parameter \\(\Theta\\) somehow. This process is called "learning".
 
 
-###### Regression and Ordinary Least Squares method (OLS):
+### Regression and Ordinary Least Squares method (OLS):
 
 Typically, having some data (experience) \\(D = \\{(X_{i},Y_{i})|X_{i} \in R^{n}, y_{i} \in R\\}\\), it is possible to define a performance estimation on how well the parameters \\(\Theta\\) model the relationship between the dependent and the outcome variables. This performance measure is often called loss function. The most common measure (in this field) is the *least squares* defined formally as:
 \\[ J_{1}(\Theta\mid D) = \sum_{i=1}^{m}(Y_{i} - f(X_{i}))^{2} = \sum_{i=1}^{m}(Y_{i} - \theta_{0} - \sum_{j=1}^{n} x_{i,j}\theta_{j})^{2} \\]
@@ -94,7 +94,7 @@ We can rearrange the variables and give a closed form for \\(\Theta\\):
 \\[\Theta = (X^{T}X + \lambda I)^{-1}X^{T}Y \\]
 This solution involves matrix inversion which requires \\(O(n^{3})\\) time.
 
-##### Gradient descent algorithm.
+#### Gradient descent algorithm.
 This method iteratively approaches an optima of functions. In each cycle 
 it determines the tangent of the function in the current position in order to 
 determine the direction of the optima. 
@@ -128,8 +128,7 @@ Here:
 	\begin{array}{ll}
 		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \\\
 		\frac{\partial}{\partial\theta_{0}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{0}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}) & \text{for j = 0} 
-    \end{array}       
-}
+    \end{array}
 \\]
 
 This update rule is called LMS (Least mean squares) update rule, or Widrow-Hoff learning rule.
@@ -149,7 +148,7 @@ There are two common approaches, a) normalization and b) scaling:
 
 a) <u>Normalization</u> consists of two steps:
 
-###### Batch mode:
+##### Batch mode:
 
 In the case above the gradient descent algorithm uses the whole dataset.  You can use less data in each iteration, say, you can chose randomly 1, 5, 10, … in each iteration, and calculate the \\(\Theta\\)'s. This can be often useful if you have lot's of data, or data access is expensive (over network, etc.)
 We can repeatedly run through the training set, and each time we encounter a training example, we update the parameters according to the gradient of the error with respect to that single training example only. This algorithm is called stochastic gradient descent (also incremental gradient descent). It slows the convergence down, but uses less data and hence less memory in each iteration.
@@ -158,7 +157,7 @@ We can repeatedly run through the training set, and each time we encounter a tra
 
 Figure 8. An example path of the stochastic gradient algorithm.
 
-##### Other optimization methods:
+#### Other optimization methods:
 
 * Other optimization methods can be used instead of Gradient Descent, such as:
 * Newton's method,
