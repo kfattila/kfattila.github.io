@@ -182,15 +182,15 @@ Each method would take the same input and provide (more-or-less) the same optimu
 
 Both methods aims at finding the same solution, but these two are different in some certain computational aspects.
 1. Normal Equation method:
-	a. (-) O(n^3) can be very slow for large number of features.
-	b. (-) Involves matrix inversion and can be a problem when the matrix becomes singular.
-	c. (+) Not iterative, and thus does not require leraning rate and termination condition to be specified in advance. 
+* a. (-) O(n^3) can be very slow for large number of features.
+* b. (-) Involves matrix inversion and can be a problem when the matrix becomes singular.
+* c. (+) Not iterative, and thus does not require leraning rate and termination condition to be specified in advance. 
 2. Gradient Descent Optimization:
-	a. (-) It is an iterative method and requires to specify the termination condition advance.
-	b. (-) Requires the specification of the learning rate parameter.
-	c. (+) Easy to scale up for paralell computations, better for big data.
-	d. (-) Requires feature scaling.
-	e. (+) Easy to extend to other types of loss functions, i.e. this is a more general method, it works with non-convex loss functions as well.
+* a. (-) It is an iterative method and requires to specify the termination condition advance.
+* b. (-) Requires the specification of the learning rate parameter.
+* c. (+) Easy to scale up for paralell computations, better for big data.
+* d. (-) Requires feature scaling.
+* e. (+) Easy to extend to other types of loss functions, i.e. this is a more general method, it works with non-convex loss functions as well.
 
 
 #### Problems with linear regression in general:
