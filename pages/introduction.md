@@ -19,8 +19,8 @@ Machine learning is - generally speaking - about solving problem with computers 
 A computer programs is said to learn a function (i.e. calculate tens of thousands parameters of an algorithm) from experience E in order to perform task T as well as "possible" with respect to performance measure P.
 
 Related definitions:
-https://goo.gl/SIOXgM
-https://goo.gl/9BV1dT
+ [https://goo.gl/SIOXgM](https://goo.gl/SIOXgM)
+ [https://goo.gl/9BV1dT](https://goo.gl/9BV1dT)
 
 
 **<u>Features</u>** describe a real world entity such as a car, picture, bank account.
