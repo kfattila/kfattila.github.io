@@ -51,12 +51,12 @@ The second term is called the regularization term, or penalty term. Here \\(\lam
 
 \\[\widetilde{\Theta} = argmin_{\Theta}J(\Theta\mid D) = argmin_{\Theta}\\{\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \\} \\]
 
-Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta|D)\\). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
+Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta\mid D)\\). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
 
 This error function is convex w.r.t. \\(\Theta\\), see an example on Figure 3.
 
 
-
+![regression7.png](./images/regression7.png)
 
 **Figure 3.** The shape of the regularized error function \\(J\\) w.r.t. \\(D\\)  The first subplot corresponds to the error term, the second to the regularization term, and the last is the sum of the error and the regularization terms. Note that, the error function is different from the previous examples shown in Figures 4-5.
 
