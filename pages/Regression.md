@@ -61,11 +61,32 @@ This error function is convex w.r.t. \\(\Theta\\), see an example on Figure 3.
 **Figure 3.** The shape of the regularized error function \\(J\\) w.r.t. \\(D\\)  The first subplot corresponds to the error term, the second to the regularization term, and the last is the sum of the error and the regularization terms. Note that, the error function is different from the previous examples shown in Figures 4-5.
 
 
-##### Solving fitting problems
+#### Solving fitting problems
 
-###### Normal equations:
+##### Normal equations:
 Let's arrange our data \\(x\\)'s in a matrix from. First, add a constant value 1 to each data:
-\\[\\]
+\\( X = 
+\left[\begin{array}{cccc}
+1 & X_{1}  \\\
+1 & X_{2} \\\
+1 & X_{3}\\\
+. & . \\\
+1 & X_{m}
+\end{array}\right] = \left[\begin{array}{cccc}
+1 & X_{1,1} & X_{1,2} & ... & X_{1,n}  \\\
+1 & X_{2,1} & X_{2,2} & ... & X_{2,n}  \\\
+1 & X_{3,1} & X_{3,2} & ... & X_{3,n} \\\
+& & ... & & \\\
+1 & X_{m,1} & X_{m,2} & ... & X_{m,n}
+\end{array}\right]
+\\) and let \\( Y = 
+\left[\begin{array}{cccc}
+Y_{1}  \\\
+Y_{2} \\\
+Y_{3}\\\
+... \\\
+Y_{m}
+\end{array}\right] \\)
 
 Then we want the \\(\Theta\\), which minimizes the least squares error of the following normal equations:
 \\[(X^{T}X + \lambda I)\Theta = X^{T}Y \\]
@@ -73,13 +94,13 @@ We can rearrange the variables and give a closed form for \\(\Theta\\):
 \\[\Theta = (X^{T}X + \lambda I)^{-1}X^{T}Y \\]
 This solution involves matrix inversion which requires \\(O(n^{3})\\) time.
 
-###### Gradient descent algorithm.
+##### Gradient descent algorithm.
 This method iteratively approaches an optima of functions. In each cycle 
 it determines the tangent of the function in the current position in order to 
 determine the direction of the optima. 
 
 
-###### Algorithm 1.
+##### Algorithm 1.
 
 
 
