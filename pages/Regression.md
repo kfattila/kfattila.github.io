@@ -99,6 +99,7 @@ This method iteratively approaches an optima of functions. In each cycle
 it determines the tangent of the function in the current position in order to 
 determine the direction of the optima. 
 
+![regression8.png](./images/regression8.png)
 
 ##### Algorithm 1.
 
