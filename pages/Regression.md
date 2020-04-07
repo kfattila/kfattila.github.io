@@ -107,7 +107,7 @@ determine the direction of the optima.
     \begin{array}{ll}
     	\text{initialize } \theta_{j} \text{ with random values.} \\\
         \text{repeat until convergence \\{} \\\
-        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\theta_{j}J(\Theta\mid D) & \text{for all j ;} \\\
+        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) & \text{for all j ;} \\\
         \theta_{j} = \widetilde{\theta_{j}} & \text{for all j in all layers l;} \\\
         \text{\\}}
     \end{array}       
