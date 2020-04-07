@@ -19,8 +19,8 @@ Machine learning is - generally speaking - about solving problem with computers 
 A computer programs is said to learn a function (i.e. calculate tens of thousands parameters of an algorithm) from experience E in order to perform task T as well as "possible" with respect to performance measure P.
 
 Related definitions:
- [https://goo.gl/SIOXgM](https://goo.gl/SIOXgM)
- [https://goo.gl/9BV1dT](https://goo.gl/9BV1dT)
+* [https://goo.gl/SIOXgM](https://goo.gl/SIOXgM)
+* [https://goo.gl/9BV1dT](https://goo.gl/9BV1dT)
 
 
 **<u>Features</u>** describe a real world entity such as a car, picture, bank account.
@@ -30,15 +30,15 @@ Consider a banking system which predicts whether a person will be able to pay a 
 
 types of features can be:
 
- a) categorical: only '=' is defined, no ordering. 
-  a. A,B,C,
-  b. binary 'Y/N'
-  c. weather = {'sunny', 'rainy', 'windy'}
- b) ordinal:' =','<','>' are defined. 
-  a. 1,2,3,...
- c) real-valued,
- d) unstructured: text.
- e) Pixels (of pictures)
+1. categorical: only '=' is defined, no ordering. 
+  * a. A,B,C,
+  * b. binary 'Y/N'
+  * c. weather = {'sunny', 'rainy', 'windy'}
+2. ordinal:' =','<','>' are defined. 
+  * a. 1,2,3,...
+3. real-valued,
+4. unstructured: text.
+5. Pixels (of pictures)
 
 
 The feature extraction can be considered as a function which maps a real word entity to a digital data vector. This feature mapping can lose lot of information if it is not designed properly. Usually, feature extraction is done by domain experts. When the feature extraction is poor, then no method can save you.
