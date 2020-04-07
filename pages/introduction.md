@@ -80,11 +80,12 @@ When \\(C\\) is real valued we talk about regression problems.
 #### Examples for tasks:
 
 1. Classification: the goal is to find the appropriate label for a given query data.
- * a. Disease diagnosis: Hearth disease risk (3 features: x=weight, y=height, z=blood pressure) (toy data, only for illustration)
+ 
+ a. Disease diagnosis: Hearth disease risk (3 features: x=weight, y=height, z=blood pressure) (toy data, only for illustration)
 
 	![intro5](./images/intro5.png)
 
- * b. Face recognition
+  b. Face recognition
 
 2. Regression: Predict Car price from mileage.  (Real data, source is below)
 
