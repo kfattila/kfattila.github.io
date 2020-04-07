@@ -112,7 +112,7 @@ determine the direction of the optima.
         \text{\\}}
     \end{array}       
 \\]
-Note: update \\(\theta_{j}\\)' simultenously. 
+Note: update \\(\theta_{j}\\)' simultaneously. 
 
 The same as above, but in vector form:
 \\[ 
