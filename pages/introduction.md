@@ -28,16 +28,17 @@ Related definitions:
 Objects are represented as features, attributes, and real-life entities first undergo some sort of digitalization.
 Consider a banking system which predicts whether a person will be able to pay a bank loan back in the near future.  Clearly, no computational method accepts any person as "input". First, some characteristics are extracted from the person's payment history than his/her credibility can be predicted. Now, the feature extraction can be good or poor. It requires domain specific knowledge and expertise. Clearly, features to predict credibility cannot be used to predict if the person has cancer or diabetes.
 
-types of features can be: 
-	a) categorical: only '=' is defined, no ordering. 
-		a. A,B,C,
-		b. binary 'Y/N'
-		c. weather = {'sunny', 'rainy', 'windy'}
-	b) ordinal:' =','<','>' are defined. 
-		a. 1,2,3,...
-	c) real-valued,
-	d) unstructured: text.
-	e) Pixels (of pictures)
+types of features can be:
+
+ a) categorical: only '=' is defined, no ordering. 
+  a. A,B,C,
+  b. binary 'Y/N'
+  c. weather = {'sunny', 'rainy', 'windy'}
+ b) ordinal:' =','<','>' are defined. 
+  a. 1,2,3,...
+ c) real-valued,
+ d) unstructured: text.
+ e) Pixels (of pictures)
 
 
 The feature extraction can be considered as a function which maps a real word entity to a digital data vector. This feature mapping can lose lot of information if it is not designed properly. Usually, feature extraction is done by domain experts. When the feature extraction is poor, then no method can save you.
