@@ -175,9 +175,9 @@ Calculate the recall and precision for a random classifier (on a binary task) th
 
 **Exercise 3**: Given an pregnancy test system which predicts if a woman is pregnant with the following performance:
 
-p(positive | pregnant) = 0.9
+p(positive \\| pregnant) = 0.9
 
-p(negative | not pregnant) = 0.1
+p(negative \\| not pregnant) = 0.1
 
 What is the performance of this system, if there are 10 million young women tested and half of them are truly pregnant.
 
