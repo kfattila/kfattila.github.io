@@ -63,10 +63,11 @@ Examples for poor feature extraction:
 
 **Figure 3:** Examples for poor features in classification (top) and regression (bottom).
 
+
 #### Tasks
 
 Set of data given as \\(D = \\{(x_{i}, y_{i})\_{n=1}^{n}\mid x_{i} \in R^{n}, y_{i} \in C \\} \\), where \\(C\\) can be
-1. either categorical labels such as \\(C  = \\{0,1,2,...,k\\}\\) without ordering, \\(C = \\{+1, -1\\}, C = \\{'true', 'false'\\}\\) or \\(C = \\{\tikzcircle[green]{2pt}, \tikzcircle[red]{2pt}, \tikzcircle[blue]{2pt} \\}\\)
+1. either categorical labels such as \\(C  = \\{0,1,2,...,k\\}\\) without ordering, \\(C = \\{+1, -1\\}, C = \\{'true', 'false'\\}\\) or \\(C = \\{'green', 'red', 'blue', ..\\}\\)
 2. or real valued (i.e. \\(C = R\\))
 3. structure such as tree, sentence, sequence of symbols
 
