@@ -23,7 +23,7 @@ https://goo.gl/SIOXgM
 https://goo.gl/9BV1dT
 
 
-<u>**Features**</u> describe a real world entity such as a car, picture, bank account.
+**<u>Features</u>** describe a real world entity such as a car, picture, bank account.
 
 Objects are represented as features, attributes, and real-life entities first undergo some sort of digitalization.
 Consider a banking system which predicts whether a person will be able to pay a bank loan back in the near future.  Clearly, no computational method accepts any person as "input". First, some characteristics are extracted from the person's payment history than his/her credibility can be predicted. Now, the feature extraction can be good or poor. It requires domain specific knowledge and expertise. Clearly, features to predict credibility cannot be used to predict if the person has cancer or diabetes.
