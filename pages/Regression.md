@@ -15,6 +15,10 @@ description: ""
 
 \\[Y = f(X) = \theta_{0} + \sum_{j=1}^{n}(x_{j}\theta_{j})\\]
 
+![regression1.png](./images/regression1.png)
+![regression2.png](./images/regression2.png)
+![regression3.png](./images/regression3.png)
+
 where coefficients \\(\theta_{j}\\)'s called unknown parameters, or model parameters. These parameters are often arranged in a vector and we denote it as \\(\Theta = [\theta_{0},\theta_{1},\theta_{2},...,\theta_{n}]^{T}\\).
 Therefore, in this model, the regressand (\\(Y\\)) is a <u>linear combination</u> of the regressors (\\(x_{j}\\)).
 
@@ -33,7 +37,9 @@ Typically, having some data (experience) \\(D = \{(X_{i},Y_{i})|X_{i} \in R^{n},
 Many other performance measures could be defined easily for any problem specific tasks. However, the reason why this method has become so popular is perhaps that it makes the loss function \\(J\\) a convex function with respect to parameters \\(\Theta\\). (The reason is not that, this loss function is reasonable.) This provides several numerical advantages. Note that, in practice other loss function might be more reasonable, but can make the optimization more difficult. See Figure 2 below.
 
 
-
+![regression4.png](./images/regression4.png)
+![regression5.png](./images/regression5.png)
+![regression6.png](./images/regression6.png)
 
 
 **Figure 2.** The shape of the error function \\(J\\) w.r.t \\(D\\). Each plot shows exactly the same error function from different point of view, obtained from data shown in Figure 1. All three figures show the same function, but from different angle. \\(\theta_{0} = 0\\) was used.
