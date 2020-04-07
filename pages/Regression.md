@@ -137,7 +137,7 @@ The parameter \\(\mu\\) is the learning rate, it controls the size of the step i
 Some technical issues:
 1. When \\(\mu\\) is too small then the convergence becomes slow.
 2. If \\(\mu\\) is too large, then divergence.
-3. The magnitude of the update is proportional to the error term: \\((Y_{i} - \theta_{0} - \sum_{j}^{n}x_{\{x,j\}}\theta_{j})\\)
+3. The magnitude of the update is proportional to the error term: \\((Y_{i} - \theta_{0} - \sum_{j}^{n}x_{\\{x,j\\}}\theta_{j})\\)
 4. <u>Feature normalization</u>: the range of the feature values needs to be transformed to the same scale
 
 ![regression9.png](./images/regression9.png)
