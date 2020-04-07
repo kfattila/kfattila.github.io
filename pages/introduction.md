@@ -108,11 +108,11 @@ Source: [http://www.amstat.org/publications/jse/v16n3/kuiper.xls](http://www.ams
 15. Autonomous car driving
 16. Human activity recognition (that is to predict if the user is cooking, running, walking, travelling, etc.)
 17. Fact-checking
- Input: sentence. Output: “Claim” or “Not Claim”
- More ambitious/futuristic example:
- Input: Claim sentence. Output: “True” or “False”
- [Full Fact](https://fullfact.org/) is an organization building automatic fact-checking tools for the benefit of the public. Part of their pipeline is a classifier that reads news articles and detects claims (classifies text as either “claim” or “not claim”) which can later be fact-checked (by humans now, by with ML later, hopefully).
- Video: [Sentence embeddings for automated factchecking - Lev Konstantinovskiy.](https://www.youtube.com/watch?v=ddf0lgPCoSo)
+ * Input: sentence. Output: “Claim” or “Not Claim”
+ * More ambitious/futuristic example:
+ * Input: Claim sentence. Output: “True” or “False”
+ * [Full Fact](https://fullfact.org/) is an organization building automatic fact-checking tools for the benefit of the public. Part of their pipeline is a classifier that reads news articles and detects claims (classifies text as either “claim” or “not claim”) which can later be fact-checked (by humans now, by with ML later, hopefully).
+ * Video: [Sentence embeddings for automated factchecking - Lev Konstantinovskiy.](https://www.youtube.com/watch?v=ddf0lgPCoSo)
  From [http://jalammar.github.io/illustrated-bert/](http://jalammar.github.io/illustrated-bert/)
 
 #### Performance measures
