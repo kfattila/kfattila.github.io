@@ -135,7 +135,7 @@ Note 2: It can be naturally defined to \\(n\\) classes.
  
 Common performance measures for binary (two-class) classification:
 \\[Accuracy = \frac{TP + TN}{TP+FN+FP+TN}\\]
-\\[Precision = Positive  Predicitve  Value  (PPV) = \frac{TP}{TP+FP}\\]
+\\[Precision = Positive \, Predicitve \, Value \, (PPV) = \frac{TP}{TP+FP}\\]
 \\[Recall = Sensitivity = Hit  Rate = \frac{TP}{TP+FN}\\]
 \\[True  Negative  Rate = Specificity = \frac{TN}{TN+FP}\\]
 \\[Fscore=2\frac{Precision \dot Recall}{Precision + Recall} = \frac{2}{\frac{1}{Recall} + \frac{1}{Precision}} = \frac{2TP}{2TP + FN + FP}\\]
