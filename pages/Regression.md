@@ -6,7 +6,7 @@ description: ""
 {% include JB/setup %}
 
 
-**Regression:** Let \\(D = \\{ X_{i}, Y_{i}|X_{i} \in R^{n},y_{i} \in R \\} \\) be some data (experience). Aim: model the relationship between the *dependent variable* \\(Y_{i}\\) and *independent variables* \\(X_{i}^{T} = [x_{i,1}, x_{i,2}, ..., x_{i,n}]\\).
+**Regression:** Let \\(D = \\{X_{i}, Y_{i} \mid X_{i} \in R^{n}, y_{i} \in R \\} \\) be some data (experience). Aim: model the relationship between the *dependent variable* \\(Y_{i}\\) and *independent variables* \\(X_{i}^{T} = [x_{i,1}, x_{i,2}, ..., x_{i,n}]\\).
 
 \\(x_{i}\\) are also called:  regressors, exogenous variables, explanatory variables, covariates, input variables, predictor variables, or independent variables.
 
