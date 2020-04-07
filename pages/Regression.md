@@ -13,7 +13,7 @@ description: ""
 \\(Y_{i}\\) is also called: regressand, endogenous variable, response variable, measured variable, criterion variable, or dependent variable.
 <u>Linear regression:</u> linear relationship is assumed between \\(Y\\) and \\(X\\). Then the <u>linear regression model, or hypothesis</u> which represents the linear relationship between \\(X\\) and \\(Y\\) can be formulated as follows:
 
-\\[\Y = f(X) = \theta_{0} + \sum_{j=1}^{n}(x_{j}\theta_{j})\]
+\\[Y = f(X) = \theta_{0} + \sum_{j=1}^{n}(x_{j}\theta_{j})\]
 
 where coefficients \\(\theta_{j}\\)'s called unknown parameters, or model parameters. These parameters are often arranged in a vector and we denote it as \\(\Theta = [\theta_{0},\theta_{1},\theta_{2},...,\theta_{n}]^{T}\\).
 Therefore, in this model, the regressand (\\(Y\\)) is a <u>linear combination</u> of the regressors (\\(x_{j}\\)).
