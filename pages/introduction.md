@@ -136,13 +136,13 @@ Note 2: It can be naturally defined to \\(n\\) classes.
 Common performance measures for binary (two-class) classification:
 \\[Accuracy = \frac{TP + TN}{TP+FN+FP+TN}\\]
 \\[Precision = Positive \, Predicitve \, Value \, (PPV) = \frac{TP}{TP+FP}\\]
-\\[Recall = Sensitivity = Hit  Rate = \frac{TP}{TP+FN}\\]
-\\[True  Negative  Rate = Specificity = \frac{TN}{TN+FP}\\]
+\\[Recall = Sensitivity = Hit \, Rate = \frac{TP}{TP+FN}\\]
+\\[True \, Negative \, Rate = Specificity = \frac{TN}{TN+FP}\\]
 \\[Fscore=2\frac{Precision \dot Recall}{Precision + Recall} = \frac{2}{\frac{1}{Recall} + \frac{1}{Precision}} = \frac{2TP}{2TP + FN + FP}\\]
-\\[True  Positive  Rate = \frac{TP}{TP + FP}\\]
-\\[False  Positive  Rate = \frac{TP}{FP + TP}\\]
-\\[False  Negative  Rate = \frac{FN}{FN + TP} = 1 - True  Positive  Rate\\]
-\\[False  Discovery  Rate(FDR) = \frac{FP}{FP + TP}\\]
+\\[True \, Positive \, Rate = \frac{TP}{TP + FP}\\]
+\\[False \, Positive \, Rate = \frac{TP}{FP + TP}\\]
+\\[False \, Negative \, Rate = \frac{FN}{FN + TP} = 1 - True \, Positive \, Rate\\]
+\\[False \, Discovery \, Rate(FDR) = \frac{FP}{FP + TP}\\]
 
 For FDR: smaller is better. 
 
