@@ -103,7 +103,34 @@ determine the direction of the optima.
 
 ##### Algorithm 1.
 
+\\[ 
+    \begin{array}{ll}
+    	\text{initialize } \theta_{j} \text{ with random values.} \\\
+        \text{repeat until convergence \\{} \\\
+        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\theta_{j}J(\Theta\mid D) & \text{for all j ;} \\\
+        \theta_{j} = \widetilde{\theta_{j}} & \text{for all j in all layers l;} \\\
+        \text{\\}}
+    \end{array}       
+\\]
+Note: update \\(\theta_{j}\\)' simultenously. 
 
+The same as above, but in vector form:
+\\[ 
+    \begin{array}{ll}
+        \text{repeat until convergence \\{} \\\
+        \Theta^{(k+1)} = \Theta^{(k)} - \mu \nabla J(\Theta^{(k)}\mid D)
+        \text{\\}}
+    \end{array}       
+\\]
+
+Here:
+\\[
+	\begin{array}{ll}
+		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \\\
+		\frac{\partial}{\partial\theta_{0}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{0}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}) & \text{for j = 0} 
+    \end{array}       
+}
+\\]
 
 This update rule is called LMS (Least mean squares) update rule, or Widrow-Hoff learning rule.
 
