@@ -118,7 +118,7 @@ The same as above, but in vector form:
 \\[ 
     \begin{array}{ll}
         \text{repeat until convergence \\{} \\\
-        \Theta^{(k+1)} = \Theta^{(k)} - \mu \nabla J(\Theta^{(k)}\mid D)
+        \Theta^{(k+1)} = \Theta^{(k)} - \mu \nabla J(\Theta^{(k)}\mid D) \\\
         \text{\\}}
     \end{array}       
 \\]
