@@ -120,7 +120,7 @@ Source: [http://www.amstat.org/publications/jse/v16n3/kuiper.xls](http://www.ams
 Sometimes the performance is expressed in terms of error, i.e. how many/big errors the algorithm makes. 
 In practice each discipline has its own standard performance measures and often along with gold standard datasets.
 
-**For regression tasks** the most common error measure is the norm \\(\L_{2}\\) defined as \\(\L_{2}(y, \widetilde{y}) = (y - \widetilde{y})^{2}\\), where \\(y\\) is the 
+**For regression tasks** the most common error measure is the norm \\(L_{2}\\) defined as \\(L_{2}(y, \widetilde{y}) = (y - \widetilde{y})^{2}\\), where \\(y\\) is the 
 true value from the gold standard dataset and \\(\widetilde{y}\\) is the approximation of \\(y\\), approximated by the algorithm.
 
 **For classification tasks** it is measured by the proportion of the misclassified objects usually. The errors often organized in a form of table and this table is often called contingency table,  confusion matrix, or error matrix. For binary classification problems it is a defined as follows:
