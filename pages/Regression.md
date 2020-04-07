@@ -49,7 +49,7 @@ Many other performance measures could be defined easily for any problem specific
 
 The second term is called the regularization term, or penalty term. Here \\(\lambda\\) is a trade-off parameter that balances between the importance of regularization term and the fitting error. The larger the amount of \\(\lambda\\) the greater the importance of the regularization, and *vice versa*. The parameters shrink toward zero and and tush each other when \\(\lambda\\)  increases. Notice that \\(\theta_{0}\\) (the bias) is not included in the regularization term. The problem to find the \\(\widetilde{\Theta}\\), which minimizes the error can be formulated as follows:
 
-\\[\widetilda{\Theta} = argmin_{\Theta}J(\Theta|D) = argmin_{\Theta}\{\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \} \\]
+\\[\widetilde{\Theta} = argmin_{\Theta}J(\Theta\mid D) = argmin_{\Theta}\\{\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \\} \\]
 
 Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta|D)\\). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
 
