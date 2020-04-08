@@ -34,11 +34,14 @@ The encoder-decoder RNN for SMT is jointly trained to maximize the conditional l
 
 where \\(y_{n},x_{n}\\)  is sentence pair, \\(\theta\\) denotes model parameters.
 
-###### Attention models
+Note that, chat-bots can be built in this principle as well.
+
+
+### Attention models
 
 One of the potential problem with this model is that, the context vector might not be large enough to store all the relevant information from long sentences. One approach to overcome this issue is called attention. The general principle of the attention models is that different context vectors are generated for different output symbols.
 
-
+![seq2seq3](./images/seq2seq_3.png)
 
 Figure. Attention layer for seq-to-seq models.
 
