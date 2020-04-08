@@ -55,7 +55,9 @@ let \\(e_{tj} = a(s_{t-1}, h_{j})\\) be the similarity between the former hidden
 
 \\(a(s_{t-1}, h_{j}) = \nu^{T}\sigma(W[s_{t-1};h_{j}])\\) single layer neural network with parameters (\\(W\\) and \\(\nu\\)) are  part of the whole model and they are learned with back-propagation simultenously with all the other parameters.
 
-Now, the context vector \\(c_{t}\\) to generate the \\(s_{t}\\) state vector with the decoder RNN is: \\(c_{t} = \sum_{j=1}^{T_{x}}a_{tj}h_{j}\\) that it, it is the weighted sum of the state vectors of the encoder RNN.
+Now, the context vector \\(c_{t}\\) to generate the \\(s_{t}\\) state vector with the decoder RNN is: 
+
+\\(c_{t} = \sum_{j=1}^{T_{x}}a_{tj}h_{j}\\) that it, it is the weighted sum of the state vectors of the encoder RNN.
 
 The state vector is obtained with
 \\[s_{t} = f(s_{t-1}, y_{t-1}, c_{t}) = activation(W_{h}[s_{t-1};y_{t-1};c_{t}] + b_{h})\\]
@@ -65,5 +67,5 @@ And the output symbol can be obtained with
 
 
 References SNMT:
-[https://arxiv.org/pdf/1406.1078v3.pdf](https://arxiv.org/pdf/1406.1078v3.pdf)
-[https://arxiv.org/abs/1409.3215](https://arxiv.org/abs/1409.3215)
+1. [https://arxiv.org/pdf/1406.1078v3.pdf](https://arxiv.org/pdf/1406.1078v3.pdf)
+2. [https://arxiv.org/abs/1409.3215](https://arxiv.org/abs/1409.3215)
