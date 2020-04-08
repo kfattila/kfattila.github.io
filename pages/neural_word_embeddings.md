@@ -120,6 +120,47 @@ Note that, there is no activation function here either.
 Consider a target word with index \\(k\\). The input vector is V-dimensional, there is one non-zeros component at index \\(k\\). Therefore, the hidden activation is \\(h = x_{k}^{T}W = W_{k}\\) (of shape \\([1,N]\\)), that is: the first layer will just select the kth row from the first weight matrix \\(W\\). Now, we calculate the outputs at the last layer as follows:
 \\[u = hW'\\]
 
+#### Model dissection
+
+The distributed word representation of a target word with index \\(k\\) is formed from the weights on the *k*th row of the first weight matrix \\(W\\). It is given as \\(W_{k}\\).
+
+![neuralword9](./images/neuralword9.png)
+
+#### Semantics of the word representations
+
+The representations calculated with skip-gram and CBOW has an interesting characteristics. Sometimes, the word representations (the vectors) are more meaningful in terms of describing the relationships between the words. For instance, subtracting two related words might reveal meaningful concepts such as gender or verb tense. Sometimes, arithmetic of the vectors results in a meaningful representations as well e.g.
+King + Woman - Man = Queen
+Paris - France + China = Beijing
+
+Note that, the words "Queen" and "Beijing" were identified by the words whose embedding is the closest to the result vector.
+
+![neuralword10](./images/neuralword10.png)
+
+#### Parameterization
+
+For practical applications, the dimensionality of the word vectors is set to be between 100 and 1000. The context window is recommended to be set to 10 for skip-gram and 5 for CBOW according to the authors based on their experience.
+
+#### Optimization techniques 
+
+Let us revisit the cost function again:
+
+
+The problem with this in practice is that the \\(V\\) can be really large, couple of millions, and the training data pairs (target and context words) are often couple of billions. It can be time consuming to calculate the denominator for every training data. Two heuristics has emerged to cope with this problem: hierarchical softmax and negative sampling.
+
+#### Hierarchical softmax
+
+This approach uses a binary tree to encode all the words and calculates \\(p(context_{j}\mid target word k)\\) by going on a path from the root to a leaf node. Therefore, the calculation of \\(p\\) takes only \\(O(\log V)\\), instead of \\(O(V)\\) steps. As we will see, this approach produces correct probability distribution over the words without performing any normalization. This is not really a softmax anymore. First, a binary coding tree is built, something like the following. This can be done with Huffman coding trees, etc.
+
+![neuralword11](./images/neuralword11.png)
+
+Note that, in traditional Huffman coding the characters are encoded and characters obtain a binary code. Now, in our case, each word remains intact and each word will obtain a unique binary code. For instance, the word "much" is encoded by 11101, where the binary digits tell if you need to turn left or right in the tree to reach the appropriate leaf. Also note that, frequent words obtain shorter codes and hence shorter path, while rare words obtained longer code words and their corresponding leaves are located in a deeper levels. We will use the fact that, there are \\(V-1\\) inner nodes for a binary tree with \\(V\\).
+
+In the hierarchical softmax model for word embedding, there is a vector for every inner node. Let us denote these vectors by \\(v_{i}\\) which corresponds to the ith inner node. Let \\(L(w)\\) denote the length of the path from the root to the leaf of the word \\(w\\). For instance \\(L('much')=6\\) \\(L('wood' )=3\\).
+
+The probability of a word with the hierarchical softmax is given as:
+\\[p(w) = \prod\\]
+
+
 These examples (above) were taken from [3].
 
 #### References:

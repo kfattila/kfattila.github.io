@@ -5,20 +5,21 @@ description: ""
 ---
 {% include JB/setup %}
 
-###### Encoder-decoder RNNs, Sequence-to-sequence models, and Statistical Neural Machine Translation (SMT)
+### Encoder-decoder RNNs, Sequence-to-sequence models, and Statistical Neural Machine Translation (SMT)
 
 A particular RNN structure is the encoder-decoder RNN. The structure is depicted on the following figure:
 
+![seq2seq1](./images/seq2seq_1.png)
 
 Figure. Encoder-decoder RNN structure. Note that the model is not restricted to GRU units, it can be used with LSTM, or any other types of recurrent units.
 
 This model reads the whole input sequence and produces a hidden state vector (called encoder state, context vector) which summarizes all the information in the input sequence. Then, the decoder model takes the context vector containing this representation and extracts information from it, and possibly translates it in a human readable format. This structure is used in statistical neural machine translation systems (NMT or SMT), caption generation systems, machine reasoning systems. 
 
-The current statistical machine translation systems are based on LSTMs (or RNNs). The underlying idea is that the input is a sentence in language A (e.g. English) and the desired output is a sentence with the same meaning in language B (e.g. Russian). The input sequence is a series of word-vectors. One approach is the following. Let \\(x = x_{1}, ..., x_{T}\\) be a sentence in language \\(A\\), where all words \\(x_{i} \ in B^{n}\\) represented with distributed word vectors (Word2Vec), and the desired outputs is a sequence of words \\(y = y_{1}, ..., y_{T}\\), \\(y_{i} \ in B^{m}\\) on language \\(B\\). Note that \\(T\\) and \\(T′\\) can be different. The aim is to learn:
+The current statistical machine translation systems are based on LSTMs (or RNNs). The underlying idea is that the input is a sentence in language A (e.g. English) and the desired output is a sentence with the same meaning in language B (e.g. Russian). The input sequence is a series of word-vectors. One approach is the following. Let \\(x = x_{1}, ..., x_{T}\\) be a sentence in language \\(A\\), where all words \\(x_{i} \in B^{n}\\) represented with distributed word vectors (Word2Vec), and the desired outputs is a sequence of words \\(y = y_{1}, ..., y_{T}\\), \\(y_{i} \in B^{m}\\) on language \\(B\\). Note that \\(T\\) and \\(T′\\) can be different. The aim is to learn:
 \\[p(y_{1}, ..., y_{T'} | x_{1}, ..., x_{T})\\]
 
 The encoder is an RNN that reads each symbol of an input sequence \\(x\\) sequentially. As it reads
-each symbol, the hidden memory state of the RNN changes according \\(p_{t} = tanh(W[h_{t-1};x_{t}] + b_{1}\\). After reading the end of the sequence (marked by an end-of-sequence symbol), the hidden memory state of the RNN is a context vector \\(c = h_{T}\\) of the whole input sequence. Note that this context vector can be really-really large dimensional.
+each symbol, the hidden memory state of the RNN changes according \\(p_{t} = tanh(W[h_{t-1};x_{t}] + b_{1})\\). After reading the end of the sequence (marked by an end-of-sequence symbol), the hidden memory state of the RNN is a context vector \\(c = h_{T}\\) of the whole input sequence. Note that this context vector can be really-really large dimensional.
 
 The decoder of the proposed model is another RNN which is trained to generate the output sequence by predicting the next symbol \\(y_{t}\\) given the hidden state \\(h_{t}\\); however, both \\(y_{t}\\) and \\(h_{t}\\) are also conditioned on \\(y_{t-1}\\) and on the summary \\(c\\) of the input sequence. Hence, the hidden state of the decoder at time \\(t\\) is computed by,
 \\[h_{t} = a(W_{h}[h_{t-1};y_{t-1};c] + b_{h}\\]
