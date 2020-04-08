@@ -47,9 +47,12 @@ Figure. Attention layer for seq-to-seq models.
 
 
 The context vector is a weighted sum of the encoder hidden state vectors, in which the weights (\\(a_{t,i}\\)) reflect the similarity betweenthe previous decoder hidden state (\\(s_{t-1}\\)) and the hidden states of the encoder RNN. Formally:
-let \\(e_{tj} = a(s_{t-1}, h_{j})\\) be the similarity between the former hidden state vector of the decoder RNN and the hidden state vector \\(h_{j}\\) of the encoder RNN, and let \\(a_{tj} = \frac{exp(e_{tj})}{\sum_{k}exp e_{tk}}\\) be the soft-max normalization of \\(e{tj}\\)'s. The attention function \\(a(.,.)\\) calculates a similarity-like score between its input vectors. For instance, a can be defined as:
+let \\(e_{tj} = a(s_{t-1}, h_{j})\\) be the similarity between the former hidden state vector of the decoder RNN and the hidden state vector \\(h_{j}\\) of the encoder RNN, and let \\(a_{tj} = \frac{exp(e_{tj})}{\sum_{k}exp e_{tk}}\\) be the soft-max normalization of \\(e_{tj}\\)'s. The attention function \\(a(.,.)\\) calculates a similarity-like score between its input vectors. For instance, \\(a\\) can be defined as:
+
 \\(a(s_{t-1}, h_{j}) = s_{t-1}^{T}h_{j}\\) (dot product), or
+
 \\(a(s_{t-1}, h_{j}) = s_{t-1}^{T}Wh_{j}\\) (weighted dot product), or
+
 \\(a(s_{t-1}, h_{j}) = \nu^{T}\sigma(W[s_{t-1};h_{j}])\\) single layer neural network with parameters (\\(W\\) and \\(\nu\\)) are  part of the whole model and they are learned with back-propagation simultenously with all the other parameters.
 
 Now, the context vector \\(c_{t}\\) to generate the \\(s_{t}\\) state vector with the decoder RNN is: \\(c_{t} = \sum_{j=1}^{T_{x}}a_{tj}h_{j}\\) that it, it is the weighted sum of the state vectors of the encoder RNN.
