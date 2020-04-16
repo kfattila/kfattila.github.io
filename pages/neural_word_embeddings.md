@@ -126,6 +126,13 @@ Note that, there is no activation function here either.
 
 Consider a target word with index \\(k\\). The input vector is V-dimensional, there is one non-zeros component at index \\(k\\). Therefore, the hidden activation is \\(h = x_{k}^{T}W = W_{k}\\) (of shape \\([1,N]\\)), that is: the first layer will just select the kth row from the first weight matrix \\(W\\). Now, we calculate the outputs at the last layer as follows:
 \\[u = hW'\\]
+The probability of a word with index \\(j\\) of being in the context of the target word with index \\(k\\) is given by:
+
+#### Learning objective
+
+For a given target word \\(k\\) and for \\(J\\) different context words, the learning objective is given as:
+\\[W,W' \lefttarrow argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word k) = \log(\prod_{j=1}^{J}\frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{j})})\\]
+
 
 #### Model dissection
 
