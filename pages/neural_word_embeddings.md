@@ -143,9 +143,10 @@ The distributed word representation of a target word with index \\(k\\) is forme
 
 #### Semantics of the word representations
 
-The representations calculated with skip-gram and CBOW has an interesting characteristics. Sometimes, the word representations (the vectors) are more meaningful in terms of describing the relationships between the words. For instance, subtracting two related words might reveal meaningful concepts such as gender or verb tense. Sometimes, arithmetic of the vectors results in a meaningful representations as well e.g.
-King + Woman - Man = Queen
-Paris - France + China = Beijing
+The representations calculated with skip-gram and CBOW has an interesting characteristics. <u>Sometimes</u>, the word representations (the vectors) are more meaningful in terms of describing the relationships between the words. For instance, subtracting two related words might reveal meaningful concepts such as gender or verb tense. Sometimes, arithmetic of the vectors results in a meaningful representations as well e.g.
+
+* King + Woman - Man = Queen
+* Paris - France + China = Beijing
 
 Note that, the words "Queen" and "Beijing" were identified by the words whose embedding is the closest to the result vector.
 
