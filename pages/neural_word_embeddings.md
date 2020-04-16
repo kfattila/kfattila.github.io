@@ -41,6 +41,7 @@ The main idea of this method is to predict the probability of a word given a con
 "Hey this is sample corpus using only one context word." 
 
 First, the words are represented via one-hot-encoding embedding. The number of the tokens is: V=10
+
 One-hot-Encoding for every word:
 
 ![neuralword2](./images/neuralword2.png)
@@ -56,7 +57,7 @@ If larger context (context=2)were used, then the data would have look like this:
 Etc.
 
 The goal of CBOW is to predict the probability of the target word from the context words. That is, we want to calculate:
-\\[p(target word \mid context_{1}, context_{2}, ..., context_{K}) \\]
+\\[p(target\ word \mid context_{1}, context_{2}, ..., context_{K}) \\]
 This is achieved with a three-layer neural network (shown for one context):
 
 ![neuralword5](./images/neuralword5.png)
@@ -65,11 +66,17 @@ This is achieved with a three-layer neural network (shown for one context):
 
 
 In real-world applications, the number of the hidden units is around 300 (N=300).
+
 The input and the output layer, both are one-hot encoded of size [1×V].
+
 There is no activation function at the hidden layer.
+
 There is a soft-max normalization at the output layer.
+
 The error between the true output and the observed output is back-propagated.
+
 The word representation (embedding) of the target word is taken from the weights between the hidden and the output layer.
+
 
 When more than one context words are given, then the model is defined as:
 
@@ -83,11 +90,11 @@ The inputs are a one-hot-encoding of the context words: \\(x_{1},x_{2},...,x_{K}
 
 The output vector is then calculated as \\(u = W'h\\). Remember, the shape of the output vector \\(u\\) is of \\([1,V]\\).
 The output is put through a soft-max layer to convert the output vector to a discrete probability distribution. The probability of the *j*th word is given by:
-\\[y_{j} = p(target word with index j \mod x_{1},x_{2},...,x_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
+\\[y_{j} = p(target\ word\ with\ index\ j \mod x_{1},x_{2},...,x_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
 
 **The learning objective** of CBOW is defined by a soft-max function.
 
-\\[W,W' \leftarrow arxmax_{\Theta}\\{p(target word j \mid context_{1}, context_{2}, ..., context_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})} \\}\\]
+\\[W,W' \leftarrow arxmax_{\Theta}\\{p(target\ word j \mid context_{1}, context_{2}, ..., context_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})} \\}\\]
 
 #### Model dissection
 
@@ -98,7 +105,7 @@ Note that the context words and the target words are one-hot encoded. So, there 
 The word representation of the target word (with index \\(j\\)) is composed from the weights of the *j*th column of \\(W'\\) matrix, and it is denoted as \\(W'\_{j}\\). Note that the word representation is of shape \\([N,1]\\).
 
 For a context word with index \\(k\\) we have \\(h = W_{k}\\), where \\(W_{k}\\) is the *k*th row from weight matrix \\(W\\). The probability of the target word with index \\(j\\) with respect to one context word with index \\(k\\):
-\\[p(jth target word \mod x_{k}) = \frac{\exp(W_{j}'^{T}h)}{\sum_{i=1}^{V}\exp(W_{i}'^{T}h} = frac{\exp(W_{j}'^{T}W_{k}}{\sum_{i=1}^{V}\exp(W_{i}'^{T}W_{k}}\\]
+\\[p(jth\ target\ word\ \mod x_{k}) = \frac{\exp(W_{j}'^{T}h)}{\sum_{i=1}^{V}\exp(W_{i}'^{T}h} = \frac{\exp(W_{j}'^{T}W_{k}}{\sum_{i=1}^{V}\exp(W_{i}'^{T}W_{k}}\\]
 
 For K different context words the hidden activation is given: \\(h = \sum_{k=1}^{K}W_{k}\\).
 The probability of the target word with index j with respect to K different context words:
