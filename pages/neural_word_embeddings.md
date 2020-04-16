@@ -137,7 +137,7 @@ For a given target word \\(k\\) and for \\(J\\) different context words, the lea
 
 #### Model dissection
 
-The distributed word representation of a target word with index \\(k\\) is formed from the weights on the *k*th row of the first weight matrix \\(W\\). It is given as \\(W_{k}\\).
+The distributed word representation of a target word with index \\(k\\) is formed from the weights on the \\(k\\)th row of the first weight matrix \\(W\\). It is given as \\(W_{k}\\).
 
 ![neuralword9](./images/neuralword9.png)
 
