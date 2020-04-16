@@ -177,7 +177,7 @@ In the hierarchical softmax model for word embedding, there is a vector for ever
 The probability of a word with the hierarchical softmax is given as:
 \\[p(w) = \prod_{j=1}^{L(w)-1}\sigma((-1)^{c_{j}}v_{w_{j}}^{T}h)\\]
 
-where \\(c\\) denotes the code word of word \\(w\\) and \\(c_{j}\\) denotes a binary digit in the code word at position \\(j\\). For the word \\(w = 'much'\\) the code word is \\(c = 11101\\) and \\(c_{1} = c_{2} = c_{3} = c_{5}\\) and \\(c_{4} = 0\\). The vector \\(v_{w_{j}}\\) denotes the vector of the inner nodes on the corresponding of the word \\(w\\). For instance, the probability of the word 'much' is calculated:
+where \\(c\\) denotes the code word of word \\(w\\) and \\(c_{j}\\) denotes a binary digit in the code word at position \\(j\\). For the word \\(w = 'much'\\) the code word is \\(c = 11101\\) and \\(c_{1} = c_{2} = c_{3} = c_{5} = 1\\) and \\(c_{4} = 0\\). The vector \\(v_{w_{j}}\\) denotes the vector of the inner nodes on the corresponding of the word \\(w\\). For instance, the probability of the word 'much' is calculated:
 \\[p(much) = \sigma (-v_{1}^{T}h) \sigma (-v_{3}^{T}h) \sigma (-v_{4}^{T}h) \sigma (-v_{6}^{T}h) \sigma (-v_{8}^{T}h)\\]
 
 Note that: \\(\sigma (-\alpha) = 1 - \sigma (-\alpha) \\)
