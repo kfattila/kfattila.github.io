@@ -85,4 +85,10 @@ If it does not match, then it outputs a small score.
 
 ![cnn9](./images/cnn9.png)
 
-It is important to note that the weights of a kernel does not change during scanning. Thus the number of the parameters is much less than in the case of a fully connected neural network. If an input image is of size \\(k \times l\\)
+It is important to note that the weights of a kernel does not change during scanning. Thus the number of the parameters is much less than in the case of a fully connected neural network. If an input image is of size \\(k \times l\\) (e.g. 3000x2000) and a kernel of size \\(m \times n\\) (e.g. 5x5), then there are the \\((k - m) \times (l - n)\\) output units (2995x1995=5975025), but the total number of parameters is only \\(m \times n\\) (25). However, for a fully connected nerual network it would be \\(k \times k \times (k - m) \times (l - n) \approx k^{2}l^{2}\\) (in this example it would be 3.585015e+13).
+
+
+
+
+#### References:
+* Module 2 in [http://cs231n.github.io](http://cs231n.github.io)
