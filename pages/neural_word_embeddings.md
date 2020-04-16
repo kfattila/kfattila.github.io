@@ -65,17 +65,12 @@ This is achieved with a three-layer neural network (shown for one context):
 **Figure 1.** The three-layer neural network used in the CBOW model. Input is one context word and the output is the target word. Context and target words are represented with one-hot-encoding.
 
 
-In real-world applications, the number of the hidden units is around 300 (N=300).
-
-The input and the output layer, both are one-hot encoded of size [1×V].
-
-There is no activation function at the hidden layer.
-
-There is a soft-max normalization at the output layer.
-
-The error between the true output and the observed output is back-propagated.
-
-The word representation (embedding) of the target word is taken from the weights between the hidden and the output layer.
+* In real-world applications, the number of the hidden units is around 300 (N=300).
+* The input and the output layer, both are one-hot encoded of size [1×V].
+* There is no activation function at the hidden layer.
+* There is a soft-max normalization at the output layer.
+* The error between the true output and the observed output is back-propagated.
+* The word representation (embedding) of the target word is taken from the weights between the hidden and the output layer.
 
 
 When more than one context words are given, then the model is defined as:
