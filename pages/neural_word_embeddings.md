@@ -197,7 +197,7 @@ for a target word with index \\(i\\). The negative samples are drawn according t
 
 That is, the learning objective for the skip gram model is given as:
 
-\\[W, W' \arrowleft  argmax_{\Theta}\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})) \\]
+\\[W, W' \leftarrow argmax_{\Theta}\Bigg\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}\Bigg\(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})\Bigg\) \Bigg\\} \\]
 
 A really good article which explains the word2vec methods in details is given in [4].
 
