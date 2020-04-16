@@ -184,7 +184,7 @@ The important point here is that, the probability of a word \\(p(word)\\) is app
 
 Finally, the learning objective of the skip gram model is given as:
 
-\\[W,V \leftarrow argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word\ k) = \sum_{j=1}^{J}p(context_{j})\\}\\]
+\\[W,V \leftarrow argmax_{\Theta}\Bigg\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word\ k) = \sum_{j=1}^{J}p(context_{j})\Bigg\\}\\]
 
 where the word probabilities are calculated with using the binary tree. Note that the optimization optimizes the vectors of the inner nodes and all of these vectors are arranged in a matrix \\(V\\).
 
