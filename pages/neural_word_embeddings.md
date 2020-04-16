@@ -192,12 +192,12 @@ where the word probabilities are calculated with using the binary tree. Note tha
 
 The idea of negative sampling is straightforward. Simply, instead of considering \\(u_{i}\\) of all words \\(word_{i} \in vocabulary\\), we just sample few words from it. Certainly, the target word should be kept in the sample. Now, instead of using softmax as training objective, we can simply use the cross entropy function. The learning objective with negative sampling is given as:
 
-\\[J = - \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})\\]
+\\[J = - \log(u_{j}) - \sum_{u \in negative\ samples, j \neq i} 1 - \log(u_{i})\\]
 for a target word with index \\(i\\). The negative samples are drawn according to some noise distribution.
 
 That is, the learning objective for the skip gram model is given as:
 
-\\[W, W' \leftarrow argmax_{\Theta}\Bigg\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}\Bigg\(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})\Bigg\) \Bigg\\} \\]
+\\[W, W' \leftarrow argmax_{\Theta}\Bigg\\{p(c_{1}, c_{2}, ..., c_{J} \mid target\ word\ k) = \sum_{j=1}^{J}\Bigg\(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})\Bigg\) \Bigg\\} \\]
 
 A really good article which explains the word2vec methods in details is given in [4].
 
