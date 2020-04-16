@@ -131,7 +131,7 @@ The probability of a word with index \\(j\\) of being in the context of the targ
 #### Learning objective
 
 For a given target word \\(k\\) and for \\(J\\) different context words, the learning objective is given as:
-\\[W,W' \arrowleft argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word k) = \log(\prod_{j=1}^{J}\frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{j})})\\]
+\\[W,W' \arrowleft argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word k) = \log(\prod_{j=1}^{J}\frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{j})})\\}\\]
 
 
 #### Model dissection
