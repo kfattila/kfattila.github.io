@@ -158,7 +158,74 @@ Note that, in traditional Huffman coding the characters are encoded and characte
 In the hierarchical softmax model for word embedding, there is a vector for every inner node. Let us denote these vectors by \\(v_{i}\\) which corresponds to the ith inner node. Let \\(L(w)\\) denote the length of the path from the root to the leaf of the word \\(w\\). For instance \\(L('much')=6\\) \\(L('wood' )=3\\).
 
 The probability of a word with the hierarchical softmax is given as:
-\\[p(w) = \prod\\]
+\\[p(w) = \prod_{j=1}^{L(w)-1}\sigma((-1)^{c_{j}}v_{w_{j}}^{T}h)\\]
+
+where \\(c\\) denotes the code word of word \\(w\\) and \\(c_{j}\\) denotes a binary digit in the code word at position \\(j\\). For the word \\(w = 'much'\\) the code word is \\(c = 11101\\) and \\(c_{1} = c_{2} = c_{3} = c_{5}\\) and \\(c_{4} = 0\\). The vector \\(v_{w_{j}}\\) denotes the vector of the inner nodes on the corresponding of the word \\(w\\). For instance, the probability of the word 'much' is calculated:
+\\[p(much) = \sigma (-v_{1}^{T}h) \sigma (-v_{3}^{T}h) \sigma (-v_{4}^{T}h) \sigma (-v_{6}^{T}h) \sigma (-v_{8}^{T}h)\\]
+
+Note that: \\(\sigma (-\alpha) = 1 - \sigma (-\alpha) \\)
+
+It can be shown that \\(\sum_{word \in vocabulary} p(word) = 1\\)
+
+The important point here is that, the probability of a word \\(p(word)\\) is appropriately normalized, that is the probability of all words sum up to 1, the calculation requires only \\(O(log(V))\\) factors. For instance, for the word='much' one needs to calculate only 5 sigmoidal factors.
+
+Finally, the learning objective of the skip gram model is given as:
+
+\\[W,V \lefttarrow argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target word k) = \sum_{j=1}^{J}p(context_{j})\\}\\]
+
+where the word probabilities are calculated with using the binary tree. Note that the optimization optimizes the vectors of the inner nodes and all of these vectors are arranged in a matrix \\(V\\).
+
+#### Negative sampling
+
+The idea of negative sampling is straightforward. Simply, instead of considering \\(u_{i}\\) of all words \\(word_{i} \in vocabulary\\), we just sample few words from it. Certainly, the target word should be kept in the sample. Now, instead of using softmax as training objective, we can simply use the cross entropy function. The learning objective with negative sampling is given as:
+
+\\[J = - \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})\\]
+for a target word with index \\(i\\). The negative samples are drawn according to some noise distribution.
+
+That is, the learning objective for the skip gram model is given as:
+
+\\[W, W' \lefttarrow  argmax_{\Theta}\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})) \\]
+
+A really good article which explains the word2vec methods in details is given in [4].
+
+#### Word2Vec on other data items
+
+In the previous sections, we gave a method to calculate distributed representations for words. We note that, we did not really exploit anything from the words itself, we only used one-hot-encoding and the relative positions of the words in the given sentences. This suggests that, if we can exploit some information about the relationships of the data instances then we can get distributed representations for any kind of data such as music songs (Spotify), apartments (Airbnb), product recommendation (Amazon, Yahoo), matching advertisements to search queries (Yahoo) using word2vec method.
+
+#### Music embedding for music recommendations
+
+The assumption is that users tend to listen to similar tracks in sequence. Each song is like a single word in a text dataset, and songs belonging to the same playlist should have similar vector representation. 
+
+![neuralword12](./images/neuralword12.png)
+
+One use of this is the create a kind of music taste vector for a user by averaging the vectors of the songs that the user likes to listen to. This taste vector can then be used in similarity search to retrieve songs similar vector to the taste vector.
+See: [https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484](https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484)
+
+#### Listing recommendation at Airbnb
+
+Apartment listings can be represented with a real-valued vector as well. Here, the assumption is that a user is likely to investigate a number of listings which fit her preferences and are comparable in features like amenities and design taste. The user activity data is formed from the click data. Airbnb is able to learn a vector representation of their listings using word2vec approach. An important note is that Airbnb used to train their embedding with negative samples, but they found that the negative samples are to be drawn from the same city.
+Another problem relates to the cold start problem, i.e. how to generate a new vector for new apartment listings. Airbnb data engineers simply averaged the vectors of the three geographically closest listings to create a new vector.
+
+![neuralword13](./images/neuralword13.png)
+
+#### Product recommendations in Yahoo Mail
+
+Mail providers can extract information based on your only shopping history, see below:
+
+![neuralword14](./images/neuralword14.png)
+
+Here, the assumption is that users purchases related items in a sequence. For instance, perhaps they are purchasing a number of items around the same time because they go together (like a camera and a lens), or because they are all part of a project they are working on, or because they are preparing for a trip they are taking. A user’s sequence of purchases may also reflect shopper taste–shoppers who like item A also tend to like item B and are interested in buying both. Yahoo augmented the word2vec approach with a few notable innovations. The most interesting was that their use of clustering to promote diversity in their recommendations. After learning vectors for all the products in their database, they clustered these vectors into groups. When making recommendations for a user based on a product the user just purchased, they don’t recommend products from within the same cluster. Instead, they identify which other clusters users most often purchase from after purchasing from the current cluster, and they recommend products from those other clusters instead.
+
+![neuralword15](./images/neuralword15.png)
+
+**Figure.**  After purchasing a product from the Nerf cluster, customers are most likely to purchase a product from either the Xbox, Pokemon, or LEGO clusters. (Note that the paper doesn’t provide example cluster contents, so the ones above are entirely fabricated).
+
+
+#### Matching Ads to Search Queries
+
+The goal is to learn vector representations for search queries and for advertisements in the same “embedding space”, so that a given search query can be matched against available advertisements in order to find the most relevant ads to show the user. The training data consists of user “search sessions” which consist of search queries entered, advertisements clicked, and search result links clicked. The sequence of these user actions is treated like the words in a sentence, and vectors are learned for each of them based on their context–the actions that tend to occur around them. If users often click a particular ad after entering a particular query, then we’ll learn similar vectors for the ad and the query. All three types of actions (searches entered, ads clicked, links clicked) are part of a single “vocabulary” for the model, such that the model doesn’t really distinguish these from one another.
+
+![neuralword16](./images/neuralword16.png)
 
 
 These examples (above) were taken from [3].
