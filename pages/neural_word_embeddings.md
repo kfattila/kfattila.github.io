@@ -85,7 +85,7 @@ The inputs are a one-hot-encoding of the context words: \\(x_{1},x_{2},...,x_{K}
 
 The output vector is then calculated as \\(u = W'h\\). Remember, the shape of the output vector \\(u\\) is of \\([1,V]\\).
 The output is put through a soft-max layer to convert the output vector to a discrete probability distribution. The probability of the *j*th word is given by:
-\\[y_{j} = p(target\ word\ with\ index\ j \mod x_{1},x_{2},...,x_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
+\\[y_{j} = p(target\ word\ with\ index\ j \mid x_{1},x_{2},...,x_{K}) = \frac{exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
 
 **The learning objective** of CBOW is defined by a soft-max function.
 
