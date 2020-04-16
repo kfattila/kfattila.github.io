@@ -160,6 +160,7 @@ For practical applications, the dimensionality of the word vectors is set to be 
 
 Let us revisit the cost function again:
 
+\\[p(context_{j} \mid target\ word\ k) = \frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
 
 The problem with this in practice is that the \\(V\\) can be really large, couple of millions, and the training data pairs (target and context words) are often couple of billions. It can be time consuming to calculate the denominator for every training data. Two heuristics has emerged to cope with this problem: hierarchical softmax and negative sampling.
 
