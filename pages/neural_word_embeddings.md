@@ -131,7 +131,7 @@ The probability of a word with index \\(j\\) of being in the context of the targ
 #### Learning objective
 
 For a given target word \\(k\\) and for \\(J\\) different context words, the learning objective is given as:
-\\[W,W' \lefttarrow argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word k) = \log(\prod_{j=1}^{J}\frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{j})})\\]
+\\[W,W' \arrowleft argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target\ word k) = \log(\prod_{j=1}^{J}\frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{j})})\\]
 
 
 #### Model dissection
@@ -185,7 +185,7 @@ The important point here is that, the probability of a word \\(p(word)\\) is app
 
 Finally, the learning objective of the skip gram model is given as:
 
-\\[W,V \lefttarrow argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target word k) = \sum_{j=1}^{J}p(context_{j})\\}\\]
+\\[W,V \arrowleft argmax_{\Theta}\\{p(context_{1}, context_{2}, ..., context_{J} \mid target word k) = \sum_{j=1}^{J}p(context_{j})\\}\\]
 
 where the word probabilities are calculated with using the binary tree. Note that the optimization optimizes the vectors of the inner nodes and all of these vectors are arranged in a matrix \\(V\\).
 
@@ -198,7 +198,7 @@ for a target word with index \\(i\\). The negative samples are drawn according t
 
 That is, the learning objective for the skip gram model is given as:
 
-\\[W, W' \lefttarrow  argmax_{\Theta}\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})) \\]
+\\[W, W' \arrowleft  argmax_{\Theta}\\{p(c_{1}, c_{2}, ..., c_{J} \mid target word k) = \sum_{j=1}^{J}(- \log(u_{j}) - \sum_{u \in negative samples, j \neq i} 1 - \log(u_{i})) \\]
 
 A really good article which explains the word2vec methods in details is given in [4].
 
