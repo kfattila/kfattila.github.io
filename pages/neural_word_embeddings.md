@@ -166,7 +166,7 @@ The problem with this in practice is that the \\(V\\) can be really large, coupl
 
 #### Hierarchical softmax
 
-This approach uses a binary tree to encode all the words and calculates \\(p(context_{j}\mid target word k)\\) by going on a path from the root to a leaf node. Therefore, the calculation of \\(p\\) takes only \\(O(\log V)\\), instead of \\(O(V)\\) steps. As we will see, this approach produces correct probability distribution over the words without performing any normalization. This is not really a softmax anymore. First, a binary coding tree is built, something like the following. This can be done with Huffman coding trees, etc.
+This approach uses a binary tree to encode all the words and calculates \\(p(context_{j}\mid target\ word\ k)\\) by going on a path from the root to a leaf node. Therefore, the calculation of \\(p\\) takes only \\(O(\log V)\\), instead of \\(O(V)\\) steps. As we will see, this approach produces correct probability distribution over the words without performing any normalization. This is not really a softmax anymore. First, a binary coding tree is built, something like the following. This can be done with Huffman coding trees, etc.
 
 ![neuralword11](./images/neuralword11.png)
 
