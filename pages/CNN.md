@@ -85,10 +85,34 @@ If it does not match, then it outputs a small score.
 
 ![cnn9](./images/cnn9.png)
 
-It is important to note that the weights of a kernel does not change during scanning. Thus the number of the parameters is much less than in the case of a fully connected neural network. If an input image is of size \\(k \times l\\) (e.g. 3000x2000) and a kernel of size \\(m \times n\\) (e.g. 5x5), then there are the \\((k - m) \times (l - n)\\) output units (2995x1995=5975025), but the total number of parameters is only \\(m \times n\\) (25). However, for a fully connected nerual network it would be \\(k \times k \times (k - m) \times (l - n) \approx k^{2}l^{2}\\) (in this example it would be 3.585015e+13).
+It is important to note that the weights of a kernel does not change during scanning. Thus the number of the parameters is much less than in the case of a fully connected neural network. If an input image is of size \\(k \times l\\) (e.g. 3000x2000) and a kernel of size \\(m \times n\\) (e.g. 5x5), then there are the \\((k - m) \times (l - n)\\) output units (2995x1995=5975025), but the total number of parameters is only \\(m \times n\\) (25). However, for a fully connected nerual network it would be \\(k \times l \times (k - m) \times (l - n) \approx k^{2}l^{2}\\) (in this example it would be 3.585015e+13).
+
+Every output obtained by a kernel at a given position can be considered as a hidden unit with linear activation function (usually), but 
+1. these units share exactly the same parameters, and
+2. they are not fully connected between all units. 
+
+![cnn10](./images/cnn10.png)
+
+![cnn11](./images/cnn11.png)
+
+A layer in a multi-layer neural network which contains such convolution is called convolutional layer. A neural network containing at least one convolutional layer is called convolutional neural network (CNN).
+
+So, on one hand, convolutional layers provides sparsity as they greatly can reduce the number of the parameters. 
+
+Now, the interesting part is that the weights of a kernel can be learned (calculated) by simply using the backpropagation algorithm. Typically, these filters learn some very basic features that can detect edges, specific colors of edges, or some color patches when applied to natural images. Typically they look like something this:
+
+![cnn12](./images/cnn12.png)
+
+(source: [http://cs231n.github.io](http://cs231n.github.io))
 
 
+#### Convolutional Neural Networks (CNNs)
 
+Now we discuss how CNNs are used with natural images and we will discuss some  case studies.
+
+The input images are usually color images. Thus, they have three channels, one for red, green, and blue, respectively.
+
+![cnn13](./images/cnn13.png)
 
 #### References:
 * Module 2 in [http://cs231n.github.io](http://cs231n.github.io)
