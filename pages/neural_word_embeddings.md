@@ -105,7 +105,7 @@ For a context word with index \\(k\\) we have \\(h = W_{k}\\), where \\(W_{k}\\)
 
 For \\(K\\) different context words the hidden activation is given: \\(h = \sum_{k=1}^{K}W_{k}\\).
 The probability of the target word with index \\(j\\) with respect to \\(K\\) different context words:
-\\[p(jth\ target\ word \mid x_{1},x_{2},...,x_{k}) = \frac{\exp(W_{j}'^{T}h)}{\sum_{i=1}^{V}\exp(W_{i}'^{T}h} = \frac{\exp(W_{j}'^{T}(\sum_{k=1}^{K}W_{k}))}{\sum_{i=1}^{V}\exp(W_{i}'^{T}(\sum_{k=1}^{K}W_{k}))} \\]
+\\[p(jth\ target\ word \mid x_{1},x_{2},...,x_{k}) = \frac{\exp(W_{j}'^{T}h)}{\sum_{i=1}^{V}\exp(W_{i}'^{T}h)} = \frac{\exp(W_{j}'^{T}(\sum_{k=1}^{K}W_{k}))}{\sum_{i=1}^{V}\exp(W_{i}'^{T}(\sum_{k=1}^{K}W_{k}))} \\]
 Advantage: This model is of low-memory cost. 
 
 #### Skip-gram model
