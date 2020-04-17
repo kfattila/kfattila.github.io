@@ -20,12 +20,14 @@ The problem is that, due to the translation invariance it also could recognize t
 In other words, the problem is that CNN does not learn and it cannot extract information about the relative positions of the extracted features, and they do not take into account important spatial hierarchies between simple and complex objects.
 Hinton argues that translational invariance is not an advantage, instead we should chase translational equivariance. 
 
-• Equivariant to translation means that a translation of input features results in an equivalent translation of outputs. So if your pattern [0,3,2,0,0] on the input results in [0,1,0,0] in the output, then the pattern [0,0,3,2,0] might lead to [0,0,1,0]
-• Invariant to translation means that a translation of input features doe not change the outputs at all. So, if your pattern [0,3,2,0,0] on the input results in [0,1,0] in the output, then the pattern [0,0,3,2,0] would also lead to [0,1,0]
+* Equivariant to translation means that a translation of input features results in an equivalent translation of outputs. So if your pattern [0,3,2,0,0] on the input results in [0,1,0,0] in the output, then the pattern [0,0,3,2,0] might lead to [0,0,1,0]
+* Invariant to translation means that a translation of input features doe not change the outputs at all. So, if your pattern [0,3,2,0,0] on the input results in [0,1,0] in the output, then the pattern [0,0,3,2,0] would also lead to [0,1,0]
 
 To solve this problem, the capsule units have been introduced in October, 2017. In short, a capsule is similar to a neural unit, but it is different in the following aspects:
 1. Capsules takes vectors from other units contrary to neural networks which send scalars.
+	
 	a. Therefore, the length of the vector represents the probability of the entity represented by a capsule.
+	
 	b. The direction of the vector encode some internal state of the detected objects. Therefore it can be considered as a feature representation of the entity of the object represented by a capsule. These features can be for instance, scale, thickness, skewness.
 2. Capsules also try to predict the output of the next layer!
 
