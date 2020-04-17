@@ -169,7 +169,7 @@ Some animation of how different convolutional layers work:
 
 A typical ConvNet architecture, it uses several convolutional and pooling layers for filtering. Typically, there is one (or more) fully connected (FC) layer at the top to make prediction.
 
-![cnn20](./images/cnn20.png)
+![cnn20](./images/cnn20.jpeg)
 
 #### Le-Net5
 
