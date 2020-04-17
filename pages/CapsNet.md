@@ -45,7 +45,7 @@ The "hut" vectors are weighted by scalars \\(c_{i}S\\) and they summed up result
 \\[s_{j} = \sum_{i}c_{ij}\hat{u}\_{ij}\\]
 
 The next step is the squash which is a kind of non-linear activation function but for vectors (instead of scalars). It scales the length of the vector between [0,1]. If the vector is short, then after squashing its length will be close to zero. If the length of vector \\(s_{j}\\) is large, then it will be rescaled close to one. (but below one). The squashing is defined as follows:
-\\[v_{j} = \frac{\norm{s_{j}^{2}}}{1+\norm{s_{j}^{2}}\Bigg(\frac{s_{j}}{\norm{s_{j}}}\Bigg)\\]
+\\[v_{j} = \frac{\norm{s_{j}}^{2}}{1+\norm{s_{j}}^{2}}\Bigg(\frac{s_{j}}{\norm{s_{j}}}\Bigg)\\]
 
 The length of \\(v_{j}\\) will represent the probability of the entity represented by the capsule.
 
