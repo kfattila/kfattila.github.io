@@ -26,13 +26,15 @@ Now, the question is that how can we calculate the parameters of the model \\(W,
 
 Consider the following case, where the RNN is unfolded in time:
 
-
+![rnn2](./images/rnn2.png)
 
 The parameters are in \\(W, V\\) and in \\(U\\). Thus, we need the following gradients:
 \\[ \frac{\partial E}{\partial V}, \frac{\partial E}{\partial W}, \frac{\partial E}{\partial U}\\]
 where \\(E\\) denotes the cost function. The calculation of the derivatives of \\(\frac{\partial E}{\partial V}\\) is done as in the case of standard neural networks. If the error is expressed in terms of the cross entropy then \\(\frac{\partial E}{\partial V} = \sum_{i} frac{\partial E_{i}}{\partial V} = \sum_{i}s_{i}^{T}(g(s_{i} + b_{2}) - y_{i})\\), where \\(g(.)\\) is the logistic sigmoid function. Note that, this is the gradients of the logistic regression. The gradients would change for different activation functions and different costs such as least squares, etc.
 
 The \\(\frac{\partial E}{\partial W}\\) is a bit different. Let us consider the error \\(E_{i}\\) for only one data instance. Then we need to calculate the gradients for all the paths to \\(E_{i}\\) and sum them up.
+
+![rnn3](./images/rnn3.png)
 
 For instance for \\(\frac{\partial E_{3}}{\partial W}\\)
 \\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial W]} \\]
@@ -65,11 +67,15 @@ The problems with BPTT are the following:
 	predefined value.
 
 3. In practice, RNNs are not capable of handling long term relationships in data, and they forget quite quickly. It is mainly due to their limited memory and to the fact that they update the memory with a linear transformation. However, RNNs are good to process sequential data in which there is no long term relationship. For instance, RNNs can perform well in human activity recognition (walking, running, etc.) because the current type of activity in the evening does not depend on what the user was doing (say) in the morning, etc. RNN also can be used for user tracking etc. An example on how the RNN is forgetting long-term information.
+
+![rnn4](./images/rnn4.png)
+
 The resilient back propagation (Rprop) is a learning heuristic for backpropagation and it may cope with vanishing and exploding gradients. Rprop utilizes only the sign of the gradients and neglects its magnitude. However, the learning rate (the step size) is adjusted adaptively, briefly, if the sign of a particular gradient remains the same compared to the previous iteration, then its corresponding learning rate is increased; otherwise, if the sign of the gradient changes, then the learning rate is decreased.
 
 ###### Prop pseudo code:
 
 In each iteration:
+
 
  
 ###### Extensions:
@@ -77,15 +83,15 @@ In each iteration:
 Bidirectional RNNs also take into account the future data samples (at time \\(t + 1\\)) when making a prediction output at time \\(t\\). This can be useful when the data is processed sequentially, but it is not sequential in time (it is not temporal). For instance, it can be used effectively for hadnwritten text recognition. For temporal data, the prediction for the data at time \\(t\\) is also based on the data coming later \\((t + i)\\). This increases the lag of the system. For instance, in speech recognition, the recognized text can be delivered not in real time, but with a little, say 5-10 sec delay.
 Bidirectional RNNs are just two RNNs stacked on top of each other. The output is then computed based on the hidden state of both RNNs.
 
-
+![rnn5](./images/rnn5.png)
 
 Deep RNNs.  RNNs also can have more hidden layers on top of each other. 
 
-
+![rnn6](./images/rnn6.png)
 
 The hidden units in layer \\(l\\) are based on the hidden units in layer \\(l\\) in the previous steps \\((t - 1)\\), and the hidden layers in the previous layer \\((l - 1)\\) in the current step \\(t\\).
 For an unidirected model:
-
+\\(s_{t}^{(l)} = tanh(W^{(l)}s_{t-1}^{(l)} + W^{(l-1)}s_{t}^{(l-1)} + b_{l}\\), where \\(s_{t}^{(0)} = x_{t}\\), etc.
 
 ###### References:
 1. [https://arxiv.org/pdf/1610.02583.pdf](https://arxiv.org/pdf/1610.02583.pdf)
