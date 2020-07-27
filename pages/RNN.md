@@ -9,7 +9,7 @@ Here, we will discuss neural network-based models for sequential data. These mod
 Let us assume we are given a single data sequence \\(x = x_{1}, ..., x_{T}\\), where each \\(x_{i} \in R^{n}\\) and the desired output is a sequence: \\(y = y_{1}, ..., y_{T}\\). Note that, different sequences in the dataset can differ in length.
 The recurrent neural network uses a memory, which is represented by a vector \\(h \in R^{H}\\), and every step it takes \\(x_{t}\\) as an input and produces a prediction \\(y_{t}^{'}\\) and updates the memory \\(h\\).
 
-
+![rnn1](./images/rnn1.png)
 
 Figure 1. Illustration of Recurrent Neural Networks.
 
