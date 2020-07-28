@@ -47,10 +47,10 @@ There is no bound for the difference between the information distance and its ap
 It is a greedy algorithm to construct a hierarchy of clusters. This algorithm start with a set of items and considers each items as a cluster containing a single element. Then it recursively merges the two closest clusters into a new one in each iteration until a single cluster is obtained. In this method there are two criteria: distance function to measure the dissimilarity over data and a linking criterion which finds the two closest clusters. Distance functions have been discussed on the previous lecture. The linkage criterion defines the distance between two clusters. It is often defined as either 1) maximal distance between the elements of two clusters (\\(d(A,B) = max\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), 2) minimal distance between the elements of two clusters (\\(d(A,B) = min\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), or the average (\\(d(A,B) = \frac{1}{\mid A \mid \mid B \mid}\sum_{a\in A,b \in B}d(a,b)\\)), \\(A\\) and \\(B\\) are two clusters).
 
 The pseudocode of hierarchical clustering:
-	1. Start by assigning each item to its own cluster, so that if you have \\(N\\) items, you now have \\(N\\) clusters, each containing just one item. Let the distances (similarities) between the clusters equal the distances (similarities) between the items they contain.
-	2. Find the closest (most similar) pair of clusters and merge them into a single cluster, so that now you have one less cluster.
-	3. Compute distances (similarities) between the new cluster and each of the old clusters.
-    4. Repeat steps 2 and 3 until all items are clustered into a single cluster of size \\(N\\).
+1. Start by assigning each item to its own cluster, so that if you have \\(N\\) items, you now have \\(N\\) clusters, each containing just one item. Let the distances (similarities) between the clusters equal the distances (similarities) between the items they contain.
+2. Find the closest (most similar) pair of clusters and merge them into a single cluster, so that now you have one less cluster.
+3. Compute distances (similarities) between the new cluster and each of the old clusters.
+4. Repeat steps 2 and 3 until all items are clustered into a single cluster of size \\(N\\).
 
 (Source: [http://www.analytictech.com/networks/hiclus.htm](http://www.analytictech.com/networks/hiclus.htm))
 
