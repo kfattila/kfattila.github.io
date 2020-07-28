@@ -21,7 +21,7 @@ The non-normalized information distance is not a proper evolutionary distance me
 because of the length factor of strings. For a given pair of strings \\(x\\) and \\(y\\) the
 normalized information distance is defined by
 
-\\[D(x,y) = \frac{max\{K(x\mid y),K(y\mid x)\}}{max\{K(x\mid\epsilon),K(y\mid\epsilon)\}} \\]
+\\[D(x,y) = \frac{max\\{K(x\mid y),K(y\mid x)\\}}{max\\{K(x\mid\epsilon),K(y\mid\epsilon)\\}} \\]
 where \\(\epsilon\\) denotes the empty string.
 
 In [2] it was shown that this satisfies the triangle inequality and vanishes when \\(x = y\\) with a negligible error term. The proof of its universality was given in [3], and the proof that it obeys the normalization property is more technical (for details, see [1; 2]).
