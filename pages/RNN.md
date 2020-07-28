@@ -51,7 +51,7 @@ In general:
 Note that the \\(\frac{\partial s_{i}}{\partial s_{t}}\\) is "recursive" and it gets longer as \\(t \rightarrow 0: \frac{\partial s_{i}}{\partial s_{k}} = \prod_{j=k}^{i}\frac{\partial s_{j}}{\partial s_{j-1}}\\)
 The total gradients for one sequence.
 
-\\[ \frac{\partial E}{\partial W} = \sum_{i} \frac{\partial E_{i}}{\partial W}
+\\[ \frac{\partial E}{\partial W} = \sum_{i} \frac{\partial E_{i}}{\partial W} \\]
 
 The calculation is similar for \\(\frac{\partial E}{\partial U^{'}}\\), using the same approach we get:
 
