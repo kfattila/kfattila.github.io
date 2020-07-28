@@ -26,12 +26,12 @@ where \\(\epsilon\\) denotes the empty string.
 
 In [2] it was shown that this satisfies the triangle inequality and vanishes when \\(x = y\\) with a negligible error term. The proof of its universality was given in [3], and the proof that it obeys the normalization property is more technical (for details, see [1; 2]).
 
-The numerator can be rewritten in the form \\( max\{K(xy) - K(x); K(yx) - K(y)\} \\) within logarithmic additive precision due to the additive property of prefix Kolmogorov complexity [1]. Thus we get
-\\[ D(x,y) = \frac{K(xy)-min\{K(x),K(y)\}}{max\{K(x),K(y)\}} \\]
+The numerator can be rewritten in the form \\( max\\{K(xy) - K(x); K(yx) - K(y)\\} \\) within logarithmic additive precision due to the additive property of prefix Kolmogorov complexity [1]. Thus we get
+\\[ D(x,y) = \frac{K(xy)-min\\{K(x),K(y)\\}}{max\\{K(x),K(y)\\}} \\]
 
 Since the Kolmogorov complexity cannot be computed, it has to be approximated, and for this purpose, common file compressors are employed. Let \\(C(x)\\) be the length of the compressed string compressed by a particular compressor like gzip or arj. Then the approximation for the information distance \\(E\\) can be obtained by using the following formula:
 
-\\[CBD(x,y) = \frac{C(xy)−min⁡\{C(x), C(y)\}}{max⁡\{C(x), C(y)\}}\\]
+\\[CBD(x,y) = \frac{C(xy)−min⁡\\{C(x), C(y)\\}}{max⁡\\{C(x), C(y)\\}}\\]
 
 A CBM is a metric up to an additive constant and satisfies the normalization property if \\(C\\) satisfies the following properties up to an additive term:
 1. Idempotency: \\(C(xx) = C(x)\\)
