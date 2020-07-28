@@ -83,10 +83,9 @@ The resilient back propagation (Rprop) is a learning heuristic for backpropagati
 	\text{} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
 	\text{} & \text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
 	\text{} & \text{} & \mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
-	\text{\\}} \\\
+	\text{} \\\
 	\text{} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
 	\text{} & \text{} & \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
-	\text{\\}}
     \end{array}       
 \\]
 
