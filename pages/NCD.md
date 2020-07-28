@@ -44,7 +44,7 @@ There is no bound for the difference between the information distance and its ap
 
 #### Hierarchical Clustering
 
-It is a greedy algorithm to construct a hierarchy of clusters. This algorithm start with a set of items and considers each items as a cluster containing a single element. Then it recursively merges the two closest clusters into a new one in each iteration until a single cluster is obtained. In this method there are two criteria: distance function to measure the dissimilarity over data and a linking criterion which finds the two closest clusters. Distance functions have been discussed on the previous lecture. The linkage criterion defines the distance between two clusters. It is often defined as either 1) maximal distance between the elements of two clusters (\\(d(A,B) = max\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), 2) minimal distance between the elements of two clusters (\\(d(A,B) = min\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), or the average (\\(d(A,B) = \frac{1}{|A||B|}\sum_{a\in A,b \in B\\}d(a,b)\\)), \\(A\\) and \\(B\\) are two clusters).
+It is a greedy algorithm to construct a hierarchy of clusters. This algorithm start with a set of items and considers each items as a cluster containing a single element. Then it recursively merges the two closest clusters into a new one in each iteration until a single cluster is obtained. In this method there are two criteria: distance function to measure the dissimilarity over data and a linking criterion which finds the two closest clusters. Distance functions have been discussed on the previous lecture. The linkage criterion defines the distance between two clusters. It is often defined as either 1) maximal distance between the elements of two clusters (\\(d(A,B) = max\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), 2) minimal distance between the elements of two clusters (\\(d(A,B) = min\\{d(a,b): a \in A, b \in B\\}\\), \\(A\\) and \\(B\\) are two clusters), or the average (\\(d(A,B) = \frac{1}{\mid A \mid \mid B \mid}\sum_{a\in A,b \in B\\}d(a,b)\\)), \\(A\\) and \\(B\\) are two clusters).
 
 The pseudocode of hierarchical clustering:
 	1. Start by assigning each item to its own cluster, so that if you have \\(N\\) items, you now have \\(N\\) clusters, each containing just one item. Let the distances (similarities) between the clusters equal the distances (similarities) between the items they contain.
@@ -57,22 +57,22 @@ The pseudocode of hierarchical clustering:
 Hierarchical clustering is often represented by a tree structure, called dendrogram. In this representation, leaves represent the objects itself, each inner node of the tree represents a cluster to which the data belong. 
 
 
-##### Applications of Compression-based Distances (CBDs)
+### Applications of Compression-based Distances (CBDs)
 
-###### Language Trees:
+#### Language Trees:
 
 The text corpora "The Universal Declaration of Human Rights" were downloaded in 52 Asian-European Languages from the website of the United Nations. The Lempel-Ziv compressor was used in the distance metric.
 The resulted dendrogram of the hierarchical classification can be seen below. Note that how well the language groups can be recognized.
 
-###### Russian Writers:
+##### Russian Writers:
 
 Some set of novels on the original Cyrillic letters written by few Russian writer were clustered. The resulted hierarchical clusters clearly shows that the novels written by the same author are grouped together.
 
-###### Russian writers translated to English:
+##### Russian writers translated to English:
 
 A bunch of novels written by Russian writes and translated to English were clustered by compression based methods. Notice that how well the novels translated by the same translator grouped together.
 
-###### Clustering hand written digits.
+##### Clustering hand written digits.
 
 The compression based distance measure has been evaluated on 30 hand written digits taken from the NIST Special Database 19. dataset. The images of the digits are black-and-white pictures '#' represents black and '.' represents white pixels. Each digit is 128x128 pixel.
 The data which was used are:
@@ -81,7 +81,7 @@ The clustering obtained is:
 
 
 
-###### Clustering of mitochondrial DNA.
+##### Clustering of mitochondrial DNA.
 
 The evolutionary tree has been reconstructed from the mitochondrial DNA of some mammals. Such reconstruction traditionally required a multiple alignment of the DNA of the species which is often cumbersome. The compression based distance measure does not require the absence of such multiple alignment and it can work on the raw DNA sequences. The reconstructed phylogenetic tree of some mammals can be seen below.
 
@@ -89,7 +89,7 @@ The evolutionary tree has been reconstructed from the mitochondrial DNA of some 
 (Note, that for evolutionary reconstruction, often the mitochondrial DNA is used. This is inherited only from the mother, and this DNA does not mix with the DNA of the fathers).
 
 
-###### The Google Similarity Distance (2007).
+##### The Google Similarity Distance (2007).
 
 The idea is similar to CBDs, but instead of measuring how two strings are related to each other based on the mutual information in them, the Google Similarity Distance (GSD) uses the Google to measure how closely two strings (words) related to each other. Let x be a search term to Google, and let \\(\Gamma\\) is denoted by \\(M = |\Gamma|\\). Let \\(S_{x} \subseteq \Gamma\\) the set of documents which contains the term \\(x\\), i.e. the documents which are retrieved by Google when searching for \\(x\\) (note that the ordering is not considered here), and let \\(f(x) = |S_{x}|\\). For a pair of search term, \\(x,y\\) let \\(S_{x,y}\\) the set of pages containing both search terms, and \\(f(x,y) = |S_{x,y)\\). Let \\(N = \sum_{x,y} f(x,y)\\), the total number of pages containing two search terms. Note that, since one document contains at least one search term (indexed by Google) some documents counted more then once and hence \\(N \geq M\\).
 In contrast to the compression based distances, where \\(C(x)\\) represents the length of the compressed strings, here we define the Google code \\(G\\) as
@@ -106,13 +106,13 @@ Some properties:
 
 
 
-###### Some conclusions
+##### Some conclusions
 
 In general, compression based distances have been demonstrated working well on a broad range of applications, and string compressors are very fast compared to e.g. edit distance-based measures. However, in my opinion, problem specific measures (such as Needleman-Wunch, or Smith-Waterman algorithms for biological sequences) perform better because usually they contain some domain specific information encoded into algorithm, while compression based distances do not utilize any specific information.
 
 
-##### References:
-	1. R. Cilibrasi and P. M. B. Vitányi. Clustering by compression. IEEE Transactions on Information Theory, 51(4):1523–1545, 2005.
-	2. Ming Li, Xin Chen, Xin Li, Bin Ma, and Paul Vitányi. The similarity metric. In SODA ’03: Proceedings of the fourteenth annual ACM-SIAM symposium on Discrete algorithms, pages 863–872, Philadelphia, PA, USA, 2003. Society for Industrial and Applied Mathematics.
-	3. Ming Li. Information distance and its applications. In Oscar H. Ibarra and Hsu-Chun Yen, editors, CIAA, volume 4094 of Lecture Notes in Computer Science, pages 1–9. Springer, 2006.
-	4. Cilibrasi and P. M. B. Vitányi. The Google Similarity Measures, IEEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING, VOL. 19, NO 3, MARCH 2007, 370–383
+#### References:
+1. R. Cilibrasi and P. M. B. Vitányi. Clustering by compression. IEEE Transactions on Information Theory, 51(4):1523–1545, 2005.
+2. Ming Li, Xin Chen, Xin Li, Bin Ma, and Paul Vitányi. The similarity metric. In SODA ’03: Proceedings of the fourteenth annual ACM-SIAM symposium on Discrete algorithms, pages 863–872, Philadelphia, PA, USA, 2003. Society for Industrial and Applied Mathematics.
+3. Ming Li. Information distance and its applications. In Oscar H. Ibarra and Hsu-Chun Yen, editors, CIAA, volume 4094 of Lecture Notes in Computer Science, pages 1–9. Springer, 2006.
+4. Cilibrasi and P. M. B. Vitányi. The Google Similarity Measures, IEEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING, VOL. 19, NO 3, MARCH 2007, 370–383
