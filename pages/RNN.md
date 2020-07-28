@@ -78,7 +78,7 @@ The resilient back propagation (Rprop) is a learning heuristic for backpropagati
 ###### Prop pseudo code:
 
 \\[ 
-    \begin{array}{lll}
+    \begin{array}{@{ }lll}
     \text{In each iteration:} \\\
 	\text{} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
 	\text{} & \text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
