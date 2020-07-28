@@ -82,10 +82,10 @@ In each iteration:
     \begin{array}{l}
 	\text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
 	\text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
-	\text{		}\mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
+	\text{    }\mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
 	\text{\\}} \\\
 	\text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
-	\text{		}\mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
+	\text{    }\mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
 	\text{\\}}
     \end{array}       
 \\]
@@ -105,7 +105,7 @@ Deep RNNs.  RNNs also can have more hidden layers on top of each other.
 
 The hidden units in layer \\(l\\) are based on the hidden units in layer \\(l\\) in the previous steps \\((t - 1)\\), and the hidden layers in the previous layer \\((l - 1)\\) in the current step \\(t\\).
 For an unidirected model:
-\\(s_{t}^{(l)} = tanh(W^{(l)}s_{t-1}^{(l)} + W^{(l-1)}s_{t}^{(l-1)} + b_{l}\\), where \\(s_{t}^{(0)} = x_{t}\\), etc.
+\\(s_{t}^{(l)} = tanh(W^{(l)}s_{t-1}^{(l)} + W^{(l-1)}s_{t}^{(l-1)} + b_{l})\\), where \\(s_{t}^{(0)} = x_{t}\\), etc.
 
 ###### References:
 1. [https://arxiv.org/pdf/1610.02583.pdf](https://arxiv.org/pdf/1610.02583.pdf)
