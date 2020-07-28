@@ -37,13 +37,13 @@ The \\(\frac{\partial E}{\partial W}\\) is a bit different. Let us consider the 
 ![rnn3](./images/rnn3.png)
 
 For instance for \\(\frac{\partial E_{3}}{\partial W}\\)
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial W]} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial W} \\]
 and
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}]} \frac{\partial s_{2}}{\partial W]} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial W} \\]
 and
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}]} \frac{\partial s_{2}}{\partial s_{1}]} \frac{\partial s_{1}}{\partial W]} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial W} \\]
 and
-\\[ \frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}]} \frac{\partial s_{2}}{\partial s_{1}]} \frac{\partial s_{1}}{\partial s_{0}]} \frac{\partial s_{0}}{\partial W]}\\]
+\\[ \frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial s_{0}} \frac{\partial s_{0}}{\partial W}\\]
 And in the end, we sum up these gradients.
 In general:
 \\[ \frac{\partial E_{i}}{\partial W} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}^{'}}     \\]
