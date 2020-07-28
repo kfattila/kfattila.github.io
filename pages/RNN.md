@@ -46,7 +46,7 @@ and
 \\[ \frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial s_{0}} \frac{\partial s_{0}}{\partial W}\\]
 And in the end, we sum up these gradients.
 In general:
-\\[ \frac{\partial E_{i}}{\partial W} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}^{'}}\frac{\partial y_{i}^{'}}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}{\partial W}      \\]
+\\[ \frac{\partial E_{i}}{\partial W} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}^{'}}\frac{\partial y_{i}^{'}}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial W}      \\]
 
 Note that the \\(\frac{\partial s_{i}}{\partial s_{t}}\\) is "recursive" and it gets longer as \\(t \arrowright 0: \frac{\partial s_{i}}{\partial s_{k}} = \prod_{j=k}^{i}\frac{\partial s_{j}}{\partial s_{j-1}}\\)
 The total gradients for one sequence.
