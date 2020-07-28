@@ -30,7 +30,7 @@ Consider the following case, where the RNN is unfolded in time:
 
 The parameters are in \\(W, V\\) and in \\(U\\). Thus, we need the following gradients:
 \\[ \frac{\partial E}{\partial V}, \frac{\partial E}{\partial W}, \frac{\partial E}{\partial U}\\]
-where \\(E\\) denotes the cost function. The calculation of the derivatives of \\(\frac{\partial E}{\partial V}\\) is done as in the case of standard neural networks. If the error is expressed in terms of the cross entropy then \\(\frac{\partial E}{\partial V} = \sum_{i} frac{\partial E_{i}}{\partial V} = \sum_{i}s_{i}^{T}(g(s_{i} + b_{2}) - y_{i})\\), where \\(g(.)\\) is the logistic sigmoid function. Note that, this is the gradients of the logistic regression. The gradients would change for different activation functions and different costs such as least squares, etc.
+where \\(E\\) denotes the cost function. The calculation of the derivatives of \\(\frac{\partial E}{\partial V}\\) is done as in the case of standard neural networks. If the error is expressed in terms of the cross entropy then \\(\frac{\partial E}{\partial V} = \sum_{i} \frac{\partial E_{i}}{\partial V} = \sum_{i}s_{i}^{T}(g(s_{i} + b_{2}) - y_{i})\\), where \\(g(.)\\) is the logistic sigmoid function. Note that, this is the gradients of the logistic regression. The gradients would change for different activation functions and different costs such as least squares, etc.
 
 The \\(\frac{\partial E}{\partial W}\\) is a bit different. Let us consider the error \\(E_{i}\\) for only one data instance. Then we need to calculate the gradients for all the paths to \\(E_{i}\\) and sum them up.
 
@@ -77,6 +77,7 @@ The resilient back propagation (Rprop) is a learning heuristic for backpropagati
 In each iteration:
 
 
+Here, \\(\mu_{i}\\) denotes the learning rate specifically to the parameter \\(\theta_{i}\\). And note that different parameters have different learning rates.
  
 ###### Extensions:
 
