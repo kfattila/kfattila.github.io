@@ -80,12 +80,12 @@ The resilient back propagation (Rprop) is a learning heuristic for backpropagati
 \\[ 
     \begin{array}{l}
     \text{In each iteration:} \\\
-	\text{\tab} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
-	\text{\tab\tab}\text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
-	\text{\tab\tab\tab}\mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
+	\hspace{10mm} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
+	\hspace{20mm}\text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
+	\hspace{30mm}\mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
 	\text{} \\\
-	\text{\tab\tab} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
-	\text{\tab\tab\tab} \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
+	\hspace{20mm} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
+	\hspace{30mm} \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
     \end{array}       
 \\]
 
