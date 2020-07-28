@@ -75,23 +75,23 @@ The problems with BPTT are the following:
 
 The resilient back propagation (Rprop) is a learning heuristic for backpropagation and it may cope with vanishing and exploding gradients. Rprop utilizes only the sign of the gradients and neglects its magnitude. However, the learning rate (the step size) is adjusted adaptively, briefly, if the sign of a particular gradient remains the same compared to the previous iteration, then its corresponding learning rate is increased; otherwise, if the sign of the gradient changes, then the learning rate is decreased.
 
-###### Prop pseudo code:
+#### Prop pseudo code:
 
 \\[ 
-    \begin{array}{@{}lll}
+    \begin{array}{l}
     \text{In each iteration:} \\\
-	\text{} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
-	\text{} & \text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
-	\text{} & \text{} & \mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
+	\text{\tab} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
+	\text{\tab\tab}\text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
+	\text{\tab\tab\tab}\mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
 	\text{} \\\
-	\text{} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
-	\text{} & \text{} & \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
+	\text{\tab\tab} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
+	\text{\tab\tab\tab} \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
     \end{array}       
 \\]
 
 Here, \\(\mu_{i}\\) denotes the learning rate specifically to the parameter \\(\theta_{i}\\). And note that different parameters have different learning rates.
  
-###### Extensions:
+#### Extensions:
 
 Bidirectional RNNs also take into account the future data samples (at time \\(t + 1\\)) when making a prediction output at time \\(t\\). This can be useful when the data is processed sequentially, but it is not sequential in time (it is not temporal). For instance, it can be used effectively for hadnwritten text recognition. For temporal data, the prediction for the data at time \\(t\\) is also based on the data coming later \\((t + i)\\). This increases the lag of the system. For instance, in speech recognition, the recognized text can be delivered not in real time, but with a little, say 5-10 sec delay.
 Bidirectional RNNs are just two RNNs stacked on top of each other. The output is then computed based on the hidden state of both RNNs.
@@ -106,7 +106,7 @@ The hidden units in layer \\(l\\) are based on the hidden units in layer \\(l\\)
 For an unidirected model:
 \\(s_{t}^{(l)} = tanh(W^{(l)}s_{t-1}^{(l)} + W^{(l-1)}s_{t}^{(l-1)} + b_{l})\\), where \\(s_{t}^{(0)} = x_{t}\\), etc.
 
-###### References:
+#### References:
 1. [https://arxiv.org/pdf/1610.02583.pdf](https://arxiv.org/pdf/1610.02583.pdf)
 2. [http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf](http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf)
 3. [https://arxiv.org/pdf/1610.02583.pdf](https://arxiv.org/pdf/1610.02583.pdf)
