@@ -13,7 +13,7 @@ This is a symmetric function and it has been proven that it satisfies the triang
 
 \\[E(x, y) = max\\{K(x\mid y), K(y\mid x)\\}\\]
 
-where \\(K(x|y)\\) denotes the conditional Kolmogorov complexity defined as \\(K(x|y) = min\\{l(p) : U(p,y) = x\\}\\).
+where \\(K(x\mid y)\\) denotes the conditional Kolmogorov complexity defined as \\(K(x\mid y) = min\\{l(p) : U(p,y) = x\\}\\).
 
 In general, the “up to an additive logarithmic term” means that the information required to reconstruct \\(x\\) from \\(y\\) is always maximally correlated with the information required to reconstruct y from \\(x\\) that is dependent on the former amount of information. Thus \\(E\\) is also a suitable approximation for the information distance.
 
@@ -21,7 +21,7 @@ The non-normalized information distance is not a proper evolutionary distance me
 because of the length factor of strings. For a given pair of strings \\(x\\) and \\(y\\) the
 normalized information distance is defined by
 
-\\[D(x,y) = \frac{max\{K(x|y),K(y|x)\}}{max\{K(x|\epsilon),K(y|\epsilon)\}} \\]
+\\[D(x,y) = \frac{max\{K(x\mid y),K(y\mid x)\}}{max\{K(x\mid\epsilon),K(y\mid\epsilon)\}} \\]
 where \\(\epsilon\\) denotes the empty string.
 
 In [2] it was shown that this satisfies the triangle inequality and vanishes when \\(x = y\\) with a negligible error term. The proof of its universality was given in [3], and the proof that it obeys the normalization property is more technical (for details, see [1; 2]).
