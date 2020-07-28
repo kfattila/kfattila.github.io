@@ -7,13 +7,13 @@ description: ""
 
 The information distance (ID) for binary strings x and y is defined as the shortest binary program \\(p\\) on a reference universal prefix computer \\(U\\) with input \\(y\\), which computes \\(x\\), and vice versa; formally:
 
-\\[ID(x, y) = min\{l(p) : U(p,x) = y, U(p,y) = x\}\\]
+\\[ID(x, y) = min\\{l(p) : U(p,x) = y, U(p,y) = x\\}\\]
 
 This is a symmetric function and it has been proven that it satisfies the triangle inequality up to an additive constant. But it is incomputable. It has been shown that ID can be computed by the so-called max distance, up to an additive logarithmic term:
 
-\\[E(x, y) = max\{K(x|y), K(y|x)\}\\]
+\\[E(x, y) = max\\{K(x|y), K(y|x)\\}\\]
 
-where \\(K(x|y)\\) denotes the conditional Kolmogorov complexity defined as \\(K(x|y) = min\{l(p) : U(p,y) = x\}\\).
+where \\(K(x|y)\\) denotes the conditional Kolmogorov complexity defined as \\(K(x|y) = min\\{l(p) : U(p,y) = x\\}\\).
 
 In general, the “up to an additive logarithmic term” means that the information required to reconstruct \\(x\\) from \\(y\\) is always maximally correlated with the information required to reconstruct y from \\(x\\) that is dependent on the former amount of information. Thus \\(E\\) is also a suitable approximation for the information distance.
 
