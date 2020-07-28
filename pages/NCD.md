@@ -11,7 +11,7 @@ The information distance (ID) for binary strings x and y is defined as the short
 
 This is a symmetric function and it has been proven that it satisfies the triangle inequality up to an additive constant. But it is incomputable. It has been shown that ID can be computed by the so-called max distance, up to an additive logarithmic term:
 
-\\[E(x, y) = max\\{K(x|y), K(y|x)\\}\\]
+\\[E(x, y) = max\\{K(x\mid y), K(y\mid x)\\}\\]
 
 where \\(K(x|y)\\) denotes the conditional Kolmogorov complexity defined as \\(K(x|y) = min\\{l(p) : U(p,y) = x\\}\\).
 
