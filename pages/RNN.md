@@ -61,7 +61,7 @@ This method above is called the backpropagation through time (bptt).
 The problems with BPTT are the following:
 1. It can be slow for long sequences, because the gradient calculation of a data near the end of the sequence requires going back to the beginning, i.e. \\(\frac{\partial s_{i}}{\partial s_{k}}\\) can be long. For this problem, the BPTT is truncated. This can be done in two ways:
 	a. Calculate the gradients only after \\(k\\) steps. This means that the gradients of \\(E_{i}\\) is calculated for not all \\(i\\), but only for every \\(k\\)-th step.
-	b. Unrolling the network at most \\(l\\) steps. This means that the back propagation goes back at most \\(l\\) steps: \\(\sum_{t=i-l}^{i} \frac{\partial E}{partial y_{i}^{'}\frac{\partial y_{i}^{'}}{partial s_{i}}\frac{\partial s_{i}}{partial s_{t}}\frac{\partial s_{t}}{partial W}\\)
+	b. Unrolling the network at most \\(l\\) steps. This means that the back propagation goes back at most \\(l\\) steps: \\(\sum_{t=i-l}^{i} \frac{\partial E}{partial y_{i}^{'}}\frac{\partial y_{i}^{'}}{partial s_{i}}\frac{\partial s_{i}}{partial s_{t}}\frac{\partial s_{t}}{partial W}\\)
 	This means that relevant information is saved for a fixed number of time steps, and everything beyond this point is forgetten.
 
 2. Consider the term \\(\frac{\partial s_{i}}{\partial s_{k}} = \prod_{j=k}^{i}\frac{\partial s_{j}}{\partial s_{j-1}}\\). This represents a series of a vector multiplication, and it can be very long.
