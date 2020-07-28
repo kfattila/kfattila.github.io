@@ -56,7 +56,7 @@ The pseudocode of hierarchical clustering:
 
 Hierarchical clustering is often represented by a tree structure, called dendrogram. In this representation, leaves represent the objects itself, each inner node of the tree represents a cluster to which the data belong. 
 
-![ncd1.png](./images/ncd1.png)
+![ncd1.png](./images/NCD1.png)
 
 ### Applications of Compression-based Distances (CBDs)
 
@@ -65,36 +65,36 @@ Hierarchical clustering is often represented by a tree structure, called dendrog
 The text corpora "The Universal Declaration of Human Rights" were downloaded in 52 Asian-European Languages from the website of the United Nations. The Lempel-Ziv compressor was used in the distance metric.
 The resulted dendrogram of the hierarchical classification can be seen below. Note that how well the language groups can be recognized.
 
-![ncd2.png](./images/ncd2.png)
+![ncd2.png](./images/NCD2.png)
 
 ##### Russian Writers:
 
 Some set of novels on the original Cyrillic letters written by few Russian writer were clustered. The resulted hierarchical clusters clearly shows that the novels written by the same author are grouped together.
 
-![ncd3.png](./images/ncd3.png)
+![ncd3.png](./images/NCD3.png)
 
 ##### Russian writers translated to English:
 
 A bunch of novels written by Russian writes and translated to English were clustered by compression based methods. Notice that how well the novels translated by the same translator grouped together.
 
-![ncd4.png](./images/ncd4.png)
+![ncd4.png](./images/NCD4.png)
 
 ##### Clustering hand written digits.
 
 The compression based distance measure has been evaluated on 30 hand written digits taken from the NIST Special Database 19. dataset. The images of the digits are black-and-white pictures '#' represents black and '.' represents white pixels. Each digit is 128x128 pixel.
 The data which was used are:
 
-![ncd5.png](./images/ncd5.png)
+![ncd5.png](./images/NCD5.png)
 
 The clustering obtained is:
 
-![ncd6.png](./images/ncd6.png)
+![ncd6.png](./images/NCD6.png)
 
 ##### Clustering of mitochondrial DNA.
 
 The evolutionary tree has been reconstructed from the mitochondrial DNA of some mammals. Such reconstruction traditionally required a multiple alignment of the DNA of the species which is often cumbersome. The compression based distance measure does not require the absence of such multiple alignment and it can work on the raw DNA sequences. The reconstructed phylogenetic tree of some mammals can be seen below.
 
-![ncd7.png](./images/ncd7.png)
+![ncd7.png](./images/NCD7.png)
 
 (Note, that for evolutionary reconstruction, often the mitochondrial DNA is used. This is inherited only from the mother, and this DNA does not mix with the DNA of the fathers).
 
@@ -121,13 +121,13 @@ Given six words:  crime, happy, urgent, help, safe, wash words as "anchors". For
 
 Learning words which are related to emergencies using EFM as representation and SVM for classification:
 
-![ncd8.png](./images/ncd8.png)
+![ncd8.png](./images/NCD8.png)
 
 Accuracy=75%
 
 **Learning prime numbers using anchors:** "composite, prime, orange, number, record" and SVM as a classifier:
 
-![ncd9.png](./images/ncd9.png)
+![ncd9.png](./images/NCD9.png)
 
 
 ##### Some conclusions
