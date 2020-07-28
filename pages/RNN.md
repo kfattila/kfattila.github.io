@@ -78,14 +78,14 @@ The resilient back propagation (Rprop) is a learning heuristic for backpropagati
 ###### Prop pseudo code:
 
 \\[ 
-    \begin{array}{ll}
+    \begin{array}{lll}
     \text{In each iteration:} \\\
-	\text{ } & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
-	\text{  } & \text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
-	\text{   } & \mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
+	\text{} & \text{For each parameter } \theta_{i}^{t} \text{ in } \frac{\partial E}{\partial \theta^{t}}: \\\
+	\text{} & \text{if } sign(\theta_{i}^{t}) \neq sign(\theta_{i}^{t-1}) \\\
+	\text{} & \text{} & \mu_{i} = \mu \times \eta^{-}\text{, where } \eta^{-} < 1 \\\
 	\text{\\}} \\\
-	\text{  } & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
-	\text{   } & \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
+	\text{} & \text{if } sign(\theta_{i}^{t}) == sign(\theta_{i}^{t-1}) \\\
+	\text{} & \text{} & \mu_{i} = \mu \times \eta^{+}\text{, where } \eta^{+} < 1 \\\
 	\text{\\}}
     \end{array}       
 \\]
