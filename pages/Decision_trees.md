@@ -107,7 +107,7 @@ Now we define the uncertainty in this subset with respect to a target attribute 
 Now, let \\(f_{a=\nu_{i}} := f(x[a] = \nu_{i};S)\\) be the frequency of the value \\(\nu_{i}\\) in attribute \\(a\\) in dataset \\(S(f_{a=\nu_{i}} := \frac{\mid s_{a=\nu_{i}}\mid}{\mid S \mid})\\).
 
 Now we can define the information gain \\(G(a,A,S)\\) as follows:
-\\[G(a,A,S) = H(P[t]) - \sum f_{a=\nu_{i} H(P[t; S_{a=\nu_{i}}])\\]
+\\[G(a,A,S) = H(P[t]) - \sum f_{a=\nu_{i}} H(P[t; S_{a=\nu_{i}}])\\]
 
 The first term is the uncertainty in the target attribute (class labels). The second term is the uncertainty after partitioning the data \\(S\\) by the attribute \\(a\\).
 The \\(G(a,A,S)\\) is the reduction in uncertainty caused by knowing the values of attribute \\(a\\).
