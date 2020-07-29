@@ -100,7 +100,7 @@ Let us define the uncertainty of an attribute \\(t\\) via the entropy:
 
 If \\(H(t)\\) is high that means we are very uncertain to predict the value of the attribute \\(t\\) if we randomly sample a new data, i.e. the class labels roughly evely distributed in the set \\(S\\). If \\(H(t)\\) is low, then we can predict accurately the value of the attribute \\(t\\).
 
-Now, let us define similar distribution but for a subset of the data. Let \\(S_{a=\nu_{i}}\\) be the subset of a data, where a specific attribute \\(a\\) has a value \\(\nu_{i}\\) that is: \\(S_{a=\nu_{i}} = \{ x \in S| x[a] = \nu_{i} \}\\).
+Now, let us define similar distribution but for a subset of the data. Let \\(S_{a=\nu_{i}}\\) be the subset of a data, where a specific attribute \\(a\\) has a value \\(\nu_{i}\\) that is: \\(S_{a=\nu_{i}} = \\{ x \in S| x[a] = \nu_{i} \\}\\).
 Now we define the uncertainty in this subset with respect to a target attribute \\(t\\):
 \\[P[t; S_{a=\nu_{i}}] = [f(x[t] = t_{1}; S_{a=\nu_{i}}), f(x[t] = t_{2}; S_{a=\nu_{i}}), ..., f(x[t] = t_{k}; S_{a=\nu_{i}}) ] \\]
 
