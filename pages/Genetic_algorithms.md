@@ -8,9 +8,9 @@ description: ""
 Genetic Algorithms (GA) are metaheuristic algorithms for global optimization and for search problems, which are inspired by the "survival of the fittest" paradigm (by Darwin). This method belongs to the class of evolutionary algorithms (EA).
 
 Genetic Algorithms consists of three main components:
-1. Representation,
+1. Representation
     * To represent the model/problem. Typically, it contains several hundreds or thousands of randomly generated models allowing to spread over the entire model space. 
-2. Fitness function,
+2. Fitness function
     * To evaluate how well a model performs. It is basically uses some sort of cost function or accuracy. GA tries to generate models which maximizes this fitness function.
 3. Genetic operator
     * To generate new model instances from the fittest ones. There are two main type of such operators: cross-over and mutation.
