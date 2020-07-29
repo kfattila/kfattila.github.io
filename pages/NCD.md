@@ -117,8 +117,8 @@ Some properties:
 
 Because of the properties 5 and 6, NGD is not a proper metric.
 
-###### Some experiments
-###### Learning of emergencies:
+##### Some experiments
+##### Learning of emergencies:
 
 Given six words:  crime, happy, urgent, help, safe, wash words as "anchors". For a given word x, let's define a numerical vector \\(v_{x} = [NGD(x,f_{1}),NGD(x,f_{2}),...,NGD(x,f_{6})]\\), where \\(f_{i}\\) is an anchor word. This feature generation is called Empirical Feature Maping.
 
