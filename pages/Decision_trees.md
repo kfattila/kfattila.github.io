@@ -154,7 +154,7 @@ The information gain for the attribute "temperature"
 The ID3 algorithm will choose the attribute which yields the highest gain.
 
 
-The ID3 algorithm can be extended for real-valued attributes. For a real valued attribute \\(r\\) one can create a new boolean attribute which is \\(true r <= c\\). Now we need to find the optimal \\(c\\).  One can order the data instance by the value of \\(r\\) and calculate the best information gain at adjacent examples that differ in their target classification.
+The ID3 algorithm can be extended for real-valued attributes. For a real valued attribute \\(r\\) one can create a new boolean attribute which is \\(true \Leftrightarrow r <= c\\). Now we need to find the optimal \\(c\\).  One can order the data instance by the value of \\(r\\) and calculate the best information gain at adjacent examples that differ in their target classification.
 As an example, we included another attribute Humidity with numeric attributes. The format is as below:
 
 ![decisiontrees5.png](./images/decisiontrees5.png)
