@@ -5,7 +5,7 @@ description: ""
 ---
 {% include JB/setup %}
 
-###### Rule-based machine learning.
+#### Rule-based machine learning.
 
 Rule-based systems specify the system's behavior using if … then … rules, often manually constructed.
 Rule-based machine learning is part of rule-based systems, however in this approach a set of rules are mined (constructed) from the data contrary to traditional rule-based systems in which rules are mainly crafted manually.
@@ -16,7 +16,7 @@ An example. Consider the following shopping charts of customers (ID). We can not
 
 ![decisiontrees1.png](./images/decisiontrees1.png)
 
-###### Decision Trees
+#### Decision Trees
 
 Decision trees represent a series of decision rules in a top-down approach. Leaves represent classes and thus decisions, intermediate nodes represent tests of data attributes. Decision trees also can be represented as a set of if-then rules where every rule corresponds to a node in the tree.
 
@@ -27,22 +27,24 @@ Example to classify if a cancer tumor is Non-Fatal/Fatal:
 [ref: Bard, Hu, Journal of Cancer Therapy Vol.2 No.2(2011), Article ID:5664]
 
 Decision trees are generally the best suited to problems with the following characteristics:
-	- Data instances are represented by attribute-value pairs, and attributes takes categorical values. Eg. Attribute: temperature, value: {Hot, Cold, Mild}
-	- The target function has discrete or categorical output values. (yes or no). Decision trees can be easily extended to multi-class classification problems.
-	- Training data contains missing values.
+- Data instances are represented by attribute-value pairs, and attributes takes categorical values. Eg. Attribute: temperature, value: {Hot, Cold, Mild}
+- The target function has discrete or categorical output values. (yes or no). Decision trees can be easily extended to multi-class classification problems.
+- Training data contains missing values.
 Note that neural networks are not appropriate for data having categorical features.
 
-###### Learning a decision tree from training data
+#### Learning a decision tree from training data
 
 The standard algorithm to learn decision trees (DTs) is called ID3. This algorithm is essentially guided by the following question: "which attribute should be tested next?"
 
 The principle of the ID3 algorithm is the following:
 Let us consider the following data with class labels. Which test would split the data into two parts such that the class labels in each subset more homogeneous.
 
+
 | Outlook:                 | overcast     | sunny     | overcast     | sunny     | overcast     |
 |--------------------------|--------------|-----------|--------------|-----------|--------------|
 | Humidity:                | low          | low       | high         | high      | high         |
 | **Play tennis (target)** | **yes**      | **yes**   | **no**       | **no**    | **no**       |
+{:class="table table-bordered"}
 
 Splitting by the variable 'outlook' we would get:
 
