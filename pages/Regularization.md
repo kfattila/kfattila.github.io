@@ -26,7 +26,7 @@ In the optimization of the cost function (above) the regularization part can be 
 #### Example for over and underfit: 
 Revisit linear regression and generate more features \\(x,x^{2},x^{3},x^{4},...,x^{n},x_{1}x_{2}, x_{2}x_{3},...,x_{n-1}x_{n},...\\)
 
-\\[J_{1}(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(Y_{i} - (\sum_{j=1}^{n}x_{i,j}\theta_{j} + \theta_{0}))^{2} + \frac{\lambda}{2n}\sum_{j=1}^{n} \theta_{j}^{2}\\]
+\\[J_{1}(\theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(Y_{i} - (\sum_{j=1}^{n}x_{i,j}\theta_{j} + \theta_{0}))^{2} + \frac{\lambda}{2n}\sum_{j=1}^{n} \theta_{j}^{2}\\]
 
 Then the model is a polynomial function of degree n. If the regularization parameter low, close to zero, or zero, then the coefficient of the variables can be high. The higher the coefficient the "curlier" the polynomial function. Figure below shows an example.
 
