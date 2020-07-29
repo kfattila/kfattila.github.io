@@ -21,7 +21,7 @@ The Bible Code, a 1998 bestseller, claimed that the Bible contains predictions o
 Let's consider the following regularized learning.
 \\[\Theta = argmin_{\Theta \in G}\\{L_{\Theta}(X,Y) + \lambda R(\Theta)\\}\\]
 
-In the optimization of the cost function (above) the regularization part can be used to control the variance (in the model selection). Loosely speaking, if \\(\lambda\\) is zero or small, then the optimizer tries to achive a small error on fitting the model to the current data. If \\(\lambda\\) is big then the optimizer tries to find small parameter values of \\(\theta\\) for the model and it will consider the model fitting less. Thus, if the parameter values are supressed then it will reduce the variance in the model selection.
+In the optimization of the cost function (above) the regularization part can be used to control the variance (in the model selection). Loosely speaking, if \\(\lambda\\) is zero or small, then the optimizer tries to achive a small error on fitting the model to the current data. If \\(\lambda\\) is big then the optimizer tries to find small parameter values of \\(\Theta\\) for the model and it will consider the model fitting less. Thus, if the parameter values are supressed then it will reduce the variance in the model selection.
 
 #### Example for over and underfit: 
 Revisit linear regression and generate more features \\(x,x^{2},x^{3},x^{4},...,x^{n},x_{1}x_{2}, x_{2}x_{3},...,x_{n-1}x_{n},...\\)
