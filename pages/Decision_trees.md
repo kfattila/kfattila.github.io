@@ -61,8 +61,8 @@ Splitting by the variable 'outlook' we would get:
 | **Play tennis (target)** | **yes**      | **no**       | **no**       |
 {:class="table table-bordered"}
 
-
 After splitting the data, the class labels mix in both dataset.
+
 
 Splitting by the variable humidity we would get:
 
@@ -82,20 +82,20 @@ Splitting by the variable humidity we would get:
 
 After splitting, the class labels become uniform.
 
-ID3 chooses the attribute that is the most useful for classifying examples, and the usefulness is measured by information gain.
+ID3 chooses the attribute that is the most useful for classifying examples, and the usefulness is measured by *information gain*.
 
 ![decisiontrees3.png](./images/decisiontrees3.png)
 
 
-There are several methods to define the function \\(G\\). Perhaps the most common is the information gain defined as follows. It utilizes the entropy. Let us define a distriubtion (a histogram) \\(P[t]\\) for a given target attribute \\(t\\) and let us denote the possible values of \\(t\\) with \\(t_{i}\\). The target attribute \\(t\\) can be, for instance, the class label and anything which we want to predict : e.g. for binary data: \\(t_{i} = "yes"\\) and \\(t_{i} = "no"\\).
+There are several methods to define the function \\(G\\). Perhaps the most common is the information gain defined as follows. It utilizes the entropy. Let us define a distriubtion (a histogram) \\(P[t]\\) for a given target attribute \\(t\\) and let us denote the possible values of \\(t\\) with \\(t_{i}\\). The target attribute \\(t\\) can be, for instance, the class label and anything which we want to predict : e.g. for binary data: \\(t_{1} = "yes"\\) and \\(t_{2} = "no"\\).
 
-\\[P[t] = [f(x[t]] = t_{1};S), f(x[t] = t_{2};S), ..., f(x[t] = t_{k};S)]\\]
+\\[P[t] = [f(x[t] = t_{1};S), f(x[t] = t_{2};S), ..., f(x[t] = t_{k};S)]\\]
 
 where \\(f(x[t] = t_{i};S)\\) denotes the ratio (frequency) of the data (in the dataset \\(S\\)) whose attribute \\(t\\) is equal to \\(t_{i}\\). \\(P[t]\\) is essentially the distribution of the attribute values. Note that \\(\sum_{i}f(x[t] = s_{i};S) = 1\\).
 
 Let us define the uncertainty of an attribute \\(t\\) via the entropy:
-\\[H(P[t]) = -\sum p_{i} \log p_{\nu}\\]
-where \\(p_{i} = P[t]\_{i}\\)
+\\[H(P[t]) = -\sum p_{i} \log p_{\nu} \text{, where } p_{i} = P[t]\_{i}\\]
+
 
 If \\(H(t)\\) is high that means we are very uncertain to predict the value of the attribute \\(t\\) if we randomly sample a new data, i.e. the class labels roughly evely distributed in the set \\(S\\). If H(t) is low, then we can predict accurately the value of the attribute \\(t\\).
 
