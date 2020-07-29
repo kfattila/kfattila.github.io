@@ -139,7 +139,7 @@ Let us chose the attribute "temperature". It has three values: "hot", "mild", "c
 
 \\(P(play;S_{Temp=hot}) = [\frac{1}{2},\frac{1}{2}]\\)
 
-That is \\(P(play;S_{Temp=cool}\\) is the distribution of the class labels within the subset \\S_{Temp=cool}\\)
+That is \\(P(play;S_{Temp=cool})\\) is the distribution of the class labels within the subset \\(S_{Temp=cool}\\)
 
 \\(f_{Temp=cool} = \frac{4}{14}\\)
 
