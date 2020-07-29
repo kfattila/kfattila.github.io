@@ -112,8 +112,8 @@ Some properties:
 2. If \\(f(x) = 0\\), then for each search term \\(y: f(x,y) = 0\\), then \\(NGD(x,y) = \frac{\infty}{\infty}\\)
 3. \\(NGD(x,x) = 0\\), for all search term \\(x\\).
 4. NGD is symmetric
-5. \\(NGD(x,y) = 0\\) for some \\(x \neq y\\). Choose \\(x\\) and \\(y\\) such that \\(x \neq y\\) but \\(S_{x} = S_{y}\\). Then \\(f(x) = f(x,y)\\) and \\(NGS(x,y) = 0\\).
-6. NDG does not satisfy the triangle inequality \\(NGD(x,y) < NGD(x,z) + NGD(y,z)\\) for all \\(x,y,z\\). To show this we need to find one case when the triangle inequality is hurt. Choose \\(x,y,z\\) such that \\(S_{z} = S_{x} \bigcup S_{y}\\)m \\(S_{x,y} = \emptyset\\), \\(S_{x} = S_{x,z}\\) and \\(S_{y} = S_{x,z}\\) and \\(f(x) = f(y)\\). Then we have \\(f(x) = f(y) = f(x,z) = f(y,z)\\) and \\(f(x,y) = 0\\). Thus, \\(NGD(x,y) = \infty\\), but \\(NGD(x,z) + NGD(y,z) = 2\fraq{\log f(z) - \log f(x)}{\log N - \log f(x)} < \infty \\)
+5. \\(NGD(x,y) = 0\\) for some \\(x \neq y\\). Choose \\(x\\) and \\(y\\) such that \\(x \neq y\\) but \\(S_{x} = S_{y}\\). Then \\(f(x) = f(x,y)\\) and \\(NGD(x,y) = 0\\).
+6. NDG does not satisfy the triangle inequality \\(NGD(x,y) < NGD(x,z) + NGD(y,z)\\) for all \\(x,y,z\\). To show this we need to find one case when the triangle inequality is hurt. Choose \\(x,y,z\\) such that \\(S_{z} = S_{x} \bigcup S_{y}\\), \\(S_{x,y} = \emptyset\\), \\(S_{x} = S_{x,z}\\) and \\(S_{y} = S_{x,z}\\) and \\(f(x) = f(y)\\). Then we have \\(f(x) = f(y) = f(x,z) = f(y,z)\\) and \\(f(x,y) = 0\\). Thus, \\(NGD(x,y) = \infty\\), but \\(NGD(x,z) + NGD(y,z) = 2\frac{\log f(z) - \log f(x)}{\log N - \log f(x)} < \infty \\)
 
 Because of the properties 5 and 6, NGD is not a proper metric.
 
