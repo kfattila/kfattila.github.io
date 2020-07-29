@@ -120,7 +120,7 @@ ID3 algorithm selects the attribute \\(a^{\ast}\\) which reduces the uncertainty
 
 
 Target attribute is "play" and it can have two values: "yes" and "no". The distribution of the values in the target attributes:
-\\[P[play] = [\frac{5}{14}, \frac{9}{14}}]\\]
+\\[P[play] = [\frac{5}{14}, \frac{9}{14}]\\]
 And the uncertainty is:
 \\[H(P[play]) = -(\frac{5}{14}\log\frac{5}{14} + \frac{9}{14}\log\frac{9}{14}) = 0.94\\]
 
