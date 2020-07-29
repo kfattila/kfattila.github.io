@@ -31,11 +31,13 @@ The each horizontal bar represents different model encoding.
 
 *Mutation operator*: The model parameter is randomly changed in some random position of the model structure. This helps maintain the diversity in the model population.
 
-**Differential Evolution.**
+#### Differential Evolution
+
 The GA is better for structure optimization while DE is more suitable for weight optimization. DE requires the population size to be at least 4.
 
 
 **Algorithm DE.**
+
 Let \\(cr \in [0,1]\\) be the cross-over probability and \\(F \in [0,2]\\) the differential scalar weight.
 
 1. Select a model \\(x = [x_{1}, ..., x_{n}]\\), and for this model it will create a new model \\(y = [y_{1}, ..., y_{n}]\\).
