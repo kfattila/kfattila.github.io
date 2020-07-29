@@ -104,7 +104,7 @@ Now, let us define similar distribution but for a subset of the data. Let \\(S_{
 Now we define the uncertainty in this subset with respect to a target attribute \\(t\\):
 \\[P[t; S_{a=\nu_{i}}] = [f(x[t] = t_{1}; S_{a=\nu_{i}}), f(x[t] = t_{2}; S_{a=\nu_{i}}), ..., f(x[t] = t_{k}; S_{a=\nu_{i}}) ] \\]
 
-Now, let \\(f_{a=\nu_{i}} := f(x[a] = \nu_{i};S)\\) be the frequency of the value \\(\nu_{i}\\) in attribute \\(a\\) in dataset \\(S(f_{a=\nu_{i}} := \frac{|s_{a=\nu_{i}}}{|S|} \\).
+Now, let \\(f_{a=\nu_{i}} := f(x[a] = \nu_{i};S)\\) be the frequency of the value \\(\nu_{i}\\) in attribute \\(a\\) in dataset \\(S(f_{a=\nu_{i}} := \frac{\mid s_{a=\nu_{i}}\mid}{\mid S \mid} \\).
 
 Now we can define the information gain \\(G(a,A,S)\\) as follows:
 \\[G(a,A,S) = H(P[t]) - \sum f_{a=\nu_{i} H(P[t; S_{a=\nu_{i}])\\]
