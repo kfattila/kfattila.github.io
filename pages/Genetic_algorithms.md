@@ -39,10 +39,9 @@ Let \\(cr \in [0,1]\\) be the cross-over probability and \\(F \in [0,2]\\) the d
 
 1. Select a model \\(x = [x_{1}, ..., x_{n}]\\), and for this model it will create a new model \\(y = [y_{1}, ..., y_{n}]\\).
 2. Randomly select three other models: \\(a, b, c\\).
-3. Select a random index \\(r \in \{1, ..., n\}\\)
+3. Select a random index \\(r \in \\{1, ..., n\\}\\)
 4. For every position \\(i \rightarrow 1, ..., n \\)
-	a. Draw a random number \\(r_{i} \in U(0,1)\\) from the uniform distribution on \\([0,1]\\)
-
+    a. Draw a random number \\(r_{i} \in U(0,1)\\) from the uniform distribution on \\([0,1]\\)
 	b. If \\(r_{i} < cr\\) or \\(i = r\\), then \\(y_{i} = a_{i} + F(b_{i} - c_{i})\\), otherwise \\(x_{i} = y_{i}\\)
 5. If the model \\(y\\) has better fitness than \\(x\\), then replace \\(x\\) with \\(y\\).
 
