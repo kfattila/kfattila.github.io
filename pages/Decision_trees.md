@@ -166,6 +166,7 @@ For humidity attribute, we need to create a new boolean value that is true when 
 |----------------------|--------|--------|--------|--------|--------|
 | Humidity:            | 0.68   | 0.72   | 0.87   | 0.9    | 0.91   |
 | Play tennis (target) | yes    | no     | no     | no     | no     |
+{:class="table table-bordered"}
 
 We would like to pick a threshold that produces the greatest information gain. By sorting the numeric attribute values, then identifying adjacent examples that differ in their target classification, we can generate a set of candidate threshold. Then we compute information gain for each candidate and find the best one for splitting.
 
@@ -173,7 +174,7 @@ We would like to pick a threshold that produces the greatest information gain. B
 
 from [http://www.cse.unsw.edu.au/~cs9417ml/DT1/decisiontreealgorithm.html](http://www.cse.unsw.edu.au/~cs9417ml/DT1/decisiontreealgorithm.html)
 
-The results:
+The result:
 
 ![decisiontrees6.png](./images/decisiontrees6.png)
 
