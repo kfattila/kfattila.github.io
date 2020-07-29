@@ -90,13 +90,13 @@ where \\(L(.)\\) is a cost function, \\(\Omega\\) is a regularization function o
 
 The objective function for linear regression with \\(l_{2}\\) regularization (reminder):
 
-
+![reg9.png](./images/reg9.png)
 
 The objective function for linear regression with \\(l_{1}\\) becomes: 
 
+![reg10.png](./images/reg10.png)
 
-
-###### \\(l_{2}\\) norm
+#### \\(l_{2}\\) norm
 
 One of the most commonly used regularization is the \\(l_{2}\\) norm, also called as ridge regression or Tikhonov regularization, and it is defined as: \\(\Omega(\theta) = \frac{1}{2}\theta^{T}\theta = \frac{1}{2}||\theta||_{2}^{2}\\)
 
