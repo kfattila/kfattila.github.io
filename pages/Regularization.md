@@ -19,7 +19,7 @@ The Bible Code, a 1998 bestseller, claimed that the Bible contains predictions o
 #### Bias-Variance trade-off control
 
 Let's consider the following regularized learning.
-\\[\theta_ = argmin_{\theta \in G}\\{L_{theta}(X,Y) + \lambda R(\theta)\\}\\]
+\\[\Theta_ = argmin_{\Theta \in G}\\{L_{\Theta}(X,Y) + \lambda R(\Theta)\\}\\]
 
 In the optimization of the cost function (above) the regularization part can be used to control the variance (in the model selection). Loosely speaking, if \\(\lambda\\) is zero or small, then the optimizer tries to achive a small error on fitting the model to the current data. If \\(\lambda\\) is big then the optimizer tries to find small parameter values of \\(\theta\\) for the model and it will consider the model fitting less. Thus, if the parameter values are supressed then it will reduce the variance in the model selection.
 
@@ -28,7 +28,7 @@ Revisit linear regression and generate more features \\(x,x^{2},x^{3},x^{4},...,
 
 \\[J_{1}(\theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(Y_{i} - (\sum_{j=1}^{n}x_{i,j}\theta_{j} + \theta_{0}))^{2} + \frac{\lambda}{2n}\sum_{j=1}^{n} \theta_{j}^{2}\\]
 
-Then the model is a polynomial function of degree n. If the regularization parameter low, close to zero, or zero, then the coefficient of the variables can be high. The higher the coefficient the "curlier" the polynomial function. Figure below shows an example.
+Then the model is a polynomial function of degree \\(n\\). If the regularization parameter low, close to zero, or zero, then the coefficient of the variables can be high. The higher the coefficient the "curlier" the polynomial function. Figure below shows an example.
 
 
 However, if the regularization parameter is high, then it will suppress the coefficients. The lower the coefficients are the "flatter" the polynomial function is. Figure x shows an example.
