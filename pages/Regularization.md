@@ -19,7 +19,7 @@ The Bible Code, a 1998 bestseller, claimed that the Bible contains predictions o
 #### Bias-Variance trade-off control
 
 Let's consider the following regularized learning.
-\\[\Theta_ = argmin_{\Theta \in G}\\{L_{\Theta}(X,Y) + \lambda R(\Theta)\\}\\]
+\\[\Theta = argmin_{\Theta \in G}\\{L_{\Theta}(X,Y) + \lambda R(\Theta)\\}\\]
 
 In the optimization of the cost function (above) the regularization part can be used to control the variance (in the model selection). Loosely speaking, if \\(\lambda\\) is zero or small, then the optimizer tries to achive a small error on fitting the model to the current data. If \\(\lambda\\) is big then the optimizer tries to find small parameter values of \\(\theta\\) for the model and it will consider the model fitting less. Thus, if the parameter values are supressed then it will reduce the variance in the model selection.
 
