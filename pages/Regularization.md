@@ -30,42 +30,50 @@ Revisit linear regression and generate more features \\(x,x^{2},x^{3},x^{4},...,
 
 Then the model is a polynomial function of degree \\(n\\). If the regularization parameter low, close to zero, or zero, then the coefficient of the variables can be high. The higher the coefficient the "curlier" the polynomial function. Figure below shows an example.
 
+![reg1.png](./images/reg1.png)
 
-However, if the regularization parameter is high, then it will suppress the coefficients. The lower the coefficients are the "flatter" the polynomial function is. Figure x shows an example.
+However, if the regularization parameter is high, then it will suppress the coefficients. The lower the coefficients are the "flatter" the polynomial function is. Figure shows an example.
 
+![reg2.png](./images/reg2.png)
 
 An optimal choice of the regularization parameter \\(\lambda\\) might give a reasonably "curvy" model. 
 
-
+![reg3.png](./images/reg3.png)
 
 Note that, this parameter penalty regularization does not control the degree of a polynomial model nor the complexity of the model. It only can suppress the value of the coefficients in the model. In generally speaking, smaller the coefficients the "flatter" the model.
 
-If the coefficients are suppressed then the models \\(\theta_{i}\\) (represented by red dots) and the mean of \\(\theta\\) (blue square in the figure below) is shifted toward zero, hence the bias is increased but the variance of \\(\theta\\) is reduced.
+If the coefficients are suppressed then the models \\(\theta_{i}\\) (represented by red dots) and the mean of \\(\Theta\\) (blue square in the figure below) is shifted toward zero, hence the bias is increased but the variance of \\(\Theta\\) is reduced.
 
-
+![reg4.png](./images/reg4.png)
 
 When overfitting occurs: reduce the number of the parameters of the model. Increase the data if you can.
 When underfitting occurs: increase the number of the parameters of the model.
 
 
-###### Regularization of k-Nearest Neighbors (kNNs).
+#### Regularization of k-Nearest Neighbors (kNNs).
 Consider an k-NN model shown below, where the black dashed line represents the true (usually unknown) model. 
 
 
 k = 1: overfitting:
 
+![reg5.png](./images/reg5.png)
+
 k = 100, underfitting:
+
+![reg6.png](./images/reg6.png)
 
 k = 29 would give a well regularized model.
 
+![reg7.png](./images/reg7.png)
 
 Figures taken from: 
 Source: [http://scott.fortmann-roe.com/docs/BiasVariance.html](http://scott.fortmann-roe.com/docs/BiasVariance.html)
 
-###### Regularization for Decision Trees (DTs)
+#### Regularization for Decision Trees (DTs)
 
 Decision trees are also prone to overfitting. DTs are actually capable of learning all data examples in the training data (especially in the case of wide data). If the decision tree is too deep then the decision boundary it represents can become too non-linear. 
 
+![reg8.png](./images/reg8.png)
 
 **Figure:** Decision tree for regression.
 
@@ -73,7 +81,7 @@ Tree pruning methods are used to decrease the complexity (the size) of the tree.
 These methods cut the branches of the decision tree and replace a branch with a leave node, where the label of the new leaf is chosen by the majority of the corresponding samples.
 
 
-###### Parameter norm penalty
+#### Parameter norm penalty
 
 The training of the parameters \\(\theta\\) of a model is done via optimizing a cost functions (also called learning objective):
 \\[J(\theta;D) = \frac{1}{m}\sum_{i}L_{\theta}(x_{i},y_{i}) + \lambda\Omega(\theta)\\]
