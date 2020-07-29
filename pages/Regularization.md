@@ -16,14 +16,14 @@ about it than about any other topic. Every powerful learner, whether symbolist, 
 The Bible Code, a 1998 bestseller, claimed that the Bible contains predictions of future events that you can find by skipping letters at regular intervals and assembling words from the letters you land on. Unfortunately, there are so many ways to do this that you’re guaranteed to find “predictions” in any sufficiently long text. Skeptics replied by finding them in Moby Dick and Supreme Court rulings, along with mentions of Roswell and UFOs in Genesis. John von Neumann, one of the founding fathers of computer science, famously said that “with four parameters I can fit an elephant, and with five I can make him wiggle his trunk.” Today we routinely learn models with millions of parameters, enough to give each elephant in the world his own distinctive wiggle. It’s even been said that data mining means “torturing the data until it confesses.” " [ref: P. Domingo: The Master Algorithm]
 
 
-###### Bias-Variance trade-off control
+#### Bias-Variance trade-off control
 
 Let's consider the following regularized learning.
-\\[\theta_ = argmin_{\theta \in G}\{L_{theta}(X,Y) + \lambdaR(\theta)\}\\]
+\\[\theta_ = argmin_{\theta \in G}\\{L_{theta}(X,Y) + \lambda R(\theta)\\}\\]
 
 In the optimization of the cost function (above) the regularization part can be used to control the variance (in the model selection). Loosely speaking, if \\(\lambda\\) is zero or small, then the optimizer tries to achive a small error on fitting the model to the current data. If \\(\lambda\\) is big then the optimizer tries to find small parameter values of \\(\theta\\) for the model and it will consider the model fitting less. Thus, if the parameter values are supressed then it will reduce the variance in the model selection.
 
-###### Example for over and underfit: 
+#### Example for over and underfit: 
 Revisit linear regression and generate more features \\(x,x^{2},x^{3},x^{4},...,x^{n},x_{1}x_{2}, x_{2}x_{3},...,x_{n-1}x_{n},...\\)
 
 \\[J_{1}(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(Y_{i} - (\sum_{j=1}^{n}x_{i,j}\theta_{j} + \theta_{0}))^{2} + \frac{\lambda}{2n}\sum_{j=1}^{n} \theta_{j}^{2}\\]
