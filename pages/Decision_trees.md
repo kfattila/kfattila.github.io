@@ -52,11 +52,15 @@ Splitting by the variable 'outlook' we would get:
 |--------------------------|-----------|-----------|
 | Humidity:                | low       | high      |
 | **Play tennis (target)** | **yes**   | **no**    |
+{:class="table table-bordered"}
+
 
 | Outlook:                 | overcast     | overcast     | overcast     |
 |--------------------------|--------------|--------------|--------------|
 | Humidity:                | low          | high         | high         |
 | **Play tennis (target)** | **yes**      | **no**       | **no**       |
+{:class="table table-bordered"}
+
 
 After splitting the data, the class labels mix in both dataset.
 
@@ -66,11 +70,15 @@ Splitting by the variable humidity we would get:
 |--------------------------|--------------|-----------|--------------|
 | Outlook:                 | overcast     | sunny     | overcast     |
 | **Play tennis (target)** | **no**       | **no**    | **no**       |
+{:class="table table-bordered"}
+
 
 | Humidity:                | low          | low       |
 |--------------------------|--------------|-----------|
 | Outlook:                 | overcast     | sunny     |
 | **Play tennis (target)** | **yes**      | **yes**   |
+{:class="table table-bordered"}
+
 
 After splitting, the class labels become uniform.
 
