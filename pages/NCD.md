@@ -105,11 +105,11 @@ The idea is similar to CBDs, but instead of measuring how two strings are relate
 In contrast to the compression based distances, where \\(C(x)\\) represents the length of the compressed strings, here we define the Google code \\(G\\) as
 \\[G(x) = G(x,x), \text{ and } G(x,y) = \log(\frac{1}{g(x,y)}) \text{, where } g(x,y) = \frac{f(x,y)}{N}\\].
 The normalized Google distance NGD for search terms \\(x\\) and \\(y\\) is defined as follows:
-\\[NGD(x,y) = \frac{G(x,y) - min(G(x), G(y))}{max (G(x), G(y))} = \frac\\{max\{\log f(x), \log f(y)\\} - \log f(x,y)}{\log N - min\\{\log f(x), \log f(y)\\}}\\]
+\\[NGD(x,y) = \frac{G(x,y) - min(G(x), G(y))}{max (G(x), G(y))} = \frac{max\\{\log f(x), \log f(y)\\} - \log f(x,y)}{\log N - min\\{\log f(x), \log f(y)\\}}\\]
 
 Some properties:
 1. If \\(x = y\\), or \\(x \neq y\\) but \\(f(x) = f(y) = f(x,y) > 0\\), then \\(NGD(x,y) = 0\\)
-2. If \\(f(x) = 0\\), then for each search term \\(y: f(x,y) = 0\\), then \\(NGD(x,y) = \frac{\inf}{\inf}\\)
+2. If \\(f(x) = 0\\), then for each search term \\(y: f(x,y) = 0\\), then \\(NGD(x,y) = \frac{\infinity}{\infinity}\\)
 3. \\(NGD(x,x) = 0\\), for all search term \\(x\\).
 4. NGD is symmetric
 5. \\(NGD(x,y) = 0\\) for some \\(x \neq y\\). Choose \\(x\\) and \\(y\\) such that \\(x \neq y\\) but \\(S_{x} = S_{y}\\)
