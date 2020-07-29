@@ -125,6 +125,7 @@ And the uncertainty is:
 \\[H(P[play]) = -(\frac{5}{14}\log\frac{5}{14} + \frac{9}{14}\log\frac{9}{14}) = 0.94\\]
 
 Let us chose the attribute "temperature". It has three values: "hot", "mild", "cool".
+
 \\(\mid S_{Temp=cool} \mid = 4\\)
 
 \\(\mid S_{Temp=mild} \mid = 6\\)
