@@ -9,14 +9,11 @@ Genetic Algorithms (GA) are metaheuristic algorithms for global optimization and
 
 Genetic Algorithms consists of three main components:
 1. Representation,
-		
-		To represent the model/problem. Typically, it contains several hundreds or thousands of randomly generated models allowing to spread over the entire model space. 
+To represent the model/problem. Typically, it contains several hundreds or thousands of randomly generated models allowing to spread over the entire model space. 
 2. Fitness function,
-		
-		To evaluate how well a model performs. It is basically uses some sort of cost function or accuracy. GA tries to generate models which maximizes this fitness function.
+To evaluate how well a model performs. It is basically uses some sort of cost function or accuracy. GA tries to generate models which maximizes this fitness function.
 3. Genetic operator
-		
-		To generate new model instances from the fittest ones. There are two main type of such operators: cross-over and mutation.
+To generate new model instances from the fittest ones. There are two main type of such operators: cross-over and mutation.
 		
 
 GAs are iterative algorithms starting from an initial population and stopping when the termination criterion fulfilled. The GA method is first initialized with a set of models randomly, and it is called *population*. Then, in each iteration, GA selects the top \\(n\\) fittest model from the population w.r.t. some evaluation criteria and discards the others. Then GA mates the fittest individuals using some genetic operators producing two offsprings from each pair of parents by crossing over their model representation at a random point. This procedure is repeated until the termination criterion has reached. The very specific fitness functions and genetic operators are usually domain and problem specific.
