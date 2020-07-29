@@ -52,9 +52,7 @@ Let \\(cr \in [0,1]\\) be the cross-over probability and \\(F \in [0,2]\\) the d
 #### Examples
 
 1. Genetic algorithm for learning decision trees:
-
 ![genetics_alg2](./images/genetics_alg2.png)
-
 2. CPPN: compositional pattern-producing network
 CPPNs are networks of functions (similar to a graph). A CPPN takes in the (x, y) position of a pixel as input, and outputs a grayscale value or tuple of HSV color values for that pixel. Like a neural network, the function the CPPN computes depends on the number and type of units in the CPPN, how they are connected, and the weights between neurons. Each CPPN unit can have one of a set of activation functions (here: sine, sigmoid, Gaussian and linear), which can provide geometric regularities to the image. For example, passing the x input into a Gaussian function will provide left-right symmetry, and passing the y input into a sine function provides top-bottom repetition.
 
