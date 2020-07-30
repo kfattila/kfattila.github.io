@@ -228,7 +228,7 @@ Let's consider a regression problem modeled with a multi-layer neural network.
 \\[J = \frac{1}{m}\sum_{i}(f(x_{i}) - y_{i})^{2}\\]
 Let \\(f_{\epsilon}\\) be the neural network in which the weights are perturbed with a noise \\(W_{\epsilon} = W + N(0, \eta I)\\)
 The learning objective can be written as:
-\\[J_{\epsilon} = \frac{1}{m}\sum_{i}(f(x_{i}) - y_{i})^{2} = \frac{1}{m}\sum_{i}f_{\epsilon}^{2}(x_{i}) - y_{i}^{2} + 2f_{\epsilon}(x_{i})y_{i}\\]
+\\[J_{\epsilon} = \frac{1}{m}\sum_{i}(f_{\epsilon}(x_{i}) - y_{i})^{2} = \frac{1}{m}\sum_{i}f_{\epsilon}^{2}(x_{i}) - y_{i}^{2} + 2f_{\epsilon}(x_{i})y_{i}\\]
 This will lead to an extra term in the learning objective \\(\frac{\eta}{m}||\nabla_{\theta}f_{\epsilon}(x)||^{2}\\). This regularization will get the optimizer find solution surrounded with flat region.
 3. Injecting noise to output targets: Instead of using hard coded class labels like 0 and 1 one can introduce a little noise ϵ on them. This would give as more relaxed class labels as \\(\epsilon\\) and \\(1 - \epsilon\\), respectively and they can plugged in the cross-entropy loss as
 \\[c_{\theta}(x_{i},y_{i}) = -(y_{i} - \epsilon)\log(h_{\theta}(x_{i})) - (1 - y_{i} + \epsilon) \log(1 - h_{\theta}(x_{i}))\\]
