@@ -134,13 +134,14 @@ Because \\(H\\) is real, symmetric, we can decompose it as \\(H = Q\Lambda Q^{T}
 
 This means that the regularization parameter \\(\alpha\\) rescales \\(\theta^{\ast}\\) along the axes defined by the eighenvectors of \\(H\\). In a direction where the corresponding eigenvalue is small, a step in that direction does not reduce the cost function "greatly". Specifically, components are rescaled by a factor of \\(\frac{\lambda_{i}}{\lambda_{i} + \alpha}\\). When \\(\lambda_{i} \gg \alpha\\), then the effect of the regularization is small. When (\lambda_{i} \ll \alpha\\), then it will be shifted toward zero by a larger magnitude. Note that, if a component of \\(\theta^{\ast}\\) is nonzero, then the corresponding component of the optimal value remains nonzero.
 
+![reg11.png](./images/reg11.png)
 
 ###### \\(l_{1}\\) norm:
 
-This type of regularization is defined as \\(\Omega(\theta) = ||\theta||_{1} = \sum_{i}|\theta_{i}|\\). Doing the similar calculations with the learning objective function we get:
+This type of regularization is defined as \\(\Omega(\theta) = \lVert\theta\rVert_{1} = \sum_{i}|\theta_{i}|\\). Doing the similar calculations with the learning objective function we get:
 
 This gives us the learning objective:
-\\[J(\theta ; D) = \sum_{i} L_{\theta}(x_{i}, y_{i}) + \lambda||\theta||_{1}\\]
+\\[J(\theta ; D) = \sum_{i} L_{\theta}(x_{i}, y_{i}) + \lambda\lVert\theta\rVert_{1}\\]
 
 The corresponding gradient and the update can be written as:
 \\[\nabla_{\theta}J(\theta ; D) = \sum_{i}\nabla_{\theta}L_{\theta}(x_{i}, y_{i}) + \lambda\sum_{i} sign(\theta_{i})\\]
@@ -149,7 +150,7 @@ where sign(.) is applied element-wise.
 This formulation does not give us clean analytical formulas. In order to proceed further, in the subsequent part, we will assume that the Hessian matrix is diagonal. That is: \\(H = diag([H_{1,1}, H_{2,2}, ..., H_{n,n}])\\). This might be not a strict assumption, as such Hessian matrix can be achieved by using PCA filtering beforehand.
 
 The learning objective can be approximated by its Taylor series as before and we get
-\\[J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast}) + \alpha\frac{1}{2}||\theta||_{1}\\]
+\\[J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast}) + \alpha\frac{1}{2}\lVert\theta\rVert_{1}\\]
 
 Because we assumed that the Hessian \\(H\\) is diagonal, it can be rewritten in the following form:
 \\[J(\theta) = J(\theta^{\ast}) + \sum_{i}[\frac{1}{2}H_{i,i}(\theta_{i} - \theta_{i}^{\ast})^{2} + \alpha|\theta_{i}|]\\]
