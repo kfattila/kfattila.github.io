@@ -207,13 +207,13 @@ Then \\(l_{2}\\) regularization and early stopping can be seen to be equivalent.
 
 However, when one monitors the learning curve and terminates the optimizer when validation increases to prevent overfitting, potentially one can get a good generalization error. However using \\(l_{2}\\) regularization one does not have this visual feedback and needs to adjust the trade-off parameter blindly several times in order to choose the most appropriate \\(\alpha\\).
 
-###### Dataset augmentation
+#### Dataset augmentation
 
 Training of a model needs lots of data. It is a thumb rule that for an \\(n\\)-dimensional data one should be provided \\(2^{n}\\) data. The optimal number of training examples also depends on the number of the model parameters as well.
 When enough data is not available, often more data are generated. There are two approach for this:
 
-1. For any \\((x,y) \in D\\), one can generate a new data \\((\widetilda{x}, y)\\) with linear transformation and add it to the traning dataset. This can be easily done for image classification, when images can be shifted by some pixels or rotated a bit. However, this should be carried out carefully as not to transform one example to another class. For instance, the digit '6' can be transformed to '9' with 180 degree rotation or 'b' could be transformed to 'd' with vertical flipping.
-2. For any \\((x,y) \in D\\), one can generate \\((\widetilda{x}, y)\\) via adding some noise: \\(\widetilda{x} + N(0, \eta I)\\). This technique increases the robustness of neural networks as practice shows.
+1. For any \\((x,y) \in D\\), one can generate a new data \\((\widetilde{x}, y)\\) with linear transformation and add it to the traning dataset. This can be easily done for image classification, when images can be shifted by some pixels or rotated a bit. However, this should be carried out carefully as not to transform one example to another class. For instance, the digit '6' can be transformed to '9' with 180 degree rotation or 'b' could be transformed to 'd' with vertical flipping.
+2. For any \\((x,y) \in D\\), one can generate \\((\widetilde{x}, y)\\) via adding some noise: \\(\widetilde{x} + N(0, \eta I)\\). This technique increases the robustness of neural networks as practice shows.
 
 In some cases it is difficult or impossible to generate new data. For instance, it is difficult to generate data for density estimation problems without first solving the density estimation problem.
 
