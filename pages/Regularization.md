@@ -175,8 +175,8 @@ When one monitors the learning curves while training a model; it can be seen the
 
 Training usually starts with random initialization of the parameters \\(\theta^{(0)}\\) with very small but random numbers around zero. Thus, during the training, the parameter point \\(\theta^{(l)}\\) starts wandering from zero to one of the local minima. Early stopping terminates this walk before it could reach the local minimum. Therefore, early stopping does not let the parameter values grow, they will have smaller values than at the local minimum. Regularization introduces a penalty on the value of the parameters, and smaller parameter values are preferred. Early stopping introduces a shift  from the local minimum towards zero. Loosley speaking this shift is the bias. Therefore, since early stopping has the same effect, it can be considered as a regularizer.
 
-
-
+![reg14.png](./images/reg14.png)
+![reg15.png](./images/reg15.png)
 
 Now we will show that how early stopping is related to \\(l_{2}\\) normalization.
 Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped after \\(\tau\\)  iteration. Let \\(\theta^{(0)}\\) be the starting point around zero; that is \\(\theta^{(0)} \approx 0\\). Let \\(J(\theta) = J(\theta^{\ast}) + \fracs{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast})\\) be the cost function and \\(\nabla_{\theta}J(\theta) = H(\theta - \theta^{\ast})\\) be the gradient, where \\(H\\) is the Hessian at \\(\theta^{\ast}\\).
