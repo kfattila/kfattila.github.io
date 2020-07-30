@@ -85,7 +85,7 @@ The problem is formulated as follows:
 \\[max f_{y_{fool}}(x + e_{x})\\]
 subject to \\(\lVert e_{x}\rVert_{0} \leq d\\)
 
-where \\(d\\) is a small number and the zero norm is defined by the number of non-zero elements in its arguments. In the one-pixel-attack scenario \\(d = \\)
+where \\(d\\) is a small number and the zero norm is defined by the number of non-zero elements in its arguments. 
 
 The optimization is carried out using differential evolution algorithm.
 
