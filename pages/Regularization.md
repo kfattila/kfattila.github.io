@@ -192,12 +192,12 @@ Assuming \\(\theta^{(0)} = 0\\) and \\(\epsilon\\) is small enough to guarantee 
 
 \\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} = (I - \epsilon\Lambda)^{\tau}Q^{T}(-\theta^{\ast})\\]
 \\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} - (I - \epsilon\Lambda)^{\tau}Q^{T}\theta^{\ast}\\]
-\\(Q^{T}\theta^{(\tau)} = [I - (I - \epsilon\Lambda)^{\tau}]Q^{T}\theta^{\tau}\\) (1)
+\\[Q^{T}\theta^{(\tau)} = [I - (I - \epsilon\Lambda)^{\tau}]Q^{T}\theta^{\tau} \text{ (1)}\\] 
 
 Now, recall that from \\(l_{2}\\) normalization we have:
 \\[\theta' = Q(\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
 \\[Q^{T}\theta' = (\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
-\\(Q^{T}\theta' = [I - (\Lambda + \alpha I)^{-1}\alpha]Q^{T}\theta^{\ast}\\)  (2)
+\\[Q^{T}\theta' = [I - (\Lambda + \alpha I)^{-1}\alpha]Q^{T}\theta^{\ast}\\ \text{ (2)}\\]
 
 When we compare the two equation (1) and (2) we see if the hyperparameters \\(\epsilon, \alpha, \tau\\) are chosen such that
 \\[(I - \epsilon\Lambda)^{\tau} = (\Lambda + \alpha I)^{-1}\alpha\\]
