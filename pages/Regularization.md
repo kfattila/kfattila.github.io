@@ -327,7 +327,7 @@ For a given loss function \\(l\\):
 
 \\[\frac{\partial l}{\partial\beta} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}}\\]
 
-The scaling and the fact its parameters are learnable is important here. If the batch normalization would rather harm the optimization of the loss then the setting \\(\gamma \sqrt{Var[h_{i}]}\\) and \\(\beta = E[h_{i}]\\)\\) would recover the original data if that were the optimal thing to do.
+The scaling and the fact its parameters are learnable is important here. If the batch normalization would rather harm the optimization of the loss then the setting \\(\gamma \sqrt{Var[h_{i}]}\\) and \\(\beta = E[h_{i}]\\) would recover the original data if that were the optimal thing to do.
 
 How would you calculate the normalization parameters for inference (test phase)?
 In the inference part the normalization parameters are the averages of the normalization parameters of each mini-batches.
