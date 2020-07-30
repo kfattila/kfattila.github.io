@@ -284,7 +284,7 @@ It is said that LB methods converge to sharp minimum, while SB methods tend to c
 ![reg18.png](./images/reg18.png)
 
 
-The concept of sharp and flat minima are defined in terms of the \\(\\nabla^{2}f(x)\).
+The concept of sharp and flat minima are defined in terms of the \\(\\nabla^{2}f(x)\\).
 Experiments. The following architectures and data were used in a research study [3]:
 
 ![reg19.png](./images/reg19.png)
