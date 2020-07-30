@@ -252,7 +252,7 @@ In the case of dropout method, a binary mask vector is used to indicate which un
 This means that keep the row \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i)} = 1\\) , otherwise delete it; and keep the column \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i-1)} = 1\\), otherwise delete it.
 
 Finally, 
-\\[A_{i} = g(\Theta'^{i}A_{i-1}^{'})\\]
+\\[A_{i}^{'} = g(\Theta'^{(i)}A_{i-1}^{'})\\]
 
 In the back propagation and in the parameter update use units which were active during forward propagation. Keep parameters of locked units unchanged.
 
