@@ -180,9 +180,9 @@ Training usually starts with random initialization of the parameters \\(\theta^{
 
 Now we will show that how early stopping is related to \\(l_{2}\\) normalization.
 Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped after \\(\tau\\)  iteration. Let \\(\theta^{(0)}\\) be the starting point around zero; that is \\(\theta^{(0)} \approx 0\\). Let \\(J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast})\\) be the cost function and \\(\nabla_{\theta}J(\theta) = H(\theta - \theta^{\ast})\\) be the gradient, where \\(H\\) is the Hessian at \\(\theta^{\ast}\\).
-\\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon\nabla_{\theta}J(\theta^{(\tau - 1)})\\]
-\\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon H(\theta^{(\tau - 1)} - \theta^{\ast})\\]
-\\[\theta^{\tau} - \theta^{\ast} = ( I - epsilon H)(\theta^{(\tau - 1)} - \theta^{\ast})\\]
+\\[\theta^{(\tau)} = \theta^{(\tau - 1)} - \epsilon\nabla_{\theta}J(\theta^{(\tau - 1)})\\]
+\\[\theta^{(\tau)} = \theta^{(\tau - 1)} - \epsilon H(\theta^{(\tau - 1)} - \theta^{\ast})\\]
+\\[\theta^{(\tau)} - \theta^{\ast} = ( I - epsilon H)(\theta^{(\tau - 1)} - \theta^{\ast})\\]
 
 If we decompose Hessian matrix \\(H\\) as \\(H = Q\Lambda Q^{T}\\)
 \\[\theta^{\tau} - \theta^{\ast} = (I - \epsilon Q\Lambda Q^{T})(\theta^{\tau - 1} - \theta^{\ast})\\]
