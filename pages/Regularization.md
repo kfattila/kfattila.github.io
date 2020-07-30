@@ -98,7 +98,7 @@ The objective function for linear regression with \\(l_{1}\\) regularization bec
 
 #### \\(l_{2}\\) norm
 
-One of the most commonly used regularization is the \\(l_{2}\\) norm, also called as ridge regression or Tikhonov regularization, and it is defined as: \\(\Omega(\theta) = \frac{1}{2}\theta^{T}\theta = \frac{1}{2}\norm\theta\norm_{2}^{2}\\)
+One of the most commonly used regularization is the \\(l_{2}\\) norm, also called as ridge regression or Tikhonov regularization, and it is defined as: \\(\Omega(\theta) = \frac{1}{2}\theta^{T}\theta = \frac{1}{2}\norm{\theta}\_{2}^{2}\\)
 
 This gives us the learning objective:
 \\[J(\theta;D) = \sum_{i}L_{\theta}(x_{i},y_{y}) + \frac{\lambda}{2}\theta^{T}\theta\\]
