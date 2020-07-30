@@ -132,7 +132,7 @@ Because \\(H\\) is real, symmetric, we can decompose it as \\(H = Q\Lambda Q^{T}
 \\[\theta' = (Q(\Lambda + \alpha I)Q^{T})^{-1}Q\Lambda Q^{T}\theta^{\ast}\\]
 \\[\theta' = Q(\Lambda + \alpha I)^{-1}\Lambda Q^{T}\theta^{\ast}\\]
 
-This means that the regularization parameter \\(\alpha\\) rescales \\(\theta^{\ast}\\) along the axes defined by the eighenvectors of \\(H\\). In a direction where the corresponding eigenvalue is small, a step in that direction does not reduce the cost function "greatly". Specifically, components are rescaled by a factor of \\(\frac{\lambda_{i}}{\lambda_{i} + \alpha}\\). When \\(\lambda_{i} \gg \alpha\\), then the effect of the regularization is small. When (\lambda_{i} \ll \alpha\\), then it will be shifted toward zero by a larger magnitude. Note that, if a component of \\(\theta^{\ast}\\) is nonzero, then the corresponding component of the optimal value remains nonzero.
+This means that the regularization parameter \\(\alpha\\) rescales \\(\theta^{\ast}\\) along the axes defined by the eighenvectors of \\(H\\). In a direction where the corresponding eigenvalue is small, a step in that direction does not reduce the cost function "greatly". Specifically, components are rescaled by a factor of \\(\frac{\lambda_{i}}{\lambda_{i} + \alpha}\\). When \\(\lambda_{i} \gg \alpha\\), then the effect of the regularization is small. When \\(\lambda_{i} \ll \alpha\\), then it will be shifted toward zero by a larger magnitude. Note that, if a component of \\(\theta^{\ast}\\) is nonzero, then the corresponding component of the optimal value remains nonzero.
 
 ![reg11.png](./images/reg11.png)
 
