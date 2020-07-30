@@ -313,7 +313,7 @@ where \\(\epsilon\\) is used only for numerical stability. After the normalizati
 The question remains if this transformation is differentiable when it is applied in the forward propagation at every layer? The answer is yes, and more importantly, the scaling parameters \\(\gamma, \beta\\) can be learned as well:
 
 For a given loss function \\(l\\):
-\\[ \frac{\partial l}{\partial\widehat{h_{i}}} = \frac{\partial l}{\partialh_{i}} \times \gamma \\]
+\\[ \frac{\partial l}{\partial\widehat{h_{i}}} = \frac{\partial l}{\partial h_{i}} \times \gamma \\]
 
 \\[ \frac{\partial l}{\partial \sigma_{B}^{2}} = \sum\frac{\partial l}{\partial\widehat{h_{i}}} \times (h_{i} - \mu_{B}) \times \frac{-1}{2}(\sigma_{B}^{2} + \epsilon)^{-\frac{3}{2}} \\]
 
