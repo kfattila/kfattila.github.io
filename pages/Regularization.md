@@ -136,9 +136,9 @@ This means that the regularization parameter \\(\alpha\\) rescales \\(\theta^{\a
 
 ![reg11.png](./images/reg11.png)
 
-###### \\(l_{1}\\) norm:
+#### \\(l_{1}\\) norm:
 
-This type of regularization is defined as \\(\Omega(\theta) = \lVert\theta\rVert_{1} = \sum_{i}|\theta_{i}|\\). Doing the similar calculations with the learning objective function we get:
+This type of regularization is defined as \\(\Omega(\theta) = \lVert\theta\rVert_{1} = \sum_{i}\mid\theta_{i}\mid\\). Doing the similar calculations with the learning objective function we get:
 
 This gives us the learning objective:
 \\[J(\theta ; D) = \sum_{i} L_{\theta}(x_{i}, y_{i}) + \lambda\lVert\theta\rVert_{1}\\]
@@ -156,7 +156,7 @@ Because we assumed that the Hessian \\(H\\) is diagonal, it can be rewritten in 
 \\[J(\theta) = J(\theta^{\ast}) + \sum_{i}[\frac{1}{2}H_{i,i}(\theta_{i} - \theta_{i}^{\ast})^{2} + \alpha|\theta_{i}|]\\]
 
 The minimization of this function can be done analytically:
-\\[\theta_{i}' = sign(\theta_{i}^{\ast}) max\{|\theta_{i}^{\ast}| - \frac{\alpha}{H_{i,i}}, 0\}\\]
+\\[\theta_{i}^{'} = sign(\theta_{i}^{\ast}) max\\{\mid\theta_{i}^{\ast}\mid - \frac{\alpha}{H_{i,i}}, 0\\}\\]
 
 Let's consider a situation when \\(\theta_{i}^{\ast}\\) is positive.
 1. \\(\theta_{i}^{\ast} \leq \frac{\alpha}{H_{i,i}} \\) : then the optimal value is simply set to zero: \\(\theta_{i}' = 0\\).
@@ -166,12 +166,11 @@ Similar arguments can be done for negative \\(\theta_{i}^{\ast}\\).
 
 One of the good thing in this regularization is that if \\(\theta_{i}^{\ast}\\) is zero, then the optimal value \\(\theta_{i}'\\) remains zero; and if \\(\theta_{i}^{\ast}\\) is nonzero, then the optimal value \\(\theta_{i}'\\) can become zero for \\(\alpha\\) large enough and the corresponding feature may safely be removed. This property can lead to sparse representation and thus \\(l_{1}\\) norm can be used for feature selection.
 
-###### Early-stopping:
+#### Early-stopping:
 
 When one monitors the learning curves while training a model; it can be seen the training error is decreasing while the error on the validation set is increasing. Let's name it, this is the case of overfitting. Therefore, stopping the training when it reaches the lowest validation error and before the algorithm reaches the local minima; hopefully this can give a better generalization error on the test set. This is called early-stopping.
 
-
-
+![reg12.png](./images/reg12.png)
 
 Training usually starts with random initialization of the parameters \\(\theta^{(0)}\\) with very small but random numbers around zero. Thus, during the training, the parameter point \\(\theta^{(l)}\\) starts wandering from zero to one of the local minima. Early stopping terminates this walk before it could reach the local minimum. Therefore, early stopping does not let the parameter values grow, they will have smaller values than at the local minimum. Regularization introduces a penalty on the value of the parameters, and smaller parameter values are preferred. Early stopping introduces a shift  from the local minimum towards zero. Loosley speaking this shift is the bias. Therefore, since early stopping has the same effect, it can be considered as a regularizer.
 
