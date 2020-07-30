@@ -179,7 +179,7 @@ Training usually starts with random initialization of the parameters \\(\theta^{
 ![reg15.png](./images/reg15.png)
 
 Now we will show that how early stopping is related to \\(l_{2}\\) normalization.
-Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped after \\(\tau\\)  iteration. Let \\(\theta^{(0)}\\) be the starting point around zero; that is \\(\theta^{(0)} \approx 0\\). Let \\(J(\theta) = J(\theta^{\ast}) + \fracs{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast})\\) be the cost function and \\(\nabla_{\theta}J(\theta) = H(\theta - \theta^{\ast})\\) be the gradient, where \\(H\\) is the Hessian at \\(\theta^{\ast}\\).
+Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped after \\(\tau\\)  iteration. Let \\(\theta^{(0)}\\) be the starting point around zero; that is \\(\theta^{(0)} \approx 0\\). Let \\(J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T}H(\theta - \theta^{\ast})\\) be the cost function and \\(\nabla_{\theta}J(\theta) = H(\theta - \theta^{\ast})\\) be the gradient, where \\(H\\) is the Hessian at \\(\theta^{\ast}\\).
 \\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon\nabla_{\theta}J(\theta^{(\tau - 1)})\\]
 \\[\theta^{\tau} = \theta^{\tau - 1} - \epsilon H(\theta^{(\tau - 1)} - \theta^{\ast})\\]
 \\[\theta^{\tau} - \theta^{\ast} = ( I - epsilon H)(\theta^{(\tau - 1)} - \theta^{\ast})\\]
@@ -188,7 +188,7 @@ If we decompose Hessian matrix \\(H\\) as \\(H = Q\Lambda Q^{T}\\)
 \\[\theta^{\tau} - \theta^{\ast} = (I - \epsilon Q\Lambda Q^{T})(\theta^{\tau - 1} - \theta^{\ast})\\]
 \\[Q^{T}(\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)Q^{T}(\theta^{\tau - 1} - \theta^{\ast}) \\]
 
-Assuming \\(\theta^{(0)} = 0\\) and \\(\epsilon\\) is small enough to guarantee that \\(|1 - \epsilon\lambda_{i}| < 1\\) then \\(Q^{T} = (\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)(I - \epsilon\Lambda)(I - \epsilon\Lambda)...(I - \epsilon\Lambda)Q^{T}(\theta^{(0)} - \theta^{\ast})\\)
+Assuming \\(\theta^{(0)} = 0\\) and \\(\epsilon\\) is small enough to guarantee that \\(\mid 1 - \epsilon\lambda_{i}\mid < 1\\) then \\(Q^{T} = (\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)(I - \epsilon\Lambda)(I - \epsilon\Lambda)...(I - \epsilon\Lambda)Q^{T}(\theta^{(0)} - \theta^{\ast})\\)
 
 \\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} = (I - \epsilon\Lambda)^{\tau}Q^{T}(-\theta^{\ast})\\]
 \\[Q^{T}\theta^{(\tau)} - Q^{T}\theta^{\ast} - (I - \epsilon\Lambda)^{\tau}Q^{T}\theta^{\ast}\\]
