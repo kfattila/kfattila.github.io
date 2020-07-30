@@ -293,7 +293,7 @@ Experiments. The following architectures and data were used in a research study 
 And the overall results obtained with SB (256 data) and LB (10% of the total data):
 
 ![reg20.png](./images/reg20.png)
-
+![reg21.png](./images/reg21.png)
 
 Error surface characterization. The local minima obtained with LB and SB are denoted by \\(x_{l}^{\ast}\\) and \\(x_{s}^{\ast}\\). respectively. Then the loss function were plotted along the line-segment containing these two local minina. Secifically, for \\(\alpha = [-1,2]\\), the loss function \\(f(\alpha x_{l}^{\ast} + (1 - \alpha)x_{s}^{\ast})\\) were plotted below. The plots show that local minima found by SB is stringkingly flatter than the local minima found by LB.
 
