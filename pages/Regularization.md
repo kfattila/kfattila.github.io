@@ -313,17 +313,17 @@ where \\(\epsilon\\) is used only for numerical stability. After the normalizati
 The question remains if this transformation is differentiable when it is applied in the forward propagation at every layer? The answer is yes, and more importantly, the scaling parameters \\(\gamma, \beta\\) can be learned as well:
 
 For a given loss function \\(l\\):
-\\[ \frac{\partial l}{\partial\widehat{h_{i}}} = \frac{\partial l}{\partial \overline{h_{i}}} \times \gamma \\]
+\\[ \frac{\partial l}{\partial\widehat{h_{i}}} = \frac{\partial l}{\partial \overline{h_{i}}} \dot \gamma \\]
 
-\\[ \frac{\partial l}{\partial \sigma_{B}^{2}} = \sum\frac{\partial l}{\partial\widehat{h_{i}}} \times (h_{i} - \mu_{B}) \times \frac{-1}{2}(\sigma_{B}^{2} + \epsilon)^{-\frac{3}{2}} \\]
+\\[ \frac{\partial l}{\partial \sigma_{B}^{2}} = \sum\frac{\partial l}{\partial\widehat{h_{i}}} \dot (h_{i} - \mu_{B}) \dot \frac{-1}{2}(\sigma_{B}^{2} + \epsilon)^{-\frac{3}{2}} \\]
 
-\\[ \frac{\partial l}{\partial \mu_{B}} = ( \frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon } \sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{\sum_{i} - 2(h_{i} - \mu_{B})}{m} \\]
+\\[ \frac{\partial l}{\partial \mu_{B}} = ( \frac{-1}{\sqrt{\sigma_{B}^{2}} + \epsilon} \sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \dot \frac{\sum_{i} - 2(h_{i} - \mu_{B})}{m} \\]
 
-\\[ \frac{\partial l}{\partial h_{i}} = \frac{\partial l}{\partial\widehat{h_{i}}} \times \frac{1}{\sqrt{\sigma_{B}^{2}} \frac{\partial l}{\partial\sigma_{B}^{2}} \\]
+\\[ \frac{\partial l}{\partial h_{i}} = \frac{\partial l}{\partial\widehat{h_{i}}} \dot \frac{1}{\sqrt{\sigma_{B}^{2}} \frac{\partial l}{\partial\sigma_{B}^{2}} \\]
 
-\\[\frac{\partial l}{\partial \mu_{B}} = (\frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon }\sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{-2(h_{i} - \mu_{B})}{m} + \frac{1}{m} \frac{\partial l}{m \partial\mu_{B}} \\]
+\\[\frac{\partial l}{\partial \mu_{B}} = (\frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon }\sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \dot \frac{-2(h_{i} - \mu_{B})}{m} + \frac{1}{m} \frac{\partial l}{m \partial\mu_{B}} \\]
 
-\\[\frac{\partial l}{\partial\gamma} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}} \times \widehat{h_{i}}\\]
+\\[\frac{\partial l}{\partial\gamma} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}} \dot \widehat{h_{i}}\\]
 
 \\[\frac{\partial l}{\partial\beta} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}}\\]
 
