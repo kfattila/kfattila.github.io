@@ -28,10 +28,10 @@ Let us consider a model, possibly a deep neural network represented by \\(f\\), 
 ###### 1.1.1 The Fast Gradient Sign method
 
 (by Goodfellow et al: Explaining and harnessing adversarial examples, 2015) proposed the following simple method:
-\\[x^{\ast} = x + \epsilon \cdot sign(\nambla_{x} J(x, y_{true}))\\]
+\\[x^{\ast} = x + \epsilon \cdot sign(\nabla_{x} J(x, y_{true}))\\]
 Note that, the gradients are calculated with respect to the input and not the model parameters. This can be simply done by backpropagation, when the units in  first (input) layer is also considered as variables, and simply the derivatives are calculated. Note also that the derivatives are added to the input \\(x\\), and not substracted like in the case of parameter update.
 The method above can be written in a different form:
-\\[x^{\ast} = x - \epsilon \cdot sign(\nambla_{x} J(x, y_{fool}))\\]
+\\[x^{\ast} = x - \epsilon \cdot sign(\nabla_{x} J(x, y_{fool}))\\]
 
 The \\(sign(.)\\) function basically erases the gradient length (but keeps the direction), and rescales them by \\(\epsilon\\). The \\(y_{fool}\\) denotes the incorrect class label we want to obtain for the image \\(x^{\ast}\\).
 
@@ -40,7 +40,7 @@ The \\(sign(.)\\) function basically erases the gradient length (but keeps the d
 
 The cause of these adversarial examples was a mystery, and speculative explanations have suggested it is due to extreme nonlinearity of deep neural networks, perhaps combined with insufficient model averaging and insufficient regularization of the purely supervised learning problem. Linear behavior in high-dimensional spaces is sufficient to cause adversarial examples
 
-In image recognition, neural networks are mainly built of linear blocks such as Rectified Linear Unit and Convolutional layers. When such neural network has really lots of parameters, making a little change ϵ in each component of an input vector can result in a big change in the output as much as \\(\epsilon\lVertW \rVert\\). Adversarial training discourages this highly sensitive locally linear behavior by encouraging the network to be locally consistent in the neighbourhood of the training data. This can be seen as a regularization method.
+In image recognition, neural networks are mainly built of linear blocks such as Rectified Linear Unit and Convolutional layers. When such neural network has really lots of parameters, making a little change ϵ in each component of an input vector can result in a big change in the output as much as \\(\epsilon\lVert W \rVert\\). Adversarial training discourages this highly sensitive locally linear behavior by encouraging the network to be locally consistent in the neighbourhood of the training data. This can be seen as a regularization method.
 
 ###### 1.1.2 The first approach
 
