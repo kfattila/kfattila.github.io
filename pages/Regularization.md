@@ -245,9 +245,9 @@ Dropout is a method used during the training such that, between every parameter 
 \\[A_{i} = g(\Theta^{(i)})A_{i-1}\\]
 where \\(A_{i-1}\\) is the output from the previous layer, \\(\Theta_{i}\\) the parameter matrix at layer \\(i\\), and \\(g(.)\\) is the activation function (such as sigmoid) applied component-wise, and \\(A_{0} = x\\) is the input data.
 
-In the case of dropout method, a binary mask vector is used to indicate which units participate in the training and which ones are held out. Let \\(r^{(i)}\\) be a binary vector of size \\(1 \times n\\) for layer \\(i\\), where \\(n\\) indicates the number of units in the layer \\(i\\). Now the forward propagation becomes \\(r_{j}^{(i)} \sim Bernoulli(p)\\) is a random bit vector which indicates whether unit \\(j\\) should be active in layer \\(i\\). \\(p\\) is usually set to be 0.5 Bias unites are always present, i.e. \\(r_{0}^{(i)} = 1\\).
+In the case of dropout method, a binary mask vector is used to indicate which units participate in the training and which ones are held out. Let \\(r^{(i)}\\) be a binary vector of size \\(1 \times n\\) for layer \\(i\\), where \\(n\\) indicates the number of units in the layer \\(i\\). Now the forward propagation becomes \\(r_{j}^{(i)} \sim Bernoulli(p)\\) is a random bit vector which indicates whether unit \\(j\\) should be active in layer \\(i\\). \\(p\\) is usually set to be 0.5. Bias unites are always present, i.e. \\(r_{0}^{(i)} = 1\\).
 
-\\[\Theta'^{(i)} = \Theta^{(i)}[r^{(i-1)} == 1, r^{(i)} == 1]\\]
+\\[\Theta^{'(i)} = \Theta^{(i)}[r^{(i-1)} == 1, r^{(i)} == 1]\\]
 
 This means that keep the row \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i)} = 1\\) , otherwise delete it; and keep the column \\(j\\) of \\(\Theta^{(i)}\\) if \\(r_{j}^{(i-1)} = 1\\), otherwise delete it.
 
@@ -258,7 +258,8 @@ In the back propagation and in the parameter update use units which were active 
 
 All units are used in test time.
 
-
+![reg16.png](./images/reg16.png)
+![reg17.png](./images/reg17.png)
 
 
 Dropout method has been reportedly proved to be a good method to increase generalization performance in various practical methods. This technique can be used to Restricted Boltzmann machines, or auto-encoders, as well. For more details, see [1,2].
