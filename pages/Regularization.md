@@ -319,7 +319,7 @@ For a given loss function \\(l\\):
 
 \\[ \frac{\partial l}{\partial \mu_{B}} = ( \frac{-1}{\sqrt{\sigma_{B}^{2}} + \epsilon} \sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \cdot \frac{\sum_{i} - 2(h_{i} - \mu_{B})}{m} \\]
 
-\\[ \frac{\partial l}{\partial h_{i}} = \frac{\partial l}{\partial\widehat{h_{i}}} \cdot \frac{1}{\sqrt{\sigma_{B}^{2}} \frac{\partial l}{\partial\sigma_{B}^{2}} \\]
+\\[ \frac{\partial l}{\partial h_{i}} = \frac{\partial l}{\partial\widehat{h_{i}}} \cdot \frac{1}{\sqrt{\sigma_{B}^{2}}} \frac{\partial l}{\partial\sigma_{B}^{2}} \\]
 
 \\[\frac{\partial l}{\partial \mu_{B}} = (\frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon }\sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \cdot \frac{-2(h_{i} - \mu_{B})}{m} + \frac{1}{m} \frac{\partial l}{m \partial\mu_{B}} \\]
 
