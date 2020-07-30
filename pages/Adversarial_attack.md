@@ -50,11 +50,13 @@ subject to \\((x + r) \in [0,1]^{m}\\),
 
 where \\(m\\) denotes the dimension of the imput image. The variables to be optimized are in \\(r\\). This optimizaiton was solved using L-BFGS optimizers.
 
+![adv_attack3.png](./images/adv_attack3.png)
+
 ###### 1.1.3 Adversarial Patches
 
 (developed by Tom Brown: Adversarial Patch, NIPS, 2017) method aims at creating adversarial image patches which can be printed, added to any scene, photographed, and presented to image classifiers; even when the patches are small, they cause the classifiers to ignore the other items in the scene and report a chosen target class.
 
-
+![adv_attack4.png](./images/adv_attack4.png)
 
 
 [https://youtu.be/i1sp4X57TL4](https://youtu.be/i1sp4X57TL4)
