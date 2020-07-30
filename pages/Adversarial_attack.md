@@ -10,17 +10,17 @@ An adversarial example is a sample of input data which has been modified very sl
 
 
 The types of AAs:
-	- Generate a noise-like data which is confidently labelled by a classifier.
-	- Generate a real-like picture what is classified with a wrong label with high confidence. 
-	In this case, these modifications can be so subtle that a human observer does not even notice the modification at all, yet the classifier still makes a mistake confidently.
+* Generate a noise-like data which is confidently labelled by a classifier.
+* Generate a real-like picture what is classified with a wrong label with high confidence. In this case, these modifications can be so subtle that a human observer does not even notice the modification at all, yet the classifier still makes a mistake confidently.
+
 Adversarial examples pose security concerns because they could be used to perform an attack on machine learning systems, even if the adversary has no access to the underlying model.
 
 There are two types of AA: *white-box* model and *black-box* model. 
 In the case of the white-box model the attacker has an access to the target model and to its derivatives. In the black-box scenario the attacker does not have this access.
 
-##### 1. Generation of real-like adversarial examples.
+#### 1. Generation of real-like adversarial examples.
 
-###### 1.1 White box models.
+##### 1.1 White box models.
 
 The attacker has an access to the target model.
 Let us consider a model, possibly a deep neural network represented by \\(f\\), input image: \\(x\\) (a tensor, height, width, and color channels), \\(f_{i}(x)\\) denotes the confidence (probability) of the classifier that input \\(x\\) belongs to the \\(i\\)th class. \\(y_{true}\\) denotes the true class label of \\(x\\). Let \\(J\\) be the usual cost function (cross entropy, etc).
