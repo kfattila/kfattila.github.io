@@ -185,8 +185,8 @@ Let \\(\tau\\) be the hyper-parameter when the optimization procedure stopped af
 \\[\theta^{(\tau)} - \theta^{\ast} = ( I - \epsilon H)(\theta^{(\tau - 1)} - \theta^{\ast})\\]
 
 If we decompose Hessian matrix \\(H\\) as \\(H = Q\Lambda Q^{T}\\)
-\\[\theta^{\tau} - \theta^{\ast} = (I - \epsilon Q\Lambda Q^{T})(\theta^{\tau - 1} - \theta^{\ast})\\]
-\\[Q^{T}(\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)Q^{T}(\theta^{\tau - 1} - \theta^{\ast}) \\]
+\\[\theta^{(\tau)} - \theta^{\ast} = (I - \epsilon Q\Lambda Q^{T})(\theta^{(\tau - 1)} - \theta^{\ast})\\]
+\\[Q^{T}(\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)Q^{T}(\theta^{(\tau - 1)} - \theta^{\ast}) \\]
 
 Assuming \\(\theta^{(0)} = 0\\) and \\(\epsilon\\) is small enough to guarantee that \\(\mid 1 - \epsilon\lambda_{i}\mid < 1\\) then \\(Q^{T} = (\theta^{(\tau)} - \theta^{\ast}) = (I - \epsilon\Lambda)(I - \epsilon\Lambda)(I - \epsilon\Lambda)...(I - \epsilon\Lambda)Q^{T}(\theta^{(0)} - \theta^{\ast})\\)
 
