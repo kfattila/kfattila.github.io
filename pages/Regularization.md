@@ -101,7 +101,7 @@ The objective function for linear regression with \\(l_{1}\\) regularization bec
 One of the most commonly used regularization is the \\(l_{2}\\) norm, also called as ridge regression or Tikhonov regularization, and it is defined as: \\(\Omega(\theta) = \frac{1}{2}\theta^{T}\theta = \frac{1}{2}\lVert \theta \rVert_{2}^{2}\\)
 
 This gives us the learning objective:
-\\[J(\theta;D) = \sum_{i}L_{\theta}(x_{i},y_{y}) + \frac{\lambda}{2}\theta^{T}\theta\\]
+\\[J(\theta;D) = \sum_{i}L_{\theta}(x_{i},y_{i}) + \frac{\lambda}{2}\theta^{T}\theta\\]
 
 The corresponding gradient and the update can be written as:
 \\[\nabla_{\theta}J(\theta;D) = \sum_{i}\nabla_{\theta}L_{\theta}(x_{i}, y_{i}) + \lambda\theta\\]
@@ -112,7 +112,7 @@ That is:
 \\[\theta^{(l+1)} = (1 -\epsilon\lambda)\theta^{(l)} - \epsilon(\sum_{i}\nabla_{\theta}L_{\theta}(x_{i}, y_{i}))\\]
 
 This shows that during the training the parameter term exponentially decays. (cf. Momentum methods).
-Let us approximate the learning objective function via quadratic function via Taylor series at its minimum location \\(\theta^{\ast}(\theta^{\ast} = argmin_{\theta}\{\sum L_{\theta}(x_{i}, y_{i})\})\\). Then:
+Let us approximate the learning objective function via quadratic function via Taylor series at its minimum location \\(\theta^{\ast}(\theta^{\ast} = argmin_{\theta}\\{\sum L_{\theta}(x_{i}, y_{i})\\})\\). Then:
 \\[J(\theta) = J(\theta^{\ast}) + \frac{1}{2}(\theta - \theta^{\ast})^{T} H(\theta - \theta^{\ast}) + \alpha\frac{1}{2}\theta^{T}\theta \\]
 where \\(H\\) is the hessian matrix of \\(J\\) w.r.t. \\(\theta\\) at \\(\theta^{\ast}\\). There is no first order term, because this is defined at the minimum location where gradients (the first order term) vanish.
 Moreover, because \\(\theta^{\ast}\\) is the local minimum, therefore the Hessian is positive semidefinite.
