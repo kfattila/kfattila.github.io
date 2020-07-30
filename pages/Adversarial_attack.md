@@ -109,9 +109,11 @@ Here the population consists of a set of images, 28x28 pixels for the MNIST data
 The recognition ANN network was LeNet to recognize digits from 0 to 9. Therefore the fitness function to be optimized was the model prediction by the LeNet model. 
 Multiple, independent runs of evolution repeatedly produce images that LeNET believes with 99.99% confidence to be digits, but are unrecognizable as such (Fig. 4). In less than 50 generations, each run of evolution repeatedly produces unrecognizable images of each digit type classified by MNIST DNNs with ≥99.99% confidence. By 200 generations, median confidence is 99.99%. Given the DNN’s near certainty, one might expect these images to resemble handwritten digits. On the contrary, the generated images look nothing like the handwritten digits in the MNIST dataset.
 
-
+![adv_attack11.png](./images/adv_attack11.png)
 
 
 Regular noise image generation for MNIST digit classification:
 To generate regular noise images, the CPPN was used. CPPNs start with no hidden nodes, and nodes are added over time, encouraging evolution to first search for simple, regular images before adding complexity.
 The evolved images for class '1' for instance tend to have more vertical bars, while images classified as a 2 tend to have a horizontal bar in the lower half of the image. Qualitatively similar discriminative features are observed in 50 other runs as well (supplementary material). This result suggests that the EA exploits specific discriminative features corresponding to the handwritten digits learned by MNIST DNNs.
+
+![adv_attack12.png](./images/adv_attack12.png)
