@@ -57,7 +57,7 @@ where \\(m\\) denotes the dimension of the imput image. The variables to be opti
 (developed by Tom Brown: Adversarial Patch, NIPS, 2017) method aims at creating adversarial image patches which can be printed, added to any scene, photographed, and presented to image classifiers; even when the patches are small, they cause the classifiers to ignore the other items in the scene and report a chosen target class.
 
 ![adv_attack4.png](./images/adv_attack4.png)
-
+![adv_attack5.png](./images/adv_attack5.png)
 
 [https://youtu.be/i1sp4X57TL4](https://youtu.be/i1sp4X57TL4)
 The training of such patches is a bit technical because we don't generate a full image but just a small image patch placed on the top of another image. Thus rotation, translation, and scaling operators are involved. Further details can be found in 
