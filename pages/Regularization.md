@@ -233,12 +233,12 @@ This will lead to an extra term in the learning objective \\(\frac{\eta}{m}||\na
 3. Injecting noise to output targets: Instead of using hard coded class labels like 0 and 1 one can introduce a little noise ϵ on them. This would give as more relaxed class labels as \\(\epsilon\\) and \\(1 - \epsilon\\), respectively and they can plugged in the cross-entropy loss as
 \\[c_{\theta}(x_{i},y_{i}) = -(y_{i} - \epsilon)\log(h_{\theta}(x_{i})) - (1 - y_{i} + \epsilon) \log(1 - h_{\theta}(x_{i}))\\]
 
-###### Parameter sharing and tying
+#### Parameter sharing and tying
 
 For this we have seen examples already, for example in the case of GMMs, when the covariance matrices can be restricted to be i) diagonal, ii)spherical), iii) or all Gaussian components have the same covariance matrices. Other examples are first-order hidden Markov model, or  first-order Markov chains. On the lecture we discussed first order HMMs might be not adequate for speech recognition, but using first-order methods keeps the number of parameters and the whole model tractable. Other example of this kind technique is the convolution layers in neural networks.
 Other type of parameter sharing and tying can be applied in multi-task learning. For more details see section 7.7.
 
-###### Dropout
+#### Dropout
 
 The motivation of dropout method is to prevent co-adaptation of units in neural networks and it is thought to ensure that different units learn different weights.
 Dropout is a method used during the training such that, between every parameter update cycle around ~50% of the units are locked and the rest of them participate in the training. Let's recall the forward propagation step:
@@ -263,7 +263,7 @@ All units are used in test time.
 
 Dropout method has been reportedly proved to be a good method to increase generalization performance in various practical methods. This technique can be used to Restricted Boltzmann machines, or auto-encoders, as well. For more details, see [1,2].
 
-###### Generalization gap and sharp minima
+#### Generalization gap and sharp minima
 
 In recent years, it has been observed in practical applications that stochastic gradient descent (SGD) methods using small-batches (SB) provide smaller generalization error than using large-batches (LB) for classification tasks. (Note that, for generative learning (such as RBMs or VAEs) mini-batches are also strongly recommended).
 
@@ -290,7 +290,7 @@ And the overall results obtained with SB (256 data) and LB (10% of the total dat
 
 Error surface characterization. The local minima obtained with LB and SB are denoted by \\(x_{l}^{\ast}\\) and \\(x_{s}^{\ast}\\). respectively. Then the loss function were plotted along the line-segment containing these two local minina. Secifically, for \\(\alpha = [-1,2]\\), the loss function \\(f(\alpha x_{l}^{\ast} + (1 - \alpha)x_{s}^{\ast})\\) were plotted below. The plots show that local minima found by SB is stringkingly flatter than the local minima found by LB.
 
-###### Batch normalization
+#### Batch normalization
 
 In the training of a deep neural network, a little change in the weights at the lower levels might end up in a large change in the higher levels. The training of a deep neural network is hindered by the fact that inputs to each layer is affected by all preceding layers. That is, at the fist layer the data has a certain fixed distribution, but changing the parameters by backpropagation the distribution of the feature data (activations) changes and the learner has to compensate and modify the weights so that the higher layers can adapt to the new feature distribution.
 Batch normalization aims to mitigate this problem introducing a layer-wise normalization in which the mini-batch of the data is normalized and centralized at every hidden layers.
@@ -305,7 +305,7 @@ The mini-batch normalization is defined by:
 where \\(\epsilon\\) is used only for numerical stability. After the normalization the training proceeds with \\(\{\}\\). That is at every layer with every mini-batch, the data is centralized and normalized, then scaled. Here the assumption is that the mini-batch more-or-less well approximates the whole data distribution, or equivalently, the gradients obtained on the mini-batch data is a good approximation of the true gradients that we would get on a large batch.
 The question remains if this transformation is differentiable when it is applied in the forward propagation at every layer? The answer is yes, and more importantly, the scaling parameters \\(\gamma, \beta\\) can be learned as well:
 
-###### References:
+#### References:
 1. [http://arxiv.org/pdf/1207.0580v1.pdf](http://arxiv.org/pdf/1207.0580v1.pdf)
 2. [https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 3. [http://www.deeplearningbook.org/contents/regularization.html](http://www.deeplearningbook.org/contents/regularization.html)
