@@ -307,7 +307,7 @@ The mini-batch normalization is defined by:
 \\[\mu_{B} := \frac{1}{m}\sum h_{i}\\]
 \\[\sigma_{B}^{2} := \frac{1}{m}\sum(h_{i} - \mu_{B})^{2}\\]
 \\[\widehat{h_{i}} := \frac{(h_{i} - \mu_{b})}{\sqrt{\sigma_{B}^{2} + \epsilon}}\\]
-\\[\wideline{h_{i}} := \gamma\widehat{h_{i}} + \beta \\]
+\\[\overline{h_{i}} := \gamma\widehat{h_{i}} + \beta \\]
 
 where \\(\epsilon\\) is used only for numerical stability. After the normalization the training proceeds with \\(\\{\widehat{h_{i}}\\}\\). That is at every layer with every mini-batch, the data is centralized and normalized, then scaled. Here the assumption is that the mini-batch more-or-less well approximates the whole data distribution, or equivalently, the gradients obtained on the mini-batch data is a good approximation of the true gradients that we would get on a large batch.
 The question remains if this transformation is differentiable when it is applied in the forward propagation at every layer? The answer is yes, and more importantly, the scaling parameters \\(\gamma, \beta\\) can be learned as well:
@@ -315,17 +315,17 @@ The question remains if this transformation is differentiable when it is applied
 For a given loss function \\(l\\):
 \\[ \frac{\partial l}{\partial\widehat{h_{i}}} = \frac{\partial l}{\partialh_{i}} \times \gamma \\]
 
-\\[ \frac{\partial l}{\partial \sigma_{\Beta}^{2}} = \sum\frac{\partial l}{\partial\widehat{h_{i}}} \times (h_{i} - \mu_{\Beta}) \times \frac{-1}{2}(\sigma_{B}^{2} + \epsilon)^{-\frac{3}{2}} \\]
+\\[ \frac{\partial l}{\partial \sigma_{B}^{2}} = \sum\frac{\partial l}{\partial\widehat{h_{i}}} \times (h_{i} - \mu_{B}) \times \frac{-1}{2}(\sigma_{B}^{2} + \epsilon)^{-\frac{3}{2}} \\]
 
-\\[ \frac{\partial l}{\partial \mu_{\Beta}} = ( \frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon } \sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{\sum_{i} - 2(h_{i} - \mu_{B})}{m} \\]
+\\[ \frac{\partial l}{\partial \mu_{B}} = ( \frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon } \sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{\sum_{i} - 2(h_{i} - \mu_{B})}{m} \\]
 
 \\[ \frac{\partial l}{\partial h_{i}} = \frac{\partial l}{\partial\widehat{h_{i}}} \times \frac{1}{\sqrt{\sigma_{B}^{2}} \frac{\partial l}{\partial\sigma_{B}^{2}} \\]
 
-\\[\frac{\partial l}{\partial \mu_{B}} = (\frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon }\sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{-2(h_{i} - \mu_{B})}{m} + \frac{1}{m} \frac{\partial l}{m \partial\mu_{\Beta}} \\]
+\\[\frac{\partial l}{\partial \mu_{B}} = (\frac{-1}{\sqrt{\sigma_{B}^{2}} +\epsilon }\sum \frac{\partial l}{\partial\widehat{h_{i}}}) + \frac{\partial l}{\partial\sigma_{B}^{2}} \times \frac{-2(h_{i} - \mu_{B})}{m} + \frac{1}{m} \frac{\partial l}{m \partial\mu_{B}} \\]
 
-\\[\frac{\partial l}{\partial\gamma} = \sum_{i}\frac{\partial l}{\partial \wideline{h_{i}}} \times \widehat{h_{i}}\\]
+\\[\frac{\partial l}{\partial\gamma} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}} \times \widehat{h_{i}}\\]
 
-\\[\frac{\partial l}{\partial\beta} = \sum_{i}\frac{\partial l}{\partial \wideline{h_{i}}}\\]
+\\[\frac{\partial l}{\partial\beta} = \sum_{i}\frac{\partial l}{\partial \overline{h_{i}}}\\]
 
 The scaling and the fact its parameters are learnable is important here. If the batch normalization would rather harm the optimization of the loss then the setting \\(\gamma \sqrt{Var[h_{i}]} and \\(\beta = E[h_{i}]\\)\\) would recover the original data if that were the optimal thing to do.
 
@@ -334,9 +334,9 @@ In the inference part the normalization parameters are the averages of the norma
 
 \\[E[x] = E[\mu_{B}]\\]
 
-\\[Var[x] = \frac{m}{m - 1}E[\sigma_{\Beta}^{2}]\\]
+\\[Var[x] = \frac{m}{m - 1}E[\sigma_{B}^{2}]\\]
 
-\\[\wideline{h} := \frac{\gamma}{\sqrt{Var[x] + \epsilon}}h + (\beta - \frac{\gamma E[X]}{Var[x] + \epsilon}) \\]
+\\[\overline{h} := \frac{\gamma}{\sqrt{Var[x] + \epsilon}}h + (\beta - \frac{\gamma E[X]}{Var[x] + \epsilon}) \\]
 
 [ref: Ioffe, Szegedy. Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift, 2015]
 
