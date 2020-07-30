@@ -202,8 +202,8 @@ Now, recall that from \\(l_{2}\\) normalization we have:
 When we compare the two equation (1) and (2) we see if the hyperparameters \\(\epsilon, \alpha, \tau\\) are chosen such that
 \\[(I - \epsilon\Lambda)^{\tau} = (\Lambda + \alpha I)^{-1}\alpha\\]
 Then \\(l_{2}\\) regularization and early stopping can be seen to be equivalent. Going further, by taking logarithms and using the series of expansion for \\(\log(1+x)\\), we can conclude that if all \\(\lambda_{i}\\) are small then
-\\[\tau = \frac{1}{\epsilon\alpha}\\]
-\\[\alpha = \frac{1}{\tau\epsilon}\\]
+\\[\tau \approx \frac{1}{\epsilon\alpha}\\]
+\\[\alpha \approx \frac{1}{\tau\epsilon}\\]
 
 However, when one monitors the learning curve and terminates the optimizer when validation increases to prevent overfitting, potentially one can get a good generalization error. However using \\(l_{2}\\) regularization one does not have this visual feedback and needs to adjust the trade-off parameter blindly several times in order to choose the most appropriate \\(\alpha\\).
 
