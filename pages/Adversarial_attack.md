@@ -66,11 +66,13 @@ The training of such patches is a bit technical because we don't generate a full
 2. Tom Brown: Adversarial Patch, NIPS, 2017
 
 
-###### 1.1.3 Adversarial examples as regularizers
+###### 1.1.4 Adversarial examples as regularizers
 
 The adversarial example generation can also be used to train neural networks to be more robust against such attacks. For instance, the fast gradient sign method can be used as a regularizer in the training in the following way:
 
-\\[J(x, y_{true}) = \alpha J(x, y_{true}) + (1 - \alpha)J(x + \epsilon \dot sign(\nabla_{x}J(x, y_{true})), y_{true})\\]
+\\[J(x, y_{true}) = \alpha J(x, y_{true}) + (1 - \alpha)J(x + \epsilon \сdot sign(\nabla_{x}J(x, y_{true})), y_{true})\\]
+
+![adv_attack6.png](./images/adv_attack6.png)
 
 ##### 1.2 Black box models.
 
@@ -81,12 +83,13 @@ Methods in this class have access only to the output of the model.
 In this approach the attack is extremely limited to the scenario where only one pixel can be modified. The method does not have access to the model or its gradients and it uses the differential evolution method. It requires less adversarial information and can fool more types of networks. The results show that 70.97% of the natural images can be perturbed to at least one target class by modifying just one pixel with 97.47% confidence on average. Thus, the proposed attack explores a different take on adversarial machine learning in an extreme limited scenario, showing that current DNNs are also vulnerable to such low dimension attacks.
 The problem is formulated as follows:
 \\[max f_{y_{fool}}(x + e_{x})\\]
-subject to \\(||e_{x}||_{0} \leq d\\)
+subject to \\(\lVert e_{x}\rVert_{0} \leq d\\)
 
 where \\(d\\) is a small number and the zero norm is defined by the number of non-zero elements in its arguments. In the one-pixel-attack scenario \\(d = \\)
 
 The optimization is carried out using differential evolution algorithm.
 
+![adv_attack7.png](./images/adv_attack7.png)
 
 #### 2. Generation of noise-like data to fool classifiers.
 
@@ -94,12 +97,12 @@ The article by Nguyen et al. [ref: Nguyen et al: Deep Neural Networks are Easily
 Examples:
 Irregular noise images
 
-
+![adv_attack8.png](./images/adv_attack8.png)
 
 Regular noise images:
 
-
-
+![adv_attack9.png](./images/adv_attack9.png)
+![adv_attack10.png](./images/adv_attack10.png)
 
 Irregular noise image generation for MNIST digit classification:
 Here the population consists of a set of images, 28x28 pixels for the MNIST data. Each pixel value is initialized with uniform random noise within the [0, 255] range. Those numbers are independently mutated; first by determining which numbers are mutated, via a rate that starts at 0.1 (each number has a 10% chance of being chosen to be mutated) and drops by half every 1000 generations. The numbers chosen to be mutated are then altered via the polynomial mutation operator with a fixed mutation strength of 15.
