@@ -33,7 +33,7 @@ In this step we calculate what information is to be add to the state \\(c_{t}\\)
 ![LSTM4.png](./images/LSTM4.png)
 
 Then, the state vector is updated as follows:
-\\[c_{t} = c_{t-1}\hfill{1mm} ^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
+\\[c_{t} = c_{t-1}\hspace{1mm} ^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
 
 where \\(^{\circ}\\) denotes the element-wise vector multiplication. This step is shown below.
 
