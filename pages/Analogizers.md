@@ -15,9 +15,9 @@ model of the atom arose from seeing it as a miniature solar system, with electro
 
 **Instance-based learning, k-Nearest Neighbor (kNN).** The idea is that, classify a new object as the class of the "closest" instance-reference.
 It requires 1) a distance function to measure the distance between data instances, and 2) and a policy to determine the closeness of a data instance to a class based on the distance between new instance and the members of the given class.
-	1. For example, one can use the Euclidean distance defined for \\(x, y \in R^{n}\\):
-	\\[d(x,y) = ||x - y||_{2} = \sqrt{\sum_{i=1}^{m}(x_{i} - y_{i})^{2}}\\]
-	2. Given a dataset \\(D = \{X_{i}, Y_{i}|X_{i} \in R^{n}, y_{i} \in C\}\\), where \\(C\\) is categorical, and let's define a set of indices indicating the index of the k-nearest data as: \\(I_{k} = argmin_{i}^{k}\{d(t, x_{i})\}\\), where \\(argmin^{k}\\) denotes the set of indeces of the \\(k\\) minimal elements in its argument. Now the class label of the new elemet can be chosen on the majority of \\(\{y_{i}: i \in I_{k}(t)\}\\).
+1. For example, one can use the Euclidean distance defined for \\(x, y \in R^{n}\\):
+\\[d(x,y) = \lVert x - y \rVert_{2} = \sqrt{\sum_{i=1}^{m}(x_{i} - y_{i})^{2}}\\]
+2. Given a dataset \\(D = \{X_{i}, Y_{i} \mid X_{i} \in R^{n}, y_{i} \in C\}\\), where \\(C\\) is categorical, and let's define a set of indices indicating the index of the k-nearest data as: \\(I_{k} = argmin_{i}^{k}\\{d(t, x_{i})\\}\\), where \\(argmin^{k}\\) denotes the set of indeces of the \\(k\\) minimal elements in its argument. Now the class label of the new elemet can be chosen on the majority of \\(\\{y_{i}: i \in I_{k}(t)\\}\\).
 
 k-Nearest Neighbor (kNN) can be considered as a voting algorithm where each of the k nearest neighbors votes to its own class label.
 
