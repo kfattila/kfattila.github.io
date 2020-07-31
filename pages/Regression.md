@@ -54,7 +54,7 @@ The second term is called the regularization term, or penalty term. Here \\(\lam
 
 \\[\widetilde{\Theta} = argmin_{\Theta}J(\Theta\mid D) = argmin_{\Theta}\Bigg\\{\sum_{i=1}^{m}\bigg(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}\bigg)^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \Bigg\\} \\]
 
-Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta\mid D)\\). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
+Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta\mid D)\\)). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
 
 This error function is convex w.r.t. \\(\Theta\\), see an example on Figure 3.
 
