@@ -33,16 +33,16 @@ In this step we calculate what information is to be add to the state \\(c_{t}\\)
 
 
 Then, the state vector is updated as follows:
-\\[c_{t} = c_{t-1}\textdegree f_{t} + \widetilde{c_{t}}\textdegree i_{t}\\]
+\\[c_{t} = c_{t-1}^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
 
-where \\(\textdegree\\) denotes the element-wise vector multiplication. This step is shown below.
+where \\(^{\circ}\\) denotes the element-wise vector multiplication. This step is shown below.
 
 
 Now, the hidden unit ht  is being updated. This step is based on the new state vector. First, it calculates the component indices which should go to the output. These indices will determine which state vector components c_t  should go to the output.
 \\[o_{t} = \sigma(W_{0}[h_{t-1},x_{t}] + b_{0})\\]
 
 The new memory (hidden state) will be the cell state squased to [-1, +1] using tanh elementwise multiplied with \\(o_{t}\\).
-\\[h_{t} = o_{t}\textdegree tanh(c_{t})\\]
+\\[h_{t} = o_{t}^{\circ} tanh(c_{t})\\]
 
 The emission produced by LSTM may contain additional calculations as well if it is needed:
 \\[y_{t} = softmax(W_{y}h_{t} + b_{y})\\]
