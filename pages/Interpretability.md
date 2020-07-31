@@ -8,7 +8,7 @@ description: ""
 This lecture is heavily based on the online book:
 Interpretable-ml-book: [https://christophm.github.io/interpretable-ml-book/index.html](https://christophm.github.io/interpretable-ml-book/index.html) And on the Lime: [https://arxiv.org/pdf/1602.04938v1.pdf](https://arxiv.org/pdf/1602.04938v1.pdf)
 
-###### Interpretability, Explainable Artificial Intelligence, and Machine Learning Transparency
+#### Interpretability, Explainable Artificial Intelligence, and Machine Learning Transparency
 
 The complexity and the performance of the recent Machine learning methods has increased significantly. This also can be attributed to the development in computational power and the increasing availability of the data. Current complex systems include recommendation systems (at Ebay or amazon), autonomous vehicles, stock price forecasting etc. In some cases, it is not really important to understand how the model really works. For instance, if the recommendation system at Amazon is proven to generate more revenue, and the test is performed by A/B testing, then it is fine. Google is also testing several version of search algorithms per day with A/B testing and the performance is measured by clicks and clicks on ads. Such models often called as black-box models.
 
@@ -23,7 +23,7 @@ In fact, as noted before, machine learning and statistical systems lack common s
 
 Also note that, we are living in a jurisdictions and our lives are regulated by law. When bad things happens responsible people are impeached at courts. Who would be responsible for a faulty decision made by AI systems? Interpretability and transparency is also needed to know that the system is not manipulated or it does not contains programming bugs.
 
-###### Interpretability or ML system
+#### Interpretability or ML system
 
 In practice, simple, small and linear models are easy to interpret, aren't they?
 Linear regression models are considered as easy to interpret, but are they so if they consist of millions of parameters?
@@ -32,13 +32,13 @@ Decision trees are considered as easy to interpret, but are they so if they cons
 Consider a simple linear regression which aims at predicting the price of a house based on some features such as its size, number of rooms, district, etc.
 How would you interpret a negative coefficient corresponding to the number of the rooms?
 
-###### I. Interpretable models, model specific interpretation
+#### I. Interpretable models, model specific interpretation
 
 1. Linear regression models are easy to interpret if they contain few variables or they are sparse. The prediction is based on the weighted sum of the input features.
 2. Logistic regression. Same.
 3. Decision trees. The prediction goes through the branches of a tree and the leaves determine the predicted label/category.  The series of the branches can be translated to a series **if … then …** decisions. Small decision trees are also easy to interpret and investigate visually.
 
-###### II. Example-based explanations
+#### II. Example-based explanations
 
 1. **Counterfactual explanations.** A counterfactual explanation of a prediction describes the smallest change to the feature values that changes the prediction to a predefined output. This approach is a model agnostic methods, because it only works with the model input and output. Example: Peter applies for a loan and gets rejected by the (machine learning powered) banking software. He wonders why his application was rejected and how he might improve his chances to get a loan. The question of “why” can be formulated as a counterfactual: What is the smallest change to the features (income, number of credit cards, age, …) that would change the prediction from rejected to approved? One possible answer could be: If Peter would earn 10,000 Euro more per year, he would get the loan. Or if Peter had fewer credit cards and hadn’t defaulted on a loan 5 years ago, he would get the loan. Peter will never know the reasons for the rejection, as the bank has no interest in transparency, but that’s another story. T
 The counterfactual explanations can be formulated as follows:
