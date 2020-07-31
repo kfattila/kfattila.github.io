@@ -79,7 +79,7 @@ Using this cost functions we can formulate the objective function of SVM classif
 
 What does this mean? For a positive sample \\((y_{i} = 1)\\), if \\(\theta^{T}x_{i} > 1\\) then the corresponding cost is zero (yay). However, if \\(\theta^{T}x_{i} < 1\\) then we will introduce some positive error (nay). The same logic goes for the negative class. For a negative sample \\((y_{i} = 0)\\), if \\(\theta^{T}x_{i} < -1\\) then cost is zero (yay), but if \\(\theta^{T}x_{i} > -1\\), then some error is applied (nay).
 
-n this case, if we interpret \\(\theta\\) as the norm vector of a line then it can be interpreted as a separation line between the classes where the separation might be violated if the data is not linearly separable. This linear separation boundary is called a line in 2D, plane in 3D, and hyperplane in higher dimensions or in general. 
+In this case, if we interpret \\(\theta\\) as the norm vector of a line then it can be interpreted as a separation line between the classes where the separation might be violated if the data is not linearly separable. This linear separation boundary is called a line in 2D, plane in 3D, and hyperplane in higher dimensions or in general. 
 
 ![analog8](./images/analog8.png)
 
@@ -90,6 +90,11 @@ The hyperplane can be formulated as \\(f(x) = \sum_{j=1}^{n}\theta_{j}x_{j} + \t
 \\[f(x) = \theta^{T}x\\]
 
 Now, if we are given by a new instance s to classify it, we can calculate which side of the hyperplane it falls, formally 
+
+\\[ f(s) = \begin{cases} 
+	0, & f(s) < 0 \\ 
+	1, & f(s) \geq 0
+	\end{cases} \\]
 
 This model has a further and a useful property. Let us consider a linearly separable case (when positive and negative instances can be separated by a linear line). Then the parameters θ will be chosen which gives the largest margin. Consider two cases:
 
