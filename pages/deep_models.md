@@ -34,7 +34,7 @@ When the depth of a model is larger than 1 (k>1), we talk about **deep models**,
 **Figure 1.** Example of a deep network and its parameters.
 
 
-##### Universal approximation theorem
+#### Universal approximation theorem
 
 The universal approximation theorem says that, loosely, every continuous function can be approximated (or represented) by a shallow neural network (with one hidden layer of units). As a consequence any continuous functions can be approximated by such a neural network. See ref [2].
 Similarly, it can be shown that SVMs with dot-product, Gaussian kernel, and polynomial kernel functions are universal approximators as well [3].
@@ -56,11 +56,11 @@ The conclusion of the work above is that if a shallow model can approximate a la
 Question remains, why a shallow model cannot be trained on the original data as well as the mimic model? It is still not known (2015).
 
 
-##### General Training of DNN
+#### General Training of DNN
 
 It has turned out gradient descent-based back-propagation algorithms are not suitable to train DNNs. The reason most likely is that back-propagation gets stuck in a poor local-minimum or the error gradients are cannot be propagated backward properly. However, a good model can be achieved if the weights of DNN are initialized approximately well. In practice, therefore, the main question is how can we initialize the weights well, so the standard back-propagation algorithms can be used to fine-tune the weights?
 
-##### Greedy layer-wise supervised training
+#### Greedy layer-wise supervised training
 
 Perhaps, one of the most simplest way to train and create deep models. The procedure is the following:
 1. Train a single layer neural network in a supervised manner using back-propagation and randomly initialized weights.
