@@ -35,6 +35,7 @@ The main benefits of this algorithm are:
 * Fast, if the reference dataset is small
 * Non-parametric,
 * Does not require learning, the dataset itself represents the model/knowledge.
+
 The disadvantage of this method:
 * Slow, if the reference dataset is large
 * it does not work well in very high dimensional spaces.
