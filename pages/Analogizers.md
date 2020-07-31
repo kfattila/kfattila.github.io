@@ -32,13 +32,13 @@ This approach can be easily defined for multi-class classification problems:
 ![analog3](./images/analog3.png)
 
 The main benefits of this algorithm are:
-	- Fast, if the reference dataset is small
-	- Non-parametric,
-	- Does not require learning, the dataset itself represents the model/knowledge.
+* Fast, if the reference dataset is small
+* Non-parametric,
+* Does not require learning, the dataset itself represents the model/knowledge.
 The disadvantage of this method:
-	- Slow, if the reference dataset is large
-	- it does not work well in very high dimensional spaces.
-	- Sensitive to class-imbalanced cases.
+* Slow, if the reference dataset is large
+* it does not work well in very high dimensional spaces.
+* Sensitive to class-imbalanced cases.
 
 Note also that, kNN does not require proper distance metric and it also can be used with any similarity-like measure (just change argmin to argmax). However, in this case, some error guarantees cannot be held anymore and perhaps these functions will not provide a proper Voronoi-partition of the space. But on the other hand, sometimes application specific similarity measures can provide better classification results with kNNs.
 
