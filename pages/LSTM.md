@@ -30,10 +30,10 @@ This \\(\sigma\\) function maps the input \\(x_{t}\\) and the memory state \\(h_
 
 In this step we calculate what information is to be add to the state \\(c_{t}\\). This step has two parts. First, it calculates a new candidate state vector: \\(\widetilde{c_{t}} = tanh(W_{c}[h_{t-1}, x_{t}] + b_{c})\\), where \\(W_{c} \in R^{k \times (l+n)}\\), and \\(\widetilde{c_{t}}, b_{c} \in R^{k}\\), and then it calculates which information will be updated: \\(i_{t} = \sigma(W_{i}[h_{t-1},x_{t}] + b_{i})\\), where \\(W_{i} \in R^{k \times (l+n)}\\), and \\(i_{t} \in R^{k}\\).
 
-
+![LSTM4.png](./images/LSTM4.png)
 
 Then, the state vector is updated as follows:
-\\[c_{t} = c_{t-1}^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
+\\[c_{t} = c_{t-1} ^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
 
 where \\(^{\circ}\\) denotes the element-wise vector multiplication. This step is shown below.
 
