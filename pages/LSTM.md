@@ -33,10 +33,11 @@ In this step we calculate what information is to be add to the state \\(c_{t}\\)
 ![LSTM4.png](./images/LSTM4.png)
 
 Then, the state vector is updated as follows:
-\\[c_{t} = c_{t-1}  ^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
+\\[c_{t} = c_{t-1}\hfill{1mm} ^{\circ} f_{t} + \widetilde{c_{t}}^{\circ} i_{t}\\]
 
 where \\(^{\circ}\\) denotes the element-wise vector multiplication. This step is shown below.
 
+![LSTM5.png](./images/LSTM5.png)
 
 Now, the hidden unit ht  is being updated. This step is based on the new state vector. First, it calculates the component indices which should go to the output. These indices will determine which state vector components c_t  should go to the output.
 \\[o_{t} = \sigma(W_{0}[h_{t-1},x_{t}] + b_{0})\\]
