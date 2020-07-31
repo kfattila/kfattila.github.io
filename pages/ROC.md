@@ -8,13 +8,14 @@ description: ""
 
 **Receiver Operator Characteristics (ROCs).**
 
-Each binary classifier, Logistic regression, Neural Networks, and Support Vector Machines, and in general many other binary classifiers, provides a score for a data \\(x\\) calculated as \\(h_{\theta}(x)\\), then the classification is based on whether this score is above or under a certain pre-defined threshold. 
+Each binary classifier, Logistic regression, Neural Networks, and Support Vector Machines, and in general many other binary classifiers, provides a score for a data \\(x\\) calculated as \\(h_{\Theta}(x)\\), then the classification is based on whether this score is above or under a certain pre-defined threshold. 
 We can calculate these scores for all positive data instances, and we get a distribution of these scores. Similarly, we can calculate the scores for all data instances belonging to the negative classes, and we get another distribution for the negative class. 
 The performance of a binary classifier is actually depends on how well these distributions are separated from each other. The ROC analysis is used to characterize how well these two distribution can be separated.
 
 ![roc1](./images/roc1.png)
 
 **Figure 1.** Example of such score distribution obtained from Logistic Regression Model.
+
 
 Score distributions:
 
