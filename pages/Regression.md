@@ -33,7 +33,7 @@ So, what we want is to calculate the model parameter \\(\Theta\\) somehow. This 
 
 ### Regression and Ordinary Least Squares method (OLS):
 
-Typically, having some data (experience) \\(D = \\{(X_{i},Y_{i})|X_{i} \in R^{n}, y_{i} \in R\\}\\), it is possible to define a performance estimation on how well the parameters \\(\Theta\\) model the relationship between the dependent and the outcome variables. This performance measure is often called loss function. The most common measure (in this field) is the *least squares* (L2) defined formally as:
+Typically, having some data (experience) \\(D = \\{(X_{i},Y_{i})\mid X_{i} \in R^{n}, y_{i} \in R\\}\\), it is possible to define a performance estimation on how well the parameters \\(\Theta\\) model the relationship between the dependent and the outcome variables. This performance measure is often called loss function. The most common measure (in this field) is the *least squares* (L2) defined formally as:
 \\[ J_{1}(\Theta\mid D) = \sum_{i=1}^{m}(Y_{i} - f(X_{i}))^{2} = \sum_{i=1}^{m}(Y_{i} - \theta_{0} - \sum_{j=1}^{n} x_{i,j}\theta_{j})^{2} \\]
 
 Many other performance measures could be defined easily for any problem specific tasks. However, the reason why this method has become so popular is perhaps that it makes the loss function \\(J\\) a convex function with respect to parameters \\(\Theta\\). (The reason is not that, this loss function is reasonable.) This provides several numerical advantages. Note that, in practice other loss function might be more reasonable, but can make the optimization more difficult. See Figure 2 below.
@@ -52,7 +52,7 @@ Many other performance measures could be defined easily for any problem specific
 
 The second term is called the regularization term, or penalty term. Here \\(\lambda\\) is a trade-off parameter that balances between the importance of regularization term and the fitting/cost error. The larger the amount of \\(\lambda\\) the greater the importance of the regularization, and *vice versa*.  The parameters shrink toward zero and  (to each other) when \\(\lambda\\) increases. Notice that \\(\theta_{0}\\) (the bias) is not included in the regularization term. The problem to find the \\(\widetilde{\Theta}\\), which minimizes the error can be formulated as follows:
 
-\\[\widetilde{\Theta} = argmin_{\Theta}J(\Theta\mid D) = argmin_{\Theta}\bigg\\{\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \bigg\\} \\]
+\\[\widetilde{\Theta} = argmin_{\Theta}J(\Theta\mid D) = argmin_{\Theta}\Bigg\\{\sum_{i=1}^{m}\bigg(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}\bigg)^{2} + \lambda\sum_{j=1}^{n} \theta_{j}^{2} \Bigg\\} \\]
 
 Now, let's take step back for a moment and take a look at the two formulas (\\(F(x)\\) and \\(J(\Theta\mid D)\\). In the first one, a data \\(x\\) is a variable and the parameters \\(\theta_{i}\\) are constants. In the cost functions the data \\(x_{i}\\) becomes a constant and the model parameters are the variables. In fact, the optimal model parameters are some sort of combination of the data, or at least the optimal solution mostly depends on the data.
 
