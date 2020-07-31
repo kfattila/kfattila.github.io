@@ -75,7 +75,7 @@ The choise of \\(\pm 1\\) is arbitrary but it must be non-zero. This cost functi
 **Figure 2.** Cost functions of Logistic Regression and Support Vector Machines for positive (left) and negative (right) classes, respectively.
 
 Using this cost functions we can formulate the objective function of SVM classification.
-\\[J(\theta\ьшв D) = \frac{1}{m}\sum_{i=1}^{m} y_{i}(1 - \theta^{T}x_{i})\_{+} + (1 - y_{i})(\theta^{T}x_{i} + 1)\_{+} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}\\]
+\\[J(\theta\mid D) = \frac{1}{m}\sum_{i=1}^{m} y_{i}(1 - \theta^{T}x_{i})\_{+} + (1 - y_{i})(\theta^{T}x_{i} + 1)\_{+} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}\\]
 
 What does this mean? For a positive sample \\((y_{i} = 1)\\), if \\(\theta^{T}x_{i} > 1\\) then the corresponding cost is zero (yay). However, if \\(\theta^{T}x_{i} < 1\\) then we will introduce some positive error (nay). The same logic goes for the negative class. For a negative sample \\((y_{i} = 0)\\), if \\(\theta^{T}x_{i} < -1\\) then cost is zero (yay), but if \\(\theta^{T}x_{i} > -1\\), then some error is applied (nay).
 
