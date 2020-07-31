@@ -134,7 +134,7 @@ For training data \\(x_{i}\\) and test data \\(z_{i}\\), these can be organized 
 
 \\[ \begin{bmatrix}
 k(x_{1},x_{1}) & k(x_{1},x_{2}) &  & k(x_{1},x_{m}) \\\
-k(x_{1},x_{1}) & k(x_{1},x_{2}) &  & k(x_{1},x_{m}) \\\
+k(x_{2},x_{1}) & k(x_{2},x_{2}) &  & k(x_{2},x_{m}) \\\
 . & . & . & . \\\
 . & . & . & . \\\
 . & . & . & . \\\
