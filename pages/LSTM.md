@@ -67,13 +67,13 @@ Certainly, LSTM can be organized into multi-layer network yielding deep LSTMs.
 
 Another approach is that one could combine the update and the forget steps, so the decision on what information to forget and what new information to add could be made simultaneously. This can be done in the following way:
 
+![LSTM6.png](./images/LSTM6.png)
 
-
-\\[c_{t} = f_{t}\textdegree c_{t-1} + (1 - f_{t})\textdegree\widetilda{c_{t}}\\]
+\\[c_{t} = f_{t}\hspace{1mm}^{\circ} c_{t-1} + (1 - f_{t})\hspace{1mm}^{\circ}\widetilde{c_{t}}\\]
 
 Another variant of LSTM contain peepholes for the gates, so they can incorporate the current state vector into their decisions.
 
-
+![LSTM7.png](./images/LSTM7.png)
 
 \\[f_{t} = \sigma(W_{f}[h_{t-1},x_{t}] + b_{f})\\]
 \\[i_{t} = \sigma(W_{i}[h_{t-1},x_{t}] + b_{i})\\]
@@ -84,13 +84,13 @@ This method does not use state vector \\(c_{t}\\), but only the hidden memory ve
 The first gate is the reset gate:
 \\[r_{t} = \sigma(W_{r}[h_{t-1},x_{t}] + b_{r})\\]
 
-\\[\widetilda{h_{t}} = tanh(W_{h}[r_{t}\textdegree h_{t-1},x_{t}])\\]
+\\[\widetilda{h_{t}} = tanh(W_{h}[r_{t}\hspace{1mm}^{\circ} h_{t-1},x_{t}])\\]
 In this formulation, when the reset gate is close to 0, then the hidden state is forced to ignore the previous hidden state and reset with the current input.
 
 The second gate is the update gate:
 \\[z_{t} = \sigma(W_{z}[h_{t-1},x_{t}] + b_{z})\\]
 
 Finally, the hidden unit is updated as:
-\\[h_{t} = z_{t}\textdegree h_{t-1} + (1 - z_{t})\textdegree\widetilda{h_{t}}\\]
+\\[h_{t} = z_{t}\hspace{1mm}^{\circ} h_{t-1} + (1 - z_{t})\hspace{1mm}^{\circ}\widetilde{h_{t}}\\]
 The update gate controls how much information from the previous hidden stat will carry over to the current hidden state. This acts similarly to the memory cell in the LSTM and helps the RNN remember long-term information. 
 [Ref: GRU: [https://arxiv.org/pdf/1406.1078v3.pdf](https://arxiv.org/pdf/1406.1078v3.pdf)]
