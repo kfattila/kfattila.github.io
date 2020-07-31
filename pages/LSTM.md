@@ -75,9 +75,9 @@ Another variant of LSTM contain peepholes for the gates, so they can incorporate
 
 ![LSTM7.png](./images/LSTM7.png)
 
-\\[f_{t} = \sigma(W_{f}[h_{t-1},x_{t}] + b_{f})\\]
-\\[i_{t} = \sigma(W_{i}[h_{t-1},x_{t}] + b_{i})\\]
-\\[o_{t} = \sigma(W_{0}[h_{t-1},x_{t}] + b_{0})\\]
+\\[f_{t} = \sigma(W_{f}[h_{t-1},[c_{t-1},x_{t}] + b_{f})\\]
+\\[i_{t} = \sigma(W_{i}[h_{t-1},[c_{t-1},x_{t}] + b_{i})\\]
+\\[o_{t} = \sigma(W_{0}[h_{t-1},[c_{t-1},x_{t}] + b_{0})\\]
 
 Another popular variant is the **Gated Recurrent Unit (GRU):**
 This method does not use state vector \\(c_{t}\\), but only the hidden memory vector \\(h\\) and it also combines the forget and input gates. The resulting model is simpler than a vanilla LSTM because GTU uses only two gates and only one state vector. 
