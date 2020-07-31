@@ -132,7 +132,17 @@ The obtained optimization problem has now m parameters. After the optimization w
 
 For training data \\(x_{i}\\) and test data \\(z_{i}\\), these can be organized in the kernel matrix as
 
-
+\\[ \begin{bmatrix}
+k(x_{1},x_{1}) & k(x_{1},x_{2}) &  & k(x_{1},x_{m}) \\\
+k(x_{1},x_{1}) & k(x_{1},x_{2}) &  & k(x_{1},x_{m}) \\\
+. & . & . & . \\\
+. & . & . & . \\\
+. & . & . & . \\\
+k(x_{n},x_{1}) & k(x_{n},x_{2}) &  & k(x_{n},x_{m}) \\\
+k(z_{1},x_{1}) & k(z_{1},x_{2}) &  & k(z_{1},x_{m}) \\\
+k(z_{2},x_{1}) & k(z_{2},x_{2}) &  & k(z_{2},x_{m}) \\\
+. & . & . & .
+\end{bmatrix} \\]
 
 That is, \\(\theta_{i}\\) can be assigned to data \\(x_{i}\\). Note that, these weights can be negative and positive, and in fact positive weights are assigned to positive data and negative weights are assigned to negative data.
 
