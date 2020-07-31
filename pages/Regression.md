@@ -33,7 +33,7 @@ So, what we want is to calculate the model parameter \\(\Theta\\) somehow. This 
 
 ### Regression and Ordinary Least Squares method (OLS):
 
-Typically, having some data (experience) \\(D = \\{(X_{i},Y_{i})|X_{i} \in R^{n}, y_{i} \in R\\}\\), it is possible to define a performance estimation on how well the parameters \\(\Theta\\) model the relationship between the dependent and the outcome variables. This performance measure is often called loss function. The most common measure (in this field) is the *least squares* defined formally as:
+Typically, having some data (experience) \\(D = \\{(X_{i},Y_{i})|X_{i} \in R^{n}, y_{i} \in R\\}\\), it is possible to define a performance estimation on how well the parameters \\(\Theta\\) model the relationship between the dependent and the outcome variables. This performance measure is often called loss function. The most common measure (in this field) is the *least squares* (L2) defined formally as:
 \\[ J_{1}(\Theta\mid D) = \sum_{i=1}^{m}(Y_{i} - f(X_{i}))^{2} = \sum_{i=1}^{m}(Y_{i} - \theta_{0} - \sum_{j=1}^{n} x_{i,j}\theta_{j})^{2} \\]
 
 Many other performance measures could be defined easily for any problem specific tasks. However, the reason why this method has become so popular is perhaps that it makes the loss function \\(J\\) a convex function with respect to parameters \\(\Theta\\). (The reason is not that, this loss function is reasonable.) This provides several numerical advantages. Note that, in practice other loss function might be more reasonable, but can make the optimization more difficult. See Figure 2 below.
