@@ -111,7 +111,7 @@ This is illustrated below.
 
 SVM can be easily extended to a non-linear classifier. In order to do this so, the original dataset has to be transformed by a (nonlinear) kernel function. Kernel function is a symmetric and positive semi-definite functions that performs a non-linear transformation. More details about kernel functions will come later. For now, let's use the Gaussian kernel function, also called as Radial Basis Functions, defined as:
 
-\\[k(x,y) = \exp\\]
+\\[k(x,y) = \exp(- \frac{\lVert x-y \rVert^{2}}{\sigma})\\]
 
 Not that, hearth of RBF is essentially a distance metric, which is then transformed from distance-like measure to a similarity-like one. The parameter \\(\sigma\\) regulates the transformation of the disntance value. If \\(\sigma\\) is small, then close data points get meaningful similarity measures and data far from each other will be neglected and get scores score to zero (or zero). If \\(\sigma\\) is large, then close data points will get a value around 1.0 but data points farther from each other will obtain some meaningful values.
 
@@ -123,7 +123,7 @@ Let's transform each data \\(x_{i}\\) in the dataset \\(D = \\{(x_{i}, y_{i})\mi
 
 Note that, the new dataset has \\(m\\) data instances, and each has \\(m\\) features. (Plus a constant 1 for the bias). Let us plug this into the learning objective and we get the following optimization problem:
 
-\\[J(\theta|D) = \frac{1}{m}\sum_{m}^{i=1}y_{i}(1 - \theta^{T}k_{i})\_{+} + (1 - y_{i})(\theta^{T}k_{i} + 1)\_{+} + \lambda\sum_{m}^{j=1}\theta_{j}^{2} \\]
+\\[J(\theta\mid D) = \frac{1}{m}\sum_{m}^{i=1}y_{i}(1 - \theta^{T}k_{i})\_{+} + (1 - y_{i})(\theta^{T}k_{i} + 1)\_{+} + \lambda\sum_{m}^{j=1}\theta_{j}^{2} \\]
 
 The obtained optimization problem has now m parameters. After the optimization we get a weigth for each training example:
 
