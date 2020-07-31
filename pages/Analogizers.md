@@ -66,7 +66,7 @@ Now, let us change the log-functions \\(log(g(z))\\) which measured the cost of 
 \\[(z)\_{+} = max(z,0)\\]
 
 For a positive data \\((x_{i}, y_{i} = 1)\\), we want \\(\Theta x_{i} \geq 1\\), hence we deinfe the cost function as \\((1 - \Theta x_{i})\_{+}\\) and
-For a negative data \\((x_{i}, y_{i} = 0)\\), let us want \\(\Theta x_{i} \leq -1\\), hence we deinfe the cost function as \\((\theta x_{i} + 1)\_{+}\\).
+For a negative data \\((x_{i}, y_{i} = 0)\\), let us want \\(\Theta x_{i} \leq -1\\), hence we deinfe the cost function as \\((\Theta x_{i} + 1)\_{+}\\).
 The choise of \\(\pm 1\\) is arbitrary but it must be non-zero. This cost function is somewhat similar to the cost function used in Logistic Regression.
 
 ![analog6](./images/analog6.png)
