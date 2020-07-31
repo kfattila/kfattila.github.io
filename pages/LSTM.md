@@ -43,7 +43,7 @@ Now, the hidden unit ht  is being updated. This step is based on the new state v
 \\[o_{t} = \sigma(W_{0}[h_{t-1},x_{t}] + b_{0})\\]
 
 The new memory (hidden state) will be the cell state squased to [-1, +1] using tanh elementwise multiplied with \\(o_{t}\\).
-\\[h_{t} = o_{t}^{\circ} tanh(c_{t})\\]
+\\[h_{t} = o_{t}\hspace{1mm}^{\circ} tanh(c_{t})\\]
 
 The emission produced by LSTM may contain additional calculations as well if it is needed:
 \\[y_{t} = softmax(W_{y}h_{t} + b_{y})\\]
