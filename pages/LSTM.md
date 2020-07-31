@@ -84,7 +84,7 @@ This method does not use state vector \\(c_{t}\\), but only the hidden memory ve
 The first gate is the reset gate:
 \\[r_{t} = \sigma(W_{r}[h_{t-1},x_{t}] + b_{r})\\]
 
-\\[\widetilda{h_{t}} = tanh(W_{h}[r_{t}\hspace{1mm}^{\circ} h_{t-1},x_{t}])\\]
+\\[\widetilde{h_{t}} = tanh(W_{h}[r_{t}\hspace{1mm}^{\circ} h_{t-1},x_{t}])\\]
 In this formulation, when the reset gate is close to 0, then the hidden state is forced to ignore the previous hidden state and reset with the current input.
 
 The second gate is the update gate:
