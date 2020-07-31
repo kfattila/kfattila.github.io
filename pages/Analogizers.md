@@ -96,7 +96,7 @@ Now, if we are given by a new instance s to classify it, we can calculate which 
 	1, & f(s) \geq 0
 	\end{cases} \\]
 
-This model has a further and a useful property. Let us consider a linearly separable case (when positive and negative instances can be separated by a linear line). Then the parameters θ will be chosen which gives the largest margin. Consider two cases:
+This model has a further and a useful property. Let us consider a linearly separable case (when positive and negative instances can be separated by a linear line). Then the parameters \\(\theta\\) will be chosen which gives the largest margin. Consider two cases:
 
 1. The positive data \\(x\\) lies close to the decision boundary. In this case \\(\theta^{T}x\\) will be small, but the cost functions would penalize it if \\(\theta^{T}x < 1\\), thus it needs to increase the length of \\(\theta\\) to avoid penalty. But it cannot really do this because then it will get another penalty from the regularizer \\(\theta_{i}^{2}\\).
 2. Consider another case when the hyperplane is farther from the data \\(x\\). In this case the \\(\theta^{T}x\\) will be bigger (than in the previous case) so the regularizer can reduce the length of the norm vector \\(\theta_{i}^{2}\\) without hurting getting penalty from the cost function for violating \\(\theta^{T}x < 1\\).
