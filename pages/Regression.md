@@ -129,8 +129,8 @@ The same as above, but in vector form:
 Here:
 \\[
 	\begin{array}{ll}
-		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \\\
-		\frac{\partial}{\partial\theta_{0}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{0}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2} = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}) & \text{for j = 0} 
+		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \\\
+		\frac{\partial}{\partial\theta_{0}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{0}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}) & \text{for j = 0} 
     \end{array}
 \\]
 
