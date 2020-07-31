@@ -93,18 +93,39 @@ This procedure yields a training data \\(D = \\{(x_{i}', y_{i}' = f(x_{i}'))\\}\
 ![interp5.png](./images/interp5.png)
 
 Lime for text data:
+
 The black box model is a deep decision tree trained on the document word matrix. Each comment is one document (= one row) and each column is the number of occurrences of a given word. Short decision trees are easy to understand, but in this case the tree is very deep. Moreover, there could have been a recurrent neural network or a support vector machine trained on word embeddings (abstract vectors) instead of this tree . Let us look at the two comments of this dataset and the corresponding classes (1 for spam, 0 for normal comment):
 
-
+|     | **Content**                               | **Class** |
+|-----|-------------------------------------------|-----------|
+| 267 | PSY is a good guy                         | 0         |
+| 173 | For Christmas Song visit my channel! ;)   | 1         |
+{:class="table table-bordered"}
 
 Now, we would like to know, why our tree classified the sentence ID=173 as spam.
 The next step is to create some variations of the datasets used in a local model. For example, some variations of one of the comments:
 
+|   |  **For**  | **Christmas** | **Song** | **visit** | **my** | **channel!** | **;)** |  **prob** | **weight** |
+|---|-----------|---------------|----------|-----------|--------|--------------|--------|-----------|------------|
+| 2 |     1     | 0             | 1        |  1        | 0      | 0            | 1      |   0.17    | 0.57       |
+| 3 |     0     | 1             | 1        |  1        | 1      | 0            | 1      |   0.17    | 0.71       |
+| 4 |     1     | 0             | 0        |  1        | 1      | 1            | 1      |   0.99    | 0.71       |
+| 5 |     1     | 0             | 1        |  1        | 1      | 1            | 1      |   0.99    | 0.86       |
+| 6 |     0     | 1             | 1        |  1        | 0      | 0            | 1      |   0.17    | 0.57       |
+{:class="table table-bordered"}
 
 Each column corresponds to one word in the sentence. Each row is a variation, 1 means that the word is part of this variation and 0 means that the word has been removed. The corresponding sentence for one of the variations (ID=3) is *“Christmas Song visit my ;)”*. Prob denotes the probability of the spam class (class=1). The 'weight' feature measures the fraction of the words being present in the generated sample. 
 Here are the two sentences (one spam, one no spam) with their estimated local weights found by the LIME algorithm:
 
-
+| **case** | **label_prob** | **feature** | **feature_weight** |
+|----------|----------------|-------------|--------------------|
+| 1        | 0.1701170      | good        | 0.000000           |
+| 1        | 0.1701170      | PSY         | 0.000000           |
+| 1        | 0.1701170      | a           | 0.000000           |
+| 2        | 0.9939024      | channel!    | 6.180747           |
+| 2        | 0.9939024      | Song        | 0.000000           |
+| 2        | 0.9939024      | Christmas   | 0.000000           |
+{:class="table table-bordered"}
 
 The word “channel” indicates a high probability of spam. For the non-spam comment no non-zero weight was estimated, because no matter which word is removed, the predicted class remains the same.
 
@@ -116,13 +137,13 @@ LIME for images works differently than LIME for tabular data and text. Intuitive
 Example
 Since the computation of image explanations is rather slow, the [lime R package](https://github.com/thomasp85/lime) contains a precomputed example which we will also use to show the output of the method. The explanations can be displayed directly on the image samples. Since we can have several predicted labels per image (sorted by probability), we can explain the top n_labels. For the following image the top 3 predictions were *electric guitar; acoustic guitar; and labrador*.
 
-
+![interp6.png](./images/interp6.png)
 
 FIGURE: LIME explanations for the top 3 classes for image classification made by Google’s Inception neural network. The example is taken from the LIME paper, Ribeiro 2016.
 The prediction and explanation in the first case are very reasonable. The first prediction of electric guitar is of course wrong, but the explanation shows us that the neural network still behaved reasonably because the image part identified suggests that this could be an electric guitar.
 Another example:
 
-
+![interp7.png](./images/interp7.png)
 
 References.
 [1] Friedman, Jerome H. “Greedy function approximation: a gradient boosting machine.” Annals of statistics (2001): 1189-1232. [https://arxiv.org/pdf/1602.04938.pdf](https://arxiv.org/pdf/1602.04938.pdf)
