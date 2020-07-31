@@ -57,7 +57,7 @@ So, there has been an investigation on this in more depth and it turned out the 
 
 ![Machine bias 3](./images/machine_bias3.png)
 
-###### References:
+#### References:
 1. Cathy O'Neil: Weapons of math destruction, 2016, Crown Random House, ISBN: 0553418815, 9780553418811
 2. [https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people](https://www.theguardian.com/technology/2018/jan/12/google-racism-ban-gorilla-black-people)
 3. [https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477](https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477)
