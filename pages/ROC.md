@@ -56,6 +56,8 @@ Area Under the curve (AUC):
 
 Examples for ROC curves.
 
+Perfect classification:
+
 ![roc11](./images/roc11.png)
 
 Good classification:
