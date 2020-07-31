@@ -57,7 +57,7 @@ nearest-neighbor’s approximation is probably not ideal. But with SVMs, we can 
 
 **Figure.** Decision Boundaries made by kNN (A) and by SVM (B).
 
-Now let us have some data: \\(D = \\{X_{i}, Y_{i}\midX_{i} \in R^{n}, y_{i} \in C\\}\\), where \\(C\\) is categorical. For now, let's assume \\(C=\\{0,1\\}\\). In the case of Logistic Regression, parametrized by \\(\theta\\) (the bias is included), we used a sigmoid function to represent the relationship between \\(X\\) and \\(Y\\), and fitted an S-shaped sigmoid function over the data, and the LogReg provided us a linear decision boundary by solving the minimization of the following cost functions:
+Now let us have some data: \\(D = \\{X_{i}, Y_{i}\mid X_{i} \in R^{n}, y_{i} \in C\\}\\), where \\(C\\) is categorical. For now, let's assume \\(C=\\{0,1\\}\\). In the case of Logistic Regression, parametrized by \\(\theta\\) (the bias is included), we used a sigmoid function to represent the relationship between \\(X\\) and \\(Y\\), and fitted an S-shaped sigmoid function over the data, and the LogReg provided us a linear decision boundary by solving the minimization of the following cost functions:
 
 \\[J(\theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i} \log(g(\theta^{T}x_{i})) - (1-y_{i}) \log(1 - g(\theta^{T}x_{i}))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2}\\]
 
