@@ -75,23 +75,23 @@ The pseudo-code in more details:
 
 This approach although is not widely used.
 
-##### Greedy layer-wise unsupervised training
+#### Greedy layer-wise unsupervised training
 
 Each layer in a multi-layer neural network can be considered as a representation of the input data obtained by a series of (often non-linear) transformation. Hence, each layer should capture useful information in the distribution of the input data from the previous layer. Exploiting this observation Hinton 2006 has proposed a method to train the parameters of the hidden layers iteratively using unsupervised learning. This pre-training provides a good initialization of the parameters which is then used by the final phase of fine-tuning the parameters with back-propagation in the usual supervised manner.
-Let \\(D = \{(x_{i},y_{i}):x_{i} \in R^{d}, y_{i} \in \{-1,+1\}\}_{i=1}^{n}\\) be the training data, and \\(h_{l}\\) are the varaibles in the layer \\(l =  0, ..., L\\) and \\(W_{l}\\) are the parameters in layer \\(l\\), where \\(h_{0}\\) represents the input data. The general framework is the following:
+Let \\(D = \\{(x_{i},y_{i}):x_{i} \in R^{d}, y_{i} \in \\{-1,+1\\}\\}\_{i=1}^{n}\\) be the training data, and \\(h_{l}\\) are the varaibles in the layer \\(l =  0, ..., L\\) and \\(W_{l}\\) are the parameters in layer \\(l\\), where \\(h_{0}\\) represents the input data. The general framework is the following:
 
 Repeat until stopping criteria is met:
 1. For \\(l = 1 \rightarrow L\\)
-	1a. using an unsupervised method, train the parameters \\(W_{l}\\) between layers \\(h_{l-1}\\) and \\(h_{l}\\) using \\(h_{l-1}\\) as input and \\(h_{l}\\) as output. This layer can be considered as a restricted boltzmann machine and the parameters can be learned by e.g Contrastive Divergence. Simialrly, this layer can also be learned using the coding layer of auto-encoders.
-	1b. Update the weights \\(W_{l}\\).
+ * using an unsupervised method, train the parameters \\(W_{l}\\) between layers \\(h_{l-1}\\) and \\(h_{l}\\) using \\(h_{l-1}\\) as input and \\(h_{l}\\) as output. This layer can be considered as a restricted boltzmann machine and the parameters can be learned by e.g Contrastive Divergence. Simialrly, this layer can also be learned using the coding layer of auto-encoders.
+ * Update the weights \\(W_{l}\\).
 2. Use back-propagation (or other supervised training method) to fine-tune the parameters w.r.t to minimize the classification error on the training dataset. 
 
 ![Deep Models 7](./images/deep_models7.png)
 
-**Figure**, Illustration of greedy layer-wise training.
+**Figure** Illustration of greedy layer-wise training.
 
 
-##### Stacked Auto-Encoders
+#### Stacked Auto-Encoders
 
 When Auto-Encoders (AE) are used in the layer-vise unsupervised learning, we talk about Stacked Auto-Encoders or Deep Auto-Encoders. In this case the AE are used to learn a representation of the data using one of the ways we discussed in the previous lecture.
 The Deep AE learns data representation iteratively. In each iteration an AE learns a more abstract (finer) representation from the previous layer.
