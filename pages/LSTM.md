@@ -75,20 +75,20 @@ Another variant of LSTM contain peepholes for the gates, so they can incorporate
 
 ![LSTM7.png](./images/LSTM7.png)
 
-\\[f_{t} = \sigma(W_{f}[h_{t-1},[c_{t-1},x_{t}] + b_{f})\\]
-\\[i_{t} = \sigma(W_{i}[h_{t-1},[c_{t-1},x_{t}] + b_{i})\\]
-\\[o_{t} = \sigma(W_{0}[h_{t-1},[c_{t-1},x_{t}] + b_{0})\\]
+\\[f_{t} = \sigma(W_{f}[h_{t-1};c_{t-1};x_{t}] + b_{f})\\]
+\\[i_{t} = \sigma(W_{i}[h_{t-1};c_{t-1};x_{t}] + b_{i})\\]
+\\[o_{t} = \sigma(W_{0}[h_{t-1};c_{t-1};x_{t}] + b_{0})\\]
 
 Another popular variant is the **Gated Recurrent Unit (GRU):**
 This method does not use state vector \\(c_{t}\\), but only the hidden memory vector \\(h\\) and it also combines the forget and input gates. The resulting model is simpler than a vanilla LSTM because GTU uses only two gates and only one state vector. 
 The first gate is the reset gate:
-\\[r_{t} = \sigma(W_{r}[h_{t-1},x_{t}] + b_{r})\\]
+\\[r_{t} = \sigma(W_{r}[h_{t-1};x_{t}] + b_{r})\\]
 
 \\[\widetilde{h_{t}} = tanh(W_{h}[r_{t}\hspace{1mm}^{\circ} h_{t-1},x_{t}])\\]
 In this formulation, when the reset gate is close to 0, then the hidden state is forced to ignore the previous hidden state and reset with the current input.
 
 The second gate is the update gate:
-\\[z_{t} = \sigma(W_{z}[h_{t-1},x_{t}] + b_{z})\\]
+\\[z_{t} = \sigma(W_{z}[h_{t-1};x_{t}] + b_{z})\\]
 
 Finally, the hidden unit is updated as:
 \\[h_{t} = z_{t}\hspace{1mm}^{\circ} h_{t-1} + (1 - z_{t})\hspace{1mm}^{\circ}\widetilde{h_{t}}\\]
