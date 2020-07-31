@@ -80,7 +80,7 @@ This approach although is not widely used.
 Each layer in a multi-layer neural network can be considered as a representation of the input data obtained by a series of (often non-linear) transformation. Hence, each layer should capture useful information in the distribution of the input data from the previous layer. Exploiting this observation Hinton 2006 has proposed a method to train the parameters of the hidden layers iteratively using unsupervised learning. This pre-training provides a good initialization of the parameters which is then used by the final phase of fine-tuning the parameters with back-propagation in the usual supervised manner.
 Let \\(D = \\{(x_{i},y_{i}):x_{i} \in R^{d}, y_{i} \in \\{-1,+1\\}\\}\_{i=1}^{n}\\) be the training data, and \\(h_{l}\\) are the varaibles in the layer \\(l =  0, ..., L\\) and \\(W_{l}\\) are the parameters in layer \\(l\\), where \\(h_{0}\\) represents the input data. The general framework is the following:
 
-Repeat until stopping criteria is met:
+**Repeat** until stopping criteria is met:
 1. For \\(l = 1 \rightarrow L\\)
  * using an unsupervised method, train the parameters \\(W_{l}\\) between layers \\(h_{l-1}\\) and \\(h_{l}\\) using \\(h_{l-1}\\) as input and \\(h_{l}\\) as output. This layer can be considered as a restricted boltzmann machine and the parameters can be learned by e.g Contrastive Divergence. Simialrly, this layer can also be learned using the coding layer of auto-encoders.
  * Update the weights \\(W_{l}\\).
@@ -110,3 +110,4 @@ Figure. Iterative construction of Deep Auto-Encoders.
 6. [http://neuralnetworksanddeeplearning.com/chap4.html](http://neuralnetworksanddeeplearning.com/chap4.html)
 7. [http://deeplearning.cs.cmu.edu/pdfs/Cybenko.pdf](http://deeplearning.cs.cmu.edu/pdfs/Cybenko.pdf)
 Ingo Wegener: The Complexity of Boolean Functions. John Wiley & Sons, 1987.
+8. Ingo Wegener: The Complexity of Boolean Functions. John Wiley & Sons, 1987.
