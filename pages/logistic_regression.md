@@ -26,7 +26,7 @@ classification error around the decision boundary.
 
 Instead of using a linear regression, we fit an S-shaped function on the data. Many S-shaped functions are available, e.g.
 arc tangent. However the most frequently used one is the sigmoid function or also called logistic function, defined as: \\(g(x) = \frac{1}{1+e^{-x}}\\)
-The reason of preferring the sigmoid function over the arctan is that (i) sigmoid has a nice derivative function and (it) it
+The reason of preferring the sigmoid function over the arctan is that (i) sigmoid has a nice derivative function and (ii) it
 has some sort of probabilistic distribution interpretation.
 
 ![Figure 2](./images/logreg2.png)
@@ -37,14 +37,14 @@ has some sort of probabilistic distribution interpretation.
 We can use this sigmoid functions as a model to represent the relationship between data \\((X)\\) and the categories \\((C)\\) in
 the following way:
 
-\\[ h_{\theta}(x) = \frac{1}{1+e^{-\theta^{T}x}} = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+...+\theta_{n}x_{n} )}} \\]
+\\[ h_{\Theta}(x) = \frac{1}{1+e^{-\Theta^{T}x}} = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+...+\theta_{n}x_{n} )}} \\]
 
 This is just a non-linear transformation of the linear combination of the feature \\(x_{i}\\)'s. Using this model, the classification rule can be defined as for a data \\(x\\):
 \\[ 
     f(x) = 
     \begin{cases}
-      0, & h_{\theta}(x) \lt t \\\
-      1, & h_{\theta}(x) \geq t
+      0, & h_{\Theta}(x) \lt t \\\
+      1, & h_{\Theta}(x) \geq t
     \end{cases}       
 \\]
 
@@ -65,10 +65,10 @@ The model parameters are \\(\theta\\)'s, and we need a way to learn these parame
 To learn the parameters, first we need to define the loss function (also called cost function). One could define the cost
 for one data as following:
 
-\\[ c_{\theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
+\\[ c_{\Theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
 
 This leads the following loss function using the regularization term as:
-\\[ J(\theta|D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 
 **Discussion 1.** What is the problem with this objective function?
 
