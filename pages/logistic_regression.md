@@ -93,14 +93,14 @@ Now, this leads to a convex error function and we can find the \\( \Theta \\) pa
 
 Initialize \\( \theta_{j} \\) with random values
 
-\\( 
+\\[ 
     \begin{array}{ll}
         \text{repeat until convergence \\{} \\\
         \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta|D), & \text{for }\forall j \\\
         \theta_{j} = \widetilde{\theta_{j}}, & \text{for }\forall j \\\
         \text{\\}}
     \end{array}
-\\)
+\\]
 
 Note: update \\(\theta_{j}\\)'s simultenously.
 
