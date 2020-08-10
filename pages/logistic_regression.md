@@ -106,13 +106,13 @@ Note: update \\(\theta_{j}\\)'s simultenously.
 
 We just need the derivatives of \\(J\\). After simple calculus, we get that:
 
-\\( h_{\theta}(x)' = h(x)(1-h(x)) \\), so
+\\( h_{\Theta}(x)' = h(x)(1-h(x)) \\), so
 
 \\[ 
 \begin{array}{ll} 
-\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta}(x_{i})) - (1-y_{i})\log(1-h_{Theta}(x_{i}))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})= \\\
-\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} & \text{for } j \gt 0 \\\
-\frac{\partial}{\partial\partial_{j}}J(\theta|D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}) & \text{for } j = 0  \\\
+\frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta}(x_{i})) - (1-y_{i})\log(1-h_{Theta}(x_{i}))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})= \\\
+\frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} & \text{for } j \gt 0 \\\
+\frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i}) & \text{for } j = 0  \\\
 \end{array}
 \\]
 
@@ -121,8 +121,8 @@ This summarises algorithm 2 as follows:
 \\[ 
 \begin{array}{ll} 
     \text{repeat until convergence \\{} \\\
-    \widetilde{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i}), & \text{for } j \gt 0 \\\
-    \widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\theta}(x_{i}) - y_{i}), & \text{for } j = 0 \\\
+    \widetilde{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i}), & \text{for } j \gt 0 \\\
+    \widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i}), & \text{for } j = 0 \\\
     \theta_{j} = \widetilde{\theta_{j}}, & \text{for } \forall j \\\
     \text{\\}}
 \end{array}   
