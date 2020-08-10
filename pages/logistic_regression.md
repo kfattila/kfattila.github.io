@@ -75,18 +75,18 @@ This leads the following loss function using the regularization term as:
 **Solution.** This error function is non-convex, which means that the optimization procedure is hindered by local-optima problem, and an global optimizer could stack in a local minimum.
 
 How can we make this error function convex?
-Let's take a logarithmic transformation of \\(h_{\theta}(x)\\): and we get \\(-\log(h_{\theta}(x))\\).
+Let's take a logarithmic transformation of \\(h_{\Theta}(x)\\): and we get \\(-\log(h_{\Theta}(x))\\).
 
 
 ![Softmax](./images/logreg5.png)
 [source:https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/](https://houxianxu.github.io/2015/04/23/logistic-softmax-regression/)
 
 Now, let's define the cost of an error as following: 
-\\[ c_{\theta}(x_{i},y_{i}) = -y_{i} \log(h_{\Theta}(x_{i})) - (1-y_{i}) \log(1-h_{\theta}(x_{i})))\\]
+\\[ c_{\Theta}(x_{i},y_{i}) = -y_{i} \log(h_{\Theta}(x_{i})) - (1-y_{i}) \log(1-h_{\Theta}(x_{i})))\\]
 
-Using this cost function \\(c_{\theta}\\) in the error function \\(J(\Theta|D)\\) we get:
+Using this cost function \\(c_{\Theta}\\) in the error function \\(J(\Theta\mid D)\\) we get:
 
-\\[ J(\Theta|D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta})(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i})) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta})(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i})) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 Now, this leads to a convex error function and we can find the \\( \Theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
 ##### Algorithm 2
