@@ -89,7 +89,7 @@ Using this cost function \\(c_{\Theta}\\) in the error function \\(J(\Theta\mid 
 \\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta})(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i})) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 Now, this leads to a convex error function and we can find the \\( \Theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
-##### Algorithm 2
+#### Algorithm 2
 
 Initialize \\( \theta_{j} \\) with random values
 
@@ -132,7 +132,7 @@ Note that, the features are needed to be normalized.
 
 
 
-##### Vectorization
+#### Vectorization
 
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
 Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
@@ -163,7 +163,7 @@ Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector de
 extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 
-##### Algorithm 3
+#### Algorithm 3
 
 Initialize the parameters randomly
 
@@ -183,7 +183,7 @@ That is it, logistic regression using gradient descent optimization can be imple
 Implementation issue: The algorithm above calculates \\(g(X\Theta)\\) three times. To make it computationally more efficient in implementation, it would be 
 worthwhile calculating it once and storing it in a local variable.
 
-##### Multi-class classification problem
+#### Multi-class classification problem
 
 The method above can be used with two categories, i.e. in binary classification problems. However, we need an approach to deal with multi-class classification problems.
 
