@@ -28,8 +28,7 @@ When one hears that Google bought a company called DeepMind whose products have 
 
 When the depth of a model is larger than 1 (k>1), we talk about **deep models**, if the depth of a model is 1 (k=1) we call it as a **shallow model**. The linear and non-linear SVMs, Logistic Regression, k-NN and single layer ANNs are shallow models.
 
-
-![Deep Models 3](./images/deep_models3.png)
+<img src="./images/deep_models3.png" alt="drawing" width="200"/>
 
 **Figure 1.** Example of a deep network and its parameters.
 
