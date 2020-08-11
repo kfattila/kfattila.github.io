@@ -201,6 +201,15 @@ That is, the learning objective for the skip gram model is given as:
 
 A really good article which explains the word2vec methods in details is given in [4].
 
+
+#### Data representation
+
+There are several data representation methodologies:
+	1. Local data representation. It is essentially the one-hot encoding. 
+	2. Semi local (or semi distributed) data representation. 
+Distributed data representation. It is similar to the word embedding. In this approach, a single feature may participate in representing several entities. 
+
+
 #### Word2Vec on other data items
 
 In the previous sections, we gave a method to calculate distributed representations for words. We note that, we did not really exploit anything from the words itself, we only used one-hot-encoding and the relative positions of the words in the given sentences. This suggests that, if we can exploit some information about the relationships of the data instances then we can get distributed representations for any kind of data such as music songs (Spotify), apartments (Airbnb), product recommendation (Amazon, Yahoo), matching advertisements to search queries (Yahoo) using word2vec method.
