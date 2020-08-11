@@ -199,10 +199,10 @@ and marked as negative class (0). A new data instance is to be classifed to the 
 [From http://www.holehouse.org/mlclass/06_Logistic_Regression.html](http://www.holehouse.org/mlclass/06_Logistic_Regression.html)
 
 
-In this case we have \\(K\\) model parameters in vector form \\(\Theta_{1}, ..., \Theta_{K}\\), which can be merged in to a matrix \\(\Theta = [\Theta_{1},\Theta_{2},...,\Theta_{K}]\\) in which the kth column corresponds to the kth class.
+In this case we have \\(K\\) model parameters in vector form \\(\Theta_{1}, ..., \Theta_{K}\\), which can be merged in to a matrix \\(\Theta = [\Theta_{1},\Theta_{2},...,\Theta_{K}]\\) in which the kth column corresponds to the \\(k\\)-th class.
 
 We also can recode the class labels. For every class label \\(y_{i} \in \\{1,2,...,K\\}\\) we assign a vector whose elemets are zero except there is a one (1) at position of \\(y_{i}\\). For instance, if \\(y_{i} = 3\\) and \\(K = 10\\) then \\(Y_{i} = [0,0,1,0,0,0,0,0,0,0]\\). This coding is called one-hot encoding. Now, we can extend the former training algorithm for multi-class logistic regression. The cost functions is:
-\\[ J(\theta|D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta^{\uparrow.2}) \\]
+\\[ J(\theta\mid D) = -mean(Y \ast. \log(g(X\theta))) + (1-Y) \ast. \log(1-g(X\theta))) + \lambda mean(\theta^{\uparrow.2}) \\]
 Note: \\(\ast.\\) element-wise production, \\(mean\\) takes the mean of all elements in its argument and \\(\uparrow.2\\) is performed element-wise. Note that \\(\Theta\\) is matrix and \\(X\Theta\\) will have the same size as \\(Y\\).
 
 Now the training algorithm can be formulated as:
