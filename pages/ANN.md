@@ -34,7 +34,8 @@ While one sigmoid function can learn a S-shaped function, combination of several
 
 **Figure.** Functions that a neural network can learn with a) one, b) two, and c-d) 4 hidden nodes. Figure is taken from: Christopher Bishop, Neural Networks (1995).
 
-Exercises:
+#### Exercises:
+
 1. Design a neural network (single input binary variables: \\(x\\)) and give its weights, which represents: \\(\lnot x\\) (not)
 2. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \lor y\\) (or)
 3. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \wedge y\\) (and) ![ann6](./images/ann6.png)
