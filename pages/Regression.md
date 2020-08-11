@@ -108,10 +108,10 @@ determine the direction of the optima.
 
 \\[ 
     \begin{array}{ll}
-    	\text{initialize } \theta_{j} \text{ with random values.} \\\
-        \text{repeat until convergence \\{} \\\
-        \hspace{1cm}\widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) & \text{for all j ;} \\\
-        \hspace{1cm} \theta_{j} = \widetilde{\theta_{j}} & \text{for all j;} \\\
+    	\text{initialize } \theta_{j} \text{ with random values.} \cr
+        \text{repeat until convergence \\{} \cr
+        \hspace{1cm}\widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) & \text{for all j ;} \cr
+        \hspace{1cm} \theta_{j} = \widetilde{\theta_{j}} & \text{for all j;} \cr
         \text{\\}}
     \end{array}       
 \\]
@@ -120,8 +120,8 @@ Note: update \\(\theta_{j}\\)' simultaneously.
 The same as above, but in vector form:
 \\[ 
     \begin{array}{ll}
-        \text{repeat until convergence \\{} \\\
-        \hspace{1cm}\Theta^{(k+1)} = \Theta^{(k)} - \mu \nabla J(\Theta^{(k)}\mid D) \\\
+        \text{repeat until convergence \\{} \cr
+        \hspace{1cm}\Theta^{(k+1)} = \Theta^{(k)} - \mu \nabla J(\Theta^{(k)}\mid D) \cr 
         \text{\\}}
     \end{array}       
 \\]
@@ -129,7 +129,7 @@ The same as above, but in vector form:
 Here:
 \\[
 	\begin{array}{ll}
-		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \\\
+		\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})x_{i,j} + 2\lambda\theta_{j} & \text{for j > 0} \cr
 		\frac{\partial}{\partial\theta_{0}}J(\Theta\mid D) = \frac{\partial}{\partial\theta_{0}}(\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i})^{2} + \lambda\sum_{j=1}^{n}\theta_{j}^{2}) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \sum_{j=1}^{n}x_{i,j}\theta_{j} - Y_{i}) & \text{for j = 0} 
     \end{array}
 \\]
@@ -156,7 +156,7 @@ a) <u>Normalization</u> consists of two steps:
 
 b) <u>Scaling</u> feature values to the range [0,1], (other ranges work well too, such as, [-1,1], [-3,3], etc.).  \\(\widetilde{x_{i,j}} = \frac{X_{i,j} - X_{min,j}}{X_{max,j} - X_{min,j}}\\)
 
-##### Batch mode:
+#### Batch mode:
 
 In the case above the gradient descent algorithm uses the whole dataset.  You can use less data in each iteration, say, you can chose randomly 1, 5, 10, … in each iteration, and calculate the \\(\Theta\\)'s. This can be often useful if you have lot's of data, or data access is expensive (over network, etc.)
 We can repeatedly run through the training set, and each time we encounter a training example, we update the parameters according to the gradient of the error with respect to that single training example only. This algorithm is called stochastic gradient descent (also incremental gradient descent). It slows the convergence down, but uses less data and hence less memory in each iteration.
