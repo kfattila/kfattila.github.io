@@ -86,7 +86,7 @@ Now, let's define the cost of an error as following:
 
 Using this cost function \\(c_{\Theta}\\) in the error function \\(J(\Theta\mid D)\\) we get:
 
-\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta})(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i})) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta}(x_{i})) - (1 - y_{i})\log(1 - h_{\Theta}(x_{i}))) + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 Now, this leads to a convex error function and we can find the \\( \Theta \\) parameters which minimize the error function using e.g. the gradient descent algorithm.
 
 #### Algorithm 2
