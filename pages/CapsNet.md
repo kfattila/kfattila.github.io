@@ -49,7 +49,7 @@ The next step is the squash which is a kind of non-linear activation function bu
 
 The length of \\(v_{j}\\) will represent the probability of the entity represented by the capsule.
 
-<img src="./images/capsnet5.png" alt="drawing" width="250"/>
+<img src="./images/capsnet5.png" alt="drawing" width="350"/>
 
 The squashing function on scalar input. In real application the squashing function operates on vectors.
 
