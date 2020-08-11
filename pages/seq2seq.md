@@ -21,7 +21,7 @@ The current statistical machine translation systems are based on LSTMs (or RNNs)
 The encoder is an RNN that reads each symbol of an input sequence \\(x\\) sequentially. As it reads
 each symbol, the hidden memory state of the RNN changes according \\(p_{t} = tanh(W[h_{t-1};x_{t}] + b_{1})\\). After reading the end of the sequence (marked by an end-of-sequence symbol), the hidden memory state of the RNN is a context vector \\(c = h_{T}\\) of the whole input sequence. Note that this context vector can be really-really large dimensional.
 
-![seq2seq2](./images/seq2seq_2.png)
+<img src="./images/seq2seq_2.png" alt="drawing" width="230"/>
 
 The decoder of the proposed model is another RNN which is trained to generate the output sequence by predicting the next symbol \\(y_{t}\\) given the hidden state \\(h_{t}\\); however, both \\(y_{t}\\) and \\(h_{t}\\) are also conditioned on \\(y_{t-1}\\) and on the summary \\(c\\) of the input sequence. Hence, the hidden state of the decoder at time \\(t\\) is computed by,
 \\[h_{t} = a(W_{h}[h_{t-1};y_{t-1};c] + b_{h})\\]
