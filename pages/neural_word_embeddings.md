@@ -166,7 +166,7 @@ This approach uses a binary tree to encode all the words and calculates \\(p(con
 
 ![neuralword11](./images/neuralword11.png)
 
-Note that, in traditional Huffman coding the characters are encoded and characters obtain a binary code. Now, in our case, each word remains intact and each word will obtain a unique binary code. For instance, the word "much" is encoded by 11101, where the binary digits tell if you need to turn left or right in the tree to reach the appropriate leaf. Also note that, frequent words obtain shorter codes and hence shorter path, while rare words obtained longer code words and their corresponding leaves are located in a deeper levels. We will use the fact that, there are \\(V-1\\) inner nodes for a binary tree with \\(V\\).
+Note that, in traditional Huffman coding the characters are encoded and characters obtain a binary code. Now, in our case, each word remains intact and each word will obtain a unique binary code. For instance, the word "much" is encoded by 11101, where the binary digits tell if you need to turn left or right in the tree to reach the appropriate leaf. Also note that, frequent words obtain shorter codes and hence shorter path, while rare words obtained longer code words and their corresponding leaves are located in a deeper levels. We will use the fact that, there are \\(V-1\\) inner nodes for a binary tree with \\(V\\) leaves.
 
 In the hierarchical softmax model for word embedding, there is a vector for every inner node. Let us denote these vectors by \\(v_{i}\\) which corresponds to the ith inner node. Let \\(L(w)\\) denote the length of the path from the root to the leaf of the word \\(w\\). For instance \\(L('much')=6\\) \\(L('wood' )=3\\).
 
