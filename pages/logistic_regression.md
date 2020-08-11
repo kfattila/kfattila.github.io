@@ -43,7 +43,7 @@ This is just a non-linear transformation of the linear combination of the featur
 \\[ 
     f(x) = 
     \begin{cases}
-      0, & h_{\Theta}(x) \lt t \\\
+      0, & h_{\Theta}(x) \lt t \cr
       1, & h_{\Theta}(x) \geq t
     \end{cases}       
 \\]
@@ -149,7 +149,7 @@ Let \\( X = \left[\begin{array}{cccc}
 1, & x_{1,1}, & x_{1,2}, & ... & x_{1,n}   \cr
 1, & x_{2,1}, & x_{2,2}, & ... & x_{2,n}   \cr
 1, & x_{3,1}, & x_{3,2}, & ... & x_{3,n}   \cr
-& & ... & & \\\
+& & ... & & \cr
 1, & x_{m,1}, & x_{m,2}, & ... & x_{m,n}
 \end{array}\right]\\) and let \\(Y = \left[\begin{array}{cccc}
 y_{1}  \cr
