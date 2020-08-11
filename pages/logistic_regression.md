@@ -209,11 +209,11 @@ Now the training algorithm can be formulated as:
 \\[ 
     \begin{array}{l}
         \text{repeat until convergence \\{} \cr
-        \Delta = X^{T}(g(X\theta)-Y)) \cr
-        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \cr
-        \theta = \theta - \mu\Delta \cr
-        error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \cr
-        \text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
+        \hspace{1cm}\Delta = X^{T}(g(X\theta)-Y)) \cr
+        \hspace{1cm}\Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \cr
+        \hspace{1cm}\theta = \theta - \mu\Delta \cr
+        \hspace{1cm}error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \cr
+        \hspace{1cm}\text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
         \text{\\}}
     \end{array}       
 \\]
