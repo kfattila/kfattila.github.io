@@ -12,7 +12,6 @@ description: ""
 
 ![cnn1](./images/cnn1.png)
 
-
 Each image is a dot in the 784 dimensional space. Thus, the logistic regression learns a distributions of the digits '2' and non-'2's represented in the 784 dimensional space.
 
 What is wrong with this? What are the limitations of this approach?
@@ -20,11 +19,11 @@ What is wrong with this? What are the limitations of this approach?
 The first problem is that this system works only with 28x28 images. The second problem is that it cannot handle, for instance, the following situation:
 If all training image samples look like this:
 
-![cnn2](./images/cnn2.png)
+![cnn2](./images/cnn2.png =200x)
 
 Then a neural network cannot recognize samples like this:
 
-![cnn3](./images/cnn3.png)
+![cnn3](./images/cnn3.png =200x)
 
 because the information (the non-zero features) lies now in different dimension and there are no proper corresponding weights to capture this information. In this case, it is said the system is not invariant to translation. LogRegs and vanilla neural networks are not invariant to translation and are not invariant to rotation as well. One way to overcome this issue is to generate more training samples in which original training samples are shifted and rotated randomly.
 
