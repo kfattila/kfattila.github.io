@@ -227,7 +227,7 @@ The cost function now is:
 
 Finally, we have
 
-\\[ \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta^{L}) .\ast g(\Theta^{L-1}A_{L-2} .\ast (1 - g(\Theta^{L-1}A_{L-2}))A_{L-2}^{T} \\]
+\\[ \frac{\partial J}{\partial\Theta^{L-1}} = (A_{L} - Y_{i})\Theta^{L} .\ast g(\Theta^{L-1}A_{L-2}) .\ast (1 - g(\Theta^{L-1}A_{L-2}))A_{L-2}^{T} \\]
 
 Here the operator .* means the element-wise multiplication of vectors, called Schur or Hadamard product. 
 
