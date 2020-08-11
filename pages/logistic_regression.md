@@ -65,7 +65,7 @@ The model parameters are \\(\theta\\)'s, and we need a way to learn these parame
 To learn the parameters, first we need to define the loss function (also called cost function). One could define the cost
 for one data as following:
 
-\\[ c_{\Theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
+\\[ c_{\theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
 
 This leads the following loss function using the regularization term as:
 \\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
