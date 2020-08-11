@@ -287,7 +287,7 @@ The soft-max loss maximizes the term above. It is defined only for positive clas
 
 ### Loss function for ANN regression
 
-The ANNs can be used for regression problems to learn mappings: \\(\Theta : R^{n} \rightarrow R^{m}\\), where the output is an m dimensional vector. There are two modifications needed to be implemented:
+The ANNs can be used for regression problems to learn mappings: \\(h_{\Theta} : R^{n} \rightarrow R^{m}\\), where the output is an m dimensional vector. There are two modifications needed to be implemented:
 1. You need to use a linear activation function in the last output layer. Otherwise, the ANN would never output any number smaller than zero or bigger than one.
 2. The cost function little bit changes. The error can be measure by the squared loss function:
 \\[J(\Theta\mid D) = \frac{1}{m}\sum_{m}^{i=1}\sum_{k}^{K}(Y_{i})\_{k} - h_{\Theta}(x_{i})\_{k})^{2} + reg\\]
