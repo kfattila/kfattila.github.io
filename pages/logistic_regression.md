@@ -140,22 +140,22 @@ matrix containing the data in its columns where we added a constant 1 to each da
 Hence, \\(X\\) and \\(\theta\\) are "compatibile". Let \\( Y \in R^{1 \times m} \\) be a row vector containing category labels.
 
 Let \\( X = \left[\begin{array}{cccc}
-1, & X_{1}  \\\
-1, & X_{2}  \\\
-1, & X_{3}   \\\
- ... \\\
+1, & X_{1}  \cr
+1, & X_{2}  \cr
+1, & X_{3}   \cr
+ ... \cr
 1, & X_{m}
 \end{array}\right] = \left[\begin{array}{cccc}
-1, & x_{1,1}, & x_{1,2}, & ... & x_{1,n}   \\\
-1, & x_{2,1}, & x_{2,2}, & ... & x_{2,n}   \\\
-1, & x_{3,1}, & x_{3,2}, & ... & x_{3,n}   \\\
+1, & x_{1,1}, & x_{1,2}, & ... & x_{1,n}   \cr
+1, & x_{2,1}, & x_{2,2}, & ... & x_{2,n}   \cr
+1, & x_{3,1}, & x_{3,2}, & ... & x_{3,n}   \cr
 & & ... & & \\\
 1, & x_{m,1}, & x_{m,2}, & ... & x_{m,n}
 \end{array}\right]\\) and let \\(Y = \left[\begin{array}{cccc}
-y_{1}  \\\
-y_{2}  \\\
-y_{3}   \\\
-... \\\
+y_{1}  \cr
+y_{2}  \cr
+y_{3}   \cr
+... \cr
 y_{m}
 \end{array}\right]  \\)
 
@@ -169,12 +169,12 @@ Initialize the parameters randomly
 
 \\( 
     \begin{array}{l}
-        \text{repeat until convergence \\{} \\\
-        \Delta = X^{T}(g(X\theta)-Y)) \\\
-        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{   Add up regularization term without the bias.} \\\
-        \theta = \theta - \mu\Delta \\\
-        error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \\\
-        \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
+        \text{repeat until convergence \\{} \cr
+        \Delta = X^{T}(g(X\theta)-Y)) \cr
+        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{   Add up regularization term without the bias.} \cr
+        \theta = \theta - \mu\Delta \cr
+        error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \cr
+        \text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
         \text{\\}}
     \end{array}{l}        
 \\)
@@ -207,12 +207,12 @@ Note: \\(\ast.\\) element-wise production, \\(mean\\) takes the mean of all elem
 Now the training algorithm can be formulated as:
 \\[ 
     \begin{array}{l}
-        \text{repeat until convergence \\{} \\\
-        \Delta = X^{T}(g(X\theta)-Y)) \\\
-        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \\\
-        \theta = \theta - \mu\Delta \\\
-        error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \\\
-        \text{Print out current error. So you can see if the algorithm converges or diverges.} \\\
+        \text{repeat until convergence \\{} \cr
+        \Delta = X^{T}(g(X\theta)-Y)) \cr
+        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \cr
+        \theta = \theta - \mu\Delta \cr
+        error = mean(-Y \ast. \log{g(X\theta)}) - (1-Y) \ast. \log{1-g(g\theta)})) + \lambda \ast mean(\theta^{2}) \cr
+        \text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
         \text{\\}}
     \end{array}       
 \\]
