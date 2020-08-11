@@ -95,9 +95,9 @@ Initialize \\( \theta_{j} \\) with random values
 
 \\[ 
     \begin{array}{cc}
-        \text{repeat until convergence \\{} \\
-        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta\mid D), & \text{for all j;} \\
-        \theta_{j} = \widetilde{\theta_{j}}, & \text{for all j;} \\
+        \text{repeat until convergence \\{} \\\\
+        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta\mid D), & \text{for all j;} \\\\
+        \theta_{j} = \widetilde{\theta_{j}}, & \text{for all j;} \\\\
         \text{\\}}
     \end{array}
 \\]
