@@ -80,7 +80,7 @@ When more than one context words are given, then the model is defined as:
 **Figure 2.** CBOW for k context words. In this case the hidden data are averaged.
 
 
-**Forward propagation in the CBOW model.**
+#### Forward propagation in the CBOW model.
 
 The inputs are a one-hot-encoding of the context words: \\(x_{1},x_{2},...,x_{K}\\). The hidden activation is given as: \\(h = \frac{1}{K}\sum_{K}(Wx_{k}) = \frac{1}{K}W(\sum_{k}x_{k})\\).
 
