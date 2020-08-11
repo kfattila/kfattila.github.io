@@ -84,7 +84,7 @@ Number of hidden units in the hidden or output layer \\( 2 \leq l \leq L\\) is \
 
 Parameters of a hidden unit \\( 1 \leq s_{i,l} \leq s_{l}\\) of hidden layer \\(l: \Theta_{i}^{l}\\)  which contains the bias parameter \\(\theta_{l}^{0}\\).
 
-For a layer \\(l\\), we can arrange the parameters \\(\theta_{i}^{l}\\) in a matrix form as 
+For a layer \\(l\\), we can arrange the parameters \\(\Theta_{i}^{l}\\) in a matrix form as 
 \\[ \theta^{l} = 
 \left[\begin{array}{cccc}
 \theta_{1,0}^{l} & \theta_{1,1}^{l} & ... & \theta_{1,s_{l-1}}^{l}   \cr
