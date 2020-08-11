@@ -70,24 +70,24 @@ This error function is convex w.r.t. \\(\Theta\\), see an example on Figure 3.
 Let's arrange our data \\(x\\)'s in a matrix from. First, add a constant value 1 to each data:
 \\( X = 
 \left[\begin{array}{cccc}
-1 & X_{1}  \\\
-1 & X_{2} \\\
-1 & X_{3}\\\
-. & . \\\
+1 & X_{1} \cr
+1 & X_{2} \cr
+1 & X_{3} \cr
+. & . \cr
 1 & X_{m}
 \end{array}\right] = \left[\begin{array}{cccc}
-1 & X_{1,1} & X_{1,2} & ... & X_{1,n}  \\\
-1 & X_{2,1} & X_{2,2} & ... & X_{2,n}  \\\
-1 & X_{3,1} & X_{3,2} & ... & X_{3,n} \\\
-& & ... & & \\\
+1 & X_{1,1} & X_{1,2} & ... & X_{1,n}  \cr
+1 & X_{2,1} & X_{2,2} & ... & X_{2,n}  \cr
+1 & X_{3,1} & X_{3,2} & ... & X_{3,n}  \cr
+& & ... & & \cr
 1 & X_{m,1} & X_{m,2} & ... & X_{m,n}
 \end{array}\right]
 \\) and let \\( Y = 
 \left[\begin{array}{cccc}
-Y_{1}  \\\
-Y_{2} \\\
-Y_{3}\\\
-... \\\
+Y_{1}  \cr
+Y_{2}  \cr
+Y_{3}  \cr
+...    \cr
 Y_{m}
 \end{array}\right] \\)
 
