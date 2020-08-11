@@ -210,7 +210,7 @@ Now the training algorithm can be formulated as:
     \begin{array}{l}
         \text{repeat until convergence \\{} \cr
         \hspace{1cm}\Delta = X^{T}(g(X\Theta)-Y)) \cr
-        \hspace{1cm}\Delta[-1] = \Delta[-1] - 2\lambda\Theta[-1] \cr
+        \hspace{1cm}\Delta[-1] = \Delta[-1] - 2\lambda\Theta[-1] \text{\hspace{1cm}#Add up regularization term without the bias.}\cr
         \hspace{1cm}\Theta = \Theta - \mu\Delta \cr
         \hspace{1cm}error = mean(-Y \ast. \log{g(X\Theta)}) - (1-Y) \ast. \log{(1-g(X\Theta)})) + \lambda \ast mean(\Theta^{2}) \cr
         \hspace{1cm}\text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
