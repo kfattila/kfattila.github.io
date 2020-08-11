@@ -135,7 +135,7 @@ Note that, the features are needed to be normalized.
 #### Vectorization
 
 Mathematical modelling languages, such as Matlab, R, numpy in Python are able to work with matrices and common mathematical functions are extended over matrices and vectors as well.
-Let \\(\theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
+Let \\(\Theta \in R^{n+1}\\) a column vector containing the parameters of the model \\([\theta_{0}, \theta_{1}, ... , \theta_{n}]^{T} \\). Let \\( X \in R^{(n+1) \times m} \\) be a
 matrix containing the data in its columns where we added a constant 1 to each data in the 0th position.
 Hence, \\(X\\) and \\(\theta\\) are "compatibile". Let \\( Y \in R^{1 \times m} \\) be a row vector containing category labels.
 
