@@ -82,21 +82,21 @@ Number of hidden layers: \\(L\\).  In the example above \\(L = 3\\).
 
 Number of hidden units in the hidden or output layer \\( 2 \leq l \leq L\\) is \\(s_{l}\\).
 
-Parameters of a hidden unit \\( 1 \leq s_{i,l} \leq s_{l}\\) of hidden layer \\(l: \theta_{i}^{l}\\)  which contains the bias parameter \\(\theta_{l}^{0}\\).
+Parameters of a hidden unit \\( 1 \leq s_{i,l} \leq s_{l}\\) of hidden layer \\(l: \Theta_{i}^{l}\\)  which contains the bias parameter \\(\theta_{l}^{0}\\).
 
 For a layer \\(l\\), we can arrange the parameters \\(\theta_{i}^{l}\\) in a matrix form as 
 \\[ \theta^{l} = 
 \left[\begin{array}{cccc}
-\theta_{1,0}^{l} & \theta_{1,1}^{l} & ... & \theta_{1,s_{l-1}}^{l}   \\\
-\theta_{2,0}^{l} & \theta_{2,1}^{l} & ... & \theta_{2,s_{l-1}}^{l}   \\\
-& & . & & \\\
-& & . & & \\\
+\theta_{1,0}^{l} & \theta_{1,1}^{l} & ... & \theta_{1,s_{l-1}}^{l}   \cr
+\theta_{2,0}^{l} & \theta_{2,1}^{l} & ... & \theta_{2,s_{l-1}}^{l}   \cr
+& & . & & \cr
+& & . & & \cr
 \theta_{s_{l},0}^{l} & \theta_{s_{l},1}^{l} & ... & \theta_{s_{l},s_{l-1}}^{l}
 \end{array}\right] = \left[\begin{array}{cccc}
-\theta_{1}^{l}  \\\
-\theta_{2}^{l}  \\\
-. \\\
-. \\\
+\theta_{1}^{l}  \cr
+\theta_{2}^{l}  \cr
+. \cr
+. \cr
 \theta_{s_{l}}^{l}
 \end{array}\right]
 \\]
