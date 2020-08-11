@@ -6,11 +6,11 @@ description: ""
 {% include JB/setup %}
 
 The main five branches of machine learning are:
-	1. Connectionism (Neural Networks, RNNs)
-	2. Analogizers, (kNN, SVM)
-	3. Symbolic, (Decision Trees, Rule-based, Random Forests)
-	4. Evolutionary (Genetic Algorithms)
-	5. Bayesian
+1. Connectionism (Neural Networks, RNNs)
+2. Analogizers, (kNN, SVM)
+3. Symbolic, (Decision Trees, Rule-based, Random Forests)
+4. Evolutionary (Genetic Algorithms)
+5. Bayesian
 
 {:class="table table-bordered"}
 |             | Connectionist                               | Analogizer                       | Symbolic                  | Evolutionary              | Bayesian                   |
