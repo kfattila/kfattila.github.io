@@ -68,7 +68,7 @@ for one data as following:
 \\[ c_{\theta}(x_{i},y_{i}) = (\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n}\theta_{i}x_{i,j})}} - y_{i})^{2} \\]
 
 This leads the following loss function using the regularization term as:
-\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x_{i})-y_{i})^{2} + \lambda \sum_{j=1}^{n} = \frac{1}{m}\sum_{i=1}^{m}(\frac{1}{1+e^{-(\theta_{0}+\sum_{j=1}^{n} \theta_{i}x_{i,j})}}-y_{i})^{2} + \lambda \sum_{j=1}^{n} \theta_{j}^{2} \\]
 
 **Discussion 1.** What is the problem with this objective function?
 
