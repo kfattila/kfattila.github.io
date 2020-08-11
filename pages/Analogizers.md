@@ -132,7 +132,7 @@ The obtained optimization problem has now m parameters. After the optimization w
 
 For training data \\(x_{i}\\) and test data \\(z_{i}\\), these can be organized in the kernel matrix as
 
-\\[ \begin{bmatrix}
+\\[ K = \begin{bmatrix}
 k(x_{1},x_{1}) & k(x_{1},x_{2}) &  & k(x_{1},x_{m}) \cr
 k(x_{2},x_{1}) & k(x_{2},x_{2}) &  & k(x_{2},x_{m}) \cr
 . & . & . & . \cr
