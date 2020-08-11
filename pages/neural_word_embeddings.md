@@ -205,9 +205,9 @@ A really good article which explains the word2vec methods in details is given in
 #### Data representation
 
 There are several data representation methodologies:
-	1. Local data representation. It is essentially the one-hot encoding. 
-	2. Semi local (or semi distributed) data representation. 
-Distributed data representation. It is similar to the word embedding. In this approach, a single feature may participate in representing several entities. 
+1. Local data representation. It is essentially the one-hot encoding. 
+2. Semi local (or semi distributed) data representation. 
+3. Distributed data representation. It is similar to the word embedding. In this approach, a single feature may participate in representing several entities. 
 
 
 #### Word2Vec on other data items
