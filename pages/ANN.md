@@ -39,8 +39,8 @@ While one sigmoid function can learn a S-shaped function, combination of several
 1. Design a neural network (single input binary variables: \\(x\\)) and give its weights, which represents: \\(\lnot x\\) (not)
 2. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \lor y\\) (or)
 3. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \wedge y\\) (and) ![ann6](./images/ann6.png)
-4. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \oplus y (xor= (x \lor \lnot y)\wedge(\lnot x \lor y))\\):<> 
-<br>![ann7](./images/ann7.png)</br>
+4. Design a neural network (for two input binary variables: \\(x,y\\)) and give its weights, which represents: \\(x \oplus y (xor= (x \lor \lnot y)\wedge(\lnot x \lor y))\\): 
+<br>![ann7](./images/ann7.png)
 5. Design a neural network for the following decision boundaries: ![ann8](./images/ann8.png)
 6. Design a neural network for the following decision boundaries: ![ann9](./images/ann9.png)
 
