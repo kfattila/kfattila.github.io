@@ -19,11 +19,11 @@ What is wrong with this? What are the limitations of this approach?
 The first problem is that this system works only with 28x28 images. The second problem is that it cannot handle, for instance, the following situation:
 If all training image samples look like this:
 
-<img src="cnn2.png" alt="drawing" width="200"/>
+<img src="./images/cnn2.png" alt="drawing" width="200"/>
 
 Then a neural network cannot recognize samples like this:
 
-<img src="cnn3.png" alt="drawing" width="200"/>
+<img src="./images/cnn3.png" alt="drawing" width="200"/>
 
 because the information (the non-zero features) lies now in different dimension and there are no proper corresponding weights to capture this information. In this case, it is said the system is not invariant to translation. LogRegs and vanilla neural networks are not invariant to translation and are not invariant to rotation as well. One way to overcome this issue is to generate more training samples in which original training samples are shifted and rotated randomly.
 
