@@ -92,7 +92,7 @@ The hyperplane can be formulated as \\(f(x) = \sum_{j=1}^{n}\theta_{j}x_{j} + \t
 Now, if we are given by a new instance s to classify it, we can calculate which side of the hyperplane it falls, formally 
 
 \\[ f(s) = \begin{cases} 
-	0, & f(s) < 0 \\\
+	0, & f(s) < 0 \cr
 	1, & f(s) \geq 0
 	\end{cases} \\]
 
