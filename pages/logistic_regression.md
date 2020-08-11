@@ -110,7 +110,7 @@ We just need the derivatives of \\(J\\). After simple calculus, we get that:
 
 \\[ 
 \begin{array}{ll} 
-\frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta}(x_{i})) - (1-y_{i})\log(1-h_{\Theta}(x_{i}))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})= \cr
+\frac{\partial}{\partial\theta_{j}}J(\Theta\mid D) = \frac{\partial}{\partial\partial_{j}}(\frac{1}{2m}\sum_{i=1}^{m}(-y_{i}\log(h_{\Theta}(x_{i})) - (1-y_{i})\log(1-h_{\Theta}(x_{i}))) + \lambda\sum_{j=1}^{n}\theta_{j}^{2})= \cr
 \frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i} & \text{for } j \gt 0 \cr
 \frac{\partial}{\partial\partial_{j}}J(\Theta\mid D) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i}) & \text{for } j = 0  \cr
 \end{array}
@@ -121,8 +121,8 @@ This summarises algorithm 2 as follows:
 \\[ 
 \begin{array}{ll} 
     \text{repeat until convergence \\{} \cr
-    \widetilde{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i}), & \text{for } j \gt 0 \cr
-    \widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i}), & \text{for } j = 0 \cr
+    \hspace{1cm}\widetilde{\theta_{j}} = \theta_{j} - \mu(\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i})x_{i,j} + 2\lambda\theta_{i}), & \text{for } j \gt 0 \cr
+    \hspace{1cm}\widetilde{\theta_{0}} =  \theta_{0} - \mu\sum_{i=1}^{m}(h_{\Theta}(x_{i}) - y_{i}), & \text{for } j = 0 \cr
     \theta_{j} = \widetilde{\theta_{j}}, & \text{for } \forall j \cr
     \text{\\}}
 \end{array}   
