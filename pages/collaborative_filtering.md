@@ -23,7 +23,7 @@ This can be learned by minimizing the following error function.
 \\[J(\Theta_{u}\mid D) = \frac{1}{n}\sum_{i=1; y_{i},u \neq ?}^{n}(\Theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{j=1}^{m}(\theta_{u,j})^{2} \\]
 
 The parameters \\(\Theta_{u}\\) for user \\(u\\) is independet and thus they could be learned using a single optimization:
-\\[ J(\Theta_{1}, \Theta_{2}, ..., \Theta_{U}\mid D) = \sum_{u=1}^{U} \frac{1}{n} \sum_{i=0; y_{i},u \neq ?}^{n} (\Theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
+\\[ J(\Theta_{1}, \Theta_{2}, ..., \Theta_{U}\mid D) = \sum_{u=1}^{U} \frac{1}{n} \sum_{i=1; y_{i},u \neq ?}^{n} (\Theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{u=1}^{U}\sum_{j=1}^{m}(\theta_{u,j})^{2}  \\]
 
 When the parameters \\(\Theta_{u}\\) are given, the one can learn the features for the products to indentify the best parameters vector associated with a product:
 \\[ J(x_{1}, x_{2}, ..., x_{n}\mid D) = \sum_{i=1}^{n} \frac{1}{U} \sum_{u=1; y_{i},u \neq ?}^{U} (\Theta_{u}^{T}x_{i} - y_{i,u})^{2} + \lambda\sum_{i=1}^{n}\sum_{j=1}^{m}(x_{i,j})^{2}  \\]
