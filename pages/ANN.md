@@ -270,7 +270,7 @@ Note that, if the neural network consists of 1 layer, the 'for' loop of the back
 Let us consider only one data point \\((x_{i}, y_{i})\\) for multi-class classification, say, we have three classes (K=3). Therefore, \\(y_{i}\\) is a 3-component vector, in which only one component is '1', all other components have value of '0'.
 
 **Cross entropy loss function (Xent)** is defined as:
-\\[ J(\Theta|D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k}) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k})) + reg  \\]
+\\[ J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k}) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k})) + reg  \\]
 
 This can be illustrated for one data instance as follows.
 
