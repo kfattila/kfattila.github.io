@@ -9,11 +9,11 @@ description: ""
 
 CNNs are good at extracting features from image data, and they are also good at learning these features. In addition, the max pooling introduces translation invariance, so that the system becomes invariant to the location of certain features. So, it does not care where a pattern was found only the fact that it was found. This actually can be a problem. Consider a CNN for face detection which learned features of corner of eyes, mouth, nose, etc. So, the CNN could recognize the following picture:
 
-![capsnet1](./images/capsnet1.png)
+<img src="./images/capsnet1.png" alt="drawing" width="300"/>
 
 The problem is that, due to the translation invariance it also could recognize the following picture as a face too:
 
-![capsnet2](./images/capsnet2.png)
+<img src="./images/capsnet1.png" alt="drawing" width="300"/>
 
 (Let's note that one could argue if this is really a problem for face detection problems. Most likely facial recognition systems will not have to recognize people with such face. However, there might be other situations in which translation invariance is a drawback, for instance in adversarial attacks.) 
 
