@@ -13,7 +13,7 @@ CNNs are good at extracting features from image data, and they are also good at 
 
 The problem is that, due to the translation invariance it also could recognize the following picture as a face too:
 
-<img src="./images/capsnet1.png" alt="drawing" width="220"/>
+<img src="./images/capsnet2.png" alt="drawing" width="220"/>
 
 (Let's note that one could argue if this is really a problem for face detection problems. Most likely facial recognition systems will not have to recognize people with such face. However, there might be other situations in which translation invariance is a drawback, for instance in adversarial attacks.) 
 
@@ -49,7 +49,7 @@ The next step is the squash which is a kind of non-linear activation function bu
 
 The length of \\(v_{j}\\) will represent the probability of the entity represented by the capsule.
 
-![capsnet5](./images/capsnet5.png)
+<img src="./images/capsnet5.png" alt="drawing" width="250"/>
 
 The squashing function on scalar input. In real application the squashing function operates on vectors.
 
