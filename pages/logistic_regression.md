@@ -161,7 +161,7 @@ y_{m}
 \end{array}\right]  \\)
 
 Let \\(X[,i]^{T} = [1,x_{1,i},x_{2,i}, ...,x_{n,i}]^{T}\\) be a column vector denoting the ith data in \\(X\\). Let \\(g(.)\\) be the sigmoid function
-extended over matrices and vectors as elementwise. Thus, \\(g(X\theta)\\) is a vector.
+extended over matrices and vectors as elementwise. Thus, \\(g(X\Theta)\\) is a vector.
 Hence, the Gradient Descent algorithm for Logistic Regression can be rewritten as follows:
 
 #### Algorithm 3
@@ -171,11 +171,11 @@ Initialize the parameters randomly
 \\( 
     \begin{array}{l}
         \text{repeat until convergence \\{} \cr
-        \Delta = X^{T}(g(X\theta)-Y)) \cr
-        \Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{   Add up regularization term without the bias.} \cr
-        \theta = \theta - \mu\Delta \cr
+        \hspace{1cm}\Delta = X^{T}(g(X\theta)-Y)) \cr
+        \hspace{1cm}\Delta[-1] = \Delta[-1] - 2\lambda\theta[-1] \text{   Add up regularization term without the bias.} \cr
+        \hspace{1cm}\theta = \theta - \mu\Delta \cr
         error = \frac{1}{m}(-Y \ast \log(g(X\Theta)) - (1 - Y) \ast \log(1 - g(x\Theta))) + \lambda \ast sum(\Theta^{2}) \cr
-        \text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
+        \hspace{1cm}\text{Print out current error. So you can see if the algorithm converges or diverges.} \cr
         \text{\\}}
     \end{array}{l}        
 \\)
