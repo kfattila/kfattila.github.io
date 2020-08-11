@@ -186,7 +186,7 @@ Each method would take the same input and provide (more-or-less) the same optimu
 
 Both methods aims at finding the same solution, but these two are different in some certain computational aspects.
 1. Normal Equation method:
-* (-) O(n^3) can be very slow for large number of features.
+* (-) \\(O(n^{3})\\) can be very slow for large number of features.
 * (-) Involves matrix inversion and can be a problem when the matrix becomes singular.
 * (+) Not iterative, and thus does not require leraning rate and termination condition to be specified in advance. 
 2. Gradient Descent Optimization:
