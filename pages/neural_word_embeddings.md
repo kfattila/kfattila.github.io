@@ -110,7 +110,7 @@ Advantage: This model is of low-memory cost.
 
 #### Skip-gram model
 
-Here, the aim is to calculate some distributed word representation but the model structure and the aim is the opposite. In this approach, we want to predict the context words for a given target word that is \\(p(context_{x}\mid target_{\downarrow})word\\) Consider the previous example: *"Hey this is sample corpus using only one context word."*
+Here, the aim is to calculate some distributed word representation but the model structure and the aim is the opposite. In this approach, we want to predict the context words for a given target word that is \\(p(context_{x}\mid target_{\downarrow}word)\\) Consider the previous example: *"Hey this is sample corpus using only one context word."*
 
 Now, for a target word "corpus" we want to get high probability for the context words: "sample" and "using". This approach does start with one-hot encodings of the words as before.
 
@@ -120,7 +120,7 @@ Note that, there is no activation function here either.
 
 #### Forward propagation
 
-Consider a target word with index \\(k\\). The input vector is V-dimensional, there is one non-zeros component at index \\(k\\). Therefore, the hidden activation is \\(h = x_{k}^{T}W = W_{k}\\) (of shape \\([1,N]\\)), that is: the first layer will just select the kth row from the first weight matrix \\(W\\). Now, we calculate the outputs at the last layer as follows:
+Consider a target word with index \\(k\\). The input vector is \\(V\\)-dimensional, there is one non-zeros component at index \\(k\\). Therefore, the hidden activation is \\(h = x_{k}^{T}W = W_{k}\\) (of shape \\([1,N]\\)), that is: the first layer will just select the kth row from the first weight matrix \\(W\\). Now, we calculate the outputs at the last layer as follows:
 \\[u = hW'\\]
 The probability of a word with index \\(j\\) of being in the context of the target word with index \\(k\\) is given by:
 \\[p(context_{j} \mid target\ word\ k) = \frac{\exp(u_{j})}{\sum_{i=1}^{V}\exp(u_{i})}\\]
