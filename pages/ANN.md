@@ -155,7 +155,7 @@ For the training we need a cost function (a.k.a. learning objective) what we cou
 Let us consider a K-class classification problem. Let's suppose we have the following dataset \\(D = \\{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in \\{1, ..., K\\}\\} \\) and \\(Y_{i} \in B^{k \times 1}\\)	are the one-hot encoded class labels.
 Let \\(h_{\Theta(x)}\\) denote a multi-layer neural network \\(h_{\Theta}(x) = A_{L}\\), where \\(A_{i} = [1, g(\Theta_{1}^{l-1}A_{l-1}), g(\Theta_{2}^{l-1}A_{l-1}), ..., g(\Theta_{s_{i,l-1}}^{l-1}A_{l-1})]^{T}\\) for \\(1 \leq i \leq L \\) and \\(A_{0} = x\\).
 
-The error made by a \\(h_{\Theta(x)}\\) on a data can be calculated in the way similarly to the error function J of the Logistic Regression.
+The error made by a \\(h_{\Theta(x)}\\) on a data can be calculated in the way similarly to the error function \\(J\\) of the Logistic Regression.
 
 \\[J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k}^{K}(-(Y_{i})\_{k}\log(h_{\Theta}(x_{i})\_{k}) - (1 - (Y_{i})\_{k})\log(1 - h_{\Theta}(x_{i})\_{k}) + \frac{\lambda}{2}\sum_{l=1}^{l_{n}}\sum_{i=1}^{s_{l}}\sum_{j=1}^{s_{l+1}}(\theta_{j,i}^{l})^{2}\\]
 \\[J(\Theta\mid D) = \frac{1}{m}\sum_{i=1}^{m} 1^{T} (-Y_{i}\log(h_{\Theta}(x_{i})) - (1 - Y_{i})\log(1-h_{\Theta}(x_{i})) + \frac{\lambda}{2}\sum_{l=1}^{l_{n}}\sum_{i=1}^{s_{l}}\sum_{j=1}^{s_{l+1}}(\Theta_{j,i}^{l})^{2} \\]
