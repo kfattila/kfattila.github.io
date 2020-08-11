@@ -41,7 +41,7 @@ From now on, we consider image data and we consider the input in matrix form (in
 
 Now, we discuss a method to handle the shortcomings mentioned above.
 
-##### Convolution.
+#### Convolution.
 
 The convolution of \\(f\\) and \\(g\\) is written \\(f \ast g\\),  using an asterisk or star. It is defined as the integral of the product of the two functions after one is reversed and shifted. As such, it is a particular kind of integral transform:
 \\[f \ast g(t) = \int f(t)g(t - \alpha)d\alpha = \int f(t - \alpha)g(t)d\alpha\\]
