@@ -169,10 +169,10 @@ The weights of a neural network can be calculated with gradient descent algorith
 Now the training algorithm can be formulated as:
 \\[ 
     \begin{array}{ll}
-    	\text{initialize } \theta_{j} \text{ with random values.} \\\
-        \text{repeat until convergence \\{} \\\
-        \widetilde{\theta_{i,j}^{l}} = \theta_{i,j}^{l} - \mu \frac{\partial}{\partial\theta_{i,j}^{l}}J(\Theta\mid D) & \text{for all j in all layers l;} \\\
-        \widetilde{\theta_{i,j}^{l}} = \theta_{i,j}^{l} & \text{for all j in all layers l;} \\\
+    	\text{initialize } \theta_{j} \text{ with random values.} \cr
+        \text{repeat until convergence \\{} \cr
+        \hspace{1cm}\widetilde{\theta_{i,j}^{l}} = \theta_{i,j}^{l} - \mu \frac{\partial}{\partial\theta_{i,j}^{l}}J(\Theta\mid D) & \text{for all j in all layers l;} \cr
+        \hspace{1cm}\widetilde{\theta_{i,j}^{l}} = \theta_{i,j}^{l} & \text{for all j in all layers l;} \cr
         \text{\\}}
     \end{array}       
 \\]
