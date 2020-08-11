@@ -129,6 +129,7 @@ This summarises algorithm 2 as follows:
 \\]
 
 Note that, the features are needed to be normalized.
+
 Question: Why should be the features normalized?
 
 
