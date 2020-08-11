@@ -15,7 +15,7 @@ When a word representation is available, then documents or sentences can be enco
 Perhaps, this is the simplest method as it works as follows. 
 1. Take a large collection of unstructured text from, for instance, Wikipedia or Twitter. 
 2. Collect or identify all unique words from the text. This process is called tokenization, therefore unique words are called tokens, sometimes.
-3. Give some ordering over the tokens and index each word (token) by their ordinal number. Let us suppose the total number of different tokens is N.
+3. Give some ordering over the tokens and index each word (token) by their ordinal number. Let us suppose the total number of different tokens is \\(N\\).
 4. Create an N-dimensional vector for each token which contains '1' at the index of the token, all other vector components are zero.
 
 For example:
@@ -40,7 +40,7 @@ The main idea of this method is to predict the probability of a word given a con
 
 "Hey this is sample corpus using only one context word." 
 
-First, the words are represented via one-hot-encoding embedding. The number of the tokens is: V=10
+First, the words are represented via one-hot-encoding embedding. The number of the tokens is: \\(V=10\\)
 
 One-hot-Encoding for every word:
 
