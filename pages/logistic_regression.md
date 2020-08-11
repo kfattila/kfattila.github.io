@@ -96,8 +96,8 @@ Initialize \\( \theta_{j} \\) with random values
 \\[
     \begin{array}{ll}
         \text{repeat until convergence \\{} \cr
-        \widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta\mid D), & \text{for all j;} \cr
-        \theta_{j} = \widetilde{\theta_{j}}, & \text{for all j;} \cr
+        \hspace{1cm}\widetilde{\theta_{j}} = \theta_{j} - \mu \frac{\partial}{\partial\partial_{j}}J(\theta\mid D), & \text{for all j;} \cr
+        \hspace{1cm}\theta_{j} = \widetilde{\theta_{j}}, & \text{for all j;} \cr
         \text{\\}}
     \end{array}
 \\]
