@@ -14,7 +14,7 @@ Here, when you are imagine a data, try to imagine one with more-or-less categori
 
 An example. Consider the following shopping charts of customers (ID). We can notice it that if customers buy milk and bread, it is likely they buy butter as well.
 
-<img src="./images/decisiontrees1.png" alt="drawing" width="250"/>
+<img src="./images/decisiontrees1.png" alt="drawing" width="300"/>
 
 #### Decision Trees
 
@@ -116,7 +116,7 @@ ID3 algorithm selects the attribute \\(a^{\ast}\\) which reduces the uncertainty
 
 **Example:** A training data to decide if the weather is good to play tennis.
 
-<img src="./images/decisiontrees4.png" alt="drawing" width="250"/>
+<img src="./images/decisiontrees4.png" alt="drawing" width="300"/>
 
 
 Target attribute is "play" and it can have two values: "yes" and "no". The distribution of the values in the target attributes:
@@ -155,6 +155,7 @@ The information gain for the attribute "temperature"
 		& -f_{Temp=cool} \cdot(P(play;S_{Temp=cool})) \cr
 		& -f_{Temp=mild} \cdot(P(play;S_{Temp=mild})) \cr
 		& -f_{Temp=hot} \cdot(P(play;S_{Temp=hot}))
+	\end{array}
 \\]
 
 The ID3 algorithm will choose the attribute which yields the highest gain.
