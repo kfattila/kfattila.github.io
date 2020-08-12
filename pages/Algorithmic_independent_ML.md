@@ -99,9 +99,9 @@ One can plot the actual error achieved on the train and the test sets as a funct
 
 **The Minimum Description Length (MDL)** principle states that one should use the model having the smallest  Kolmogorov complexity among all the good models that fit the data well i.e.
 
-\\[K(\Theta, D) = K(\Theta) + K(D \hspace{5mm}using\hspace{5mm} \Theta)\\]
+\\[K(\Theta, D) = K(\Theta) + K(D \hspace{2mm}using\hspace{2mm} \Theta)\\]
 
-where \\(K)\\ denotes the Kolmogorov complexity of its argument. The Kolmogorov complexity (or also called algorithmic complexity) of a string (binary string) x is the length of the shortest program that prints the string \\(x\\) as an output. The Kolmogorov complexity is uncomputable, and it has little practical interests.
+where \\(K\\) denotes the Kolmogorov complexity of its argument. The Kolmogorov complexity (or also called algorithmic complexity) of a string (binary string) \\(x\\) is the length of the shortest program that prints the string \\(x\\) as an output. The Kolmogorov complexity is uncomputable, and it has little practical interests.
 
 
 #### Structural risk minimization
