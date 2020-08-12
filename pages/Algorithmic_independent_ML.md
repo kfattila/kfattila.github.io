@@ -29,7 +29,7 @@ Let \\(G\\) be class of models, and let \\(\widehat{\Theta} \in G\\) denote the 
 
 Let \\(\Theta_{m}\\) be an estimation of \\(\widehat{\Theta}\\) calculated on a dataset containing \\(m\\) data.
 The **bias of an estimator** is defined as:
-\\[bias(\Theta_{m}) = E[\Theta] - \widehat{\Theta}]
+\\[bias(\Theta_{m}) = E[\Theta] - \widehat{\Theta}\\]
 
 where \\(E(.)\\) denotes the statistical expected value over the models. The bias measures how far the point estimation can be expected from the true model. An estimator is said to be unbiased if \\(bias(\Theta_{m}) = 0\\), and it is said to be asymptotically unbiased if \\(\lim_{m \rightarrow \inf}bias(\Theta_{m}) = 0\\)
 
