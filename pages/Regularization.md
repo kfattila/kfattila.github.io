@@ -80,7 +80,6 @@ Decision trees are also prone to overfitting. DTs are actually capable of learni
 Tree pruning methods are used to decrease the complexity (the size) of the tree. 
 These methods cut the branches of the decision tree and replace a branch with a leave node, where the label of the new leaf is chosen by the majority of the corresponding samples.
 
-
 #### Parameter norm penalty
 
 The training of the parameters \\(\theta\\) of a model is done via optimizing a cost functions (also called learning objective):
