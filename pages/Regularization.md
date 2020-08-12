@@ -155,7 +155,7 @@ Because we assumed that the Hessian \\(H\\) is diagonal, it can be rewritten in 
 \\[J(\theta) = J(\theta^{\ast}) + \sum_{i}[\frac{1}{2}H_{i,i}(\theta_{i} - \theta_{i}^{\ast})^{2} + \alpha|\theta_{i}|]\\]
 
 The minimization of this function can be done analytically:
-\\[\theta_{i}^{'} = sign(\theta_{i}^{\ast}) max\\{\mid\theta_{i}^{\ast}\mid - \frac{\alpha}{H_{i,i}}, 0\\}\\]
+\\[\theta_{i}' = sign(\theta_{i}^{\ast}) max\\{\mid\theta_{i}^{\ast}\mid - \frac{\alpha}{H_{i,i}}, 0\\}\\]
 
 Let's consider a situation when \\(\theta_{i}^{\ast}\\) is positive.
 1. \\(\theta_{i}^{\ast} \leq \frac{\alpha}{H_{i,i}} \\) : then the optimal value is simply set to zero: \\(\theta_{i}' = 0\\).
