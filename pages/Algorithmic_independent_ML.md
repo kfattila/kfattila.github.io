@@ -42,9 +42,9 @@ However, the calculation of the variance is not involved to the true model, and 
 
 #### Jackknife estimation of variance
 
-This approach iteratively calculates statistics by removing one different data in each iteration. It is often called *leave-one-out*. Let \\(D_{m} = \\{(X_{i}, Y_{i})\mid X_{i} \in R^{n}, y_{i} \in C\\}\_{i=1}^{m} \\) the training dataset, and let \\(\theta_{-i}\\) a model estimation obtained on the dataset \\(D_{m-1}\\) without the data \\(i\\).
+This approach iteratively calculates statistics by removing one different data in each iteration. It is often called *leave-one-out*. Let \\(D_{m} = \\{(X_{i}, Y_{i})\mid X_{i} \in R^{n}, y_{i} \in C\\}\_{i=1}^{m} \\) the training dataset, and let \\(\Theta_{-i}\\) a model estimation obtained on the dataset \\(D_{m-1}\\) without the data \\(i\\).
 The mean of the models can be estimated by:
-\\[E_{jk}[\theta_{m}] = \frac{m-1}{m}\sum_{i=1}^{m}\theta_{-i}\\]
+\\[E_{jk}[\Theta_{m}] = \frac{m-1}{m}\sum_{i=1}^{m}\Theta_{-i}\\]
 
 Using this mean one can give an estimation on the variance.
 
