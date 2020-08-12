@@ -75,4 +75,5 @@ After some iterations it can produces images like:
 ![genetics_alg6](./images/genetics_alg6.jpg)
 3. GA for hyper-parameter tuning of neural network training.
 Note that: hyper-parameters are of those which are not updated by the optimizer such as learning rate, tread-off regularization parameter, number of hidden units, number of hidden layers, type of activation functions, etc.]
+
 [ref: Jaderberg et al: Population based training of neural networks. 2017]
