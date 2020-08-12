@@ -37,35 +37,35 @@ The \\(\frac{\partial E}{\partial W}\\) is a bit different. Let us consider the 
 ![rnn3](./images/rnn3.png)
 
 For instance for \\(\frac{\partial E_{3}}{\partial W}\\)
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial W} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}'} \frac{\partial y_{3}'}{\partial s_{3}} \frac{\partial s_{3}}{\partial W} \\]
 and
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial W} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}'} \frac{\partial y_{3}'}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial W} \\]
 and
-\\[\frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial W} \\]
+\\[\frac{\partial E_{3}}{\partial y_{3}'} \frac{\partial y_{3}'}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial W} \\]
 and
-\\[ \frac{\partial E_{3}}{\partial y_{3}^{'}} \frac{\partial y_{3}^{'}}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial s_{0}} \frac{\partial s_{0}}{\partial W}\\]
+\\[ \frac{\partial E_{3}}{\partial y_{3}'} \frac{\partial y_{3}'}{\partial s_{3}} \frac{\partial s_{3}}{\partial s_{2}} \frac{\partial s_{2}}{\partial s_{1}} \frac{\partial s_{1}}{\partial s_{0}} \frac{\partial s_{0}}{\partial W}\\]
 And in the end, we sum up these gradients.
 In general:
-\\[ \frac{\partial E_{i}}{\partial W} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}^{'}}\frac{\partial y_{i}^{'}}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial W}      \\]
+\\[ \frac{\partial E_{i}}{\partial W} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}'}\frac{\partial y_{i}'}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial W}      \\]
 
 Note that the \\(\frac{\partial s_{i}}{\partial s_{t}}\\) is "recursive" and it gets longer as \\(t \rightarrow 0: \frac{\partial s_{i}}{\partial s_{k}} = \prod_{j=k}^{i}\frac{\partial s_{j}}{\partial s_{j-1}}\\)
 The total gradients for one sequence.
 
 \\[ \frac{\partial E}{\partial W} = \sum_{i} \frac{\partial E_{i}}{\partial W} \\]
 
-The calculation is similar for \\(\frac{\partial E}{\partial U^{'}}\\), using the same approach we get:
+The calculation is similar for \\(\frac{\partial E}{\partial U'}\\), using the same approach we get:
 
-\\[  \frac{\partial E_{i}}{\partial U} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}^{'}} \frac{\partial y_{i}^{'}}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial U}\\]
+\\[  \frac{\partial E_{i}}{\partial U} = \sum_{t=0}^{i} \frac{\partial E_{i}}{\partial y_{i}'} \frac{\partial y_{i}'}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial U}\\]
 
 This method above is called the backpropagation through time (bptt).
 The problems with BPTT are the following:
 1. It can be slow for long sequences, because the gradient calculation of a data near the end of the sequence requires going back to the beginning, i.e. \\(\frac{\partial s_{i}}{\partial s_{k}}\\) can be long. For this problem, the BPTT is truncated. This can be done in two ways:
 	a. Calculate the gradients only after \\(k\\) steps. This means that the gradients of \\(E_{i}\\) is calculated for not all \\(i\\), but only for every \\(k\\)-th step.
-	b. Unrolling the network at most \\(l\\) steps. This means that the back propagation goes back at most \\(l\\) steps: \\(\sum_{t=i-l}^{i} \frac{\partial E}{\partial y_{i}^{'}}\frac{\partial y_{i}^{'}}{\partial s_{i}}\frac{\partial s_{i}}{\partial s_{t}}\frac{\partial s_{t}}{\partial W}\\)
+	b. Unrolling the network at most \\(l\\) steps. This means that the back propagation goes back at most \\(l\\) steps: \\(\sum_{t=i-l}^{i} \frac{\partial E}{\partial y_{i}'}\frac{\partial y_{i}'}{\partial s_{i}}\frac{\partial s_{i}}{\partial s_{t}}\frac{\partial s_{t}}{\partial W}\\)
 	This means that relevant information is saved for a fixed number of time steps, and everything beyond this point is forgetten.
 
 2. Consider the term \\(\frac{\partial s_{i}}{\partial s_{k}} = \prod_{j=k}^{i}\frac{\partial s_{j}}{\partial s_{j-1}}\\). This represents a series of a vector multiplication, and it can be very long.
-	a. If the gradients are small (<1), then the multiplication of small numbers can lead to tiny values (small gradients). This phenomenon is called vanishing gradients. More specifically, when the gradients are calculated via \\(\sum_{t=0}^{i} \frac{\partial E}{\partial y_{i}^{'}} \frac{\partial y_{i}^{'}}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial W}\\) then the long \\(\frac{\partial s_{i}}{\partial s_{t}}\\) terms in the sum converges to zero and they do vanish, however, for short \\(\frac{\partial s_{i}}{\partial s_{t}}\\) terms in the sum, the gradients can be useful. Therefore, RNNs have capability of learning short-term relationships, but they do have problems for learning long term relationships. In other words, the gradient's components in directions that correspond to long-term dependencies is small, while gradient's components correspond to short-term dependencies is large. As a result, RNNs easily learn the short-term but not the long-term dependencies.
+	a. If the gradients are small (<1), then the multiplication of small numbers can lead to tiny values (small gradients). This phenomenon is called vanishing gradients. More specifically, when the gradients are calculated via \\(\sum_{t=0}^{i} \frac{\partial E}{\partial y_{i}'} \frac{\partial y_{i}'}{\partial s_{i}} \frac{\partial s_{i}}{\partial s_{t}} \frac{\partial s_{t}}{\partial W}\\) then the long \\(\frac{\partial s_{i}}{\partial s_{t}}\\) terms in the sum converges to zero and they do vanish, however, for short \\(\frac{\partial s_{i}}{\partial s_{t}}\\) terms in the sum, the gradients can be useful. Therefore, RNNs have capability of learning short-term relationships, but they do have problems for learning long term relationships. In other words, the gradient's components in directions that correspond to long-term dependencies is small, while gradient's components correspond to short-term dependencies is large. As a result, RNNs easily learn the short-term but not the long-term dependencies.
 	b. Contrary, the values can be large (>1) and the multiplication of these can explode. This also means that gradients from long term grow much faster than gradients from short terms. This is called exploding gradients. The exploding gradients can be circumvented by so called gradient clipping technique in which one does not allow parameter updates large than a 
 	predefined value.
 
