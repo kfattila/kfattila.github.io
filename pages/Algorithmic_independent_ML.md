@@ -23,6 +23,8 @@ When resampling your training data, it could result in a different model.
 
 Let \\(G\\) be class of models, and let \\(\widehat{\Theta} \in G\\) denote the true model we are looking for. This is the model we could get on sufficiently large dataset sampled without any noise, and the learning algorithm would give the exact global optimum without involving any numerical instability and we assume that it is fixed, but unknown. Note that this is not the model which generated data, the real true model might not be a member of \\(G\\), or it might not be computable. In reality, data is not perfect, learning algorihms can terminate early. Hence, the learning proceudre can be considered as a point estimation of \\(\widehat{\Theta}\\) which is a function of the data. Let \\(\Theta\\) denote the estimation of \\(\widehat{\Theta}\\). Since the data drawn from a random procedure, any estimation \\(\Theta\\) of \\(\widehat{\Theta}\\) is random, and it has mean and variance.
 
+![alg_ind1](./images/alg_ind1.png)
+
 **Figure 1.** Bias and Variance of the model selection. Green triangle (in the middle) represents the true model \\(\Theta\\) and red dots represent point estimations \\(\Theta\\) of \\(\widehat{\Theta}\\). Blue rectangle represents the mean of the point estimations.
 
 Let \\(\Theta_{m}\\) be an estimation of \\(\widehat{\Theta}\\) calculated on a dataset containing \\(m\\) data.
@@ -40,13 +42,13 @@ However, the calculation of the variance is not involved to the true model, and 
 
 #### Jackknife estimation of variance
 
-This approach iteratively calculates statistics by removing one different data in each iteration. It is often called *leave-one-out*. Let \\(D_{m} = \{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in C\}_{i=1}^{m} \\) the training dataset, and let \\(\theta_{-i}\\) a model estimation obtained on the dataset \\(D_{m-1}\\) without the data \\(i\\).
+This approach iteratively calculates statistics by removing one different data in each iteration. It is often called *leave-one-out*. Let \\(D_{m} = \\{(X_{i}, Y_{i})\mid X_{i} \in R^{n}, y_{i} \in C\\}\_{i=1}^{m} \\) the training dataset, and let \\(\theta_{-i}\\) a model estimation obtained on the dataset \\(D_{m-1}\\) without the data \\(i\\).
 The mean of the models can be estimated by:
 \\[E_{jk}[\theta_{m}] = \frac{m-1}{m}\sum_{i=1}^{m}\theta_{-i}\\]
 
 Using this mean one can give an estimation on the variance.
 
-\\[Var_{jk}(\theta_{m}) \approx \frac{m-1}{m}\sum_{i=1}^{m}[\theta_{-i} - E_{jk}[\theta_{m}]]^{2} \\]
+\\[Var_{jk}(\Theta_{m}) \approx \frac{m-1}{m}\sum_{i=1}^{m}[\Theta_{-i} - E_{jk}[\Theta_{m}]]^{2} \\]
 
 This estimation method can be time consuming in large datasets.
 
