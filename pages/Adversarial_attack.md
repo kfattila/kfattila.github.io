@@ -40,7 +40,7 @@ The \\(sign(.)\\) function basically erases the gradient length (but keeps the d
 
 The cause of these adversarial examples was a mystery, and speculative explanations have suggested it is due to extreme nonlinearity of deep neural networks, perhaps combined with insufficient model averaging and insufficient regularization of the purely supervised learning problem. Linear behavior in high-dimensional spaces is sufficient to cause adversarial examples
 
-In image recognition, neural networks are mainly built of linear blocks such as Rectified Linear Unit and Convolutional layers. When such neural network has really lots of parameters, making a little change ϵ in each component of an input vector can result in a big change in the output as much as \\(\epsilon\lVert W \rVert\\). Adversarial training discourages this highly sensitive locally linear behavior by encouraging the network to be locally consistent in the neighbourhood of the training data. This can be seen as a regularization method.
+In image recognition, neural networks are mainly built of linear blocks such as Rectified Linear Unit and Convolutional layers. When such neural network has really lots of parameters, making a little change \\(\epsilon\\) in each component of an input vector can result in a big change in the output as much as \\(\epsilon\lVert W \rVert\\). Adversarial training discourages this highly sensitive locally linear behavior by encouraging the network to be locally consistent in the neighbourhood of the training data. This can be seen as a regularization method.
 
 ###### 1.1.2 The first approach
 
