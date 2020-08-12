@@ -296,11 +296,14 @@ And the overall results obtained with SB (256 data) and LB (10% of the total dat
 
 Error surface characterization. The local minima obtained with LB and SB are denoted by \\(x_{l}^{\ast}\\) and \\(x_{s}^{\ast}\\). respectively. Then the loss function were plotted along the line-segment containing these two local minina. Secifically, for \\(\alpha = [-1,2]\\), the loss function \\(f(\alpha x_{l}^{\ast} + (1 - \alpha)x_{s}^{\ast})\\) were plotted below. The plots show that local minima found by SB is stringkingly flatter than the local minima found by LB.
 
+![reg22.png](./images/reg22.png)
+
 #### Batch normalization
 
 In the training of a deep neural network, a little change in the weights at the lower levels might end up in a large change in the higher levels. The training of a deep neural network is hindered by the fact that inputs to each layer is affected by all preceding layers. That is, at the fist layer the data has a certain fixed distribution, but changing the parameters by backpropagation the distribution of the feature data (activations) changes and the learner has to compensate and modify the weights so that the higher layers can adapt to the new feature distribution.
+
 Batch normalization aims to mitigate this problem introducing a layer-wise normalization in which the mini-batch of the data is normalized and centralized at every hidden layers.
-Let \\(MB = \{h_{1}, h_{2},...,h_{n}\}\\) be the mini-batch data at level \\(k\\). For first layer \\((k = 0)\\), this data is equivalent to the input raw data \\(h_{i} = x_{i}\\), while at higher layers this data is obtained by transforming the original data through the preceding layer's \\((l = 1, ..., k)\\) transformation and activation.
+Let \\(MB = \\{h_{1}, h_{2},...,h_{n}\\}\\) be the mini-batch data at level \\(k\\). For first layer \\((k = 0)\\), this data is equivalent to the input raw data \\(h_{i} = x_{i}\\), while at higher layers this data is obtained by transforming the original data through the preceding layer's \\((l = 1, ..., k)\\) transformation and activation.
 
 The mini-batch normalization is defined by:
 \\[\mu_{B} := \frac{1}{m}\sum h_{i}\\]
