@@ -70,7 +70,7 @@ The training of such patches is a bit technical because we don't generate a full
 
 The adversarial example generation can also be used to train neural networks to be more robust against such attacks. For instance, the fast gradient sign method can be used as a regularizer in the training in the following way:
 
-\\[J(x, y_{true}) = \alpha J(x, y_{true}) + (1 - \alpha)J(x + \epsilon \сdot sign(\nabla_{x}J(x, y_{true})), y_{true})\\]
+\\[J(x, y_{true}) = \alpha J(x, y_{true}) + (1 - \alpha)J(x + \epsilon \cdot sign(\nabla_{x}J(x, y_{true})), y_{true})\\]
 
 ![adv_attack6.png](./images/adv_attack6.png)
 
