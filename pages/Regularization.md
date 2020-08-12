@@ -338,6 +338,8 @@ In the inference part the normalization parameters are the averages of the norma
 
 \\[Var[x] = \frac{m}{m - 1}E[\sigma_{B}^{2}]\\]
 
+where \\(m\\) is the size of the mini-batches, and apply the normalization as follows:
+
 \\[\overline{h} := \frac{\gamma}{\sqrt{Var[x] + \epsilon}}h + (\beta - \frac{\gamma E[X]}{Var[x] + \epsilon}) \\]
 
 [ref: Ioffe, Szegedy. Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift, 2015]
