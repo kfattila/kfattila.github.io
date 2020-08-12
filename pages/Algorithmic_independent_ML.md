@@ -31,7 +31,7 @@ Let \\(\Theta_{m}\\) be an estimation of \\(\widehat{\Theta}\\) calculated on a 
 The **bias of an estimator** is defined as:
 \\[bias(\Theta_{m}) = E[\Theta] - \widehat{\Theta}\\]
 
-where \\(E(.)\\) denotes the statistical expected value over the models. The bias measures how far the point estimation can be expected from the true model. An estimator is said to be unbiased if \\(bias(\Theta_{m}) = 0\\), and it is said to be asymptotically unbiased if \\(\lim_{m \rightarrow \inf}bias(\Theta_{m}) = 0\\)
+where \\(E(.)\\) denotes the statistical expected value over the models. The bias measures how far the point estimation can be expected from the true model. An estimator is said to be unbiased if \\(bias(\Theta_{m}) = 0\\), and it is said to be asymptotically unbiased if \\(\lim_{m \rightarrow \infty}bias(\Theta_{m}) = 0\\)
 
 The **variance of an estimator** is defined as:
 \\[Var(\Theta_{m}) = E[\Theta_{m}^{2}] - E[\Theta_{m}]^{2}\\]
