@@ -73,39 +73,44 @@ High variance means that the model obtained with the learning algorithm depends 
 
 **Underfitting** happens when the model does not fit neither to the training set nor to the test set.
 
+![alg_ind2](./images/alg_ind2.png)
+
 **Figure 2.** Over and under fitting. Left hand side (LHS) shows an example for overfitting. Right hand side (RHS) shows an example of underfitting. The middle plot shows a reasonably good fit to the data.
 
 #### Learning curves
 
 One can plot the actual error achieved on the train and the test sets as a function of the number of iterations used. The error (accuracy) on the training set should grow as the training iteration increases, while the test error should decreases. These curves are called **learning curves**. In the case of overfitting there is a gap in the error on the train and test sets.  Figures 3-5 show examples for under-, over-, and well- fitting.
 
-
+![alg_ind3](./images/alg_ind3.png)
 
 **Figure 3.** Learning curves in overfitting. In case of overfitting, the model achieves low error on the training set, but still has high error on the test sets.
 
+![alg_ind4](./images/alg_ind4.png)
 
 **Figure 4.** Learning curves in underfitting. Underfitting happens when the model does not fit to the data. In this case the model achieves high error on both training and test sets.
 
+![alg_ind5](./images/alg_ind5.png)
 
 **Figure 5.** In a good fit the model achieves low and nearly the same error on test set as on the train set.
 
 **Model Capacity (model Complexity)** gives an intuition how much the model is capable to learn "complicated" models. The capacity of a linear model, such as linear regression, or linear SVM, can be considered low. However, a multi-layer neural networks using many hidden units can be considered highly capable models. If the model capacity is low, then model may underfit the data. If the capacity of a model is too high, then it might overfit and might learn noise as well.
 
+![alg_ind6](./images/alg_ind6.png)
 
 **The Minimum Description Length (MDL)** principle states that one should use the model having the smallest  Kolmogorov complexity among all the good models that fit the data well i.e.
 
-\\[K(\theta, D) = K(\theta) + K(D using \theta)\\]
+\\[K(\Theta, D) = K(\Theta) + K(D using \Theta)\\]
 
 where \\(K)\\ denotes the Kolmogorov complexity of its argument. The Kolmogorov complexity (or also called algorithmic complexity) of a string (binary string) x is the length of the shortest program that prints the string \\(x\\) as an output. The Kolmogorov complexity is uncomputable, and it has little practical interests.
 
 
 #### Structural risk minimization
 
-It gives a preference to a model where the estimation error and the model complexity is low \\(\theta = argmin_{\theta \in G}(J(\theta|D) + K(\theta,D))\\)
+It gives a preference to a model where the estimation error and the model complexity is low \\(\Theta = argmin_{\Theta \in G}(J(\Theta\mid D) + K(\Theta,D))\\)
 
 This is in accordance with the Occam's Razors which states that among equally adequate  models (theory, proof, etc) the simpler is preferred.
 
-**Empirical Risk Minimization.** The idea here is to use a model which has the lowest estimation error overall without preference toward smooth or simple models:
+**Empirical Risk Minimization.** The idea here is to use a model which has the lowest estimation error overall without preference toward smooth or simple models: \\(\Theta = argmin_{\Theta \in G} J(\Theta\mid D)\\)
 
 
 #### Parameters and hyper parameters
