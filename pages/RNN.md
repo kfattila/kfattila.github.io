@@ -19,7 +19,7 @@ The update of the hidden states is given by:
 
 where [.;.] indicates the vector concatenation, and \\(Z\\) contains both \\(W\\) and \\(U\\).
 And the prediction of the current input:
-\\[y_{t}^{'} = \alpha(V_{s_{t}} + b_{2})\\]
+\\[y_{t}' = \alpha(V_{s_{t}} + b_{2})\\]
 where \\(b_{1}\\) and \\(b_{2}\\) are biases and \\(\alpha(.)\\) is an activation function. Note that logistic activation functions also could be used instead of tanh. The parameters in \\(V\\) and \\(U\\) can be interpreted as the same in standard neural networks. The parameters in the weight matrix \\(W\\) controls basically what to keep and what to forget from the previous state. The memory is usually set to be 0 vector at the beginning of process \\((s_{0} = 0)\\). Note that, the parameters of the network \\((U, V, W)\\) do not change over the time.
 
 Now, the question is that how can we calculate the parameters of the model \\(W, V, U\\) and the biases? First, we need a loss function. This loss can be the same as what we used to use, for instance, cross-entropy for categorical target values or least squares for regression models. Now, the derivation of the cost function w.r.t. the parameters is basically straightforward but technical, one just need to consider the RNN as a deep neural network and calculate the derivatives at previous times \\((t - 1, t - 2, ..., 0)\\) and sum up the gradients. Now, we discuss this in more details.
