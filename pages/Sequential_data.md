@@ -8,7 +8,7 @@ description: ""
 
 In the previous lectures when we discussed the data, we, did not say, but we strongly assumed that every data instance was sampled independently. This means that a picture of a cat \\(x_{i}\\) was totally independent  of a picture of a cat \\(x_{i+1}\\), and if you shuffled your dataset, then it would not affect your method.
 
-In this lecture we will discuss methods for sequential data. In this type of data, we strongly assume that there is a very strong correlation between two subsequent data. In this case, we assume that either data \\(x_{i}\\) and \\(x_{i+1}\\) are very similar to each other, or they have a strong relationhips in some sense and the entropy of \\(P(x_{i+1}\mid x_{i},..,x_{i-k})\\) is high (written text). Shuffling this data would mostly damage all the information in this data.
+In this lecture we will discuss methods for sequential data. In this type of data, we strongly assume that there is a very strong correlation between two subsequent data. In this case, we assume that either data \\(x_{i}\\) and \\(x_{i+1}\\) are very similar to each other, or they have a strong relationhips in some sense and the entropy of \\(P(x_{i+1} \mid x_{i},..,x_{i-k})\\) is high (written text). Shuffling this data would mostly damage all the information in this data.
 
 For the first type of data you can consider a video stream, in which the subsequent image frames are very similar to each other, it hardly changes. You may also consider a speech data at high frequency in which the speech audio frames are also very similar.
 
