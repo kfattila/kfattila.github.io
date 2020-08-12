@@ -14,7 +14,7 @@ Here, when you are imagine a data, try to imagine one with more-or-less categori
 
 An example. Consider the following shopping charts of customers (ID). We can notice it that if customers buy milk and bread, it is likely they buy butter as well.
 
-![decisiontrees1.png](./images/decisiontrees1.png)
+<img src="./images/decisiontrees1.png" alt="drawing" width="250"/>
 
 #### Decision Trees
 
@@ -116,7 +116,7 @@ ID3 algorithm selects the attribute \\(a^{\ast}\\) which reduces the uncertainty
 
 **Example:** A training data to decide if the weather is good to play tennis.
 
-![decisiontrees4.png](./images/decisiontrees4.png)
+<img src="./images/decisiontrees4.png" alt="drawing" width="250"/>
 
 
 Target attribute is "play" and it can have two values: "yes" and "no". The distribution of the values in the target attributes:
@@ -135,7 +135,7 @@ Let us chose the attribute "temperature". It has three values: "hot", "mild", "c
 
 \\(P(play;S_{Temp=cool}) = [\frac{1}{4},\frac{3}{4}]\\)
 
-\\(P(play;S_{Temp=cool}) = [\frac{2}{6},\frac{4}{6}]\\)
+\\(P(play;S_{Temp=mild}) = [\frac{2}{6},\frac{4}{6}]\\)
 
 \\(P(play;S_{Temp=hot}) = [\frac{1}{2},\frac{1}{2}]\\)
 
@@ -149,7 +149,13 @@ That is \\(P(play;S_{Temp=cool})\\) is the distribution of the class labels with
 
 The information gain for the attribute "temperature"
 
-\\[\\]
+\\[
+	\begin{array}{ll}
+		G(temp, A, S) = H(P[play]) \cr
+		& -f_{Temp=cool} \cdot(P(play;S_{Temp=cool})) \cr
+		& -f_{Temp=mild} \cdot(P(play;S_{Temp=mild})) \cr
+		& -f_{Temp=hot} \cdot(P(play;S_{Temp=hot}))
+\\]
 
 The ID3 algorithm will choose the attribute which yields the highest gain.
 
