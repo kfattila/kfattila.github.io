@@ -7,7 +7,7 @@ description: ""
 
 Here, we will discuss neural network-based models for sequential data. These models process sequential data, one data frame (one vector) at a time using a memory that is updated after each step. This memory is supposed to represent the essence (or the information) of the past data. Different methods (Recurrent Neural Networks, Long-Short Term Memory models, and Neural Turing Machines) are all use a memory but they differ in how they update or modify the memory.
 Let us assume we are given a single data sequence \\(x = x_{1}, ..., x_{T}\\), where each \\(x_{i} \in R^{n}\\) and the desired output is a sequence: \\(y = y_{1}, ..., y_{T}\\). Note that, different sequences in the dataset can differ in length.
-The recurrent neural network uses a memory, which is represented by a vector \\(h \in R^{H}\\), and every step it takes \\(x_{t}\\) as an input and produces a prediction \\(y_{t}^{'}\\) and updates the memory \\(h\\).
+The recurrent neural network uses a memory, which is represented by a vector \\(h \in R^{H}\\), and every step it takes \\(x_{t}\\) as an input and produces a prediction \\(y_{t}'\\) and updates the memory \\(h\\).
 
 ![rnn1](./images/rnn1.png)
 
