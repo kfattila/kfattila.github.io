@@ -82,7 +82,7 @@ Methods in this class have access only to the output of the model.
 
 In this approach the attack is extremely limited to the scenario where only one pixel can be modified. The method does not have access to the model or its gradients and it uses the differential evolution method. It requires less adversarial information and can fool more types of networks. The results show that 70.97% of the natural images can be perturbed to at least one target class by modifying just one pixel with 97.47% confidence on average. Thus, the proposed attack explores a different take on adversarial machine learning in an extreme limited scenario, showing that current DNNs are also vulnerable to such low dimension attacks.
 The problem is formulated as follows:
-\\[max f_{y_{fool}}(x + e_{x})\\]
+\\[max_{e_{x}} f_{y_{fool}}(x + e_{x})\\]
 subject to \\(\lVert e_{x}\rVert_{0} \leq d\\)
 
 where \\(d\\) is a small number and the zero norm is defined by the number of non-zero elements in its arguments. 
