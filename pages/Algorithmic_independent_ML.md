@@ -54,13 +54,13 @@ This estimation method can be time consuming in large datasets.
 
 #### Bootstrap estimation of variance
 
-Bootstrap datasets is created via selecting \\(m\\) data from \\(D_{m} = \{(X_{i}, Y_{i})|X_{i} \in R^{n}, y_{i} \in C\}_{i=1}^{m} \\), with replacement. Using replacement in the data sampling means that the bootstrapped data contains some duplications. Using \\(B\\) bootstrapped datasets (drawn independently) can be used to estimate the variance of the models. Let \\(\theta_{i}\\) be the model learned on the \\(i\\)-th bootstrapped dataset, \\(i = 1,...,B\\). (Note that, here \\(\theta_{i}\\) does not denote the ith parameter in \\(\theta\\), but it means the full parameter set obtained on the \\(i\\)-th training bootstrapped dataset.)
+Bootstrap datasets is created via selecting \\(m\\) data from \\(D_{m} = \\{(X_{i}, Y_{i}) \mid X_{i} \in R^{n}, y_{i} \in C\\}\_{i=1}^{m} \\), with replacement. Using replacement in the data sampling means that the bootstrapped data contains some duplications. Using \\(B\\) bootstrapped datasets (drawn independently) can be used to estimate the variance of the models. Let \\(\Theta_{i}\\) be the model learned on the \\(i\\)-th bootstrapped dataset, \\(i = 1,...,B\\). (Note that, here \\(\Theta_{i}\\) does not denote the ith parameter in \\(\Theta\\), but it means the full parameter set obtained on the \\(i\\)-th training bootstrapped dataset.)
 
 The mean and variance estimated via bootstrap:
 
-\\[E_{bs}[\theta_{m}] = \frac{1}{B}\sum_{i=1}^{B}\theta_{i}\\]
+\\[E_{bs}[\Theta_{m}] = \frac{1}{B}\sum_{i=1}^{B}\Theta_{i}\\]
 
-\\[Var_{bs}(\theta_{m}) \approx \frac{m-1}{m}\sum{m}{i=1}[\theta_{i} - E_{bs}[\theta_{m}]]^{2} \\]
+\\[Var_{bs}(\Theta_{m}) \approx \frac{m-1}{m}\sum{m}{i=1}[\Theta_{i} - E_{bs}[\Theta_{m}]]^{2} \\]
 
 The benefit of the bootstrap estimation over the jackknife is that the number of the bootstrap datasets \\(B\\) can be adapted to the computational resources available. However, the more bootstrapped datasets are used the better variance estimation we get.
 
