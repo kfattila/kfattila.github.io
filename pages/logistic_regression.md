@@ -227,3 +227,16 @@ Some remarks:
 In fact, \\(g(x\Theta) = P(y=1 \mid x)\\) and \\(P(y=0 \mid x) = 1 - g(x\Theta)\\). This can be written as \\(P(y \mid x) = g(x\Theta)^{y}(1-g(x\Theta))^{1-y}\\).
 For a given dataset, the likelihood function is defined as \\(l(\Theta) = \prod_{i} P(y_{i}\mid x_{i}) = \prod_{i}g(x_{i}\Theta)^{y_{i}}(1-g(x_{i}\Theta))^{1-y_{i}}\\).
 The loglikelihood: \\(\log(l(\Theta)) = \sum_{i} y_{i} \log g(x_{i}\Theta) + (1-y_{i})\log(1-g(x_{i}\Theta)) \\). The only difference between the cross entropy function and this maximum likelihood estimation is the sign (-1). This is also a reason why sigmoid functions is preferred to other S-shaped functions, such as arctan. Note that, in the case above we fit two distributions, one for the positive and one for the negative class, but the model parameters are tied.
+
+
+Logistic Regression and other discriminative methods learn features to distingush between the classes.
+The image below shows the how trained Logistic Regression makes decisions. 
+
+![Weights example](./images/logreg7.png)
+
+In the top row there are learned weights for each class. Next rows show an image from the test set of MNIST and element-wise product of the image and weights.
+In those images we can see, which pixels are used to discriminate this class from other classes. Bright (positive) regions are the pixels which increase probabilty of the class and 
+dark (negative) regions are pixels that deacrease 
+
+
+In this particaular example we can see that in most cases (except 3,5 and 6) the sum of this product is the highest for the true class.
