@@ -230,13 +230,10 @@ The loglikelihood: \\(\log(l(\Theta)) = \sum_{i} y_{i} \log g(x_{i}\Theta) + (1-
 
 
 Logistic Regression and other discriminative methods learn features to distingush between the classes.
-The image below shows the how trained Logistic Regression makes decisions. 
+The image below shows how the trained Logistic Regression makes decisions. 
 
 ![Weights example](./images/logreg7.png)
 
-In the top row there are learned weights for each class. Next rows show an image from the test set of MNIST and element-wise product of the image and weights.
-In those images we can see, which pixels are used to discriminate this class from other classes. Bright (positive) regions are the pixels which increase probabilty of the class and 
-dark (negative) regions are pixels that deacrease 
-
-
-In this particaular example we can see that in most cases (except 3,5 and 6) the sum of this product is the highest for the true class.
+In the top row, there are learned weights for each class. The next rows show an image from the test set of MNIST and the element-wise product of the image and weights.
+In those images, we can see, which pixels are used to discriminate this class from other classes. Bright (positive) regions are the pixels that increase the class probability and dark (negative) regions are pixels that decrease the class probability. For instance, in case of 2, the classifier makes its decision based on the curve on the top, bottom and the tail 
+(you can see that both in the weight matrix plot 2 and the product of input with 2 and the weights, which correspond to this class). Also, in this particaular example we can see that in most cases (except 3,5 and 6) the sum of this product is the highest for the true class.
